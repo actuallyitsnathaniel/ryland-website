@@ -1,0 +1,90 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  display: flex;
+  min-height: 84vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-footer {
+  background-color: #000;
+  min-height: 1vh;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  justify-content: center;
+  font-size: calc(12px);
+  color: white;
+  padding: 3vh;
+}
+
+.social-links {
+  display: "flex";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  gap: 15;
+  padding: 1vh;
+}
+.App-nav {
+  color: #FFF;
+  font-size: 4vh;
+  padding: 3vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 25px;
+  font-weight: 600;
+}
+
+.App-nav-item {
+  flex: 1;
+  white-space: nowrap;
+  text-decoration: none;
+  color: inherit;
+}
+
+.ryland-logo {
+  height: 90vh;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.video {
+ filter: brightness(0.25) blur(15px);
+ /* The min width had to be set for both */
+ min-width: 230vh;
+ justify-content: center;
+ align-content: center;
+ overflow: hidden;
+ object-fit: fill;
+}
+
+.video-wrapper {
+  background-color: #000;
+  position: fixed;
+  display: flex;
+  min-width: 200vh;
+  z-index: -1;
+}
