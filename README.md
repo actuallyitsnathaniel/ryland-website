@@ -1,4 +1,5 @@
-# Getting Started with Create React App
+# Ryland Website 🛏
+![screenshot_home](https://user-images.githubusercontent.com/38742706/182973788-a5060f89-6b7c-46c0-82b1-1fd1adffc10d.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
