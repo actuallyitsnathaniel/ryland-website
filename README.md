@@ -1,8 +1,13 @@
 # Ryland Website 🛏
 ![screenshot_home](https://user-images.githubusercontent.com/38742706/182973788-a5060f89-6b7c-46c0-82b1-1fd1adffc10d.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## The spot for everything Ryland. Music, merch, and much more.Come dream up some new tunes with us!
 
+
+<details>
+  <summary>React ReadMe</summary>
+  This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  
 ## Available Scripts
 
 In the project directory, you can run:
@@ -69,3 +74,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</details>
