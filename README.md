@@ -1,12 +1,12 @@
 # Ryland Website 🛏
 ![screenshot_home](https://user-images.githubusercontent.com/38742706/182973788-a5060f89-6b7c-46c0-82b1-1fd1adffc10d.png)
 
-## The spot for everything Ryland. Music, merch, and much more.Come dream up some new tunes with us!
+## The spot for everything Ryland. Music, merch, and much more. Come dream up some new tunes with us!
 
 
-<details>
+<details> 
   <summary>React ReadMe</summary>
-  This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
   
 ## Available Scripts
 
