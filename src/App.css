@@ -42,6 +42,7 @@
   gap: 15;
   padding: 1vh;
 }
+
 .App-nav {
   color: #FFF;
   font-size: 4vh;
@@ -58,6 +59,16 @@
   white-space: nowrap;
   text-decoration: none;
   color: inherit;
+}
+
+.logo-header {
+  padding-top: 15vh;
+  padding-bottom: 15vh;
+}
+
+.ryland-bed-logo {
+  align-content: center;
+  justify-content: center;
 }
 
 .video {

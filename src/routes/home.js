@@ -6,7 +6,10 @@ import { MusicLinks } from "../components/music-embeds";
 function Home() {
   return (
     <>
-      <RylandBedIcon />
+      <div className="logo-header">
+        <RylandBedIcon />
+      </div>
+
       <div className="App-body">
         <MusicLinks />
       </div>
