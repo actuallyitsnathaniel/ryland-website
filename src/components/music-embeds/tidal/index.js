@@ -6,8 +6,8 @@ export default function TidalEmbed() {
         borderRadius: "18px",
         minHeight: "450px",
         maxHeight: "450px",
-        minWidth: "30vh",
-        maxWidth: "30vh",
+        minWidth: "37vh",
+        maxWidth: "37vh",
         padding: "1vh",
       }}
       src={"https://embed.tidal.com/albums/175851104?layout=gridify"}
