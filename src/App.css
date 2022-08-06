@@ -34,24 +34,6 @@
   padding: 3vh;
 }
 
-.App-nav {
-  color: #FFF;
-  font-size: 4vh;
-  padding: 3vh;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 25px;
-  font-weight: 600;
-}
-
-.App-nav-item {
-  flex: 1;
-  white-space: nowrap;
-  text-decoration: none;
-  color: inherit;
-}
-
 .ryland-bed-logo {
   align-content: center;
   justify-content: center;

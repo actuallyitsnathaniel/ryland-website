@@ -7,11 +7,13 @@ import TidalEmbed from "./tidal";
 
 export function MusicLinks() {
   return (
-    <main className="music-embeds">
+    <div>
       <h2>Listen to Portrait</h2>
-      <SpotifyEmbed />
-      <AppleMusicEmbed />
-      <TidalEmbed />
-    </main>
+      <div className="music-embeds">
+        <SpotifyEmbed />
+        <AppleMusicEmbed />
+        <TidalEmbed />
+      </div>
+    </div>
   );
 }
