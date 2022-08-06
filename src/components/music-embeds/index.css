@@ -5,13 +5,3 @@
     justify-content: center;
     align-items: center;
 }
-
-.music-embeds-item {
-    border-radius: "18px";
-    min-height: "450px";
-    max-height: "450px";
-    min-width: "30vh";
-    max-width: "30vh";
-    padding: "1vh";
-    
-}
