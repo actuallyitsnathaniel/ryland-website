@@ -1,6 +1,5 @@
 import {
   BrowserRouter as Router,
-  Link,
   Switch,
   Route,
   Redirect,
@@ -9,6 +8,7 @@ import {
 import "./App.css";
 import VideoBackground from "./components/video-background";
 import { SocialLinks } from "./components/social-links";
+import NavBar from "./components/navbar";
 
 import Home from "./routes/home";
 import Contact from "./routes/contact";
@@ -16,29 +16,15 @@ import AboutUs from "./routes/about-us";
 import Merch from "./routes/merch";
 import Shows from "./routes/shows";
 
+// matchMedia("(max-width: 600px)") ? true : false
+
 function App() {
   return (
     <Router>
       <div className="App">
         <VideoBackground />
 
-        <nav className="App-nav">
-          <Link className="App-nav-item" to="/home">
-            Home
-          </Link>
-          <Link className="App-nav-item" to="/about-us">
-            About Us
-          </Link>
-          <Link className="App-nav-item" to="/contact">
-            Contact
-          </Link>
-          <Link className="App-nav-item" to="/merch">
-            Merch
-          </Link>
-          <Link className="App-nav-item" to="/shows">
-            Shows
-          </Link>
-        </nav>
+        <NavBar />
         <Switch>
           <Route exact path="/">
             <Redirect to="/home" />

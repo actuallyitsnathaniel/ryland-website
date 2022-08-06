@@ -6,8 +6,6 @@ export default function AppleMusicEmbed() {
         borderRadius: "18px",
         minHeight: "450px",
         maxHeight: "450px",
-        minWidth: "37vh",
-        maxWidth: "37vh",
         padding: "1vh",
       }}
       src={"https://embed.music.apple.com/us/album/portrait/1556566677"}
