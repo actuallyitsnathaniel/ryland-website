@@ -1,4 +1,3 @@
-import "./index.css";
 import InstagramLogo from "./instagram-link";
 import GmailLogo from "./gmail-link";
 

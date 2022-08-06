@@ -34,15 +34,6 @@
   padding: 3vh;
 }
 
-.social-links {
-  display: "flex";
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  gap: 15;
-  padding: 1vh;
-}
-
 .App-nav {
   color: #FFF;
   font-size: 4vh;
@@ -68,6 +59,15 @@
 .ryland-bed-logo {
   align-content: center;
   justify-content: center;
+}
+
+.social-links {
+  display: "flex";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  gap: 15;
+  padding: 1vh;
 }
 
 .video {
