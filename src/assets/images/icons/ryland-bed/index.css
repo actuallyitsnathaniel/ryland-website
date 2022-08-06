@@ -1,0 +1,11 @@
+.ryland-bed-logo {
+    display: flexbox;
+    align-items: center;
+    justify-content: center;
+    max-width: 50%;
+
+  }
+
+.ryland-bed-logo-wrapper {
+    padding-top: 6vw;
+  }
