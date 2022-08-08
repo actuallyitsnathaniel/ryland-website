@@ -7,6 +7,7 @@
     flex-wrap: wrap;
     gap: 25px;
     font-weight: 600;
+    overflow: hidden;
   }
   
   .App-nav-item {
@@ -15,8 +16,19 @@
     text-decoration: none;
     color: inherit;
   }
+  .App-nav-item:hover {
+    color: burlywood;
+  }
+  
+  .App-nav-item:active {
+    color: chocolate;
+  }
 
-  @media only screen and (max-width: 600px) {
+  .App-nav-close-icon {
+    display: none;
+  }
+
+  @media screen and (max-width: 600px) {
     .App-nav {
         color: #FFF;
         font-size: 4vh;

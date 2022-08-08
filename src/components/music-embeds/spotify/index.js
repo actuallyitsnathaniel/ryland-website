@@ -1,11 +1,13 @@
+import "./index.css";
+
 export default function SpotifyEmbed() {
   return (
     <iframe
+      className="spotify-embed"
       title="spotify-embedded"
       style={{
         borderRadius: "18px",
-        minHeight: "450px",
-        maxHeight: "450px",
+
         padding: "1vh",
       }}
       src={

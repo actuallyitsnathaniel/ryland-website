@@ -3,18 +3,18 @@
     align-items: center;
     justify-content: center;
     max-height: 70vh;
-
+    padding-left: 5vw;
+    padding-right: 5vw;
   }
 
 .ryland-bed-logo-wrapper {
     padding-top: 4vw;
   }
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 800px) {
     .ryland-bed-logo {
       align-items: center;
       justify-content: center;
-      max-width: 80%;
     }
   
   .ryland-bed-logo-wrapper {

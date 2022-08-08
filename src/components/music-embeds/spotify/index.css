@@ -1,0 +1,10 @@
+@media screen and (max-width: 650px) {
+    .spotify-embed {
+        max-height: 400px;
+    }
+    
+}
+
+.spotify-embed {
+    height: 450px;
+}
