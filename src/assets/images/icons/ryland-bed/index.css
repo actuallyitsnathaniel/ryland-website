@@ -15,6 +15,7 @@
     .ryland-bed-logo {
       align-items: center;
       justify-content: center;
+      max-width: 85vw;
     }
   
   .ryland-bed-logo-wrapper {
