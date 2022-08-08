@@ -29,7 +29,7 @@
   }
 
   @media screen and (max-width: 600px) {
-    .App-nav {
+    .App-nav::before {
         color: #FFF;
         font-size: 4vh;
         padding: 3vh;
@@ -39,12 +39,21 @@
         flex-wrap: wrap;
         gap: 25px;
         font-weight: 600;
-      }
+    }
 
-      .App-nav-item {
-        flex: 1 0 50%; 
-        white-space: nowrap;
-        text-decoration: none;
-        color: inherit;
-      }
+    /* All items in nav that are not relevant to active page */
+    .App-nav .App-nav-item:not(:first-child) {
+      display: none;
+    }
+
+    .App-nav:hover .App-nav-item:not(:first-child) {
+      display: block;
+    }
+
+    .App-nav-item {
+      flex: 1 0 50%; 
+      white-space: nowrap;
+      text-decoration: none;
+      color: inherit;
+    }
   }

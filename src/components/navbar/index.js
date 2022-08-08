@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import "./index.css";
+import closeIcon from "../../assets/images/icons/navbar/close-icon.svg";
 
 function NavBar() {
   return (
@@ -21,9 +22,7 @@ function NavBar() {
       <Link className="App-nav-item" to="/shows">
         Shows
       </Link>
-      <Link className="App-nav-close-icon" to="#" onClick="myFunction()">
-        <i className="fa fa-bars" />
-      </Link>
+      <img src={closeIcon} alt="close-icon" className="App-nav-close-icon" />
     </nav>
   );
 }
