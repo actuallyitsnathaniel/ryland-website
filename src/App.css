@@ -63,6 +63,6 @@
   background-color: #000;
   position: fixed;
   display: flex;
-  min-width: 200vh;
+  min-width: 230vh;
   z-index: -1;
 }
