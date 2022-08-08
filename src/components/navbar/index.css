@@ -29,7 +29,7 @@
   }
 
   @media screen and (max-width: 600px) {
-    .App-nav::before {
+    .App-nav: {
         color: #FFF;
         font-size: 4vh;
         padding: 3vh;
@@ -46,7 +46,7 @@
       display: none;
     }
 
-    .App-nav:hover .App-nav-item:not(:first-child) {
+    .App-nav:hover .App-nav-item {
       display: block;
     }
 

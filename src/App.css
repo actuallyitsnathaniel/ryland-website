@@ -40,15 +40,6 @@
   fill: aqua;
 }
 
-.social-links {
-  display: "flex";
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  gap: 15;
-  padding: 1vh;
-}
-
 .video {
  filter: brightness(0.25) blur(15px);
  /* The min width had to be set for both */
