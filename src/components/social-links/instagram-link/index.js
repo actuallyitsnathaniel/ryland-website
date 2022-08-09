@@ -3,7 +3,7 @@ import instagram_svg from "../../../assets/images/icons/instagram-logo.svg";
 function InstagramLogo() {
   return (
     <a
-      className="p-10"
+      className="p-3"
       href="https://instagram.com/weareryland"
       target="_blank"
       rel="noopener noreferrer"

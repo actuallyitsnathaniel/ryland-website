@@ -8,7 +8,7 @@ export function MusicLinks() {
   return (
     <div className="text-white text-4xl">
       <h2>Listen to Portrait</h2>
-      <div className="flex flex-wrap justify-center md:h-[470px] sm:h-full">
+      <div className="flex flex-wrap justify-center  sm:h-full">
         <SpotifyEmbed />
         <AppleMusicEmbed />
         <TidalEmbed />

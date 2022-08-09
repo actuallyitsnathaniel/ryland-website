@@ -3,7 +3,7 @@ import email_svg from "../../../assets/images/icons/email-logo.svg";
 function GmailLogo() {
   return (
     <a
-      className="p-10"
+      className="p-3"
       href="mailto:weareryland@gmail.com"
       target="_blank"
       rel="noopener noreferrer"
