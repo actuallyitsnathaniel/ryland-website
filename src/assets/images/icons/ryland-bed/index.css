@@ -7,10 +7,6 @@
     padding-right: 5vw;
   }
 
-.ryland-bed-logo-wrapper {
-    padding-top: 4vw;
-  }
-
   @media only screen and (max-width: 800px) {
     .ryland-bed-logo {
       align-items: center;

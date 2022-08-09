@@ -21,7 +21,7 @@ import Shows from "./routes/shows";
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="flexbox place-content-center text-center">
         <VideoBackground />
 
         <NavBar />
@@ -37,7 +37,7 @@ function App() {
           <Route path="/shows" render={Shows} />
         </Switch>
         <SocialLinks />
-        <div className="App-footer">
+        <div className="bg-black text-md text-white text-center p-5">
           Copyright © Ryland, Nathaniel Bowman 2022
         </div>
       </div>

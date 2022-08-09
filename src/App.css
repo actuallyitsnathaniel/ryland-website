@@ -1,6 +1,3 @@
-.App {
-  text-align: center;
-}
 
 .App-header {
   display: flex;
@@ -20,18 +17,6 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.App-footer {
-  background-color: #000;
-  min-height: 1vh;
-  display: flex;
-  flex-direction: row;
-  flex: 1;
-  justify-content: center;
-  font-size: calc(12px);
-  color: white;
-  padding: 3vh;
 }
 
 .ryland-bed-logo {

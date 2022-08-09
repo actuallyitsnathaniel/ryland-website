@@ -1,30 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "./index.css";
-import closeIcon from "../../assets/images/icons/navbar/close-icon.svg";
-
-// this sucks rn. need to re-do a lot of this with better styling and some kind of state management.
+// import closeIcon from "../../assets/images/icons/navbar/close-icon.svg";
 
 function NavBar() {
   return (
-    <nav className="App-nav">
-      <Link className="App-nav-item" to="/home">
+    <nav className="grid grid-cols-1 lg:grid-cols-5 text-4xl text-white text-center p-5 font-semibold">
+      <Link className="whitespace-nowrap flex-1" to="/home">
         Home
       </Link>
-      <Link className="App-nav-item" to="/about-us">
+      <Link className="whitespace-nowrap" to="/about-us">
         About Us
       </Link>
-      <Link className="App-nav-item" to="/contact">
+      <Link className="whitespace-nowrap" to="/contact">
         Contact
       </Link>
-      <Link className="App-nav-item" to="/merch">
+      <Link className="whitespace-nowrap" to="/merch">
         Merch
       </Link>
-      <Link className="App-nav-item" to="/shows">
+      <Link className="whitespace-nowrap" to="/shows">
         Shows
       </Link>
-      <img src={closeIcon} alt="close-icon" className="App-nav-close-icon" />
+      {/* <img src={closeIcon} alt="close-icon" className="" /> */}
     </nav>
   );
 }
