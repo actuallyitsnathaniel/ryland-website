@@ -15,13 +15,14 @@ import Contact from "./routes/contact";
 import AboutUs from "./routes/about-us";
 import Merch from "./routes/merch";
 import Shows from "./routes/shows";
+import Footer from "./components/footer";
 
 // matchMedia("(max-width: 600px)") ? true : false
 
 function App() {
   return (
     <Router>
-      <div className="flexbox place-content-center text-center">
+      <div className="justify-items-center text-center">
         <VideoBackground />
 
         <NavBar />
@@ -36,11 +37,9 @@ function App() {
           <Route path="/merch" render={Merch} />
           <Route path="/shows" render={Shows} />
         </Switch>
-        <SocialLinks />
-        <div className="bg-black text-md text-white text-center p-6">
-          Copyright © Ryland, Nathaniel Bowman 2022
-        </div>
       </div>
+      <SocialLinks />
+      <Footer />
     </Router>
   );
 }

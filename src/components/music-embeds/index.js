@@ -6,9 +6,9 @@ import TidalEmbed from "./tidal";
 
 export function MusicLinks() {
   return (
-    <div className="text-white text-4xl">
-      <h2>Listen to Portrait</h2>
-      <div className="flex flex-wrap justify-center  sm:h-full">
+    <div className="text-white text-5xl font-semibold p-5">
+      Listen to Portrait
+      <div className="flex flex-wrap justify-center h-full">
         <SpotifyEmbed />
         <AppleMusicEmbed />
         <TidalEmbed />

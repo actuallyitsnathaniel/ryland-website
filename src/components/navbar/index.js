@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 function NavBar() {
   return (
     <nav className="grid grid-cols-1 lg:grid-cols-5 text-4xl text-white text-center p-5 font-semibold">
-      <Link className="whitespace-nowrap flex-1" to="/home">
+      <Link className="whitespace-nowrap" to="/home">
         Home
       </Link>
       <Link className="whitespace-nowrap" to="/about-us">
