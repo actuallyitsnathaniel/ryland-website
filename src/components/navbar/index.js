@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import "./index.css";
 import closeIcon from "../../assets/images/icons/navbar/close-icon.svg";
 
+// this sucks rn. need to re-do a lot of this with better styling and some kind of state management.
+
 function NavBar() {
   return (
     <nav className="App-nav">
