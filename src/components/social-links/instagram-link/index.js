@@ -3,12 +3,12 @@ import instagram_svg from "../../../assets/images/icons/instagram-logo.svg";
 function InstagramLogo() {
   return (
     <a
+      className="p-10"
       href="https://instagram.com/weareryland"
       target="_blank"
       rel="noopener noreferrer"
-      style={{ padding: 10 }}
     >
-      <img src={instagram_svg} alt="instagram-svg" className="App-link" />
+      <img src={instagram_svg} alt="instagram-svg" />
     </a>
   );
 }

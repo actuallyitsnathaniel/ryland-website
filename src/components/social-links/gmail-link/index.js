@@ -3,12 +3,12 @@ import email_svg from "../../../assets/images/icons/email-logo.svg";
 function GmailLogo() {
   return (
     <a
+      className="p-10"
       href="mailto:weareryland@gmail.com"
       target="_blank"
       rel="noopener noreferrer"
-      style={{ padding: 10 }}
     >
-      <img src={email_svg} alt="gmail-svg" className="App-link" />
+      <img src={email_svg} alt="gmail-svg" />
     </a>
   );
 }
