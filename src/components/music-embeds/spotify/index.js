@@ -1,13 +1,10 @@
-import "./index.css";
-
 export default function SpotifyEmbed() {
   return (
     <iframe
-      className="spotify-embed"
+      className="h-[418px] sm:h-[470px] md:h-[470px]"
       title="spotify-embedded"
       style={{
         borderRadius: "18px",
-
         padding: "1vh",
       }}
       src={

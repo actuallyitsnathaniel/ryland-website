@@ -5,7 +5,7 @@ import { MusicLinks } from "../components/music-embeds";
 
 function Home() {
   return (
-    <div className="grid place-content-center text-center">
+    <div className="grid place-content-center text-center h-full">
       <RylandBedIcon />
       <MusicLinks />
     </div>

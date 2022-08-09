@@ -2,10 +2,9 @@ export default function AppleMusicEmbed() {
   return (
     <iframe
       title="apple-music-embedded"
+      className="h-[470px]"
       style={{
         borderRadius: "18px",
-        minHeight: "450px",
-        maxHeight: "450px",
         padding: "1vh",
       }}
       src={"https://embed.music.apple.com/us/album/portrait/1556566677"}
