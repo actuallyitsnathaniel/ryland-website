@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // import closeIcon from "../../assets/images/icons/navbar/close-icon.svg";
-// https://tailwindcss.com/docs/hover-focus-and-other-states#open-closed-state
+// https://flowbite.com/docs/components/navbar/#default-navbar
 
 function NavBar() {
   return (
