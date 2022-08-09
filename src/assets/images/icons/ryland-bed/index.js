@@ -2,11 +2,13 @@ import rylandBed from "./ryland-bed.svg";
 
 export default function RylandBedIcon() {
   return (
-    <img
-      className="max-w-3xl "
-      alt="ryland-bed-logo"
-      aria-label="ryland-bed-logo"
-      src={rylandBed}
-    />
+    <div className="grid h-screen">
+      <img
+        className="max-w-3xl pt-10 justify-self-center"
+        alt="ryland-bed-logo"
+        aria-label="ryland-bed-logo"
+        src={rylandBed}
+      />
+    </div>
   );
 }
