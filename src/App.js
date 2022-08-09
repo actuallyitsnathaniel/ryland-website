@@ -37,7 +37,7 @@ function App() {
           <Route path="/shows" render={Shows} />
         </Switch>
         <SocialLinks />
-        <div className="bg-black text-md text-white text-center p-4">
+        <div className="bg-black text-md text-white text-center p-6">
           Copyright © Ryland, Nathaniel Bowman 2022
         </div>
       </div>

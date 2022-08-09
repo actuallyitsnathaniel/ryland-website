@@ -1,30 +1,4 @@
 
-.App-header {
-  display: flex;
-  min-height: 84vh;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.ryland-bed-logo {
-  align-content: center;
-  justify-content: center;
-  fill: aqua;
-}
-
 .video {
  filter: brightness(0.25) blur(15px);
  /* The min width had to be set for both */

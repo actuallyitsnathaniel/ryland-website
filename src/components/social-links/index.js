@@ -3,7 +3,7 @@ import GmailLogo from "./gmail-link";
 
 export function SocialLinks() {
   return (
-    <div className="flex grid-col-2 bottom-0 left-0 md:fixed sm:relative sm:place-items-center">
+    <div className="flex lg:fixed md:relative lg:bottom-0 md:bottom-auto lg:left-0 md:left-auto lg:justify-start justify-center md:pt-4">
       <InstagramLogo />
       <GmailLogo />
     </div>
