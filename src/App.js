@@ -22,7 +22,7 @@ import Footer from "./components/footer";
 function App() {
   return (
     <Router>
-      <div className="justify-items-center text-center">
+      <div>
         <VideoBackground />
 
         <NavBar />
