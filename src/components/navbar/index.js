@@ -34,32 +34,32 @@ function NavBar() {
       >
         <ul class="flex flex-col md:flex-row items-center justify-between md:mx-14 my-3 text-3xl whitespace-nowrap">
           <Link
-            className="p-1 transition ease-in-out duration-300 hover:scale-110"
+            className="p-1 transition ease-in-out duration-300 hover:scale-110 hover:text-orange-300"
             to="/home"
             aria-current="page"
           >
             Home
           </Link>
           <Link
-            className="p-1 transition ease-in-out duration-300 hover:scale-110"
+            className="p-1 transition ease-in-out duration-300 hover:scale-110 hover:text-orange-300"
             to="/about-us"
           >
             About Us
           </Link>
           <Link
-            className="p-1 transition ease-in-out duration-300 hover:scale-110"
+            className="p-1 transition ease-in-out duration-300 hover:scale-110 hover:text-orange-300"
             to="/contact"
           >
             Contact
           </Link>
           <Link
-            className="p-1 transition ease-in-out duration-300 hover:scale-110"
+            className="p-1 transition ease-in-out duration-300 hover:scale-110 hover:text-orange-300"
             to="/merch"
           >
             Merch
           </Link>
           <Link
-            className="p-1 transition ease-in-out duration-300 hover:scale-110"
+            className="p-1 transition ease-in-out duration-300 hover:scale-110 hover:text-orange-300"
             to="/shows"
           >
             Shows
