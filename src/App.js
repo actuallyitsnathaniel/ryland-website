@@ -24,9 +24,7 @@ function App() {
     <Router>
       <div>
         <VideoBackground />
-
         <NavBar />
-
         <Switch>
           <Route exact path="/">
             <Redirect to="/home" />
