@@ -27,33 +27,44 @@ function NavBar() {
         >
           {expanded ? <CloseIcon /> : <HamburgerIcon />}
         </button>
-
-        <div
-          className={`flex ${
-            expanded ? "block" : "hidden"
-          } md:block justify-center col-span-2 md:justify-between`}
-          id="navbar-default"
-        >
-          <ul class="grid grid-col-1 md:flex justify-items-center md:m-4 whitespace-nowrap">
-            <Link className="p-1 text-2xl" to="/home" aria-current="page">
-              Home
-            </Link>
-            <Link className="p-1 text-2xl" to="/about-us">
-              About Us
-            </Link>
-            <Link className="p-1 text-2xl" to="/contact">
-              Contact
-            </Link>
-            <Link className="p-1 text-2xl" to="/merch">
-              Merch
-            </Link>
-            <Link className="p-1 text-2xl" to="/shows">
-              Shows
-            </Link>
-          </ul>
-        </div>
-
-        {/* <img src={closeIcon} alt="close-icon" className="" /> */}
+      </div>
+      <div
+        className={`${expanded ? "block" : "hidden"} md:block`}
+        id="navbar-default"
+      >
+        <ul class="flex flex-col md:flex-row items-center justify-between md:mx-14 my-3 text-3xl whitespace-nowrap">
+          <Link
+            className="p-1 transition ease-in-out duration-300 hover:scale-110"
+            to="/home"
+            aria-current="page"
+          >
+            Home
+          </Link>
+          <Link
+            className="p-1 transition ease-in-out duration-300 hover:scale-110"
+            to="/about-us"
+          >
+            About Us
+          </Link>
+          <Link
+            className="p-1 transition ease-in-out duration-300 hover:scale-110"
+            to="/contact"
+          >
+            Contact
+          </Link>
+          <Link
+            className="p-1 transition ease-in-out duration-300 hover:scale-110"
+            to="/merch"
+          >
+            Merch
+          </Link>
+          <Link
+            className="p-1 transition ease-in-out duration-300 hover:scale-110"
+            to="/shows"
+          >
+            Shows
+          </Link>
+        </ul>
       </div>
     </nav>
   );
