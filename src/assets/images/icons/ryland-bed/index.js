@@ -2,9 +2,9 @@ import rylandBed from "./ryland-bed.svg";
 
 export default function RylandBedIcon() {
   return (
-    <div className="grid ">
+    <div className="grid">
       <img
-        className="max-w-2xl justify-self-center sm:p-0 md:p-2 w-screen md:h-screen"
+        className="max-w-2xl justify-self-center md:pb-7 px-12 md:px-0 mt-[35%] md:mt-[5%] mb-[50%] md:mb-[5%] w-screen"
         alt="ryland-bed-logo"
         aria-label="ryland-bed-logo"
         src={rylandBed}
