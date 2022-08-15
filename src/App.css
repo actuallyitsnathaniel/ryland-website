@@ -1,8 +1,9 @@
 
 .video {
- filter: brightness(0.25) blur(15px);
+ filter: brightness(0.40) blur(15px);
  /* The min width had to be set for both */
- min-width: 230vh;
+ min-width: 220vh;
+ transform: translateY(-300px);
  justify-content: center;
  align-content: center;
  overflow: hidden;
