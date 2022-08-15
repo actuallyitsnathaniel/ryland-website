@@ -1,14 +1,14 @@
-import instagram_svg from "../../../assets/images/icons/instagram-logo.svg";
+import { ReactComponent as InstagramSVG } from "../../../assets/images/icons/instagram-logo.svg";
 
 function InstagramLogo() {
   return (
     <a
-      className="transition ease-in-out duration-300 p-3 fill-white hover:fill-orange-300"
+      className="p-3"
       href="https://instagram.com/weareryland"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img src={instagram_svg} alt="instagram-svg" />
+      <InstagramSVG className="transition ease-in-out duration-100 hover:scale-110 hover:fill-orange-300" />
     </a>
   );
 }

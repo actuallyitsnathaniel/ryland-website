@@ -1,14 +1,14 @@
-import email_svg from "../../../assets/images/icons/email-logo.svg";
+import { ReactComponent as EmailSVG } from "../../../assets/images/icons/email-logo.svg";
 
 function GmailLogo() {
   return (
     <a
-      className="transition ease-in-out duration-300 p-3 hover:fill-orange-300"
+      className="p-3"
       href="mailto:weareryland@gmail.com"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img src={email_svg} alt="gmail-svg" />
+      <EmailSVG className="transition ease-in-out duration-100 hover:scale-110 hover:fill-orange-300" />
     </a>
   );
 }
