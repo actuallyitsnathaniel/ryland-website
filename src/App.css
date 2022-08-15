@@ -16,3 +16,16 @@
   min-width: 230vh;
   z-index: -1;
 }
+
+@media  and min-width(600px) {
+  .video {
+    filter: brightness(0.75) blur(10px);
+    /* The min width had to be set for both */
+    min-width: 60vw;
+    justify-content: center;
+    align-content: center;
+    overflow: hidden;
+    object-fit: fill;
+   }
+  
+}

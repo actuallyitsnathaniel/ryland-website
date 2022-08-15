@@ -1,4 +1,4 @@
-import RylandBGVideo from "../../assets/videos/rylandEP_720.mp4";
+import RylandBGVideo from "../../assets/videos/rylandEP_comp.mp4";
 
 function VideoBackground() {
   return (
@@ -9,6 +9,7 @@ function VideoBackground() {
         autoPlay
         loop
         muted
+        playsInline
         className="video"
       />
     </div>
