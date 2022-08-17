@@ -10,6 +10,7 @@ function VideoBackground() {
         loop
         muted
         playsInline
+        disablePictureInPicture
         className="video"
       />
     </div>

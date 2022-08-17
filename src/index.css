@@ -15,3 +15,11 @@ code {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.nav-bar {
+  @apply transition-opacity ease-in-out duration-100 flex flex-col md:flex-row items-center justify-between md:mx-14 my-3 text-3xl whitespace-nowrap
+}
+
+.nav-item {
+  @apply p-1 transition ease-in-out duration-100 hover:scale-110 hover:text-orange-300
+}
