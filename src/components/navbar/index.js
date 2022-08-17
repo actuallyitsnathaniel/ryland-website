@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { ReactComponent as HamburgerIcon } from "../../assets/images/icons/navbar/hamburger-icon.svg";
 import { ReactComponent as CloseIcon } from "../../assets/images/icons/navbar/close-icon.svg";
 
-// https://flowbite.com/docs/components/navbar/#default-navbar
+// https://tailwindcss.com/blog/utility-friendly-transitions-with-tailwindui-react
 
 function NavBar() {
   const [expanded, setExpanded] = useState(false);
