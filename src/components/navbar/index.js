@@ -29,8 +29,16 @@ function NavBar() {
           {expanded ? <CloseIcon /> : <HamburgerIcon />}
         </button>
       </div>
-      <div className={`${expanded ? "block" : "hidden"} md:block`} id="navbar">
-        <ul class={"nav-bar"}>
+      <div
+        id="nav-wrapper"
+        className={`${expanded ? "block" : "hidden"} md:block`}
+      >
+        <ul
+          id="nav-bar"
+          className={`nav-bar transition-transform duration-100 ${
+            expanded ? "scale-100" : "scale-0"
+          } md:scale-100 `}
+        >
           <Link
             className={"nav-item"}
             to="/home"
