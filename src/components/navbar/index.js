@@ -31,14 +31,11 @@ function NavBar() {
       </div>
       <div
         id="nav-wrapper"
-        className={`${expanded ? "block" : "hidden"} md:block`}
+        className={` transition-all h-0 origin-top-right duration-100 md:block
+        ${expanded ? "scale-100 h-36" : "scale-0"} md:scale-100 md:h-full
+        `}
       >
-        <ul
-          id="nav-bar"
-          className={`nav-bar transition-transform duration-100 ${
-            expanded ? "scale-100" : "scale-0"
-          } md:scale-100 `}
-        >
+        <ul id="nav-bar" className={`nav-bar `}>
           <Link
             className={"nav-item"}
             to="/home"
