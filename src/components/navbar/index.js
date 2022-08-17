@@ -8,11 +8,6 @@ import { ReactComponent as CloseIcon } from "../../assets/images/icons/navbar/cl
 
 function NavBar() {
   const [expanded, setExpanded] = useState(false);
-  var navWrapper = `${expanded ? "block" : "hidden"} md:block`;
-  var navBar =
-    "transition-opacity ease-in-out duration-300 flex flex-col md:flex-row items-center justify-between md:mx-14 my-3 text-3xl whitespace-nowrap";
-  var navItem =
-    "p-1 transition ease-in-out duration-170 hover:scale-110 hover:text-orange-300";
 
   return (
     <nav className="text-white p-2.5 font-semibold">
@@ -34,10 +29,10 @@ function NavBar() {
           {expanded ? <CloseIcon /> : <HamburgerIcon />}
         </button>
       </div>
-      <div className={navWrapper} id="navbar">
-        <ul class={navBar}>
+      <div className={`${expanded ? "block" : "hidden"} md:block`} id="navbar">
+        <ul class={"nav-bar"}>
           <Link
-            className={navItem}
+            className={"nav-item"}
             to="/home"
             aria-current="page"
             onClick={() => setExpanded(false)}
@@ -45,28 +40,28 @@ function NavBar() {
             Home
           </Link>
           <Link
-            className={navItem}
+            className={"nav-item"}
             to="/about-us"
             onClick={() => setExpanded(false)}
           >
             About Us
           </Link>
           <Link
-            className={navItem}
+            className={"nav-item"}
             to="/contact"
             onClick={() => setExpanded(false)}
           >
             Contact
           </Link>
           <Link
-            className={navItem}
+            className={"nav-item"}
             to="/merch"
             onClick={() => setExpanded(false)}
           >
             Merch
           </Link>
           <Link
-            className={navItem}
+            className={"nav-item"}
             to="/shows"
             onClick={() => setExpanded(false)}
           >
