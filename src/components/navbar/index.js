@@ -32,7 +32,7 @@ function NavBar() {
       <div
         id="nav-wrapper"
         className={` transition-all h-0 origin-top-right duration-100 md:block
-        ${expanded ? "scale-100 h-36" : "scale-0"} md:scale-100 md:h-full
+        ${expanded ? "scale-100 h-full" : "scale-0"} md:scale-100 md:h-full
         `}
       >
         <ul id="nav-bar" className={`nav-bar `}>
@@ -57,6 +57,13 @@ function NavBar() {
             onClick={() => setExpanded(false)}
           >
             Contact
+          </Link>
+          <Link
+            className={"nav-item"}
+            to="/music"
+            onClick={() => setExpanded(false)}
+          >
+            Music
           </Link>
           <Link
             className={"nav-item"}
