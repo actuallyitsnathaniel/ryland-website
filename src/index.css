@@ -27,3 +27,7 @@ code {
 .nav-item-active {
   @apply transition ease-in hidden md:block text-orange-300 md:scale-110
 }
+
+.about-us-profile-pic {
+  @apply max-w-xs w-[66%] p-4
+}

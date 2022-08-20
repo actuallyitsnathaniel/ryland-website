@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import tom from "../assets/images/the-band/tom.png";
 import ron from "../assets/images/the-band/ron.png";
@@ -7,33 +7,50 @@ import jake from "../assets/images/the-band/jake.png";
 import nate from "../assets/images/the-band/nate.png";
 
 function AboutUs() {
+  const bandMemberBtnStyle =
+    "transition-scale ease-in-out duration-150 hover:scale-110 flex items-center whitespace-nowrap p-3 ";
+
+  // const [expanded, setExpanded] = useState(-1);
+  let expanded = -1;
   return (
     <div className="grid place-items-center text-4xl text-white min-h-screen">
       <div className="flex flex-wrap max-w-1/2 justify-center">
-        <div className="flex items-center whitespace-nowrap p-3">
-          <img src={tom} alt="tom" className="max-w-xs p-4" />
+        <button
+          // onClick={() => setExpanded(0)}
+          className={`${bandMemberBtnStyle}`}
+        >
+          <img src={tom} alt="tom" className="about-us-profile-pic" />
           <p className="font-bold">Tom</p>
-        </div>
+          <div className={`${expanded === 0 ? "" : ""}`}></div>
+        </button>
 
-        <div className="flex items-center whitespace-nowrap p-3">
-          <img src={ron} alt="ron" className="max-w-xs p-4" />
-          <p className="font-bold">Ron</p>
-        </div>
+        <button className={`${bandMemberBtnStyle}`}>
+          <div className="flex items-center whitespace-nowrap p-3">
+            <img src={ron} alt="ron" className="about-us-profile-pic" />
+            <p className="font-bold">Ron</p>
+          </div>
+        </button>
 
-        <div className="flex items-center whitespace-nowrap p-3">
-          <img src={nate} alt="nate" className="max-w-xs p-4" />
-          <p className="font-bold">Nate</p>
-        </div>
+        <button className={`${bandMemberBtnStyle}`}>
+          <div className="flex items-center whitespace-nowrap p-3">
+            <img src={nate} alt="nate" className="about-us-profile-pic" />
+            <p className="font-bold">Nate</p>
+          </div>
+        </button>
 
-        <div className="flex items-center whitespace-nowrap p-3">
-          <img src={elias} alt="elias" className="max-w-xs p-4" />
-          <p className="font-bold">Elias</p>
-        </div>
+        <button className={`${bandMemberBtnStyle}`}>
+          <div className="flex items-center whitespace-nowrap p-3">
+            <img src={elias} alt="elias" className="about-us-profile-pic" />
+            <p className="font-bold">Elias</p>
+          </div>
+        </button>
 
-        <div className="flex items-center whitespace-nowrap p-3">
-          <img src={jake} alt="jake" className="max-w-xs p-4" />
-          <p className="font-bold">Jake</p>
-        </div>
+        <button className={`${bandMemberBtnStyle}`}>
+          <div className="flex items-center whitespace-nowrap p-3">
+            <img src={jake} alt="jake" className="about-us-profile-pic" />
+            <p className="font-bold">Jake</p>
+          </div>
+        </button>
       </div>
     </div>
   );
