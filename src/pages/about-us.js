@@ -9,13 +9,31 @@ import nate from "../assets/images/the-band/nate.png";
 function AboutUs() {
   return (
     <div className="grid place-items-center text-4xl text-white min-h-screen">
-      <h1>About Us</h1>
-      <div className="flex flex-wrap max-w-1/2 justify-center whitespace-normal">
-        <img src={tom} alt="tom" className="max-w-md p-5" />
-        <img src={ron} alt="ron" className="max-w-md p-5" />
-        <img src={nate} alt="nate" className="max-w-md p-5" />
-        <img src={elias} alt="elias" className="max-w-md p-5" />
-        <img src={jake} alt="jake" className="max-w-md p-5" />
+      <div className="flex flex-wrap max-w-1/2 md:justify-center">
+        <div className="">
+          <img src={tom} alt="tom" className="max-w-sm p-5" />
+          <p>Tom</p>
+        </div>
+
+        <div>
+          <img src={ron} alt="ron" className="max-w-sm p-5" />
+          <p>Ron</p>
+        </div>
+
+        <div>
+          <img src={nate} alt="nate" className="max-w-sm p-5" />
+          <p>Nate</p>
+        </div>
+
+        <div>
+          <img src={elias} alt="elias" className="max-w-sm p-5" />
+          <p>Elias</p>
+        </div>
+
+        <div>
+          <img src={jake} alt="jake" className="max-w-sm p-5" />
+          <p>Jake</p>
+        </div>
       </div>
     </div>
   );
