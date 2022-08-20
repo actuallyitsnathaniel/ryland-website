@@ -2,8 +2,8 @@ import React from "react";
 
 function Music() {
   return (
-    <div className="grid place-items-center text-4xl text-white min-h-screen">
-      <h1>📀 Discography</h1>
+    <div className="flex items-center justify-center min-h-screen text-4xl text-white">
+      <h1 className="">📀 Discography</h1>
     </div>
   );
 }

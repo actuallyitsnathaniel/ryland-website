@@ -1,9 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
 import "./App.css";
 import VideoBackground from "./components/video-background";
@@ -17,15 +12,17 @@ import Merch from "./pages/merch";
 import Music from "./pages/music";
 import Shows from "./pages/shows";
 import Secret from "./pages/secret";
+import ErrorPage from "./pages/error";
 
 import Footer from "./components/footer";
+import React from "react";
 
 // matchMedia("(max-width: 600px)") ? true : false
 
-function App() {
-  return (
-    <Router>
-      <div>
+class App extends React.Component {
+  render() {
+    return (
+      <BrowserRouter>
         <VideoBackground />
         <NavBar />
         <Switch>
@@ -39,12 +36,13 @@ function App() {
           <Route path="/music" render={Music} />
           <Route path="/shows" render={Shows} />
           <Route path="/secret" render={Secret} />
+          <Route path="*" render={ErrorPage} />
         </Switch>
-      </div>
-      <SocialLinks />
-      <Footer />
-    </Router>
-  );
+        <SocialLinks />
+        <Footer />
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
