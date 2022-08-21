@@ -9,15 +9,16 @@ import nate from "../assets/images/the-band/nate.png";
 // why does useState render a blank white screen
 function AboutUs() {
   const bandMemberBtnStyle =
-    "transition-scale ease-in-out duration-150 hover:scale-110 flex flex-wrap items-center p-3 ";
+    "transition-scale ease-in-out duration-150 hover:scale-110 flex xl:basis-1/3 items-center p-3";
 
   return (
     <div className="flex items-center justify-center min-h-full text-4xl text-white">
       <div className="flex flex-wrap max-w-1/2 justify-center">
-        <button onClick={() => {}} className={`${bandMemberBtnStyle}`}>
-          <img src={tom} alt="tom" className="about-us-profile-pic" />
-          <p className="font-bold">Tom</p>
-
+        <button className={`${bandMemberBtnStyle}`}>
+          <div className="flex items-center whitespace-nowrap p-3">
+            <img src={tom} alt="tom" className="about-us-profile-pic" />
+            <p className="font-bold">Tom</p>
+          </div>
           <div className={`text-sm hidden`}>
             lorem ipsum dolor desit requescat en pache lorem ipsum dolor desit
             requescat en pache lorem ipsum dolor desit requescat en pache lorem
