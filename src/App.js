@@ -24,22 +24,24 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <VideoBackground />
-        <NavBar />
-        <Switch>
-          <Route exact path="/">
-            <Redirect to="/home" />
-          </Route>
-          <Route path="/home" render={Home} />
-          <Route path="/about-us" render={AboutUs} />
-          <Route path="/contact" render={Contact} />
-          <Route path="/merch" render={Merch} />
-          <Route path="/music" render={Music} />
-          <Route path="/shows" render={Shows} />
-          <Route path="/secret" render={Secret} />
-          <Route path="*" render={ErrorPage} />
-        </Switch>
-        <SocialLinks />
-        <Footer />
+        <div className="h-screen">
+          <NavBar />
+          <Switch>
+            <Route exact path="/">
+              <Redirect to="/home" />
+            </Route>
+            <Route path="/home" render={Home} />
+            <Route path="/about-us" render={AboutUs} />
+            <Route path="/contact" render={Contact} />
+            <Route path="/merch" render={Merch} />
+            <Route path="/music" render={Music} />
+            <Route path="/shows" render={Shows} />
+            <Route path="/secret" render={Secret} />
+            <Route path="*" render={ErrorPage} />
+          </Switch>
+          <SocialLinks />
+          <Footer />
+        </div>
       </BrowserRouter>
     );
   }
