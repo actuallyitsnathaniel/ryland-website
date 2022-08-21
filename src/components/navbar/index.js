@@ -28,7 +28,7 @@ function NavBar() {
     const curTitle = titleMap.find((item) => item.path === curLoc.pathname);
     if (curTitle && curTitle.title) {
       setPageTitle(curTitle.title);
-      document.title = curTitle.title;
+      document.title = "Ryland - " + curTitle.title;
     }
   }, [curLoc]);
 
