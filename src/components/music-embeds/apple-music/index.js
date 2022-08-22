@@ -8,7 +8,7 @@ export default function AppleMusicEmbed() {
         padding: "1vh",
       }}
       src={"https://embed.music.apple.com/us/album/portrait/1556566677"}
-      frameborder={0}
+      frameBorder={0}
       sandbox={
         "allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
       }

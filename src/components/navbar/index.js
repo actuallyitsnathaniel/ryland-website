@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation, withRouter } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { ReactComponent as HamburgerIcon } from "../../assets/images/icons/navbar/hamburger-icon.svg";
 import { ReactComponent as CloseIcon } from "../../assets/images/icons/navbar/close-icon.svg";
 
 // https://tailwindcss.com/blog/utility-friendly-transitions-with-tailwindui-react
 
-function NavBar() {
-  const [expanded, setExpanded] = useState(false);
-
+function usePageTitle(location) {
   const [pageTitle, setPageTitle] = useState("");
-
-  let curLoc = useLocation();
 
   useEffect(() => {
     const titleMap = [
@@ -25,16 +21,24 @@ function NavBar() {
       { path: "/secret", tite: "Secret" },
     ];
 
-    const curTitle = titleMap.find((item) => item.path === curLoc.pathname);
+    const curTitle = titleMap.find((item) => item.path === location);
     if (curTitle && curTitle.title) {
       setPageTitle(curTitle.title);
       document.title = "Ryland - " + curTitle.title;
     }
-  }, [curLoc]);
+  }, [location]);
+
+  return pageTitle;
+}
+
+function NavBar() {
+  const [expanded, setExpanded] = useState(false);
+
+  let pageTitle = usePageTitle(useLocation().pathname);
 
   return (
     <nav className="text-white p-2.5 font-semibold">
-      <div class="flex justify-between">
+      <div className="flex justify-between">
         <a
           id="person-bed-icon"
           href="/home"
@@ -44,16 +48,12 @@ function NavBar() {
         </a>
         <div className="md:hidden p-3 justify-center text-5xl whitespace-nowrap">
           {pageTitle}
-          {/*{[
-            location.pathname.substring(1).charAt(0).toUpperCase(),
-            location.pathname.substring(2),
-          ]}*/}
         </div>
         <button
           data-collapse-toggle="navbar"
           id="navbar-icon"
           type="button"
-          class={`md:hidden p-3 justify-end`}
+          className={`md:hidden p-3 justify-end`}
           aria-controls="navbar"
           aria-expanded="false"
           onClick={() => {
@@ -72,7 +72,7 @@ function NavBar() {
         <ul id="nav-bar" className={`nav-bar`}>
           <Link
             className={`nav-item ${
-              curLoc.pathname === "/home" ? "nav-item-active" : ""
+              pageTitle === "Home" ? "nav-item-active" : ""
             }`}
             to="/home"
             aria-current="page"
@@ -82,7 +82,7 @@ function NavBar() {
           </Link>
           <Link
             className={`nav-item ${
-              curLoc.pathname === "/about-us" ? "nav-item-active" : ""
+              pageTitle === "About Us" ? "nav-item-active" : ""
             }`}
             to="/about-us"
             onClick={() => setExpanded(false)}
@@ -91,7 +91,7 @@ function NavBar() {
           </Link>
           <Link
             className={`nav-item ${
-              curLoc.pathname === "/contact" ? "nav-item-active" : ""
+              pageTitle === "Contact" ? "nav-item-active" : ""
             }`}
             to="/contact"
             onClick={() => setExpanded(false)}
@@ -100,7 +100,7 @@ function NavBar() {
           </Link>
           <Link
             className={`nav-item ${
-              curLoc.pathname === "/music" ? "nav-item-active" : ""
+              pageTitle === "Music" ? "nav-item-active" : ""
             }`}
             to="/music"
             onClick={() => setExpanded(false)}
@@ -109,7 +109,7 @@ function NavBar() {
           </Link>
           <Link
             className={`nav-item ${
-              curLoc.pathname === "/merch" ? "nav-item-active" : ""
+              pageTitle === "Merch" ? "nav-item-active" : ""
             }`}
             to="/merch"
             onClick={() => setExpanded(false)}
@@ -118,7 +118,7 @@ function NavBar() {
           </Link>
           <Link
             className={`nav-item ${
-              curLoc.pathname === "/shows" ? "nav-item-active" : ""
+              pageTitle === "Shows" ? "nav-item-active" : ""
             }`}
             to="/shows"
             onClick={() => setExpanded(false)}
@@ -131,4 +131,4 @@ function NavBar() {
   );
 }
 
-export default withRouter(NavBar);
+export default NavBar;
