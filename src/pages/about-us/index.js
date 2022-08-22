@@ -11,9 +11,13 @@ function AboutUs() {
   const [expanded, setExpanded] = useState(-1);
   // let expanded = -1;
 
-  // const setActiveMember = (i) => {
-  //   setExpanded(i);
-  // };
+  const setActiveMember = (i) => {
+    if (i === expanded) {
+      setExpanded(-1);
+    } else {
+      setExpanded(i);
+    }
+  };
 
   const bandMemberBtnStyle =
     "transition-scale ease-in-out duration-150 hover:scale-110 flex xl:basis-1/3 items-center p-3";
@@ -23,7 +27,7 @@ function AboutUs() {
       <div className="flex flex-wrap max-w-1/2 justify-center">
         <div
           onClick={() => {
-            setExpanded(0);
+            setActiveMember(0);
           }}
           className={`${bandMemberBtnStyle}`}
         >
@@ -41,7 +45,7 @@ function AboutUs() {
 
         <div
           onClick={() => {
-            setExpanded(1);
+            setActiveMember(1);
           }}
           className={`${bandMemberBtnStyle}`}
         >
@@ -53,7 +57,7 @@ function AboutUs() {
 
         <div
           onClick={() => {
-            setExpanded(2);
+            setActiveMember(2);
           }}
           className={`${bandMemberBtnStyle}`}
         >
@@ -65,7 +69,7 @@ function AboutUs() {
 
         <div
           onClick={() => {
-            setExpanded(3);
+            setActiveMember(3);
           }}
           className={`${bandMemberBtnStyle}`}
         >
@@ -77,7 +81,7 @@ function AboutUs() {
 
         <div
           onClick={() => {
-            setExpanded(4);
+            setActiveMember(4);
           }}
           className={`${bandMemberBtnStyle}`}
         >
