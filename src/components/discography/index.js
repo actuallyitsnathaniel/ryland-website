@@ -21,33 +21,41 @@ import youtube from "../../assets/images/icons/music-platforms/youtube.svg";
 
 function Disc(props) {
   return (
-    <div className="transition-scale duration-100 text-8xl p-6 hover:scale-110 group">
+    <div
+      onClick={() => {
+        props.onClick();
+      }}
+      className="transition-scale duration-100 text-8xl p-6 hover:scale-110 group"
+    >
       <div className="h-[300px] w-[300px]">
         <div
-          className={`${
-            props.selected ? "" : ""
-          } fixed grid grid-cols-2 justify-items-center items-center h-[305px] w-[305px] -translate-x-1 -translate-y-1 transition-opacity opacity-0 hover:bg-black hover:bg-opacity-50 hover:backdrop-blur-md group-hover:opacity-100 group p-4`}
+          className={`fixed grid grid-cols-2 justify-items-center items-center h-[305px] w-[305px] -translate-x-1 -translate-y-1 transition-opacity opacity-0 group p-4
+          ${
+            props.expanded === props.i
+              ? "bg-black bg-opacity-50 backdrop-blur-md opacity-100"
+              : ""
+          }`}
         >
           <img
-            className="transition-all duration-75 h-[75px] hidden group-hover:block hover:scale-110"
+            className="transition-all duration-75 h-[75px] hover:scale-110"
             alt="apple-music"
             src={appleMusic}
             href={props.appleMusicLink}
           />
           <img
-            className="transition-all duration-75 h-[75px] hidden group-hover:flex hover:scale-110"
+            className="transition-all duration-75 h-[75px] hover:scale-110"
             alt="spotify"
             src={spotify}
             href={props.spotifyLink}
           />
           <img
-            className="transition-all duration-75 h-[75px] hidden group-hover:flex hover:scale-110"
+            className="transition-all duration-75 h-[75px] hover:scale-110"
             alt="tidal"
             src={tidal}
             href={props.tidalLink}
           />
           <img
-            className="transition-all duration-75 h-[75px] hidden group-hover:flex hover:scale-110"
+            className="transition-all duration-75 h-[75px] hover:scale-110"
             alt="youtube"
             src={youtube}
             href={props.youtubeLink}
@@ -63,14 +71,15 @@ function Disc(props) {
 }
 
 function Discography() {
-  const [selected, setSelected] = useState(-1);
+  const [expanded, setExpanded] = useState(-1);
 
   const setActiveDisc = (i) => {
-    if (selected === i) {
-      setSelected(-1);
+    if (i === expanded) {
+      setExpanded(-1);
+      alert(expanded);
     } else {
-      setSelected(selected);
-      alert(selected);
+      setExpanded(i);
+      alert(expanded);
     }
   };
 
@@ -84,7 +93,8 @@ function Discography() {
           <Disc
             artwork={portrait}
             title={"Portrait"}
-            selected={selected}
+            expanded={expanded}
+            i={0}
             onClick={() => {
               setActiveDisc(0);
             }}
@@ -100,7 +110,8 @@ function Discography() {
           <Disc
             artwork={talking}
             title="Talking - Single"
-            selected={selected}
+            expanded={expanded}
+            i={1}
             onClick={() => {
               setActiveDisc(1);
             }}
@@ -108,7 +119,8 @@ function Discography() {
           <Disc
             artwork={karma}
             title="Karma - Single"
-            selected={selected}
+            expanded={expanded}
+            i={2}
             onClick={() => {
               setActiveDisc(2);
             }}
@@ -116,7 +128,8 @@ function Discography() {
           <Disc
             artwork={iblfawn}
             title={`I've Been Looking For A While Now - Single`}
-            selected={selected}
+            expanded={expanded}
+            i={3}
             onClick={() => {
               setActiveDisc(3);
             }}
@@ -124,7 +137,8 @@ function Discography() {
           <Disc
             artwork={lashingOut}
             title="Lashing Out - EP"
-            selected={selected}
+            expanded={expanded}
+            i={4}
             onClick={() => {
               setActiveDisc(4);
             }}
@@ -132,7 +146,8 @@ function Discography() {
           <Disc
             artwork={stairwell}
             title="Stairwell - Single"
-            selected={selected}
+            expanded={expanded}
+            i={5}
             onClick={() => {
               setActiveDisc(5);
             }}
@@ -140,7 +155,8 @@ function Discography() {
           <Disc
             artwork={itinerary}
             title="Itinerary - EP"
-            selected={selected}
+            expanded={expanded}
+            i={6}
             onClick={() => {
               setActiveDisc(6);
             }}
