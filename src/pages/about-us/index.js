@@ -5,11 +5,8 @@ import elias from "../../assets/images/the-band/elias.png";
 import jake from "../../assets/images/the-band/jake.png";
 import nate from "../../assets/images/the-band/nate.png";
 
-// why does useState render a blank white screen
-
 function AboutUs() {
   const [expanded, setExpanded] = useState(-1);
-  // let expanded = -1;
 
   const setActiveMember = (i) => {
     if (i === expanded) {
@@ -19,40 +16,42 @@ function AboutUs() {
     }
   };
 
-  const bandMemberDiv =
-    "transition-all ease-in-out duration-150 hover:scale-110 flex xl:basis-1/3 items-center p-3";
+  // Tailwind declarations for band members set up an an array
+
+  // 0 = wrapper
+  // 1 = profile-pic
+  // 2 = description text
+
+  const focused = [
+    "fixed z-[1] top-0 grid col-span-1 transition-transform origin-center bg-origin-top duration-150 place-items-center bg-black bg-opacity-70 backdrop-blur-lg w-screen h-screen",
+    "h-[400px]",
+    "transition-all duration-75 ease-in-out scale-100 text-sm md:text-lg text-start mx-10",
+  ];
+
+  const unfocused = [
+    "transition-all ease-in-out duration-150 hover:scale-110 flex xl:basis-1/3 items-center p-3",
+    "about-us-profile-pic",
+    "scale-0 hidden",
+  ];
 
   return (
-    <div className="flex items-center justify-center min-h-full text-4xl text-white">
+    <div className="flex items-center justify-center min-h-full text-4xl text-white p-3 mt-9">
       <div className="flex flex-wrap max-w-1/2 justify-center">
         <div
           onClick={() => {
             setActiveMember(0);
           }}
-          className={`${bandMemberDiv} ${
-            expanded === 0
-              ? // ? "fixed z-[1] transition-all origin-center bg-origin-content duration-150 flex-wrap flex-col top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-70 backdrop-blur-md w-screen h-screen items-center justify-center"
-                "fixed z-[1] transition-all origin-center bg-origin-content duration-150 flex-wrap flex-col transform bg-black bg-opacity-70 backdrop-blur-md w-screen h-screen items-center justify-center"
-              : ""
-          }`}
+          className={`${expanded === 0 ? focused[0] : unfocused[0]}`}
         >
           <img
             src={tom}
             alt="tom"
-            className={
-              expanded === 0 ? `flex h-[400px]` : "about-us-profile-pic"
-            }
+            className={`${expanded === 0 ? focused[1] : unfocused[1]}`}
           />
-          <p className="flex font-bold text-center p-3">Tom</p>
-          <div
-            className={`${
-              expanded === 0
-                ? "transition-transform duration-75 ease-in-out scale-100 text-sm text-start mx-10"
-                : "scale-0 hidden"
-            }`}
-          >
-            The frontman of the band. It's all about the We. Plays keys, guitar,
-            and sings like a songbird.
+          <p className="font-bold self-center p-3">{"Tom"}</p>
+          <div className={`${expanded === 0 ? focused[2] : unfocused[2]}`}>
+            {`The frontman of the band. "It's all about the We." Plays keys,
+            guitar, and sings like a songbird.`}
           </div>
         </div>
 
@@ -60,11 +59,16 @@ function AboutUs() {
           onClick={() => {
             setActiveMember(1);
           }}
-          className={`${bandMemberDiv}`}
+          className={`${expanded === 1 ? focused[0] : unfocused[0]}`}
         >
-          <div className="flex items-center whitespace-nowrap p-3">
-            <img src={ron} alt="ron" className="about-us-profile-pic" />
-            <p className="font-bold">Ron</p>
+          <img
+            src={ron}
+            alt="ron"
+            className={`${expanded === 1 ? focused[1] : unfocused[1]}`}
+          />
+          <p className="font-bold self-center p-3">{"Ron"}</p>
+          <div className={`${expanded === 1 ? focused[2] : unfocused[2]}`}>
+            {"The bassist of the band. He'll riff if he feels like."}
           </div>
         </div>
 
@@ -72,11 +76,16 @@ function AboutUs() {
           onClick={() => {
             setActiveMember(2);
           }}
-          className={`${bandMemberDiv}`}
+          className={`${expanded === 2 ? focused[0] : unfocused[0]}`}
         >
-          <div className="flex items-center whitespace-nowrap p-3">
-            <img src={nate} alt="nate" className="about-us-profile-pic" />
-            <p className="font-bold">Nate</p>
+          <img
+            src={nate}
+            alt="nate"
+            className={`${expanded === 2 ? focused[1] : unfocused[1]}`}
+          />
+          <p className="font-bold self-center p-3">{"Nate"}</p>
+          <div className={`${expanded === 2 ? focused[2] : unfocused[2]}`}>
+            {"Synths and samples guy. Sings with Tom."}
           </div>
         </div>
 
@@ -84,11 +93,16 @@ function AboutUs() {
           onClick={() => {
             setActiveMember(3);
           }}
-          className={`${bandMemberDiv}`}
+          className={`${expanded === 3 ? focused[0] : unfocused[0]}`}
         >
-          <div className="flex items-center whitespace-nowrap p-3">
-            <img src={elias} alt="elias" className="about-us-profile-pic" />
-            <p className="font-bold">Elias</p>
+          <img
+            src={elias}
+            alt="elias"
+            className={`${expanded === 3 ? focused[1] : unfocused[1]}`}
+          />
+          <p className="font-bold self-center p-3">{"Elias"}</p>
+          <div className={`${expanded === 3 ? focused[2] : unfocused[2]}`}>
+            {"The drummer. He'll sing if he feels like it."}
           </div>
         </div>
 
@@ -96,11 +110,18 @@ function AboutUs() {
           onClick={() => {
             setActiveMember(4);
           }}
-          className={`${bandMemberDiv}`}
+          className={`${expanded === 4 ? focused[0] : unfocused[0]}`}
         >
-          <div className="flex items-center whitespace-nowrap p-3">
-            <img src={jake} alt="jake" className="about-us-profile-pic" />
-            <p className="font-bold">Jake</p>
+          <img
+            src={jake}
+            alt="jake"
+            className={`${expanded === 4 ? focused[1] : unfocused[1]}`}
+          />
+          <p className="font-bold self-center p-3">{"Jake"}</p>
+          <div className={`${expanded === 4 ? focused[2] : unfocused[2]}`}>
+            {
+              "Producer and electric guitar player. He'll solo if he feels like it."
+            }
           </div>
         </div>
       </div>
