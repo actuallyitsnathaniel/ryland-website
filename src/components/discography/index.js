@@ -22,34 +22,35 @@ import youtube from "../../assets/images/icons/music-platforms/youtube.svg";
 function Disc(props) {
   return (
     <div className="transition-scale duration-100 text-8xl p-6 hover:scale-110 group">
-      <div className="fixed grid grid-cols-2 place-content-around h-[300px] w-[300px] transition-opacity opacity-0 hover:bg-black hover:bg-opacity-70 hover:backdrop-blur-md group-hover:opacity-100 group p-4">
-        <img
-          className="transition-all duration-75 h-[75px] hidden group-hover:block hover:scale-110"
-          alt="apple-music"
-          src={appleMusic}
-          href={props.appleMusicLink}
-        />
-        <img
-          className="transition-all duration-75 h-[75px] hidden group-hover:flex hover:scale-110"
-          alt="spotify"
-          src={spotify}
-          href={props.spotifyLink}
-        />
-        <img
-          className="transition-all duration-75 h-[75px] hidden group-hover:flex hover:scale-110"
-          alt="tidal"
-          src={tidal}
-          href={props.tidalLink}
-        />
-        <img
-          className="transition-all duration-75 h-[75px] hidden group-hover:flex hover:scale-110"
-          alt="youtube"
-          src={youtube}
-          href={props.youtubeLink}
-        />
+      <div className="h-[300px] w-[300px]">
+        <div className="fixed grid grid-cols-2 justify-items-center items-center h-[305px] w-[305px] -translate-x-1 -translate-y-1 transition-opacity opacity-0 hover:bg-black hover:bg-opacity-50 hover:backdrop-blur-md group-hover:opacity-100 group p-4">
+          <img
+            className="transition-all duration-75 h-[75px] hidden group-hover:block hover:scale-110"
+            alt="apple-music"
+            src={appleMusic}
+            href={props.appleMusicLink}
+          />
+          <img
+            className="transition-all duration-75 h-[75px] hidden group-hover:flex hover:scale-110"
+            alt="spotify"
+            src={spotify}
+            href={props.spotifyLink}
+          />
+          <img
+            className="transition-all duration-75 h-[75px] hidden group-hover:flex hover:scale-110"
+            alt="tidal"
+            src={tidal}
+            href={props.tidalLink}
+          />
+          <img
+            className="transition-all duration-75 h-[75px] hidden group-hover:flex hover:scale-110"
+            alt="youtube"
+            src={youtube}
+            href={props.youtubeLink}
+          />
+        </div>
+        <img className="h-[300px]" src={props.artwork} alt={props.title} />
       </div>
-      <img className="h-[300px]" src={props.artwork} alt={props.title}></img>
-
       <div className="flex flex-row w-[300px] flex-wrap text-center justify-center transition-scale duration-100 origin-top text-lg scale-0 group-hover:scale-90">
         {props.title}
       </div>
