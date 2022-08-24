@@ -66,7 +66,7 @@ function NavBar() {
       <div
         id="nav-wrapper"
         className={`transition-all h-0 origin-top duration-100 md:block
-        ${expanded ? "scale-100 h-full" : "scale-0"} md:scale-100 md:h-full
+        ${expanded ? "scale-100 h-full" : "scale-0"} md:scale-100 
         `}
       >
         <ul id="nav-bar" className={`nav-bar`}>

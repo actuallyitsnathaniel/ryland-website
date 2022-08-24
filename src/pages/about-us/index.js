@@ -19,8 +19,8 @@ function AboutUs() {
     }
   };
 
-  const bandMemberBtnStyle =
-    "transition-scale ease-in-out duration-150 hover:scale-110 flex xl:basis-1/3 items-center p-3";
+  const bandMemberDiv =
+    "transition-all ease-in-out duration-150 hover:scale-110 flex xl:basis-1/3 items-center p-3";
 
   return (
     <div className="flex items-center justify-center min-h-full text-4xl text-white">
@@ -29,17 +29,30 @@ function AboutUs() {
           onClick={() => {
             setActiveMember(0);
           }}
-          className={`${bandMemberBtnStyle}`}
+          className={`${bandMemberDiv} ${
+            expanded === 0
+              ? // ? "fixed z-[1] transition-all origin-center bg-origin-content duration-150 flex-wrap flex-col top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-70 backdrop-blur-md w-screen h-screen items-center justify-center"
+                "fixed z-[1] transition-all origin-center bg-origin-content duration-150 flex-wrap flex-col transform bg-black bg-opacity-70 backdrop-blur-md w-screen h-screen items-center justify-center"
+              : ""
+          }`}
         >
-          <div className="flex items-center whitespace-nowrap p-3">
-            <img src={tom} alt="tom" className="about-us-profile-pic" />
-            <p className="font-bold">Tom</p>
-          </div>
-          <div className={`text-sm ${expanded === 0 ? "" : "hidden"} `}>
-            lorem ipsum dolor desit requescat en pache lorem ipsum dolor desit
-            requescat en pache lorem ipsum dolor desit requescat en pache lorem
-            ipsum dolor desit requescat en pache lorem ipsum dolor desit
-            requescat en pache
+          <img
+            src={tom}
+            alt="tom"
+            className={
+              expanded === 0 ? `flex h-[400px]` : "about-us-profile-pic"
+            }
+          />
+          <p className="flex font-bold text-center p-3">Tom</p>
+          <div
+            className={`${
+              expanded === 0
+                ? "transition-transform duration-75 ease-in-out scale-100 text-sm text-start mx-10"
+                : "scale-0 hidden"
+            }`}
+          >
+            The frontman of the band. It's all about the We. Plays keys, guitar,
+            and sings like a songbird.
           </div>
         </div>
 
@@ -47,7 +60,7 @@ function AboutUs() {
           onClick={() => {
             setActiveMember(1);
           }}
-          className={`${bandMemberBtnStyle}`}
+          className={`${bandMemberDiv}`}
         >
           <div className="flex items-center whitespace-nowrap p-3">
             <img src={ron} alt="ron" className="about-us-profile-pic" />
@@ -59,7 +72,7 @@ function AboutUs() {
           onClick={() => {
             setActiveMember(2);
           }}
-          className={`${bandMemberBtnStyle}`}
+          className={`${bandMemberDiv}`}
         >
           <div className="flex items-center whitespace-nowrap p-3">
             <img src={nate} alt="nate" className="about-us-profile-pic" />
@@ -71,7 +84,7 @@ function AboutUs() {
           onClick={() => {
             setActiveMember(3);
           }}
-          className={`${bandMemberBtnStyle}`}
+          className={`${bandMemberDiv}`}
         >
           <div className="flex items-center whitespace-nowrap p-3">
             <img src={elias} alt="elias" className="about-us-profile-pic" />
@@ -83,7 +96,7 @@ function AboutUs() {
           onClick={() => {
             setActiveMember(4);
           }}
-          className={`${bandMemberBtnStyle}`}
+          className={`${bandMemberDiv}`}
         >
           <div className="flex items-center whitespace-nowrap p-3">
             <img src={jake} alt="jake" className="about-us-profile-pic" />
