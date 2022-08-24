@@ -1,9 +1,10 @@
 import React from "react";
+import Discography from "../../components/discography";
 
 function Music() {
   return (
-    <div className="flex items-center justify-center min-h-screen text-4xl text-white">
-      <h1 className="">📀 Discography</h1>
+    <div className="flex flex-wrap items-center justify-center h-screen text-white">
+      <Discography />
     </div>
   );
 }
