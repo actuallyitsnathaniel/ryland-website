@@ -36,30 +36,57 @@ function Disc(props) {
               : ""
           }`}
         >
-          <img
-            className="transition-all duration-75 h-[75px] hover:scale-110"
-            alt="apple-music"
-            src={appleMusic}
-            href={props.appleMusicLink}
-          />
-          <img
-            className="transition-all duration-75 h-[75px] hover:scale-110"
-            alt="spotify"
-            src={spotify}
-            href={props.spotifyLink}
-          />
-          <img
-            className="transition-all duration-75 h-[75px] hover:scale-110"
-            alt="tidal"
-            src={tidal}
-            href={props.tidalLink}
-          />
-          <img
-            className="transition-all duration-75 h-[75px] hover:scale-110"
-            alt="youtube"
-            src={youtube}
-            href={props.youtubeLink}
-          />
+          <a
+            className={`${props.expanded === props.i ? "block" : "hidden"}`}
+            href={`${props.appleMusicLink}`}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              className="transition-all duration-75 h-[75px] hover:scale-110"
+              alt="apple-music"
+              src={appleMusic}
+            />
+          </a>
+
+          <a
+            className={`${props.expanded === props.i ? "block" : "hidden"}`}
+            href={`${props.spotifyLink}`}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              className="transition-all duration-75 h-[75px] hover:scale-110"
+              alt="apple-music"
+              src={spotify}
+            />
+          </a>
+
+          <a
+            className={`${props.expanded === props.i ? "block" : "hidden"}`}
+            href={`${props.tidalLink}`}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              className="transition-all duration-75 h-[75px] hover:scale-110"
+              alt="apple-music"
+              src={tidal}
+            />
+          </a>
+
+          <a
+            className={`${props.expanded === props.i ? "block" : "hidden"}`}
+            href={`${props.youtubeLink}`}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              className="transition-all duration-75 h-[75px] hover:scale-110"
+              alt="apple-music"
+              src={youtube}
+            />
+          </a>
         </div>
         <img className="h-[300px]" src={props.artwork} alt={props.title} />
       </div>
@@ -91,6 +118,16 @@ function Discography() {
           <Disc
             artwork={portrait}
             title={"Portrait"}
+            appleMusicLink={
+              "https://music.apple.com/us/album/portrait/1556566677"
+            }
+            spotifyLink={
+              "https://open.spotify.com/album/1YRrSespqvZu2iYa7WSM4X"
+            }
+            tidalLink={"https://tidal.com/browse/album/175851104"}
+            youtubeLink={
+              "https://www.youtube.com/watch?v=j9_KZDcwg6I&list=OLAK5uy_lP4KNWsjACvqILi5xZWnPrN4s7nxZZrH8&ab_channel=Ryland-Topic"
+            }
             expanded={expanded}
             i={0}
             onClick={() => {
@@ -108,6 +145,10 @@ function Discography() {
           <Disc
             artwork={talking}
             title="Talking - Single"
+            appleMusicLink={""}
+            spotifyLink={""}
+            tidalLink={""}
+            youtubeLink={""}
             expanded={expanded}
             i={1}
             onClick={() => {
@@ -117,6 +158,10 @@ function Discography() {
           <Disc
             artwork={karma}
             title="Karma - Single"
+            appleMusicLink={""}
+            spotifyLink={""}
+            tidalLink={""}
+            youtubeLink={""}
             expanded={expanded}
             i={2}
             onClick={() => {
@@ -126,6 +171,10 @@ function Discography() {
           <Disc
             artwork={iblfawn}
             title={`I've Been Looking For A While Now - Single`}
+            appleMusicLink={""}
+            spotifyLink={""}
+            tidalLink={""}
+            youtubeLink={""}
             expanded={expanded}
             i={3}
             onClick={() => {
@@ -135,6 +184,10 @@ function Discography() {
           <Disc
             artwork={lashingOut}
             title="Lashing Out - EP"
+            appleMusicLink={""}
+            spotifyLink={""}
+            tidalLink={""}
+            youtubeLink={""}
             expanded={expanded}
             i={4}
             onClick={() => {
@@ -144,6 +197,10 @@ function Discography() {
           <Disc
             artwork={stairwell}
             title="Stairwell - Single"
+            appleMusicLink={""}
+            spotifyLink={""}
+            tidalLink={""}
+            youtubeLink={""}
             expanded={expanded}
             i={5}
             onClick={() => {
@@ -153,6 +210,10 @@ function Discography() {
           <Disc
             artwork={itinerary}
             title="Itinerary - EP"
+            appleMusicLink={""}
+            spotifyLink={""}
+            tidalLink={""}
+            youtubeLink={""}
             expanded={expanded}
             i={6}
             onClick={() => {
