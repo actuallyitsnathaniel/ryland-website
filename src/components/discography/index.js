@@ -29,7 +29,7 @@ function Disc(props) {
     >
       <div className="h-[300px] w-[300px]">
         <div
-          className={`fixed grid grid-cols-2 justify-items-center items-center h-[305px] w-[305px] -translate-x-1 -translate-y-1 transition-opacity opacity-0 group p-4
+          className={`absolute grid grid-cols-2 justify-items-center items-center h-[305px] w-[305px] -translate-x-1 -translate-y-1 transition-opacity opacity-0 group p-4
           ${
             props.expanded === props.i
               ? "bg-black bg-opacity-50 backdrop-blur-md opacity-100"
@@ -76,10 +76,8 @@ function Discography() {
   const setActiveDisc = (i) => {
     if (i === expanded) {
       setExpanded(-1);
-      alert(expanded);
     } else {
       setExpanded(i);
-      alert(expanded);
     }
   };
 
