@@ -25,11 +25,11 @@ function AboutUs() {
   const focused = [
     "fixed z-[1] top-0 grid col-span-1 transition-transform origin-center bg-origin-top duration-150 place-items-center bg-black bg-opacity-70 backdrop-blur-lg w-screen h-screen",
     "h-[400px]",
-    "transition-all duration-75 ease-in-out scale-100 text-sm md:text-lg text-start mx-10",
+    "transition-all duration-75 ease-in-out scale-100 text-sm text-lg text-start mx-10 mb-7",
   ];
 
   const unfocused = [
-    "transition-all ease-in-out duration-150 hover:scale-110 flex xl:basis-1/3 items-center p-3",
+    "transition-all ease-in-out duration-150  md:hover:scale-110 flex xl:basis-1/3 items-center p-3",
     "about-us-profile-pic",
     "scale-0 hidden",
   ];
@@ -48,7 +48,7 @@ function AboutUs() {
             alt="tom"
             className={`${expanded === 0 ? focused[1] : unfocused[1]}`}
           />
-          <p className="font-bold self-center p-3">{"Tom"}</p>
+          <p className="font-bold self-center">{"Tom"}</p>
           <div className={`${expanded === 0 ? focused[2] : unfocused[2]}`}>
             {`The frontman of the band. "It's all about the We." Plays keys,
             guitar, and sings like a songbird.`}
