@@ -3,7 +3,7 @@ import Discography from "../../components/discography";
 
 function Music() {
   return (
-    <div className="flex flex-wrap items-center justify-center h-screen text-white">
+    <div className="flex flex-wrap mt-16 justify-center text-white">
       <Discography />
     </div>
   );
