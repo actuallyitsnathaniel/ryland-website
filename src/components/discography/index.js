@@ -84,7 +84,7 @@ function Disc(props) {
         </div>
         <img className="h-[300px]" src={props.artwork} alt={props.title} />
       </div>
-      <div className="flex flex-row w-[300px] flex-wrap text-center justify-center transition-scale duration-100 origin-top text-lg scale-0 group-hover:scale-90">
+      <div className="flex flex-row w-[300px] flex-wrap text-center justify-center transition-scale duration-100 origin-top text-xl pt-2 scale-0 group-hover:scale-90">
         {props.title}
       </div>
     </div>
