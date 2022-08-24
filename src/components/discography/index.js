@@ -19,7 +19,25 @@ import spotify from "../../assets/images/icons/music-platforms/spotify.svg";
 import tidal from "../../assets/images/icons/music-platforms/tidal.svg";
 import youtube from "../../assets/images/icons/music-platforms/youtube.svg";
 
+const MusicPlatformLink = (props) => {
+  return (
+    <a
+      className={`${props.expanded === props.i ? "block" : "hidden"}`}
+      href={`${props.musicLink}`}
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <img
+        className="transition-all duration-75 h-[75px] hover:scale-110"
+        alt="apple-music"
+        src={`${props.svg}`}
+      />
+    </a>
+  );
+};
+
 function Disc(props) {
+  console.log(props.expanded);
   return (
     <div
       onClick={() => {
@@ -36,57 +54,33 @@ function Disc(props) {
               : ""
           }`}
         >
-          <a
-            className={`${props.expanded === props.i ? "block" : "hidden"}`}
-            href={`${props.appleMusicLink}`}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <img
-              className="transition-all duration-75 h-[75px] hover:scale-110"
-              alt="apple-music"
-              src={appleMusic}
-            />
-          </a>
+          <MusicPlatformLink
+            expanded={props.expanded}
+            i={props.i}
+            musicLink={props.appleMusicLink}
+            svg={appleMusic}
+          />
 
-          <a
-            className={`${props.expanded === props.i ? "block" : "hidden"}`}
-            href={`${props.spotifyLink}`}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <img
-              className="transition-all duration-75 h-[75px] hover:scale-110"
-              alt="apple-music"
-              src={spotify}
-            />
-          </a>
+          <MusicPlatformLink
+            expanded={props.expanded}
+            i={props.i}
+            musicLink={props.spotifyLink}
+            svg={spotify}
+          />
 
-          <a
-            className={`${props.expanded === props.i ? "block" : "hidden"}`}
-            href={`${props.tidalLink}`}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <img
-              className="transition-all duration-75 h-[75px] hover:scale-110"
-              alt="apple-music"
-              src={tidal}
-            />
-          </a>
+          <MusicPlatformLink
+            expanded={props.expanded}
+            i={props.i}
+            musicLink={props.tidalLink}
+            svg={tidal}
+          />
 
-          <a
-            className={`${props.expanded === props.i ? "block" : "hidden"}`}
-            href={`${props.youtubeLink}`}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <img
-              className="transition-all duration-75 h-[75px] hover:scale-110"
-              alt="apple-music"
-              src={youtube}
-            />
-          </a>
+          <MusicPlatformLink
+            expanded={props.expanded}
+            i={props.i}
+            musicLink={props.youtubeLink}
+            svg={youtube}
+          />
         </div>
         <img className="h-[300px]" src={props.artwork} alt={props.title} />
       </div>
@@ -145,10 +139,16 @@ function Discography() {
           <Disc
             artwork={talking}
             title="Talking - Single"
-            appleMusicLink={""}
-            spotifyLink={""}
-            tidalLink={""}
-            youtubeLink={""}
+            appleMusicLink={
+              "https://music.apple.com/us/album/talking-single/1550695263"
+            }
+            spotifyLink={
+              "https://open.spotify.com/album/1tFU6vCOBndpsHS4G0Bk6b"
+            }
+            tidalLink={"https://tidal.com/browse/album/171031166"}
+            youtubeLink={
+              "https://www.youtube.com/watch?v=3nYxfzVerys&ab_channel=Ryland-Topic"
+            }
             expanded={expanded}
             i={1}
             onClick={() => {
@@ -158,10 +158,16 @@ function Discography() {
           <Disc
             artwork={karma}
             title="Karma - Single"
-            appleMusicLink={""}
-            spotifyLink={""}
-            tidalLink={""}
-            youtubeLink={""}
+            appleMusicLink={
+              "https://music.apple.com/us/album/karma-single/1540025669"
+            }
+            spotifyLink={
+              "https://open.spotify.com/album/7BFWk2MnsBydI9FVNtokgJ"
+            }
+            tidalLink={"https://tidal.com/browse/album/161942070"}
+            youtubeLink={
+              "https://www.youtube.com/watch?v=vddP2nWvJ30&ab_channel=Ryland-Topic"
+            }
             expanded={expanded}
             i={2}
             onClick={() => {
@@ -171,10 +177,14 @@ function Discography() {
           <Disc
             artwork={iblfawn}
             title={`I've Been Looking For A While Now - Single`}
-            appleMusicLink={""}
-            spotifyLink={""}
-            tidalLink={""}
-            youtubeLink={""}
+            appleMusicLink={
+              "https://music.apple.com/us/album/ive-been-looking-for-a-while-now-single/1537916310"
+            }
+            spotifyLink={
+              "https://open.spotify.com/album/1xEbTebOcFQJpl5sEVJ6p8?si=JZlTs1BNT0iz0oxpI0CDrQ"
+            }
+            tidalLink={"https://tidal.com/browse/album/160222795"}
+            youtubeLink={"https://www.youtube.com/watch?v=0En7Fc5NMmo"}
             expanded={expanded}
             i={3}
             onClick={() => {
@@ -184,10 +194,16 @@ function Discography() {
           <Disc
             artwork={lashingOut}
             title="Lashing Out - EP"
-            appleMusicLink={""}
-            spotifyLink={""}
-            tidalLink={""}
-            youtubeLink={""}
+            appleMusicLink={
+              "https://music.apple.com/us/album/lashing-out-ep/1513245392"
+            }
+            spotifyLink={
+              "https://open.spotify.com/album/3cV2NG0rtCRqjeQuB0jrPi"
+            }
+            tidalLink={"https://tidal.com/browse/album/141435524"}
+            youtubeLink={
+              "https://www.youtube.com/watch?v=iFaFUDRdQM8&list=OLAK5uy_lc2utY1UM_LNoogjtn98ubuCFW_xc2Cjo"
+            }
             expanded={expanded}
             i={4}
             onClick={() => {
@@ -197,10 +213,14 @@ function Discography() {
           <Disc
             artwork={stairwell}
             title="Stairwell - Single"
-            appleMusicLink={""}
-            spotifyLink={""}
-            tidalLink={""}
-            youtubeLink={""}
+            appleMusicLink={
+              "https://music.apple.com/us/album/stairwell-single/1482802988"
+            }
+            spotifyLink={
+              "https://open.spotify.com/album/6dbexdk9Vzpr0kPYqp36QR"
+            }
+            tidalLink={"https://tidal.com/browse/album/119716422"}
+            youtubeLink={"https://youtu.be/DB4k8_zpkJw"}
             expanded={expanded}
             i={5}
             onClick={() => {
@@ -210,10 +230,16 @@ function Discography() {
           <Disc
             artwork={itinerary}
             title="Itinerary - EP"
-            appleMusicLink={""}
-            spotifyLink={""}
-            tidalLink={""}
-            youtubeLink={""}
+            appleMusicLink={
+              "https://music.apple.com/us/album/itinerary-ep/1473164315"
+            }
+            spotifyLink={
+              "https://open.spotify.com/album/2I19mObRLLNKzm2HCHJf42?si=VnLqR5ZQQDqwfyyW__gDTA"
+            }
+            tidalLink={"https://tidal.com/browse/album/113394980"}
+            youtubeLink={
+              "https://www.youtube.com/watch?v=7YUkplOVhtM&list=OLAK5uy_nrGLK171l7gdvuUYFm5wBp3KdVRm1M33w"
+            }
             expanded={expanded}
             i={6}
             onClick={() => {
