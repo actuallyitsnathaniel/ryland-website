@@ -24,7 +24,7 @@ function AboutUs() {
 
   const focused = [
     "fixed z-[1] top-0 grid col-span-1 transition-transform origin-center bg-origin-top duration-150 place-items-center bg-black bg-opacity-70 backdrop-blur-lg w-screen h-screen",
-    "h-[345px]",
+    "h-[345px] md:h-[400px]",
     "transition-all duration-75 ease-in-out scale-100 text-sm text-lg text-start mx-10 mb-7",
   ];
 
