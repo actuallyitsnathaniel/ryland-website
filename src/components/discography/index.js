@@ -23,7 +23,11 @@ function Disc(props) {
   return (
     <div className="transition-scale duration-100 text-8xl p-6 hover:scale-110 group">
       <div className="h-[300px] w-[300px]">
-        <div className="fixed grid grid-cols-2 justify-items-center items-center h-[305px] w-[305px] -translate-x-1 -translate-y-1 transition-opacity opacity-0 hover:bg-black hover:bg-opacity-50 hover:backdrop-blur-md group-hover:opacity-100 group p-4">
+        <div
+          className={`${
+            props.selected ? "" : ""
+          } fixed grid grid-cols-2 justify-items-center items-center h-[305px] w-[305px] -translate-x-1 -translate-y-1 transition-opacity opacity-0 hover:bg-black hover:bg-opacity-50 hover:backdrop-blur-md group-hover:opacity-100 group p-4`}
+        >
           <img
             className="transition-all duration-75 h-[75px] hidden group-hover:block hover:scale-110"
             alt="apple-music"
@@ -61,6 +65,15 @@ function Disc(props) {
 function Discography() {
   const [selected, setSelected] = useState(-1);
 
+  const setActiveDisc = (i) => {
+    if (selected === i) {
+      setSelected(-1);
+    } else {
+      setSelected(selected);
+      alert(selected);
+    }
+  };
+
   return (
     <div>
       <div>
@@ -68,7 +81,14 @@ function Discography() {
           Albums
         </h2>
         <div className="flex flex-row flex-wrap w-full justify-center">
-          <Disc artwork={portrait} title={"Portrait"} />
+          <Disc
+            artwork={portrait}
+            title={"Portrait"}
+            selected={selected}
+            onClick={() => {
+              setActiveDisc(0);
+            }}
+          />
         </div>
       </div>
 
@@ -77,15 +97,54 @@ function Discography() {
           Singles/EPs
         </h2>
         <div className="flex flex-wrap w-full justify-center">
-          <Disc artwork={talking} title="Talking - Single" />
-          <Disc artwork={karma} title="Karma - Single" />
+          <Disc
+            artwork={talking}
+            title="Talking - Single"
+            selected={selected}
+            onClick={() => {
+              setActiveDisc(1);
+            }}
+          />
+          <Disc
+            artwork={karma}
+            title="Karma - Single"
+            selected={selected}
+            onClick={() => {
+              setActiveDisc(2);
+            }}
+          />
           <Disc
             artwork={iblfawn}
             title={`I've Been Looking For A While Now - Single`}
+            selected={selected}
+            onClick={() => {
+              setActiveDisc(3);
+            }}
           />
-          <Disc artwork={lashingOut} title="Lashing Out - EP" />
-          <Disc artwork={stairwell} title="Stairwell - Single" />
-          <Disc artwork={itinerary} title="Itinerary - EP" />
+          <Disc
+            artwork={lashingOut}
+            title="Lashing Out - EP"
+            selected={selected}
+            onClick={() => {
+              setActiveDisc(4);
+            }}
+          />
+          <Disc
+            artwork={stairwell}
+            title="Stairwell - Single"
+            selected={selected}
+            onClick={() => {
+              setActiveDisc(5);
+            }}
+          />
+          <Disc
+            artwork={itinerary}
+            title="Itinerary - EP"
+            selected={selected}
+            onClick={() => {
+              setActiveDisc(6);
+            }}
+          />
         </div>
       </div>
     </div>
