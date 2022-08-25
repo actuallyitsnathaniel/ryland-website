@@ -3,7 +3,7 @@ import { ReactComponent as EmailSVG } from "../../../assets/images/icons/email-l
 function GmailLogo() {
   return (
     <a
-      className="p-3"
+      className="transition-all duration-100 p-3 md:hover:-translate-y-2"
       href="mailto:weareryland@gmail.com"
       target="_blank"
       rel="noopener noreferrer"
