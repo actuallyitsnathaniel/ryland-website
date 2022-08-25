@@ -1,5 +1,5 @@
-import React from "react";
-import Disc from "./disc";
+import React, { useState } from "react";
+// import Disc from "./disc";
 
 // Albums
 import portrait from "../../assets/images/discography/LPs/Portrait-LP_600x600bb.jpeg";
@@ -14,60 +14,93 @@ import karma from "../../assets/images/discography/Singles_EPs/Karma-Single_600x
 import stairwell from "../../assets/images/discography/Singles_EPs/Stairwell-Single_600x600bb.jpeg";
 import talking from "../../assets/images/discography/Singles_EPs/Talking-Single_600x600bb.jpeg";
 
-// function Disc(props) {
-//   console.log(props.expanded);
-//   return (
-//     <div
-//       onClick={() => {
-//         props.onClick();
-//       }}
-//       className="transition-scale duration-100 text-8xl p-6 hover:scale-110 group"
-//     >
-//       <div className="h-[300px] w-[300px]">
-//         <div
-//           className={`absolute grid grid-cols-2 justify-items-center items-center h-[305px] w-[305px] -translate-x-1 -translate-y-1 transition-opacity opacity-0 group p-4
-//           ${
-//             props.expanded === props.i
-//               ? "bg-black bg-opacity-50 backdrop-blur-md opacity-100"
-//               : ""
-//           }`}
-//         >
-//           <MusicPlatformLink
-//             expanded={props.expanded}
-//             i={props.i}
-//             musicLink={props.appleMusicLink}
-//             svg={appleMusic}
-//           />
+// Icons
+import appleMusic from "../../assets/images/icons/music-platforms/apple-music.svg";
+import spotify from "../../assets/images/icons/music-platforms/spotify.svg";
+import tidal from "../../assets/images/icons/music-platforms/tidal.svg";
+import youtube from "../../assets/images/icons/music-platforms/youtube.svg";
 
-//           <MusicPlatformLink
-//             expanded={props.expanded}
-//             i={props.i}
-//             musicLink={props.spotifyLink}
-//             svg={spotify}
-//           />
+function MusicPlatformLink(props) {
+  return (
+    <a
+      className={`${props.expanded === props.i ? "block" : "hidden"}`}
+      href={props.musicLink}
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <img
+        className="transition-all duration-75 h-[75px] hover:scale-110"
+        alt="music-link"
+        src={props.svg}
+      />
+    </a>
+  );
+}
 
-//           <MusicPlatformLink
-//             expanded={props.expanded}
-//             i={props.i}
-//             musicLink={props.tidalLink}
-//             svg={tidal}
-//           />
+function Disc(props) {
+  const [expanded, setExpanded] = useState(-1);
 
-//           <MusicPlatformLink
-//             expanded={props.expanded}
-//             i={props.i}
-//             musicLink={props.youtubeLink}
-//             svg={youtube}
-//           />
-//         </div>
-//         <img className="h-[300px]" src={props.artwork} alt={props.title} />
-//       </div>
-//       <div className="flex flex-row w-[300px] flex-wrap text-center justify-center transition-scale duration-100 origin-top text-xl pt-2 scale-0 group-hover:scale-90">
-//         {props.title}
-//       </div>
-//     </div>
-//   );
-// }
+  const setActiveDisc = (i) => {
+    if (i === expanded) {
+      setExpanded(-1);
+    } else {
+      setExpanded(i);
+    }
+  };
+  console.log(props.expanded);
+
+  return (
+    <div
+      onClick={() => {
+        setActiveDisc(props.i);
+      }}
+      className="transition-scale duration-100 text-8xl p-6 hover:scale-110 group"
+    >
+      <div className="h-[300px] w-[300px]">
+        <div
+          className={`absolute grid grid-cols-2 justify-items-center items-center h-[305px] w-[305px] -translate-x-1 -translate-y-1 transition-opacity opacity-0 group p-4
+          ${
+            expanded === props.i
+              ? "bg-black bg-opacity-50 backdrop-blur-md opacity-100"
+              : ""
+          }`}
+        >
+          <MusicPlatformLink
+            expanded={expanded}
+            i={props.i}
+            musicLink={props.appleMusicLink}
+            svg={appleMusic}
+          />
+
+          <MusicPlatformLink
+            expanded={expanded}
+            i={props.i}
+            musicLink={props.spotifyLink}
+            svg={spotify}
+          />
+
+          <MusicPlatformLink
+            expanded={expanded}
+            i={props.i}
+            musicLink={props.tidalLink}
+            svg={tidal}
+          />
+
+          <MusicPlatformLink
+            expanded={expanded}
+            i={props.i}
+            musicLink={props.youtubeLink}
+            svg={youtube}
+          />
+        </div>
+        <img className="h-[300px]" src={props.artwork} alt={props.title} />
+      </div>
+      <div className="flex flex-row w-[300px] flex-wrap text-center justify-center transition-scale duration-100 origin-top text-xl pt-2 scale-0 group-hover:scale-90">
+        {props.title}
+      </div>
+    </div>
+  );
+}
 
 function Discography() {
   return (
