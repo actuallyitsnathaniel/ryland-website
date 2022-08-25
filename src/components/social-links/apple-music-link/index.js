@@ -1,16 +1,15 @@
-import appleMusic from "../../../assets/images/icons/music-platforms/apple-music.svg";
+import { ReactComponent as AppleMusicSVG } from "../../../assets/images/icons/music-platforms/apple-music.svg";
 
 function AppleMusicLink() {
   return (
     <a
-      className="p-3"
+      className="transition-all duration-100 p-3 md:hover:-translate-y-2"
       href="https://music.apple.com/us/artist/ryland/1472845950"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img
-        src={appleMusic}
-        className="transition-all duration-75 h-[52px] hover:scale-110"
+      <AppleMusicSVG
+        className="transition-all duration-75 h-[52px] w-[52px] rounded-[13px] hover:scale-110 hover:bg-gradient-to-b from-[#fa57c1] via-[#b166cc] to-[#69a6f9]"
         alt="apple-music-alt"
       />
     </a>

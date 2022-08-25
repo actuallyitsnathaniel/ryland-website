@@ -3,12 +3,12 @@ import { ReactComponent as InstagramSVG } from "../../../assets/images/icons/ins
 function InstagramLogo() {
   return (
     <a
-      className="p-3"
+      className="transition-all duration-100 p-3 md:hover:-translate-y-2"
       href="https://instagram.com/weareryland"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <InstagramSVG className="transition ease-in-out duration-100 hover:scale-110 hover:fill-orange-300" />
+      <InstagramSVG className="transition ease-in-out duration-100 rounded-[15px] bg-white hover:fill-white hover:scale-110 hover:bg-gradient-to-tr from-[#feda75] via-[#d62976] to-[#962fbf]" />
     </a>
   );
 }
