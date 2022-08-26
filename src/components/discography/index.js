@@ -7,6 +7,7 @@ import portrait from "../../assets/images/discography/LPs/Portrait-LP_600x600bb.
 // EPs
 import lashingOut from "../../assets/images/discography/Singles_EPs/Lashing-Out-EP_600x600bb.jpeg";
 import itinerary from "../../assets/images/discography/Singles_EPs/Itinerary-EP_600x600bb.jpeg";
+import untitled from "../../assets/images/discography/Singles_EPs/untitled.jpeg";
 
 // Singles
 import iblfawn from "../../assets/images/discography/Singles_EPs/I'veBeenLooking-Single_600x600bb.jpeg";
@@ -133,6 +134,18 @@ function Discography() {
           Singles/EPs
         </h2>
         <div className="flex flex-wrap w-full justify-center">
+          <div className="blur-sm">
+            <Disc
+              artwork={untitled}
+              title="????"
+              i={7}
+              appleMusicLink
+              spotifyLink
+              tidalLink
+              youtubeLink
+            />
+          </div>
+
           <Disc
             artwork={talking}
             title="Talking - Single"
