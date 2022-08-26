@@ -15,8 +15,7 @@ import Music from "./pages/music";
 import Shows from "./pages/shows";
 import Secret from "./pages/secret";
 import ErrorPage from "./pages/error";
-
-// matchMedia("(max-width: 600px)") ? true : false
+import Drinks from "./pages/drinks";
 
 function App() {
   return (
@@ -35,6 +34,7 @@ function App() {
           <Route path="/music" render={() => <Music />} />
           <Route path="/shows" render={() => <Shows />} />
           <Route path="/secret" render={() => <Secret />} />
+          <Route path="/drinks" render={() => <Drinks />} />
           <Route path="*" render={() => <ErrorPage />} />
         </Switch>
         <SocialLinks />
