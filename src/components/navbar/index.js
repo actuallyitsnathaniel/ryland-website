@@ -39,11 +39,7 @@ function NavBar() {
   return (
     <nav className="text-white p-2.5 font-semibold">
       <div className="flex justify-between">
-        <a
-          id="person-bed-icon"
-          href="/home"
-          className="md:hidden p-3.5 text-4xl"
-        >
+        <a id="person-bed-icon" href="/" className="md:hidden p-3.5 text-4xl">
           🛌
         </a>
         <div className="md:hidden p-3 justify-center text-5xl whitespace-nowrap">
