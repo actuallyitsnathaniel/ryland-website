@@ -7,7 +7,7 @@ import portrait from "../../assets/images/discography/LPs/Portrait-LP_600x600bb.
 // EPs
 import lashingOut from "../../assets/images/discography/Singles_EPs/Lashing-Out-EP_600x600bb.jpeg";
 import itinerary from "../../assets/images/discography/Singles_EPs/Itinerary-EP_600x600bb.jpeg";
-import untitled from "../../assets/images/discography/Singles_EPs/untitled.jpeg";
+import youshouldknow from "../../assets/images/discography/Singles_EPs/You-Should-Know-EP.jpeg";
 
 // Singles
 import iblfawn from "../../assets/images/discography/Singles_EPs/I'veBeenLooking-Single_600x600bb.jpeg";
@@ -48,7 +48,7 @@ function Discography() {
         <div className="flex flex-wrap w-full justify-center">
           <div className="blur-sm">
             <Disc
-              artwork={untitled}
+              artwork={youshouldknow}
               title="????"
               i={7}
               appleMusicLink
