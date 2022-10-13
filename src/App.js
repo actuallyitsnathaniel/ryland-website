@@ -10,6 +10,7 @@ import "./App.css";
 import Home from "./pages/home";
 import Contact from "./pages/contact";
 import AboutUs from "./pages/about-us";
+import Links from "./pages/links";
 import Merch from "./pages/merch";
 import Music from "./pages/music";
 import Shows from "./pages/shows";
@@ -30,6 +31,7 @@ function App() {
           <Route path="/home" render={() => <Home />} />
           <Route path="/about-us" render={() => <AboutUs />} />
           <Route path="/contact" render={() => <Contact />} />
+          <Route path="/links" render={() => <Links />} />
           <Route path="/merch" render={() => <Merch />} />
           <Route path="/music" render={() => <Music />} />
           <Route path="/shows" render={() => <Shows />} />

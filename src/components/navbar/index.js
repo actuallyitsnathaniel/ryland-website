@@ -18,7 +18,8 @@ function usePageTitle(location) {
       { path: "/music", title: "Music" },
       { path: "/merch", title: "Merch" },
       { path: "/shows", title: "Shows" },
-      { path: "/secret", tite: "Secret" },
+      { path: "/secret", title: "Secret" },
+      { path: "/links", title: "Links" },
     ];
 
     const curTitle = titleMap.find((item) => item.path === location);
@@ -37,9 +38,17 @@ function NavBar() {
   let pageTitle = usePageTitle(useLocation().pathname);
 
   return (
-    <nav className="text-white p-2.5 font-semibold">
+    <nav
+      className={`text-white p-2.5 font-semibold ${
+        document.URL.includes("/links") ? "hidden" : ""
+      }`}
+    >
       <div className="flex justify-between">
-        <a id="person-bed-icon" href="/" className="md:hidden p-3.5 text-4xl">
+        <a
+          id="person-bed-icon"
+          href="/home"
+          className="md:hidden p-3.5 text-4xl"
+        >
           🛌
         </a>
         <div className="md:hidden p-3 justify-center text-5xl whitespace-nowrap">
@@ -62,8 +71,8 @@ function NavBar() {
       <div
         id="nav-wrapper"
         className={`transition-all h-0 origin-top duration-100 md:block
-        ${expanded ? "scale-100 h-full" : "scale-0"} md:scale-100 
-        `}
+      ${expanded ? "scale-100 h-full" : "scale-0"} md:scale-100 
+      `}
       >
         <ul id="nav-bar" className={`nav-bar`}>
           <Link
@@ -103,24 +112,24 @@ function NavBar() {
           >
             Music
           </Link>
-          <Link
-            className={`nav-item ${
-              pageTitle === "Merch" ? "nav-item-active" : ""
-            }`}
-            to="/merch"
-            onClick={() => setExpanded(false)}
-          >
-            Merch
-          </Link>
-          <Link
-            className={`nav-item ${
-              pageTitle === "Shows" ? "nav-item-active" : ""
-            }`}
-            to="/shows"
-            onClick={() => setExpanded(false)}
-          >
-            Shows
-          </Link>
+          {/* <Link
+          className={`nav-item ${
+            pageTitle === "Merch" ? "nav-item-active" : ""
+          }`}
+          to="/merch"
+          onClick={() => setExpanded(false)}
+        >
+          Merch
+        </Link> */}
+          {/*<Link
+          className={`nav-item ${
+            pageTitle === "Shows" ? "nav-item-active" : ""
+          }`}
+          to="/shows"
+          onClick={() => setExpanded(false)}
+        >
+          Shows
+        </Link> */}
         </ul>
       </div>
     </nav>
