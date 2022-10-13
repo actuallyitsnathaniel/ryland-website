@@ -5,6 +5,7 @@ import InstagramLogo from "../../components/social-links/instagram-link";
 import GmailLogo from "../../components/social-links/gmail-link";
 import SpotifyLink from "../../components/social-links/spotify-link";
 import AppleMusic from "../../components/social-links/apple-music-link";
+import YoutubeLink from "../../components/social-links/youtube-link";
 
 import rylandBed from "../../assets/images/icons/ryland-bed/ryland-bed.svg";
 
@@ -20,6 +21,9 @@ function Links() {
         </div>
         <div className="flex flex-row items-center text-3xl">
           <AppleMusic /> Apple Music
+        </div>
+        <div className="flex flex-row items-center text-center text-3xl">
+          <YoutubeLink /> Youtube
         </div>
         <div className="flex flex-row items-center text-3xl">
           <InstagramLogo /> Instagram
