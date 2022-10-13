@@ -96,12 +96,12 @@ function NavBar() {
           </Link>
           <Link
             className={`nav-item ${
-              pageTitle === "Contact" ? "nav-item-active" : ""
+              pageTitle === "Links" ? "nav-item-active" : ""
             }`}
-            to="/contact"
+            to="/links"
             onClick={() => setExpanded(false)}
           >
-            Contact
+            Contact & Links
           </Link>
           <Link
             className={`nav-item ${
