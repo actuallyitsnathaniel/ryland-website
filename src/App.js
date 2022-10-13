@@ -20,7 +20,7 @@ import Drinks from "./pages/drinks";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter forceRefresh>
       <VideoBackground />
       <div className="h-screen">
         <NavBar />
