@@ -40,7 +40,7 @@ function NavBar() {
   return (
     <nav
       className={`text-white p-2.5 font-semibold ${
-        document.URL.includes("/links") ? "hidden" : ""
+        pageTitle.includes("Links") ? "hidden" : ""
       }`}
     >
       <div className="flex justify-between">
