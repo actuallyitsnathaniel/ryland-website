@@ -1,6 +1,6 @@
 {
   "name": "ryland-website",
-  "homepage": "https://weareryland.com/home",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
