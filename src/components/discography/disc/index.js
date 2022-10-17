@@ -13,7 +13,7 @@ function Disc(props) {
     }
   };
 
-  console.log(expanded);
+  // console.log(expanded);
 
   return (
     <div
