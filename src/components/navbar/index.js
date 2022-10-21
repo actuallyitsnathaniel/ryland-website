@@ -13,6 +13,7 @@ function usePageTitle(location) {
     const titleMap = [
       { path: "/", title: "Home" },
       { path: "/home", title: "Home" },
+      { path: "/home/", title: "Home" },
       { path: "/about-us", title: "About Us" },
       { path: "/contact", title: "Contact" },
       { path: "/music", title: "Music" },
