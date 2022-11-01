@@ -23,21 +23,19 @@ function Discography() {
           Singles/EPs
         </h2>
         <div className="flex flex-wrap w-full justify-center">
-          <div className="">
-            <Disc
-              artwork={youshouldknow}
-              title="You Should Know - EP"
-              i={7}
-              appleMusicLink={""}
-              spotifyLink={
-                "https://open.spotify.com/album/3dcyqNJBbex17eICVzfi4S?si=5FXaa4i5Tz6JzCWZX1u6gg"
-              }
-              tidalLink={"https://tidal.com/browse/album/254309190"}
-              youtubeLink={
-                "https://www.youtube.com/playlist?list=OLAK5uy_k68rFLA0eSnvoyseygxYBBdH2nrWp9lu0"
-              }
-            />
-          </div>
+          <Disc
+            artwork={youshouldknow}
+            title="You Should Know - EP"
+            i={7}
+            appleMusicLink={""}
+            spotifyLink={
+              "https://open.spotify.com/album/3dcyqNJBbex17eICVzfi4S?si=5FXaa4i5Tz6JzCWZX1u6gg"
+            }
+            tidalLink={"https://tidal.com/browse/album/254309190"}
+            youtubeLink={
+              "https://www.youtube.com/playlist?list=OLAK5uy_k68rFLA0eSnvoyseygxYBBdH2nrWp9lu0"
+            }
+          />
 
           <Disc
             artwork={talking}
