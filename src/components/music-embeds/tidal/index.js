@@ -7,7 +7,7 @@ export default function TidalEmbed() {
         borderRadius: "18px",
         padding: "1vh",
       }}
-      src={"https://embed.tidal.com/albums/175851104?layout=gridify"}
+      src={"https://embed.tidal.com/albums/254309190?layout=gridify"}
       frameBorder={0}
     />
   );

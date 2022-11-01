@@ -8,7 +8,7 @@ export default function SpotifyEmbed() {
         padding: "1vh",
       }}
       src={
-        "https://open.spotify.com/embed/album/1YRrSespqvZu2iYa7WSM4X?utm_source=generator"
+        "https://open.spotify.com/embed/album/3dcyqNJBbex17eICVzfi4S?utm_source=generator"
       }
       frameBorder={0}
       allow={
