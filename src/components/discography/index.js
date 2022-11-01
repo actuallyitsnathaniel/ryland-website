@@ -20,29 +20,6 @@ function Discography() {
     <div>
       <div>
         <h2 className="flex text-6xl font-semibold italic justify-center p-10">
-          Albums
-        </h2>
-        <div className="flex flex-row flex-wrap w-full justify-center">
-          <Disc
-            artwork={portrait}
-            title={"Portrait"}
-            appleMusicLink={
-              "https://music.apple.com/us/album/portrait/1556566677"
-            }
-            spotifyLink={
-              "https://open.spotify.com/album/1YRrSespqvZu2iYa7WSM4X"
-            }
-            tidalLink={"https://tidal.com/browse/album/175851104"}
-            youtubeLink={
-              "https://www.youtube.com/watch?v=j9_KZDcwg6I&list=OLAK5uy_lP4KNWsjACvqILi5xZWnPrN4s7nxZZrH8&ab_channel=Ryland-Topic"
-            }
-            i={0}
-          />
-        </div>
-      </div>
-
-      <div>
-        <h2 className="flex text-6xl font-semibold italic justify-center p-10">
           Singles/EPs
         </h2>
         <div className="flex flex-wrap w-full justify-center">
@@ -147,6 +124,29 @@ function Discography() {
               "https://www.youtube.com/watch?v=7YUkplOVhtM&list=OLAK5uy_nrGLK171l7gdvuUYFm5wBp3KdVRm1M33w"
             }
             i={6}
+          />
+        </div>
+      </div>
+
+      <div>
+        <h2 className="flex text-6xl font-semibold italic justify-center p-10">
+          Albums
+        </h2>
+        <div className="flex flex-row flex-wrap w-full justify-center">
+          <Disc
+            artwork={portrait}
+            title={"Portrait"}
+            appleMusicLink={
+              "https://music.apple.com/us/album/portrait/1556566677"
+            }
+            spotifyLink={
+              "https://open.spotify.com/album/1YRrSespqvZu2iYa7WSM4X"
+            }
+            tidalLink={"https://tidal.com/browse/album/175851104"}
+            youtubeLink={
+              "https://www.youtube.com/watch?v=j9_KZDcwg6I&list=OLAK5uy_lP4KNWsjACvqILi5xZWnPrN4s7nxZZrH8&ab_channel=Ryland-Topic"
+            }
+            i={0}
           />
         </div>
       </div>
