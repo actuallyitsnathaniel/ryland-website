@@ -2,7 +2,7 @@ export default function AppleMusicEmbed() {
   return (
     <iframe
       title="apple-music-embedded"
-      className=""
+      className="h-[470px]"
       style={{
         borderRadius: "18px",
         padding: "1vh",
