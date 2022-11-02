@@ -15,7 +15,7 @@ import youshouldknow from "../../assets/images/discography/Singles_EPs/You-Shoul
 function Links() {
   return (
     <main className="flex justify-center min-h-screen text-white">
-      <div className="space-y-3 pb-4 grid">
+      <div className="space-y-3 pb-4">
         <Link exact to={"/home"}>
           <img
             className="transition item-center duration-75 h-60 my-10 hover:translate-y-1 hover:scale-115"
@@ -24,7 +24,7 @@ function Links() {
           />
         </Link>
 
-        <div className="transform-gpu scale-100 -m-5">
+        <div className="transform-gpu scale-100 -m-8">
           <p className="text-3xl text-center font-semibold p-0">
             You Should Know - EP
           </p>
@@ -44,21 +44,50 @@ function Links() {
           <p className="text-center text-3xl font-bold pt-0 m-0">OUT NOW!!</p>
         </div>
 
-        <div className="flex flex-row items-center text-4xl">
+        <a
+          className="flex flex-row items-center text-4xl"
+          href="https://open.spotify.com/artist/3Ekf9P1XRqjP3MBwl6iFVT?si=FFIpHWiOSdiy5jAlhFPCWg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <SpotifyLink /> Spotify
-        </div>
-        <div className="flex flex-row  items-center text-4xl">
+        </a>
+
+        <a
+          className="flex flex-row  items-center text-4xl"
+          href="https://music.apple.com/us/artist/ryland/1472845950"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <AppleMusic /> Apple Music
-        </div>
-        <div className="flex flex-row items-center text-center text-4xl">
+        </a>
+
+        <a
+          className="flex flex-row items-center text-center text-4xl"
+          href="https://www.youtube.com/@weareryland"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <YoutubeLink /> Youtube
-        </div>
-        <div className="flex flex-row items-center text-4xl">
+        </a>
+
+        <a
+          className="flex flex-row items-center text-4xl"
+          href="https://instagram.com/weareryland"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <InstagramLogo /> Instagram
-        </div>
-        <div className="flex flex-row  items-center text-center text-4xl">
+        </a>
+
+        <a
+          className="flex flex-row  items-center text-center text-4xl"
+          href="mailto:weareryland@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <GmailLogo /> Gmail
-        </div>
+        </a>
       </div>
     </main>
   );

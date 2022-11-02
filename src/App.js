@@ -22,7 +22,7 @@ function App() {
   return (
     <BrowserRouter forceRefresh>
       <VideoBackground />
-      <div className="h-screen">
+      <div className="h-screen w-screen">
         <NavBar />
         <Switch>
           <Route exact path="/">
