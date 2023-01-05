@@ -6,7 +6,7 @@ function ShowLink(props) {
       <p className="">{props.venue}</p>
       <div className="object-center">
         <img
-          className="mx-auto transition duration-75 h-72 my-10 hover:-translate-y-1 hover:scale-115"
+          className="mx-auto transition duration-75 h-80 my-10 hover:-translate-y-1 hover:scale-115"
           src={props.thumbnail}
           alt={props.alt}
         />
