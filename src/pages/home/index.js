@@ -4,7 +4,7 @@ import RylandBedIcon from "../../assets/images/icons/ryland-bed";
 import { MusicLinks } from ".//../../components/music-embeds";
 import ShowLink from "../../components/show-link";
 
-import show14th from "../../assets/images/thumbnails/brodyn_jla_ryland.png";
+import show19th from "../../assets/images/thumbnails/brodyn_jla_ryland.png";
 
 function Home() {
   return (
@@ -14,7 +14,7 @@ function Home() {
       </div>
       <div className="flex justify-center text-white">
         <ShowLink
-          thumbnail={show14th}
+          thumbnail={show19th}
           link={
             "https://dice.fm/event/7eyvb-brodyn-john-lowell-anderson-ryland-19th-jan-the-silverlake-lounge-los-angeles-tickets?_branch_match_id=1120861200082607989&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXz8nMy9ZLyUxO1UvL1c81T0kzNzU3NzFJNgEATz3tRyEAAAA%3D"
           }

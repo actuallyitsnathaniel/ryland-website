@@ -9,7 +9,7 @@ import YoutubeLink from "../../components/social-links/youtube-link";
 import ShowLink from "../../components/show-link";
 
 import rylandBed from "../../assets/images/icons/ryland-bed/ryland-bed.svg";
-import show14th from "../../assets/images/thumbnails/brodyn_jla_ryland.png";
+import show19th from "../../assets/images/thumbnails/brodyn_jla_ryland.png";
 // import youshouldknow from "../../assets/images/discography/Singles_EPs/You-Should-Know-EP.jpeg";
 
 function Links() {
@@ -24,7 +24,7 @@ function Links() {
           />
         </Link>
         <ShowLink
-          thumbnail={show14th}
+          thumbnail={show19th}
           link={
             "https://dice.fm/event/7eyvb-brodyn-john-lowell-anderson-ryland-19th-jan-the-silverlake-lounge-los-angeles-tickets?_branch_match_id=1120861200082607989&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXz8nMy9ZLyUxO1UvL1c81T0kzNzU3NzFJNgEATz3tRyEAAAA%3D"
           }
