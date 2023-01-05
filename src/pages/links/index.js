@@ -12,7 +12,7 @@ import Jan19 from "../../components/show-link/jan19";
 
 function Links() {
   return (
-    <main className="flex flex-wrap justify-center min-h-screen text-white">
+    <main className="flex flex-wrap mx-auto w-fit min-h-screen text-white">
       <div className="space-y-3 pb-4">
         <Link exact to={"/home"}>
           <img
@@ -21,6 +21,8 @@ function Links() {
             alt="ryland-bed"
           />
         </Link>
+        <h1 className="text-4xl text-center font-semibold">Links</h1>
+        <div className="h-11" />
         <Jan19 />
 
         <div className="flex flex-row items-center text-4xl">
