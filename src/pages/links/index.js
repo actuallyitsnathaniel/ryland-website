@@ -22,8 +22,11 @@ function Links() {
           />
         </Link>
         <h1 className="text-4xl text-center font-semibold">Links</h1>
-        <div className="h-11" />
+        <div className="h-8" />
+
         <Jan19 />
+
+        <div className="h-8" />
 
         <div className="flex flex-row items-center text-4xl">
           <SpotifyLink /> Spotify
