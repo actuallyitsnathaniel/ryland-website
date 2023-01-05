@@ -18,7 +18,7 @@ function Links() {
       <div className="space-y-3 pb-4">
         <Link exact to={"/home"}>
           <img
-            className="transition duration-75 h-56 my-10 hover:translate-y-1 hover:scale-125"
+            className="mx-auto transition duration-75 h-56 my-10 hover:translate-y-1 hover:scale-125"
             src={rylandBed}
             alt="ryland-bed"
           />
