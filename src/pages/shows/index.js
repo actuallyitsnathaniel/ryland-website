@@ -3,10 +3,12 @@ import Jan19 from "../../components/show-link/jan19";
 
 function Shows() {
   return (
-    <div className="flex items-center justify-center min-h-screen text-4xl text-white">
-      <Jan19 />
-      <div>🎤🔥</div>
-    </div>
+    <main className="flex flex-col justify-center text-center min-h-full p-3 text-white">
+      <div>
+        <Jan19 />
+        <div>🎤🔥</div>
+      </div>
+    </main>
   );
 }
 

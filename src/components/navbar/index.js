@@ -122,15 +122,15 @@ function NavBar() {
         >
           Merch
         </Link> */}
-          {/*<Link
-          className={`nav-item ${
-            pageTitle === "Shows" ? "nav-item-active" : ""
-          }`}
-          to="/shows"
-          onClick={() => setExpanded(false)}
-        >
-          Shows
-        </Link> */}
+          <Link
+            className={`nav-item ${
+              pageTitle === "Shows" ? "nav-item-active" : ""
+            }`}
+            to="/shows"
+            onClick={() => setExpanded(false)}
+          >
+            Shows
+          </Link>
         </ul>
       </div>
     </nav>
