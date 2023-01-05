@@ -10,7 +10,7 @@ function Home() {
       <div>
         <RylandBedIcon />
       </div>
-      <div className="flex justify-center text-white">
+      <div className="flex-col text-center text-white">
         <Jan19 />
       </div>
 
