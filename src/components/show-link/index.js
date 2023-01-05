@@ -1,7 +1,7 @@
 function ShowLink(props) {
   return (
     <a href={props.link} className="text-center">
-      <p className="text-2xl font-semibold">{props.artists}</p>
+      <p className="text-xl font-semibold">{props.artists}</p>
       <p className="font-semibold">{props.date}</p>
       <p className="">{props.venue}</p>
       <div className="object-center">
