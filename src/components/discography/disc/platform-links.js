@@ -7,7 +7,11 @@ import youtube from "../../../assets/images/icons/music-platforms/youtube.svg";
 const MusicPlatformLinks = (props) => {
   return (
     <div
-      className={`absolute grid grid-cols-2 ${props.className} justify-items-center items-center h-[305px] w-[305px] -translate-x-1 -translate-y-1 p-4`}
+      className={`absolute grid grid-cols-2 
+      ${props.className} h-[305px]  ${
+        props.width ? props.width : "w-[305px]"
+      } justify-items-center items-center -translate-x-1 -translate-y-1 p-4
+      `}
     >
       <a href={props.spotifyLink} rel="noopener noreferrer" target="_blank">
         <img

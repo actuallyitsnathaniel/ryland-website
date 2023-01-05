@@ -22,7 +22,7 @@ function Disc(props) {
       }}
       className="transition-scale duration-100 text-8xl p-6 hover:scale-110 group"
     >
-      <div className="h-[300px] w-[300px]">
+      <div className={"h-[300px] w-[300px]"}>
         <MusicPlatformLinks
           className={`transition-all origin-content bg-black overflow-visible
           ${

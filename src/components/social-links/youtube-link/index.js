@@ -4,7 +4,7 @@ function YoutubeLink() {
   return (
     <a
       className="transition-all duration-100 p-3 md:hover:-translate-y-2"
-      href="https://www.youtube.com/channel/UChjPqJxxT2qSo5fDXlUXRLA"
+      href="https://www.youtube.com/@weareryland"
       target="_blank"
       rel="noopener noreferrer"
     >

@@ -7,7 +7,6 @@ import SpotifyLink from "../../components/social-links/spotify-link";
 import AppleMusic from "../../components/social-links/apple-music-link";
 import YoutubeLink from "../../components/social-links/youtube-link";
 import ShowLink from "../../components/show-link";
-// import Disc from "../../components/discography/disc";
 
 import rylandBed from "../../assets/images/icons/ryland-bed/ryland-bed.svg";
 import show14th from "../../assets/images/thumbnails/brodyn_jla_ryland.png";
