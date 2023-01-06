@@ -6,7 +6,7 @@ function ShowLink(props) {
         <p className="font-semibold">{props.date}</p>
         <p className="p-0 m-0">{props.venue}</p>
         <img
-          className="mx-auto w-fit transition duration-75 h-80 my-4 hover:-translate-y-1 hover:scale-115"
+          className="mx-auto transition duration-75 h-80 my-4 hover:-translate-y-1 hover:scale-115"
           src={props.thumbnail}
           alt={props.alt}
         />
