@@ -13,21 +13,25 @@ import Jan19 from "../../components/show-link/jan19";
 function Links() {
   return (
     <main className="flex flex-wrap mx-auto w-fit min-h-screen text-white">
-      <div className="space-y-3 pb-4">
+      <div className="space-y-0 pb-3 text-center">
         <Link exact to={"/home"}>
           <img
-            className="mx-auto transition duration-75 my-10 hover:translate-y-1 hover:scale-125"
+            className="mx-auto transition duration-75 mt-10 mb-3 hover:translate-y-1 hover:scale-125"
             src={rylandBed}
             alt="ryland-bed"
           />
         </Link>
-        <h1 className="text-4xl text-center font-semibold">Links</h1>
-        <div className="h-8" />
 
+        <div className="h-8" />
+        <h1 className="p-3 text-[150%] md:text-5xl font-semibold whitespace-nowrap underline underline-offset-8">
+          Upcoming Shows
+        </h1>
         <Jan19 />
 
         <div className="h-8" />
-
+        <h1 className="text-[150%] md:text-5xl font-semibold underline underline-offset-8">
+          Links
+        </h1>
         <div className="flex flex-row items-center text-4xl">
           <SpotifyLink /> Spotify
         </div>
