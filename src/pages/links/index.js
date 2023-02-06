@@ -8,7 +8,6 @@ import AppleMusic from "../../components/social-links/apple-music-link";
 import YoutubeLink from "../../components/social-links/youtube-link";
 
 import rylandBed from "../../assets/images/icons/ryland-bed/ryland-bed.svg";
-import Jan19 from "../../components/show-link/jan19";
 
 function Links() {
   return (
@@ -23,10 +22,9 @@ function Links() {
         </Link>
 
         <div className="h-8" />
-        <h1 className="p-3 text-[150%] md:text-5xl font-semibold whitespace-nowrap underline underline-offset-8">
+        <h1 className="hidden p-3 text-[150%] md:text-5xl font-semibold whitespace-nowrap underline underline-offset-8">
           Upcoming Shows
         </h1>
-        <Jan19 />
 
         <div className="h-8" />
         <h1 className="text-[150%] md:text-5xl font-semibold underline underline-offset-8">

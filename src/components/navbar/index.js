@@ -113,17 +113,17 @@ function NavBar() {
           >
             Music
           </Link>
-          {/* <Link
-          className={`nav-item ${
-            pageTitle === "Merch" ? "nav-item-active" : ""
-          }`}
-          to="/merch"
-          onClick={() => setExpanded(false)}
-        >
-          Merch
-        </Link> */}
           <Link
-            className={`nav-item ${
+            className={`hidden nav-item ${
+              pageTitle === "Merch" ? "nav-item-active" : ""
+            }`}
+            to="/merch"
+            onClick={() => setExpanded(false)}
+          >
+            Merch
+          </Link>
+          <Link
+            className={`hidden nav-item ${
               pageTitle === "Shows" ? "nav-item-active" : ""
             }`}
             to="/shows"
