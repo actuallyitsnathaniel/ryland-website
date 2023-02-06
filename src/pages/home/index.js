@@ -10,7 +10,7 @@ function Home() {
       <div>
         <RylandBedIcon />
       </div>
-      <div className="flex-col text-center text-white">
+      <div className="flex-col text-center text-white" hidden>
         <h1 className="p-3 text-[150%] md:text-5xl font-semibold whitespace-nowrap">
           Upcoming Shows
         </h1>
