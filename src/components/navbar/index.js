@@ -95,6 +95,7 @@ function NavBar() {
           >
             About Us
           </Link>
+          {/**
           <Link
             className={`nav-item ${
               pageTitle === "Links" ? "nav-item-active" : ""
@@ -104,6 +105,7 @@ function NavBar() {
           >
             Contact & Links
           </Link>
+          */}
           <Link
             className={`nav-item ${
               pageTitle === "Music" ? "nav-item-active" : ""
