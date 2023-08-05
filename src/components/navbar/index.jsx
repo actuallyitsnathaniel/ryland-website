@@ -33,7 +33,7 @@ function usePageTitle(location) {
   return pageTitle;
 }
 
-function NavBar() {
+const NavBar = () => {
   const [expanded, setExpanded] = useState(false);
 
   let pageTitle = usePageTitle(useLocation().pathname);
@@ -137,6 +137,6 @@ function NavBar() {
       </div>
     </nav>
   );
-}
+};
 
 export default NavBar;

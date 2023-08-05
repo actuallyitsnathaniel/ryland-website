@@ -1,6 +1,8 @@
+import React from 'react';
+
 import { ReactComponent as AppleMusicSVG } from "../../../assets/images/icons/music-platforms/apple-music.svg";
 
-function AppleMusicLink() {
+const AppleMusicLink = () => {
   return (
     <a
       className="transition-all duration-100 p-3 md:hover:-translate-y-2"
@@ -9,7 +11,7 @@ function AppleMusicLink() {
       rel="noopener noreferrer"
     >
       <AppleMusicSVG
-        className="transition-all duration-75 h-[52px] w-[52px] rounded-[13px] hover:scale-110 hover:bg-gradient-to-b from-[#fa57c1] via-[#b166cc] to-[#69a6f9]"
+        className="transition-all duration-75 h-16 w-auto rounded-[13px] hover:scale-110 hover:bg-gradient-to-b from-[#fa57c1] via-[#b166cc] to-[#69a6f9]"
         alt="apple-music-alt"
       />
     </a>

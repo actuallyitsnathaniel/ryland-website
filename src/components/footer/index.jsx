@@ -1,8 +1,19 @@
 function Footer() {
   return (
-    <div className="bg-black text-md text-white text-center p-6">
-      Copyright © {(new Date().getFullYear())} Ryland, Nathaniel Bowman
-    </div>
+    <footer className="flex flex-wrap bg-black text-white text-center justify-center items-center p-3 h-24">
+      <p className="grid md:text-md">
+        Copyright © {new Date().getFullYear()} Ryland
+        <p>
+          powered by{" "}
+          <a
+            className="underline underline-offset-8 "
+            href="mailto:nathanielrbowman@gmail.com"
+          >
+            nathaniel bowman
+          </a>
+        </p>
+      </p>
+    </footer>
   );
 }
 
