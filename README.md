@@ -4,7 +4,7 @@
 
 <h3 align="center">Mobile</h3>
 <p align="center">
-  <img src="https://github.com/actuallyitsnathaniel/ryland-website/assets/38742706/a0dddf77-0c16-4e64-a95e-3a8f4fd2588f">
+  <img w="360" src="https://github.com/actuallyitsnathaniel/ryland-website/assets/38742706/a0dddf77-0c16-4e64-a95e-3a8f4fd2588f">
 </p>
 
 _The spot for everything Ryland. Music, merch, and much more. Come dream up some new tunes with us!_
