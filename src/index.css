@@ -1,33 +1,55 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .nav-bar {
-  @apply transition-all duration-100 ease-in-out flex flex-col md:flex-row items-center justify-between md:mx-14 my-3 text-3xl whitespace-nowrap
+  @apply transition-all duration-100 ease-in-out flex flex-col md:flex-row items-center justify-between md:mx-14 my-3 text-3xl whitespace-nowrap;
 }
 
 .nav-item {
-  @apply transition ease-in-out p-4 duration-150 hover:scale-110 hover:text-orange-200
+  @apply transition ease-in-out p-4 duration-150 hover:scale-110 hover:text-orange-200;
 }
 
+/* DEBUG SPACINGS HERE */
+/* * {
+  outline: 1px solid #f00 !important;
+} */
+
 .nav-item-active {
-  @apply transition ease-in hidden md:block text-orange-300 md:scale-110
+  @apply transition ease-in hidden md:block text-orange-300 md:scale-110;
 }
 
 .about-us-profile-pic {
-  @apply max-w-xs w-[66%] p-4
+  @apply max-w-xs w-[66%] p-4;
+}
+
+.video {
+  filter: brightness(0.4) blur(15px);
+  /* The min width had to be set for both */
+  min-width: 220vh;
+  transform: translateY(-300px);
+  justify-content: center;
+  align-content: center;
+  overflow: hidden;
+  object-fit: fill;
+}
+
+.video-wrapper {
+  background-color: #000;
+  position: fixed;
+  display: flex;
+  min-width: 230vh;
+  z-index: -1;
+}
+
+@media and min-width(600px) {
+  .video {
+    filter: brightness(0.75) blur(10px);
+    /* The min width had to be set for both */
+    min-width: 60vw;
+    justify-content: center;
+    align-content: center;
+    overflow: hidden;
+    object-fit: fill;
+  }
 }

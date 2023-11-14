@@ -10,7 +10,7 @@ import nate from "../../assets/images/the-band/nate.png";
 
 function AboutUs() {
   return (
-    <div className="flex items-center justify-center min-h-full text-4xl text-white p-3 mt-9">
+    <div className="flex items-center justify-center min-h-full text-4xl text-white p-3 pt-20">
       <div className="flex flex-wrap max-w-1/2 justify-center">
         <BandMember
           profilePic={tom}

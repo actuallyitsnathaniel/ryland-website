@@ -6,7 +6,6 @@ import { SocialLinks } from "./components/social-links";
 import NavBar from "./components/navbar";
 import Footer from "./components/footer";
 
-import "./App.css";
 import Home from "./pages/home";
 import Contact from "./pages/contact";
 import AboutUs from "./pages/about-us";
@@ -18,32 +17,30 @@ import Secret from "./pages/secret";
 import ErrorPage from "./pages/error";
 import Drinks from "./pages/drinks";
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter forceRefresh>
       <VideoBackground />
-      <div className="h-screen w-screen">
-        <NavBar />
-        <Switch>
-          <Route exact path="/">
-            <Redirect to="/home" />
-          </Route>
-          <Route path="/home" render={() => <Home />} />
-          <Route path="/about-us" render={() => <AboutUs />} />
-          <Route path="/contact" render={() => <Contact />} />
-          <Route path="/links" render={() => <Links />} />
-          <Route path="/merch" render={() => <Merch />} />
-          <Route path="/music" render={() => <Music />} />
-          <Route path="/shows" render={() => <Shows />} />
-          <Route path="/secret" render={() => <Secret />} />
-          <Route path="/drinks" render={() => <Drinks />} />
-          <Route path="*" render={() => <ErrorPage />} />
-        </Switch>
-        <SocialLinks />
-        <Footer />
-      </div>
+      <NavBar />
+      <Switch>
+        <Route exact path="/">
+          <Redirect to="/home" />
+        </Route>
+        <Route path="/home" render={() => <Home />} />
+        <Route path="/about-us" render={() => <AboutUs />} />
+        <Route path="/contact" render={() => <Contact />} />
+        <Route path="/links" render={() => <Links />} />
+        <Route path="/merch" render={() => <Merch />} />
+        <Route path="/music" render={() => <Music />} />
+        <Route path="/shows" render={() => <Shows />} />
+        <Route path="/secret" render={() => <Secret />} />
+        <Route path="/drinks" render={() => <Drinks />} />
+        <Route path="*" render={() => <ErrorPage />} />
+      </Switch>
+      <SocialLinks />
+      <Footer />
     </BrowserRouter>
   );
-}
+};
 
 export default App;

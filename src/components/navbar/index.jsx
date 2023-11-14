@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
-import { ReactComponent as HamburgerIcon } from "../../assets/images/icons/navbar/hamburger-icon.svg";
-import { ReactComponent as CloseIcon } from "../../assets/images/icons/navbar/close-icon.svg";
+import { MobileNavButton } from "./mobile-nav-button";
+import { NavItem } from "./nav-item";
 
 // https://tailwindcss.com/blog/utility-friendly-transitions-with-tailwindui-react
 
@@ -33,109 +33,163 @@ function usePageTitle(location) {
   return pageTitle;
 }
 
-const NavBar = () => {
-  const [expanded, setExpanded] = useState(false);
+const MobileNav = ({ expanded, setExpanded, pageTitle }) => {
+  return (
+    <nav
+      className={`text-white w-screen py-2.5 font-semibold ${
+        pageTitle.includes("Links") ? "hidden" : ""
+      }`}
+    >
+      <MobileNavButton
+        expanded={expanded}
+        setExpanded={setExpanded}
+        pageTitle={pageTitle}
+      />
 
-  let pageTitle = usePageTitle(useLocation().pathname);
+      <div
+        id="nav-wrapper"
+        className={`transition-all origin-top duration-150 h-0 translate-x-1
+    ${expanded ? "scale-100" : "scale-0"}
+    `}
+      >
+        <ul id="nav-bar" className={`nav-bar`}>
+          <NavItem
+            pageTitle={pageTitle}
+            title="Home"
+            to="/home"
+            {...{ setExpanded }}
+          />
+          <NavItem
+            pageTitle={pageTitle}
+            title="About Us"
+            to="/about-us"
+            {...{ setExpanded }}
+          />
+          {/**
+        <Link
+          className={`nav-item ${
+            pageTitle === "Links" ? "nav-item-active" : ""
+          }`}
+          to="/links"
+          onClick={() => setExpanded(false)}
+        >
+          Contact & Links
+        </Link>
+        */}
+          <NavItem
+            pageTitle={pageTitle}
+            title="Music"
+            to="/music"
+            {...{ setExpanded }}
+          />
+          <NavItem
+            pageTitle={pageTitle}
+            title="Merch"
+            to="/merch"
+            hidden
+            {...{ setExpanded }}
+          />
+          <NavItem
+            pageTitle={pageTitle}
+            title="Shows"
+            to="/shows"
+            hidden
+            {...{ setExpanded }}
+          />
+        </ul>
+      </div>
+    </nav>
+  );
+};
 
+const DesktopNav = ({ pageTitle, expanded, setExpanded }) => {
   return (
     <nav
       className={`text-white p-2.5 font-semibold ${
         pageTitle.includes("Links") ? "hidden" : ""
       }`}
     >
-      <div className="flex justify-between">
-        <a
-          id="person-bed-icon"
-          href="/home"
-          className="md:hidden p-3.5 text-4xl"
-        >
-          🛌
-        </a>
-        <div className="md:hidden p-3 justify-center text-5xl whitespace-nowrap">
-          {pageTitle}
-        </div>
-        <button
-          data-collapse-toggle="navbar"
-          id="navbar-icon"
-          type="button"
-          className={`md:hidden p-3 justify-end`}
-          aria-controls="navbar"
-          aria-expanded="false"
-          onClick={() => {
-            setExpanded(!expanded);
-          }}
-        >
-          {expanded ? <CloseIcon /> : <HamburgerIcon />}
-        </button>
-      </div>
       <div
         id="nav-wrapper"
         className={`transition-all h-0 origin-top duration-100 md:block
-      ${expanded ? "scale-100 h-full" : "scale-0"} md:scale-100 
-      `}
+  ${expanded ? "scale-100 h-full" : "scale-0"} md:scale-100 
+  `}
       >
         <ul id="nav-bar" className={`nav-bar`}>
-          <Link
-            className={`nav-item ${
-              pageTitle === "Home" ? "nav-item-active" : ""
-            }`}
+          <NavItem
+            pageTitle={pageTitle}
+            title="Home"
             to="/home"
-            aria-current="page"
-            onClick={() => setExpanded(false)}
-          >
-            Home
-          </Link>
-          <Link
-            className={`nav-item ${
-              pageTitle === "About Us" ? "nav-item-active" : ""
-            }`}
+            {...{ setExpanded }}
+          />
+          <NavItem
+            pageTitle={pageTitle}
+            title="About Us"
             to="/about-us"
-            onClick={() => setExpanded(false)}
-          >
-            About Us
-          </Link>
+            {...{ setExpanded }}
+          />
+
           {/**
-          <Link
-            className={`nav-item ${
-              pageTitle === "Links" ? "nav-item-active" : ""
-            }`}
-            to="/links"
-            onClick={() => setExpanded(false)}
-          >
-            Contact & Links
-          </Link>
-          */}
-          <Link
-            className={`nav-item ${
-              pageTitle === "Music" ? "nav-item-active" : ""
-            }`}
+      <Link
+        className={`nav-item ${
+          pageTitle === "Links" ? "nav-item-active" : ""
+        }`}
+        to="/links"
+        onClick={() => setExpanded(false)}
+      >
+        Contact & Links
+      </Link>
+      */}
+          <NavItem
+            pageTitle={pageTitle}
+            title="Music"
             to="/music"
-            onClick={() => setExpanded(false)}
-          >
-            Music
-          </Link>
-          <Link
-            className={`hidden nav-item ${
-              pageTitle === "Merch" ? "nav-item-active" : ""
-            }`}
+            {...{ setExpanded }}
+          />
+          <NavItem
+            pageTitle={pageTitle}
+            title="Merch"
             to="/merch"
-            onClick={() => setExpanded(false)}
-          >
-            Merch
-          </Link>
-          <Link
-            className={`hidden nav-item ${
-              pageTitle === "Shows" ? "nav-item-active" : ""
-            }`}
+            hidden
+            {...{ setExpanded }}
+          />
+          <NavItem
+            pageTitle={pageTitle}
+            title="Shows"
             to="/shows"
-            onClick={() => setExpanded(false)}
-          >
-            Shows
-          </Link>
+            hidden
+            {...{ setExpanded }}
+          />
         </ul>
       </div>
     </nav>
+  );
+};
+
+const NavBar = () => {
+  const [windowDimension, setWindowDimension] = useState(null);
+  const [expanded, setExpanded] = useState(false);
+
+  useEffect(() => {
+    setWindowDimension(window.innerWidth);
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowDimension(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  const isMobile = windowDimension <= 640;
+
+  let pageTitle = usePageTitle(useLocation().pathname);
+
+  return isMobile ? (
+    <MobileNav {...{ expanded, setExpanded, isMobile, pageTitle }} />
+  ) : (
+    <DesktopNav {...{ expanded, setExpanded, isMobile, pageTitle }} />
   );
 };
 
