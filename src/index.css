@@ -2,8 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: #000;
+}
 .nav-bar {
-  @apply transition-all duration-100 ease-in-out flex flex-col md:flex-row items-center justify-between md:mx-14 my-3 text-3xl whitespace-nowrap;
+  @apply transition-all duration-100 ease-in-out flex flex-col md:flex-row items-center justify-between md:mx-14 text-3xl whitespace-nowrap;
 }
 
 .nav-item {
@@ -11,9 +14,9 @@
 }
 
 /* DEBUG SPACINGS HERE */
-* {
+/* * {
   outline: 1px solid #f00 !important;
-}
+} */
 
 .nav-item-active {
   @apply transition ease-in hidden md:block text-orange-300 md:scale-110;

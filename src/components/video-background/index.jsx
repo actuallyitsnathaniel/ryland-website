@@ -3,7 +3,7 @@ import BGVideoWEBM from "../../assets/videos/rylandEP_comp.webm";
 
 function VideoBackground() {
   return (
-    <div className="video-wrapper overflow-clip">
+    <div className="video-wrapper">
       <video
         height={"110%"}
         width={"auto"}

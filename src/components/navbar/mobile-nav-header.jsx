@@ -1,8 +1,8 @@
-export const MobileNavButton = (props) => {
+export const MobileNavHeader = (props) => {
   return (
     <div className="flex">
       <div
-        className={`flex w-full p-3 justify-center text-5xl whitespace-nowrap`}
+        className={`flex w-full pt-5 justify-center text-5xl whitespace-nowrap font-semibold`}
       >
         {props.pageTitle}
       </div>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-import { MobileNavButton } from "./mobile-nav-button";
+import { MobileNavHeader } from "./mobile-nav-header";
 import { NavItem } from "./nav-item";
 
 // https://tailwindcss.com/blog/utility-friendly-transitions-with-tailwindui-react
@@ -36,11 +36,11 @@ function usePageTitle(location) {
 const MobileNav = ({ expanded, setExpanded, pageTitle }) => {
   return (
     <nav
-      className={`text-white w-screen py-2.5 font-semibold ${
+      className={`text-white w-screen fixed font-semibold ${
         pageTitle.includes("Links") ? "hidden" : ""
       }`}
     >
-      <MobileNavButton
+      <MobileNavHeader
         expanded={expanded}
         setExpanded={setExpanded}
         pageTitle={pageTitle}
@@ -48,7 +48,7 @@ const MobileNav = ({ expanded, setExpanded, pageTitle }) => {
 
       <div
         id="nav-wrapper"
-        className={`transition-all origin-top duration-150 h-0 translate-x-1
+        className={`transition-all origin-top duration-150 translate-x-1
     ${expanded ? "scale-100" : "scale-0"}
     `}
       >
