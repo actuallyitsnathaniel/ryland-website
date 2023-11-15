@@ -19,10 +19,10 @@ function Discography() {
   return (
     <div>
       <div>
-        <h2 className="flex text-6xl font-semibold italic justify-center p-10">
+        <h2 className="flex text-6xl font-semibold italic justify-center py-10">
           Singles/EPs
         </h2>
-        <div className="flex flex-wrap w-full justify-center">
+        <div className="flex flex-wrap justify-center">
           <Disc
             artwork={youshouldknow}
             title="You Should Know - EP"
