@@ -3,7 +3,7 @@ const SvgComponent = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 130.456 110.932"
-    className="flex h-[75vh] w-full mx-auto px-10 max-w-xl"
+    className="flex h-[75vh] pt-10 w-full mx-auto my-auto px-10 max-w-xl"
     alt="ryland-bed-logo"
     aria-label="ryland-bed-logo"
   >
