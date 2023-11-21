@@ -27,7 +27,9 @@ function Discography() {
             artwork={youshouldknow}
             title="You Should Know - EP"
             i={7}
-            appleMusicLink={""}
+            appleMusicLink={
+              "https://music.apple.com/us/album/you-should-know-ep/1650078036"
+            }
             spotifyLink={
               "https://open.spotify.com/album/3dcyqNJBbex17eICVzfi4S?si=5FXaa4i5Tz6JzCWZX1u6gg"
             }
