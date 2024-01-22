@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 
 import VideoBackground from "./components/video-background";
 import { SocialLinks } from "./components/social-links";
@@ -22,21 +22,19 @@ const App = () => {
     <BrowserRouter forceRefresh>
       <VideoBackground />
       <NavBar />
-      <Switch>
-        <Route exact path="/">
-          <Redirect to="/home" />
-        </Route>
-        <Route path="/home" render={() => <Home />} />
-        <Route path="/about-us" render={() => <AboutUs />} />
-        <Route path="/contact" render={() => <Contact />} />
-        <Route path="/links" render={() => <Links />} />
-        <Route path="/merch" render={() => <Merch />} />
-        <Route path="/music" render={() => <Music />} />
-        <Route path="/shows" render={() => <Shows />} />
-        <Route path="/secret" render={() => <Secret />} />
+      <Routes>
+        <Route index element={<Navigate replace to="/home" />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/links" element={<Links />} />
+        <Route path="/merch" element={<Merch />} />
+        <Route path="/music" element={<Music />} />
+        <Route path="/shows" element={<Shows />} />
+        <Route path="/secret" element={<Secret />} />
         <Route path="/drinks" render={() => <Drinks />} />
         <Route path="*" render={() => <ErrorPage />} />
-      </Switch>
+      </Routes>
       <SocialLinks />
       <Footer />
     </BrowserRouter>
