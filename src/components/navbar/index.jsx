@@ -33,6 +33,58 @@ function usePageTitle(location) {
   return pageTitle;
 }
 
+const NavItems = ({ expanded, setExpanded, pageTitle }) => {
+  return (
+    <ul id="nav-bar" className={`nav-bar`}>
+      <NavItem
+        pageTitle={pageTitle}
+        title="Home"
+        to="/home"
+        {...{ setExpanded }}
+      />
+      <NavItem
+        pageTitle={pageTitle}
+        title="Music"
+        to="/music"
+        {...{ setExpanded }}
+      />
+      <NavItem
+        pageTitle={pageTitle}
+        title="About Us"
+        to="/about-us"
+        {...{ setExpanded }}
+      />
+      <NavItem
+        pageTitle={pageTitle}
+        title="Press"
+        to="/press"
+        {...{ setExpanded }}
+      />
+      <NavItem
+        pageTitle={pageTitle}
+        title="Links"
+        to="/links"
+        hidden
+        {...{ setExpanded }}
+      />
+      <NavItem
+        pageTitle={pageTitle}
+        title="Merch"
+        to="/merch"
+        hidden
+        {...{ setExpanded }}
+      />
+      <NavItem
+        pageTitle={pageTitle}
+        title="Shows"
+        to="/shows"
+        hidden
+        {...{ setExpanded }}
+      />
+    </ul>
+  );
+};
+
 const MobileNav = ({ expanded, setExpanded, pageTitle }) => {
   return (
     <nav
@@ -52,51 +104,7 @@ const MobileNav = ({ expanded, setExpanded, pageTitle }) => {
     ${expanded ? "scale-100" : "scale-0"}
     `}
       >
-        <ul id="nav-bar" className={`nav-bar`}>
-          <NavItem
-            pageTitle={pageTitle}
-            title="Home"
-            to="/home"
-            {...{ setExpanded }}
-          />
-          <NavItem
-            pageTitle={pageTitle}
-            title="About Us"
-            to="/about-us"
-            {...{ setExpanded }}
-          />
-          {/**
-        <Link
-          className={`nav-item ${
-            pageTitle === "Links" ? "nav-item-active" : ""
-          }`}
-          to="/links"
-          onClick={() => setExpanded(false)}
-        >
-          Contact & Links
-        </Link>
-        */}
-          <NavItem
-            pageTitle={pageTitle}
-            title="Music"
-            to="/music"
-            {...{ setExpanded }}
-          />
-          <NavItem
-            pageTitle={pageTitle}
-            title="Merch"
-            to="/merch"
-            hidden
-            {...{ setExpanded }}
-          />
-          <NavItem
-            pageTitle={pageTitle}
-            title="Shows"
-            to="/shows"
-            hidden
-            {...{ setExpanded }}
-          />
-        </ul>
+        <NavItems {...{ expanded, setExpanded, pageTitle }} />
       </div>
     </nav>
   );
@@ -115,52 +123,7 @@ const DesktopNav = ({ pageTitle, expanded, setExpanded }) => {
   ${expanded ? "scale-100 h-full" : "scale-0"} md:scale-100 
   `}
       >
-        <ul id="nav-bar" className={`nav-bar`}>
-          <NavItem
-            pageTitle={pageTitle}
-            title="Home"
-            to="/home"
-            {...{ setExpanded }}
-          />
-          <NavItem
-            pageTitle={pageTitle}
-            title="About Us"
-            to="/about-us"
-            {...{ setExpanded }}
-          />
-
-          {/**
-      <Link
-        className={`nav-item ${
-          pageTitle === "Links" ? "nav-item-active" : ""
-        }`}
-        to="/links"
-        onClick={() => setExpanded(false)}
-      >
-        Contact & Links
-      </Link>
-      */}
-          <NavItem
-            pageTitle={pageTitle}
-            title="Music"
-            to="/music"
-            {...{ setExpanded }}
-          />
-          <NavItem
-            pageTitle={pageTitle}
-            title="Merch"
-            to="/merch"
-            hidden
-            {...{ setExpanded }}
-          />
-          <NavItem
-            pageTitle={pageTitle}
-            title="Shows"
-            to="/shows"
-            hidden
-            {...{ setExpanded }}
-          />
-        </ul>
+        <NavItems />
       </div>
     </nav>
   );
