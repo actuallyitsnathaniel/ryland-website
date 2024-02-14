@@ -81,26 +81,31 @@ const NavItems = ({ expanded, setExpanded, pageTitle }) => {
 
 const MobileNav = ({ expanded, setExpanded, pageTitle }) => {
   return (
-    <nav
-      className={`text-white w-screen fixed font-semibold ${
-        pageTitle.includes("Links") ? "hidden" : ""
-      }`}
-    >
-      <MobileNavHeader
-        expanded={expanded}
-        setExpanded={setExpanded}
-        pageTitle={pageTitle}
-      />
-
-      <div
-        id="nav-wrapper"
-        className={`transition-all origin-top duration-150 translate-x-1
-    ${expanded ? "scale-100" : "scale-0"}
-    `}
+    <div id="nav-bar" className="overflow-visible">
+      <div className="h-20 backdrop-blur-sm"></div>
+      <nav
+        className={`fixed text-white w-screen top-0 font-semibold transition-all bg-opacity-0 ${
+          pageTitle.includes("Links") && "hidden"
+        } ${
+          expanded &&
+          "backdrop-blur-sm bg-black bg-opacity-75 pb-4 overflow-visible"
+        }`}
       >
-        <NavItems {...{ expanded, setExpanded, pageTitle }} />
-      </div>
-    </nav>
+        <MobileNavHeader
+          expanded={expanded}
+          setExpanded={setExpanded}
+          pageTitle={pageTitle}
+        />
+        <div
+          id="nav-items-wrapper"
+          className={`w-screen mx-auto my-auto origin-top duration-150 scale-0 ${
+            expanded && "scale-100"
+          }`}
+        >
+          <NavItems {...{ expanded, setExpanded, pageTitle }} />
+        </div>
+      </nav>
+    </div>
   );
 };
 
@@ -113,9 +118,7 @@ const DesktopNav = ({ pageTitle, expanded, setExpanded }) => {
     >
       <div
         id="nav-wrapper"
-        className={`transition-all h-0 origin-top duration-100 md:block
-  ${expanded ? "scale-100 h-full" : "scale-0"} md:scale-100 
-  `}
+        className={`transition-all origin-top duration-100`}
       >
         <NavItems />
       </div>

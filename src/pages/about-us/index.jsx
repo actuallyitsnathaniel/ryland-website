@@ -11,7 +11,7 @@ import Press from "../press";
 const AboutUs = () => {
   return (
     <div className="flex flex-wrap flex-col items-center text-4xl text-white min-h-screen my-auto">
-      <div className="flex flex-wrap max-w-1/2 justify-center p-10 h-screen">
+      <div className="flex flex-wrap max-w-1/2 justify-center">
         <BandMember
           profilePic={tom}
           name={"Tom"}

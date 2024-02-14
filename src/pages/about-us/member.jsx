@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-function BandMember(props) {
+const BandMember = (props) => {
   const [expanded, setExpanded] = useState(-1);
   const setActiveMember = (i) => {
     if (i === expanded) {
@@ -22,7 +22,7 @@ function BandMember(props) {
   ];
 
   const unfocused = [
-    "transition-all ease-in-out duration-150 md:hover:scale-110 flex xl:basis-1/3 items-center p-3",
+    "flex flex-col transition-all ease-in-out duration-150 md:hover:scale-110 flex xl:basis-1/3 items-center p-3",
     "about-us-profile-pic",
     "scale-0 hidden",
   ];
@@ -39,12 +39,12 @@ function BandMember(props) {
         alt={props.name}
         className={`${expanded === props.i ? focused[1] : unfocused[1]}`}
       />
-      <p className="font-bold self-center p-3">{`${props.name}`}</p>
+      <p className="font-semibold self-center p-3">{`${props.name}`}</p>
       <div className={`${expanded === props.i ? focused[2] : unfocused[2]}`}>
         {`${props.desc}`}
       </div>
     </div>
   );
-}
+};
 
 export default BandMember;
