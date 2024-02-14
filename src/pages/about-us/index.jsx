@@ -1,5 +1,3 @@
-import React from "react";
-
 import BandMember from "./member";
 
 import tom from "../../assets/images/the-band/tom.png";
@@ -8,10 +6,12 @@ import elias from "../../assets/images/the-band/elias.png";
 import jake from "../../assets/images/the-band/jake.png";
 import nate from "../../assets/images/the-band/nate.png";
 
-function AboutUs() {
+import Press from "../press";
+
+const AboutUs = () => {
   return (
-    <div className="flex items-center justify-center min-h-full text-4xl text-white p-3 pt-20">
-      <div className="flex flex-wrap max-w-1/2 justify-center">
+    <div className="flex flex-wrap flex-col items-center text-4xl text-white min-h-screen my-auto">
+      <div className="flex flex-wrap max-w-1/2 justify-center p-10 h-screen">
         <BandMember
           profilePic={tom}
           name={"Tom"}
@@ -48,8 +48,9 @@ function AboutUs() {
           desc={`Producer and electric guitar player. He'll solo if he feels like it.`}
         />
       </div>
+      <Press />
     </div>
   );
-}
+};
 
 export default AboutUs;

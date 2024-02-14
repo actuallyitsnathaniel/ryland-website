@@ -10,7 +10,6 @@ import Home from "./pages/home";
 import Contact from "./pages/contact";
 import AboutUs from "./pages/about-us";
 import Links from "./pages/links";
-import Press from "./pages/press";
 import Merch from "./pages/merch";
 import Music from "./pages/music";
 import Shows from "./pages/shows";
@@ -28,7 +27,6 @@ const App = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/press" element={<Press />} />
         <Route path="/links" element={<Links />} />
         <Route path="/merch" element={<Merch />} />
         <Route path="/music" element={<Music />} />

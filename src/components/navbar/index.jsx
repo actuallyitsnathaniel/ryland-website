@@ -56,12 +56,6 @@ const NavItems = ({ expanded, setExpanded, pageTitle }) => {
       />
       <NavItem
         pageTitle={pageTitle}
-        title="Press"
-        to="/press"
-        {...{ setExpanded }}
-      />
-      <NavItem
-        pageTitle={pageTitle}
         title="Links"
         to="/links"
         hidden

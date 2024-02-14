@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="flex flex-wrap bg-black text-white text-center justify-center items-center p-3 h-24">
+    <footer className="grid bg-black text-md text-white w-full text-center py-5">
       <p className="grid md:text-md">
         Copyright © {new Date().getFullYear()} Ryland
         <p>
