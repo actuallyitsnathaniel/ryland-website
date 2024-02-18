@@ -1,4 +1,3 @@
-import React from "react";
 import Disc from "./disc";
 
 // Albums
@@ -10,7 +9,7 @@ import itinerary from "../../assets/images/discography/Singles_EPs/Itinerary-EP_
 import youshouldknow from "../../assets/images/discography/Singles_EPs/You-Should-Know-EP.jpeg";
 
 // Singles
-import iblfawn from "../../assets/images/discography/Singles_EPs/I'veBeenLooking-Single_600x600bb.jpeg";
+import iblfawn from "../../assets/images/discography/Singles_EPs/IveBeenLooking-Single_600x600bb.jpeg";
 import karma from "../../assets/images/discography/Singles_EPs/Karma-Single_600x600bb.jpeg";
 import stairwell from "../../assets/images/discography/Singles_EPs/Stairwell-Single_600x600bb.jpeg";
 import talking from "../../assets/images/discography/Singles_EPs/Talking-Single_600x600bb.jpeg";

@@ -8,12 +8,11 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Portrait out now on all platforms!" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/bed-emoji.svg"
+    <meta
+      name="description"
+      content="'You Should Know EP' out now on all platforms!"
     />
+    <link rel="apple-touch-icon" sizes="180x180" href="/bed-emoji.svg" />
     <link rel="mask-icon" href="/bed-emoji.svg" color="#c98c18" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#bb6b01" />
@@ -21,11 +20,9 @@
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link
-      rel="manifest"
-      crossorigin="use-credentials"
-      href="/manifest.json"
-    />
+
+    <!-- <link rel="manifest" crossorigin="use-credentials" href="/manifest.json" /> -->
+
     <!--
       Notice the use of  in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -39,8 +36,16 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/default-passive-events"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/universal-cookie@3/umd/universalCookie.min.js"
+    ></script>
     <div id="root"></div>
-    <script type="module" src="/src/index.jsx"></script>
+    <script type="module" src="/src/main.jsx"></script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
