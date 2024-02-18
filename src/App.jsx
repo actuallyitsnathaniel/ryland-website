@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import VideoBackground from "./components/video-background";
 import { SocialLinks } from "./components/social-links";
@@ -19,7 +19,7 @@ import Drinks from "./pages/drinks";
 
 const App = () => {
   return (
-    <BrowserRouter forceRefresh>
+    <Router forceRefresh>
       <VideoBackground />
       <NavBar />
       <Routes>
@@ -31,12 +31,12 @@ const App = () => {
         <Route path="/music" element={<Music />} />
         <Route path="/shows" element={<Shows />} />
         <Route path="/secret" element={<Secret />} />
-        <Route path="/drinks" render={() => <Drinks />} />
-        <Route path="*" render={() => <ErrorPage />} />
+        <Route path="/drinks" element={<Drinks />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
       <SocialLinks />
       <Footer />
-    </BrowserRouter>
+    </Router>
   );
 };
 

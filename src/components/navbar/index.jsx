@@ -12,8 +12,6 @@ function usePageTitle(location) {
   useEffect(() => {
     const titleMap = [
       { path: "/", title: "Home" },
-      { path: "/home", title: "Home" },
-      { path: "/home/", title: "Home" },
       { path: "/about-us", title: "About Us" },
       { path: "/contact", title: "Contact" },
       { path: "/music", title: "Music" },
@@ -36,12 +34,7 @@ function usePageTitle(location) {
 const NavItems = ({ expanded, setExpanded, pageTitle }) => {
   return (
     <ul id="nav-bar" className={`nav-bar`}>
-      <NavItem
-        pageTitle={pageTitle}
-        title="Home"
-        to="/home"
-        {...{ setExpanded }}
-      />
+      <NavItem pageTitle={pageTitle} title="Home" to="/" {...{ setExpanded }} />
       <NavItem
         pageTitle={pageTitle}
         title="Music"

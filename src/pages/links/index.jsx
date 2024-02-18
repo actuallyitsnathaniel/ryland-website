@@ -13,7 +13,7 @@ function Links() {
   return (
     <main className="flex flex-wrap mx-auto w-fit min-h-screen text-white">
       <div className="space-y-0 pb-3 text-center">
-        <Link exact to={"/home"}>
+        <Link exact to={"/"}>
           <img
             className="mx-auto transition duration-75 mt-10 mb-3 hover:translate-y-1 hover:scale-125"
             src={rylandBed}
