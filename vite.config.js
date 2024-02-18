@@ -6,6 +6,7 @@ import preload from "vite-plugin-preload";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "",
   plugins: [
     react(),
     svgr(),
