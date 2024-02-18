@@ -23,8 +23,7 @@ const App = () => {
       <VideoBackground />
       <NavBar />
       <Routes>
-        <Route index element={<Navigate replace to="/home" />} />
-        <Route path="/home" element={<Home />} />
+        <Route index element={<Home />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/links" element={<Links />} />
