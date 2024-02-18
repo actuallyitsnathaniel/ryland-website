@@ -77,6 +77,7 @@ export default defineConfig({
     commonjsOptions: {
       transformMixedEsModules: false,
     },
+    target: "ES2022",
     outDir: "./build",
   },
   server: {
