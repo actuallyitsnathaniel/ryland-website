@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 const BandMember = (props) => {
   const [expanded, setExpanded] = useState(-1);
   const setActiveMember = (i) => {

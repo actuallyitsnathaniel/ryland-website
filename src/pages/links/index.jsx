@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 import InstagramLogo from "../../components/social-links/instagram-link";
@@ -9,7 +8,7 @@ import YoutubeLink from "../../components/social-links/youtube-link";
 
 import rylandBed from "../../assets/images/icons/ryland-bed/ryland-bed.svg";
 
-function Links() {
+const Links = () => {
   return (
     <main className="flex flex-wrap mx-auto w-fit min-h-screen text-white">
       <div className="space-y-0 pb-3 text-center">
@@ -48,6 +47,6 @@ function Links() {
       </div>
     </main>
   );
-}
+};
 
 export default Links;

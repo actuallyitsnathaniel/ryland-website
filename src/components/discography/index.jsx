@@ -1,4 +1,3 @@
-import React from "react";
 import Disc from "./disc";
 
 // Albums
