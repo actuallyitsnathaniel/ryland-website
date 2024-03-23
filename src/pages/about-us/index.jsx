@@ -24,7 +24,7 @@ const AboutUs = () => {
           profilePic={ron}
           name={"Ron"}
           i={1}
-          desc={`The bassist of the band. He'll riff if he feels like.`}
+          desc={`The bassist of the band. He'll riff if he feels like it.`}
         />
 
         <BandMember
