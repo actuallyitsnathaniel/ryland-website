@@ -12,3 +12,5 @@ const TidalEmbed = () => {
     />
   );
 };
+
+export default TidalEmbed;
