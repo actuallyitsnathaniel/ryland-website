@@ -1,4 +1,4 @@
-export default function AppleMusicEmbed() {
+const AppleMusicEmbed = () => {
   return (
     <iframe
       title="apple-music-embedded"
@@ -17,4 +17,6 @@ export default function AppleMusicEmbed() {
       allow={"autoplay *; encrypted-media *; fullscreen *; clipboard-write"}
     />
   );
-}
+};
+
+export default AppleMusicEmbed;

@@ -1,4 +1,4 @@
-export default function TidalEmbed() {
+const TidalEmbed = () => {
   return (
     <iframe
       className="h-[470px]"
@@ -11,4 +11,4 @@ export default function TidalEmbed() {
       frameBorder={0}
     />
   );
-}
+};

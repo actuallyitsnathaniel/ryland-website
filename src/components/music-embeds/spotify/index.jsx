@@ -1,4 +1,4 @@
-export default function SpotifyEmbed() {
+const SpotifyEmbed = () => {
   return (
     <iframe
       className="h-[418px] sm:h-[470px] md:h-[470px]"
@@ -15,4 +15,6 @@ export default function SpotifyEmbed() {
       }
     />
   );
-}
+};
+
+export default SpotifyEmbed;

@@ -6,7 +6,7 @@ import { NavItem } from "./nav-item";
 
 // https://tailwindcss.com/blog/utility-friendly-transitions-with-tailwindui-react
 
-function usePageTitle(location) {
+const usePageTitle = (location) => {
   const [pageTitle, setPageTitle] = useState("");
 
   useEffect(() => {
@@ -29,7 +29,7 @@ function usePageTitle(location) {
   }, [location]);
 
   return pageTitle;
-}
+};
 
 const NavItems = ({ expanded, setExpanded, pageTitle }) => {
   return (

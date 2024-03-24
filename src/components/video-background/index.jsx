@@ -1,7 +1,7 @@
 import BGVideoMP4 from "../../assets/videos/rylandEP_comp.mp4";
 import BGVideoWEBM from "../../assets/videos/rylandEP_comp.webm";
 
-function VideoBackground() {
+const VideoBackground = () => {
   return (
     <div className="video-wrapper">
       <video
@@ -20,6 +20,6 @@ function VideoBackground() {
       </video>
     </div>
   );
-}
+};
 
 export default VideoBackground;

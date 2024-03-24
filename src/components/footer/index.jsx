@@ -1,4 +1,4 @@
-function Footer() {
+const Footer = () => {
   return (
     <footer className="grid bg-black text-md text-white w-full text-center py-5">
       <p className="grid md:text-md">
@@ -15,6 +15,6 @@ function Footer() {
       </p>
     </footer>
   );
-}
+};
 
 export default Footer;

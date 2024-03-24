@@ -2,7 +2,7 @@ import ShowLink from "..";
 
 import show19th from "../../../assets/images/thumbnails/valley-show.jpeg";
 
-function Jan19() {
+const Jan19 = () => {
   return (
     <ShowLink
       thumbnail={show19th}
@@ -15,6 +15,6 @@ function Jan19() {
       alt={"show-19th"}
     />
   );
-}
+};
 
 export default Jan19;
