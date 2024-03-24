@@ -8,14 +8,14 @@ const Press = () => {
         <div>
           <PressHighlight
             title={"Meet Thomas Wagstaffe | Lead Singer of Ryland"}
-            subtitle={"Write-up by Shoutout LA"}
+            subtitle={"Write-up by 'Shoutout LA'"}
             url={
               "https://shoutoutla.com/meet-thomas-wagstaffe-lead-singer-of-ryland/"
             }
           />
           <PressHighlight
             title={"RYLAND"}
-            subtitle={"Write-up by 'The Artist I Am"}
+            subtitle={"Write-up by 'The Artist I Am'"}
             url={"https://theartistiam.cargo.site/ryland-1"}
           />
         </div>
