@@ -11,10 +11,6 @@ body {
   outline: 1px solid #f00 !important;
 } */
 
-.about-us-profile-pic {
-  @apply max-w-xs w-[66%] p-4;
-}
-
 .video {
   filter: brightness(0.4) blur(15px);
   /* The min width had to be set for both */

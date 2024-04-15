@@ -105,7 +105,7 @@ const MobileNav = ({ expanded, setExpanded, pageTitle }) => {
 const DesktopNav = ({ pageTitle }) => {
   return (
     <nav
-      className={`text-white pt-7 font-semibold 
+      className={`text-white pt-3 font-semibold 
       transition-all duration-100 ease-in-out flex 
       flex-col md:flex-row items-center justify-end 
       md:mx-14 text-3xl whitespace-nowrap ${
