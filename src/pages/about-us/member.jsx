@@ -23,7 +23,7 @@ const BandMember = (props) => {
 
   const unfocused = [
     "flex flex-col transition-all ease-in-out duration-150 md:hover:scale-110 flex xl:basis-1/3 items-center p-3",
-    "about-us-profile-pic",
+    "max-w-xs w-[66%] p-4",
     "scale-0 hidden",
   ];
 
