@@ -6,7 +6,7 @@ import { NavItem } from "./nav-item";
 
 // https://tailwindcss.com/blog/utility-friendly-transitions-with-tailwindui-react
 
-const usePageTitle = (location) => {
+export const usePageTitle = (location) => {
   const [pageTitle, setPageTitle] = useState("");
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const NavItems = ({ classNames, setExpanded, pageTitle }) => {
         to="/about-us"
         {...{ setExpanded }}
       />
-      <NavItem
+      {/* <NavItem
         pageTitle={pageTitle}
         title="Links"
         to="/links"
@@ -67,7 +67,7 @@ const NavItems = ({ classNames, setExpanded, pageTitle }) => {
         to="/shows"
         hidden
         {...{ setExpanded }}
-      />
+      /> */}
     </ul>
   );
 };
@@ -116,7 +116,7 @@ const DesktopNav = ({ pageTitle }) => {
         id="nav-wrapper"
         className={`transition-all origin-top duration-100`}
       >
-        <NavItems />
+        <NavItems {...{ pageTitle }} />
       </div>
     </nav>
   );
@@ -125,6 +125,7 @@ const DesktopNav = ({ pageTitle }) => {
 const NavBar = () => {
   const [windowDimension, setWindowDimension] = useState(null);
   const [expanded, setExpanded] = useState(false);
+  const isMobile = windowDimension <= 640;
 
   useEffect(() => {
     setWindowDimension(window.innerWidth);
@@ -138,7 +139,6 @@ const NavBar = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  const isMobile = windowDimension <= 640;
 
   let pageTitle = usePageTitle(useLocation().pathname);
 
