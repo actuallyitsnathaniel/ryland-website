@@ -31,9 +31,9 @@ const usePageTitle = (location) => {
   return pageTitle;
 };
 
-const NavItems = ({ expanded, setExpanded, pageTitle }) => {
+const NavItems = ({ classNames, setExpanded, pageTitle }) => {
   return (
-    <ul id="nav-bar" className={`nav-bar`}>
+    <ul id="nav-bar" className={`text-3xl ${classNames}`}>
       <NavItem pageTitle={pageTitle} title="Home" to="/" {...{ setExpanded }} />
       <NavItem
         pageTitle={pageTitle}
@@ -74,15 +74,12 @@ const NavItems = ({ expanded, setExpanded, pageTitle }) => {
 
 const MobileNav = ({ expanded, setExpanded, pageTitle }) => {
   return (
-    <div id="nav-bar" className="overflow-visible">
-      <div className="h-20 backdrop-blur-sm"></div>
+    <div id="nav-bar">
+      <div className="h-20" id="mobile-nav-padding"></div>
       <nav
-        className={`fixed text-white w-screen top-0 font-semibold transition-all bg-opacity-0 ${
+        className={`fixed z-[1] bg-gradient-to-b from-black h-30 to-transparent text-white w-screen top-0 font-semibold transition-all bg-opacity-0 ${
           pageTitle.includes("Links") && "hidden"
-        } ${
-          expanded &&
-          "backdrop-blur-sm bg-black bg-opacity-75 pb-4 overflow-visible"
-        }`}
+        } ${expanded && "bg-black h-3/4"}`}
       >
         <MobileNavHeader
           expanded={expanded}
@@ -90,22 +87,28 @@ const MobileNav = ({ expanded, setExpanded, pageTitle }) => {
           pageTitle={pageTitle}
         />
         <div
-          id="nav-items-wrapper"
-          className={`w-screen mx-auto my-auto origin-top duration-150 scale-0 ${
-            expanded && "scale-100"
+          id="nav-wrapper"
+          className={`w-screen flex justify-center origin-top duration-150 h-0 scale-0 ${
+            expanded && "scale-100 h-full"
           }`}
         >
-          <NavItems {...{ expanded, setExpanded, pageTitle }} />
+          <NavItems
+            classNames={`flex flex-col items-center h-full`}
+            {...{ expanded, setExpanded, pageTitle }}
+          />
         </div>
       </nav>
     </div>
   );
 };
 
-const DesktopNav = ({ pageTitle, expanded, setExpanded }) => {
+const DesktopNav = ({ pageTitle }) => {
   return (
     <nav
-      className={`text-white p-2.5 font-semibold ${
+      className={`text-white pt-7 font-semibold 
+      transition-all duration-100 ease-in-out flex 
+      flex-col md:flex-row items-center justify-end 
+      md:mx-14 text-3xl whitespace-nowrap ${
         pageTitle.includes("Links") ? "hidden" : ""
       }`}
     >
