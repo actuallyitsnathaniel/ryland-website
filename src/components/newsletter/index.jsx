@@ -10,11 +10,11 @@ const Newsletter = () => {
   const form = useRef();
 
   const inputStyle =
-    "flex mx-auto m-2 bg-opacity-20 rounded-md bg-white p-2 font-normal place-items-center";
+    "flex mx-auto m-2 bg-opacity-20 rounded-md bg-white p-2 font-normal place-items-center w-full";
 
   const placeholderClasses = " placeholder:text-gray-300 placeholder:text-lg";
 
-  const focusClasses = "focus-visible:outline-none focus:outline-white";
+  const focusClasses = "focus-visible:outline-none focus:outline-white text-lg";
 
   const HandleSubmit = (e) => {
     e.preventDefault();
@@ -58,7 +58,7 @@ const Newsletter = () => {
       <h2 className="text-4xl p-6 text-center">
         Sign up for the band newsletter!
       </h2>
-      <div id="input-wrapper" className="justify-items-center">
+      <div id="input-wrapper" className="justify-items-center w-2/3">
         <div className="grid">
           <input
             type="text"
