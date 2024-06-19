@@ -51,6 +51,12 @@ const NavItems = ({ classNames, setExpanded, pageTitle }) => {
         to="/about-us"
         {...{ setExpanded }}
       />
+      <NavItem
+        pageTitle={pageTitle}
+        title="Contact"
+        to="/contact"
+        {...{ setExpanded }}
+      />
       {/* <NavItem
         pageTitle={pageTitle}
         title="Links"
