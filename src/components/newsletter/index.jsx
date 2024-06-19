@@ -4,8 +4,6 @@ const Newsletter = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -21,7 +19,7 @@ const Newsletter = () => {
   const HandleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    if (firstName != "" && lastName != "" && email != "" && message != "") {
+    if (firstName != "" && lastName != "" && email != "") {
       emailjs
         .sendForm(
           import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -44,7 +42,7 @@ const Newsletter = () => {
 
   const HandleDisabled = () => {
     if (!submitted) {
-      if (firstName != "" && lastName != "" && email != "" && message != "") {
+      if (firstName != "" && lastName != "" && email != "") {
         return false;
       }
     }
