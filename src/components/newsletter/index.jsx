@@ -94,12 +94,12 @@ const Newsletter = () => {
         <button
           type="submit"
           className={
-            "flex transition duration-75 font-semibold px-5 py-3 m-5 mx-auto rounded-lg outline outline-2 outline-white disabled:opacity-25 hover:enabled:-translate-y-1 hover:enabled:bg-gray-400 hover:enabled:bg-opacity-30 hover:enabled:outline-none"
+            "flex transition duration-75 px-5 py-3 m-5 mx-auto rounded-lg outline outline-2 outline-white disabled:opacity-25 hover:enabled:-translate-y-1 hover:enabled:bg-gray-400 hover:enabled:bg-opacity-30 hover:enabled:outline-none"
           }
           disabled={HandleDisabled()}
           onClick={HandleSubmit}
         >
-          Submit
+          Sign Up
         </button>
       </div>
     </form>
