@@ -34,7 +34,10 @@ export const usePageTitle = (location) => {
 
 const NavItems = ({ classNames, setExpanded, pageTitle }) => {
   return (
-    <ul id="nav-bar" className={`text-3xl ${classNames}`}>
+    <ul
+      id="nav-bar"
+      className={`flex text-3xl sm:justify-around ${classNames}`}
+    >
       <NavItem pageTitle={pageTitle} title="Home" to="/" {...{ setExpanded }} />
       <NavItem
         pageTitle={pageTitle}
@@ -107,13 +110,18 @@ const DesktopNav = ({ pageTitle }) => {
   return (
     <>
       <nav
-        className={`flex fixed px-10 w-screen text-white origin-top pt-3 font-semibold 
+        className={`flex fixed px-6 text-white origin-top pt-3 font-semibold 
       transition-all duration-100 ease-in-out whitespace-nowrap ${
         pageTitle.includes("Links") ? "hidden" : ""
       }`}
       >
-        <NavItems {...{ pageTitle }} />
-        <SocialLinks />
+        <div>
+          <NavItems {...{ pageTitle }} />
+        </div>
+
+        <div className="fixed right-4">
+          <SocialLinks />
+        </div>
       </nav>
       <div id="nav-bar-spacer" className="pt-20" />
     </>

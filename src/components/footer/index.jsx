@@ -1,18 +1,25 @@
+import { SocialLinks } from "../social-links";
+
 const Footer = () => {
   return (
-    <footer className="grid bg-black text-md text-white w-full text-center py-5">
-      <p className="grid md:text-md">
-        Copyright © {new Date().getFullYear()} Ryland
-        <p>
-          powered by{" "}
-          <a
-            className="underline underline-offset-8 "
-            href="mailto:nathanielrbowman@gmail.com"
-          >
-            nathaniel bowman
-          </a>
+    <footer className="grid text-md text-white w-full text-center pt-5">
+      <div className="bg-black py-4">
+        <div className="sm:hidden flex justify-center">
+          <SocialLinks />
+        </div>
+        <p className="grid md:text-md">
+          Copyright © {new Date().getFullYear()} Ryland
+          <p>
+            powered by{" "}
+            <a
+              className="underline underline-offset-8 "
+              href="mailto:nathanielrbowman@gmail.com"
+            >
+              nathaniel bowman
+            </a>
+          </p>
         </p>
-      </p>
+      </div>
     </footer>
   );
 };

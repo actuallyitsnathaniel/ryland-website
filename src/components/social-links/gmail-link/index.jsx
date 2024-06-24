@@ -11,7 +11,7 @@ const GmailLogo = () => {
       <img
         alt="gmail"
         src={GmailColor}
-        className="h-8 saturate-0 hover:saturate-100 contrast-[150%] to-black hover:contrast-100 transition ease-in-out duration-100 hover:scale-110"
+        className="h-10 saturate-0 hover:saturate-100 contrast-[150%] to-black hover:contrast-100 transition ease-in-out duration-100 hover:scale-110"
       />
     </a>
   );

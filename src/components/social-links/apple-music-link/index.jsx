@@ -10,7 +10,7 @@ const AppleMusicLink = () => {
     >
       <img
         src={AppleMusicSVG}
-        className="transition-all duration-75 h-8 w-auto rounded-[8px] hover:scale-110 hover:bg-gradient-to-b from-[#fa57c1] via-[#b166cc] to-[#69a6f9]"
+        className="transition-all duration-75 h-10 w-auto rounded-[8px] hover:scale-110 hover:bg-gradient-to-b from-[#fa57c1] via-[#b166cc] to-[#69a6f9]"
         alt="apple-music-alt"
       />
     </a>

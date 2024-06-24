@@ -8,10 +8,10 @@ const SpotifyLink = () => {
     >
       <svg
         loading="lazy"
-        height="30px"
-        width="30px"
+        height="40px"
+        width="40px"
         viewBox="0 0 305 305"
-        className="transition-all duration-75 h-8 rounded-full fill-white hover:scale-110 hover:fill-[#1DB954]"
+        className="transition-all duration-75 h-10 rounded-full fill-white hover:scale-110 hover:fill-[#1DB954]"
         alt="spotify-alt"
       >
         <path

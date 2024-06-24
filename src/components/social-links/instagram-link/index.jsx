@@ -8,7 +8,7 @@ const InstagramLogo = () => {
     >
       <svg
         viewBox="-3 -3 30 30"
-        className="transition ease-in-out duration-100 h-8 w-8 rounded-[7px] bg-white hover:fill-white hover:scale-110 hover:bg-gradient-to-tr from-[#feda75] via-[#d62976] to-[#962fbf]"
+        className="transition ease-in-out duration-100 h-10 rounded-[7px] bg-white hover:fill-white hover:scale-110 hover:bg-gradient-to-tr from-[#feda75] via-[#d62976] to-[#962fbf]"
         alt="ig-logo"
       >
         <path
