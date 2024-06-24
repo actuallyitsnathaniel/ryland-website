@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import VideoBackground from "./components/video-background";
-import { SocialLinks } from "./components/social-links";
 import NavBar from "./components/navbar";
 import Footer from "./components/footer";
 
@@ -33,7 +32,6 @@ const App = () => {
         <Route path="/drinks" element={<Drinks />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
-      <SocialLinks />
       <Footer />
     </Router>
   );

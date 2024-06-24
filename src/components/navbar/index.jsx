@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 
 import { MobileNavHeader } from "./mobile-nav-header";
 import { NavItem } from "./nav-item";
+import { SocialLinks } from "../social-links";
 
 // https://tailwindcss.com/blog/utility-friendly-transitions-with-tailwindui-react
 
@@ -104,21 +105,18 @@ const MobileNav = ({ expanded, setExpanded, pageTitle }) => {
 
 const DesktopNav = ({ pageTitle }) => {
   return (
-    <nav
-      className={`text-white pt-3 font-semibold 
-      transition-all duration-100 ease-in-out flex 
-      flex-col md:flex-row items-center justify-end 
-      md:mx-14 text-3xl whitespace-nowrap ${
+    <>
+      <nav
+        className={`flex fixed px-10 w-screen text-white origin-top pt-3 font-semibold 
+      transition-all duration-100 ease-in-out whitespace-nowrap ${
         pageTitle.includes("Links") ? "hidden" : ""
       }`}
-    >
-      <div
-        id="nav-wrapper"
-        className={`transition-all origin-top duration-100`}
       >
         <NavItems {...{ pageTitle }} />
-      </div>
-    </nav>
+        <SocialLinks />
+      </nav>
+      <div id="nav-bar-spacer" className="pt-20" />
+    </>
   );
 };
 

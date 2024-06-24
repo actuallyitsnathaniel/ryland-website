@@ -3,7 +3,7 @@ import GmailColor from "../../../assets/images/icons/gmail-color.svg";
 const GmailLogo = () => {
   return (
     <a
-      className="transition-all duration-100 p-3 md:hover:-translate-y-2 group"
+      className="transition-all duration-100 p-2 md:hover:translate-y-2 group"
       href="mailto:weareryland@gmail.com"
       target="_blank"
       rel="noopener noreferrer"
@@ -11,7 +11,7 @@ const GmailLogo = () => {
       <img
         alt="gmail"
         src={GmailColor}
-        className="h-16 saturate-0 hover:saturate-100 contrast-[150%] to-black hover:contrast-100 transition ease-in-out duration-100 hover:scale-110 "
+        className="h-8 saturate-0 hover:saturate-100 contrast-[150%] to-black hover:contrast-100 transition ease-in-out duration-100 hover:scale-110"
       />
     </a>
   );

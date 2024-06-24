@@ -1,17 +1,17 @@
 const SpotifyLink = () => {
   return (
     <a
-      className="transition-all duration-100 p-3 md:hover:-translate-y-2"
+      className="transition-all duration-100 p-2 md:hover:translate-y-2"
       href="https://open.spotify.com/artist/3Ekf9P1XRqjP3MBwl6iFVT?si=FFIpHWiOSdiy5jAlhFPCWg"
       target="_blank"
       rel="noopener noreferrer"
     >
       <svg
         loading="lazy"
-        height="75px"
-        width="75px"
+        height="30px"
+        width="30px"
         viewBox="0 0 305 305"
-        className="transition-all duration-75 h-16 rounded-full fill-white hover:scale-110 hover:fill-[#1DB954]"
+        className="transition-all duration-75 h-8 rounded-full fill-white hover:scale-110 hover:fill-[#1DB954]"
         alt="spotify-alt"
       >
         <path
