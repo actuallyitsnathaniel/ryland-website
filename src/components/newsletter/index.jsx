@@ -6,6 +6,7 @@ const Newsletter = () => {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   const form = useRef();
 
@@ -16,27 +17,28 @@ const Newsletter = () => {
 
   const focusClasses = "focus-visible:outline-none focus:outline-white text-lg";
 
-  const HandleSubmit = (e) => {
+  const HandleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
     setIsSubmitting(true);
     if (firstName != "" && lastName != "" && email != "") {
-      emailjs
-        .sendForm(
-          import.meta.env.VITE_EMAILJS_SERVICE_ID,
-          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-          form.current,
-          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-        )
-        .then(
-          (result) => {
-            console.log(result.text);
-            setIsSubmitting(false);
-            setSubmitted(true);
+      try {
+        const response = await fetch("https://your-railway-app-url/subscribe", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
           },
-          (error) => {
-            console.log(error.text);
-          }
-        );
+          body: JSON.stringify({ email }),
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to subscribe");
+        }
+
+        setSubmitted(true);
+      } catch (err) {
+        setError("Failed to subscribe. Please try again.");
+      }
     }
   };
 
