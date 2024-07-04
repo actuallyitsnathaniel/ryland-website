@@ -10,7 +10,6 @@ import AboutUs from "./pages/about-us";
 import Links from "./pages/links";
 import Merch from "./pages/merch";
 import Music from "./pages/music";
-import Newsletter from "./components/newsletter";
 import Shows from "./pages/shows";
 import Secret from "./pages/secret";
 import ErrorPage from "./pages/error";
