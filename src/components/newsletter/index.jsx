@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { capitalizeFirstLetter, validateEmail } from "../../util/util";
-import EmailRender from "./emailRender";
+import EmailTemplate from "./email";
 
 const Newsletter = () => {
   const [firstName, setFirstName] = useState("");
@@ -26,22 +26,24 @@ const Newsletter = () => {
 
       try {
         const response = await fetch(
-          `/api/getData?firstName=${firstName}&lastName=${lastName}&emailAddress=${email}`,
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
+          `/api/getData?firstName=${encodeURIComponent(
+            firstName
+          )}&lastName=${encodeURIComponent(
+            lastName
+          )}&emailAddress=${encodeURIComponent(
+            email
+          )}&htmlBody=${encodeURIComponent(EmailTemplate({ firstName }))}`
         );
 
         if (!response.ok) {
           throw new Error("Failed to submit data");
         }
 
+        const data = await response.json(); // assuming your response is JSON
+        console.log("Server response:", data);
+
         setSubmitted(true);
         setIsSubmitting(false);
-        alert("Form submitted successfully!");
       } catch (error) {
         console.error("Error submitting form:", error);
         setError("Failed to submit form. Please try again later.");
@@ -59,7 +61,6 @@ const Newsletter = () => {
       !(firstName !== "" && lastName !== "" && validateEmail(email))
     );
   };
-
   return (
     <form
       id="connect-form"
@@ -112,7 +113,7 @@ const Newsletter = () => {
           }
           disabled={handleDisabled()}
         >
-          {isSubmitting ? "Submitting..." : "Sign Up"}
+          {isSubmitting ? "Submitting..." : submitted ? "Thanks!" : "Sign Up"}
         </button>
       </div>
     </form>

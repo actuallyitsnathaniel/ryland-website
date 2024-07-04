@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer";
 
 const handler = (req, res) => {
-  const { firstName, lastName, emailAddress } = req.query; // Extracting query parameters
+  const { firstName, lastName, emailAddress, htmlBody } = req.query; // Extracting query parameters
 
   const bandEmail = process.env.BAND_EMAIL;
   const bandPass = process.env.BAND_PASS;
@@ -9,6 +9,7 @@ const handler = (req, res) => {
   // Creating Nodemailer transporter
   const transporter = nodemailer.createTransport({
     service: "gmail",
+    secure: true,
     auth: {
       user: bandEmail,
       pass: bandPass,
@@ -28,11 +29,17 @@ const handler = (req, res) => {
     from: "nathanielrbowman@gmail.com",
     to: emailAddress,
     subject: "🛌 Heyo! Thanks for connecting with us!",
-    text: `${firstName},
-
-Thanks so much for signing up! Now you're IN. You'll be the first to hear about anything new with us.
-No need to think about this further, we'll tell you when we're ready. 🫡`,
+    html: htmlBody,
   };
+  //   const newMemberMailOptions = {
+  //     from: "nathanielrbowman@gmail.com",
+  //     to: emailAddress,
+  //     subject: "🛌 Heyo! Thanks for connecting with us!",
+  //     text: `${firstName},
+
+  // Thanks so much for signing up! Now you're IN. You'll be the first to hear about anything new with us.
+  // No need to think about this further, we'll tell you when we're ready. 🫡`,
+  //   };
 
   // Sending emails
   transporter.sendMail(bandMailOptions, (error, info) => {
