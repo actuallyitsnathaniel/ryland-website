@@ -134,7 +134,7 @@ const DesktopNav = ({ pageTitle }) => {
 const NavBar = () => {
   const [windowDimension, setWindowDimension] = useState(null);
   const [expanded, setExpanded] = useState(false);
-  const isMobile = windowDimension <= 640;
+  const isMobile = windowDimension <= 822; // custom width for custom navbar
 
   useEffect(() => {
     setWindowDimension(window.innerWidth);
