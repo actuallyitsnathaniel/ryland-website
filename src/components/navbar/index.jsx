@@ -36,7 +36,7 @@ const NavItems = ({ classNames, setExpanded, pageTitle }) => {
   return (
     <ul
       id="nav-bar"
-      className={`flex text-3xl sm:justify-around ${classNames}`}
+      className={`flex text-3xl sm:justify-around ${classNames && classNames}`}
     >
       <NavItem pageTitle={pageTitle} title="Home" to="/" {...{ setExpanded }} />
       <NavItem
@@ -49,6 +49,12 @@ const NavItems = ({ classNames, setExpanded, pageTitle }) => {
         pageTitle={pageTitle}
         title="About Us"
         to="/about-us"
+        {...{ setExpanded }}
+      />
+      <NavItem
+        pageTitle={pageTitle}
+        title="Contact"
+        to="/contact"
         {...{ setExpanded }}
       />
       {/* <NavItem
@@ -110,20 +116,17 @@ const DesktopNav = ({ pageTitle }) => {
   return (
     <>
       <nav
-        className={`flex fixed px-6 text-white origin-top pt-3 font-semibold 
+        className={`flex w-1/2 fixed px-6 text-white origin-top pt-3 font-semibold 
       transition-all duration-100 ease-in-out whitespace-nowrap ${
         pageTitle.includes("Links") ? "hidden" : ""
       }`}
       >
-        <div>
-          <NavItems {...{ pageTitle }} />
-        </div>
-
+        <NavItems classNames={"w-full justify-stretch"} {...{ pageTitle }} />
         <div className="fixed right-4">
           <SocialLinks />
         </div>
       </nav>
-      <div id="nav-bar-spacer" className="pt-20" />
+      <div id="nav-bar-spacer" className="pt-20 " />
     </>
   );
 };
@@ -131,7 +134,7 @@ const DesktopNav = ({ pageTitle }) => {
 const NavBar = () => {
   const [windowDimension, setWindowDimension] = useState(null);
   const [expanded, setExpanded] = useState(false);
-  const isMobile = windowDimension <= 640;
+  const isMobile = windowDimension <= 822; // custom width for custom navbar
 
   useEffect(() => {
     setWindowDimension(window.innerWidth);
