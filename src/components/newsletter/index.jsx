@@ -1,5 +1,5 @@
-import { useRef, useState } from "react";
-
+import { useEffect, useRef, useState } from "react";
+import { capitalizeFirstLetter, validateEmail } from "../../util/util";
 const Newsletter = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -21,7 +21,7 @@ const Newsletter = () => {
     e.preventDefault();
     setError("");
     setIsSubmitting(true);
-    if (firstName != "" && lastName != "" && email != "") {
+    if (firstName != "" && lastName != "" && validateEmail(email)) {
       try {
         const response = await fetch("https://your-railway-app-url/subscribe", {
           method: "POST",
@@ -44,7 +44,7 @@ const Newsletter = () => {
 
   const HandleDisabled = () => {
     if (!submitted) {
-      if (firstName != "" && lastName != "" && email != "") {
+      if (firstName != "" && lastName != "" && validateEmail(email)) {
         return false;
       }
     }
