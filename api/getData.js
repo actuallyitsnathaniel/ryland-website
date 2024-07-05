@@ -20,6 +20,10 @@ const handler = (req, res) => {
     attachDataUrls: true,
   });
 
+  transporter.on("debug", (info) => {
+    console.log("Nodemailer debug:", info);
+  });
+
   // Email options for band notifier
   const bandMailOptions = {
     from: emailAddress,
