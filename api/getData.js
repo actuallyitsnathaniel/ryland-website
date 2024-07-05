@@ -14,6 +14,7 @@ const handler = (req, res) => {
       user: bandEmail,
       pass: bandPass,
     },
+    attachDataUrls: true,
   });
 
   // Email options for band notifier
