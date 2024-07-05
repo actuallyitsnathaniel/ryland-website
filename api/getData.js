@@ -5,8 +5,8 @@ const handler = (req, res) => {
 
   const bandEmail = process.env.BAND_EMAIL;
   const bandPass = process.env.BAND_PASS;
-  const baseUrl = process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
+  const baseUrl = process.env.VERCEL_BRANCH_URL
+    ? `https://${process.env.VERCEL_BRANCH_URL}`
     : "http://localhost:3000";
 
   // Creating Nodemailer transporter

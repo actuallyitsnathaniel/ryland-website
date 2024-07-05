@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => {
   return {
     base: "",
     define: {
-      "process.env.VERCEL_URL": JSON.stringify(env.VERCEL_URL),
+      "process.env.VERCEL_BRANCH_URL": JSON.stringify(env.VERCEL_BRANCH_URL),
     },
     plugins: [
       react(),
