@@ -13,7 +13,7 @@ const handler = (req, res) => {
   // Creating Nodemailer transporter
   const transporter = nodemailer.createTransport({
     service: "gmail",
-    // secure: true,
+    secure: true,
     auth: {
       user: bandEmail,
       pass: bandPass,
@@ -62,15 +62,6 @@ const handler = (req, res) => {
       },
     ],
   };
-  //   const newMemberMailOptions = {
-  //     from: "nathanielrbowman@gmail.com",
-  //     to: emailAddress,
-  //     subject: "🛌 Heyo! Thanks for connecting with us!",
-  //     text: `${firstName},
-
-  // Thanks so much for signing up! Now you're IN. You'll be the first to hear about anything new with us.
-  // No need to think about this further, we'll tell you when we're ready. 🫡`,
-  //   };
 
   // Sending emails
   transporter.sendMail(bandMailOptions, (error, info) => {
