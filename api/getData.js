@@ -1,5 +1,6 @@
 import nodemailer from "nodemailer";
 
+// Vercel deployment protection must be OFF
 const handler = (req, res) => {
   const { firstName, lastName, emailAddress, htmlBody } = req.query; // Extracting query parameters
 
