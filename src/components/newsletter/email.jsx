@@ -13,10 +13,6 @@ import {
 import { render } from "@react-email/render";
 
 export default function EmailTemplate({ firstName }) {
-  const baseUrl = process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "";
-
   return render(
     <Html lang="en">
       <Tailwind>
