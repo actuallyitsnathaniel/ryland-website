@@ -62,9 +62,6 @@ const Newsletter = () => {
     );
   };
 
-  useEffect(() => {
-    console.log(`${baseUrl}/static/spotify.png`);
-  });
   return (
     <form
       id="connect-form"

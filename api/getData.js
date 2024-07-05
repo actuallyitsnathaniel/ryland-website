@@ -5,6 +5,9 @@ const handler = (req, res) => {
 
   const bandEmail = process.env.BAND_EMAIL;
   const bandPass = process.env.BAND_PASS;
+  const baseUrl = process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "http://localhost:3000";
 
   // Creating Nodemailer transporter
   const transporter = nodemailer.createTransport({
@@ -31,6 +34,28 @@ const handler = (req, res) => {
     to: emailAddress,
     subject: "🛌 Heyo! Thanks for connecting with us!",
     html: htmlBody,
+    attachments: [
+      {
+        filename: "spotify.png",
+        path: `${baseUrl}/static/spotify.png`,
+        cid: "spotify",
+      },
+      {
+        filename: "apple-music.png",
+        path: `${baseUrl}/static/apple-music.png`,
+        cid: "apple-music",
+      },
+      {
+        filename: "instagram.png",
+        path: `${baseUrl}/static/instagram.png`,
+        cid: "instagram",
+      },
+      {
+        filename: "gmail.png",
+        path: `${baseUrl}/static/gmail.png`,
+        cid: "gmail",
+      },
+    ],
   };
   //   const newMemberMailOptions = {
   //     from: "nathanielrbowman@gmail.com",

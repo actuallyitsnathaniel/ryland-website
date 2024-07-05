@@ -31,7 +31,7 @@ export default function EmailTemplate({ firstName }) {
           <div className="flex flex-row gap-x-10 py-4">
             <Link href="https://open.spotify.com/artist/3Ekf9P1XRqjP3MBwl6iFVT?si=FFIpHWiOSdiy5jAlhFPCWg">
               <Img
-                src={`${baseUrl}/static/spotify.png`}
+                src={`cid:spotify`}
                 alt="spotify-ryland"
                 width="40"
                 height="40"
@@ -39,7 +39,7 @@ export default function EmailTemplate({ firstName }) {
             </Link>
             <Link href="https://music.apple.com/us/artist/ryland/1472845950">
               <Img
-                src={`${baseUrl}/static/apple-music.png`}
+                src={`cid:apple-music`}
                 alt="apple-music-ryland"
                 width="40"
                 height="40"
@@ -47,17 +47,15 @@ export default function EmailTemplate({ firstName }) {
             </Link>
             <Link href="https://instagram.com/weareryland">
               <Img
-                src={`${baseUrl}/static/instagram.png`}
+                src={`cid:instagram`}
                 alt="instagram-ryland"
-                width="52"
-                height="52"
-                className="-translate-y-1.5"
+                width="40"
+                height="40"
               />
             </Link>
             <Link href="mailto:weareryland@gmail.com">
               <Img
-                className="saturate-0"
-                src={`${baseUrl}/static/gmail.png`}
+                src={`cid:gmail`}
                 alt="gmail-ryland"
                 width="40"
                 height="40"
