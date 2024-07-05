@@ -11,10 +11,7 @@ import {
   Text,
 } from "@react-email/components";
 import { render } from "@react-email/render";
-import spotify from "../../assets/images/icons/music-platforms/png/spotify.png";
-import appleMusic from "../../assets/images/icons/music-platforms/png/apple-music.png";
-import instagram from "../../assets/images/icons/instagram.png";
-import gmail from "../../assets/images/icons/gmail.png";
+import { baseUrl } from "../../util/util";
 
 export default function EmailTemplate({ firstName }) {
   return render(
@@ -31,13 +28,18 @@ export default function EmailTemplate({ firstName }) {
           <Text>With the utmost love,</Text>
           <Text className="font-bold italic">Ryland</Text>
           <Hr />
-          {/* <div className="flex flex-row gap-x-10 py-4">
+          <div className="flex flex-row gap-x-10 py-4">
             <Link href="https://open.spotify.com/artist/3Ekf9P1XRqjP3MBwl6iFVT?si=FFIpHWiOSdiy5jAlhFPCWg">
-              <Img src={spotify} alt="spotify-ryland" width="40" height="40" />
+              <Img
+                src={`cid:spotify`}
+                alt="spotify-ryland"
+                width="40"
+                height="40"
+              />
             </Link>
             <Link href="https://music.apple.com/us/artist/ryland/1472845950">
               <Img
-                src={appleMusic}
+                src={`cid:apple-music`}
                 alt="apple-music-ryland"
                 width="40"
                 height="40"
@@ -45,23 +47,21 @@ export default function EmailTemplate({ firstName }) {
             </Link>
             <Link href="https://instagram.com/weareryland">
               <Img
-                src={instagram}
+                src={`cid:instagram`}
                 alt="instagram-ryland"
-                width="52"
-                height="52"
-                className="-translate-y-1.5"
+                width="40"
+                height="40"
               />
             </Link>
             <Link href="mailto:weareryland@gmail.com">
               <Img
-                className="saturate-0"
-                src={gmail}
+                src={`cid:gmail`}
                 alt="gmail-ryland"
                 width="40"
                 height="40"
               />
             </Link>
-          </div> */}
+          </div>
         </Container>
       </Tailwind>
     </Html>,

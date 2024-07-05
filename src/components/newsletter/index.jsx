@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { capitalizeFirstLetter, validateEmail } from "../../util/util";
+import { useEffect, useState } from "react";
+import { capitalizeFirstLetter, validateEmail, baseUrl } from "../../util/util";
 import EmailTemplate from "./email";
 
 const Newsletter = () => {
@@ -61,6 +61,7 @@ const Newsletter = () => {
       !(firstName !== "" && lastName !== "" && validateEmail(email))
     );
   };
+
   return (
     <form
       id="connect-form"

@@ -13,6 +13,6 @@ export const validateEmail = (string) => {
   return regex.test(string);
 };
 
-export const sendEmail = (firstName, lastName, email) => {
-  // TODO: https://react.email/docs/introduction
-};
+export const baseUrl = process.env.VERCEL_BRANCH_URL
+  ? `https://${process.env.VERCEL_BRANCH_URL}`
+  : "";
