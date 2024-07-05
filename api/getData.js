@@ -12,7 +12,7 @@ const handler = (req, res) => {
   // Creating Nodemailer transporter
   const transporter = nodemailer.createTransport({
     service: "gmail",
-    secure: true,
+    // secure: true,
     auth: {
       user: bandEmail,
       pass: bandPass,
