@@ -11,6 +11,7 @@ import {
   Text,
 } from "@react-email/components";
 import { render } from "@react-email/render";
+import { baseUrl } from "../../util/util";
 
 export default function EmailTemplate({ firstName }) {
   return render(
