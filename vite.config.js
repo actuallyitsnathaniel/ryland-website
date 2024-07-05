@@ -6,8 +6,12 @@ import preload from "vite-plugin-preload";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd(), "");
   return {
     base: "",
+    define: {
+      "process.env.VERCEL_URL": JSON.stringify(env.VERCEL_URL),
+    },
     plugins: [
       react(),
       svgr(),
