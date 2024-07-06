@@ -28,14 +28,14 @@ const handler = (req, res) => {
   // Email options for band notifier
   const bandMailOptions = {
     from: emailAddress,
-    to: "nathanielrbowman@gmail.com", // Replace with your band's email
+    to: bandEmail, // Replace with your band's email
     subject: "New Subscriber",
     text: `${firstName} ${lastName} - ${emailAddress} has been added to the email list!`,
   };
 
   // Email options for new member
   const newMemberMailOptions = {
-    from: "nathanielrbowman@gmail.com",
+    from: bandEmail,
     to: emailAddress,
     subject: "🛌 Heyo! Thanks for connecting with us!",
     html: htmlBody,

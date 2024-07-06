@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { capitalizeFirstLetter, validateEmail, baseUrl } from "../../util/util";
+import { capitalizeFirstLetter, validateEmail } from "../../util/util";
 import EmailTemplate from "./email";
 
 const Newsletter = () => {
