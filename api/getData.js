@@ -1,7 +1,8 @@
 import nodemailer from "nodemailer";
+import axios from "axios";
 
-// Vercel deployment protection must be OFF
-const handler = (req, res) => {
+// Check vercel deployment protection on lower envs
+const handler = async (req, res) => {
   const { firstName, lastName, emailAddress, htmlBody } = req.query; // Extracting query parameters
 
   const bandEmail = process.env.BAND_EMAIL;
@@ -9,6 +10,7 @@ const handler = (req, res) => {
   const baseUrl = process.env.VERCEL_BRANCH_URL
     ? `https://${process.env.VERCEL_BRANCH_URL}`
     : "http://localhost:3000";
+  const webAppURL = process.env.WEB_APP_URL;
 
   // Creating Nodemailer transporter
   const transporter = nodemailer.createTransport({
@@ -63,26 +65,35 @@ const handler = (req, res) => {
     ],
   };
 
-  // Sending emails
-  transporter.sendMail(bandMailOptions, (error, info) => {
-    if (error) {
-      console.error("Error sending band notifier email:", error);
-      // Handle error appropriately
-    } else {
-      console.log("Band notifier email sent:", info.response);
-      // Handle success appropriately
-    }
-  });
+  try {
+    // Sending band notifier email
+    await transporter.sendMail(bandMailOptions);
+    console.log("Band notifier email sent");
 
-  transporter.sendMail(newMemberMailOptions, (error, info) => {
-    if (error) {
-      console.error("Error sending new member email:", error);
-      res.status(500).send("Failed to send emails");
-    } else {
-      console.log("New member email sent:", info.response);
-      res.status(200).json({ message: "Emails sent successfully" });
-    }
-  });
+    // Sending new member email
+    await transporter.sendMail(newMemberMailOptions);
+    console.log("New member email sent");
+
+    // Prepare data for Google Sheets
+    const sheetData = {
+      timestamp: new Date().toISOString(),
+      firstName: firstName,
+      lastName: lastName,
+      emailAddress,
+      emailAddress,
+    };
+
+    // Send data to Google Sheets
+    await axios.post(webAppURL, sheetData);
+    console.log("Data sent to Google Sheets");
+
+    res
+      .status(200)
+      .json({ message: "Emails sent and data logged to Google Sheets" });
+  } catch (error) {
+    console.error("Error:", error);
+    res.status(500).send("Failed to send emails or log data to Google Sheets");
+  }
 };
 
 export default handler;

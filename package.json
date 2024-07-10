@@ -13,6 +13,7 @@
   "dependencies": {
     "@react-email/components": "0.0.21",
     "@react-email/render": "0.0.16",
+    "axios": "^1.7.2",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "nodemailer": "^6.9.14",
