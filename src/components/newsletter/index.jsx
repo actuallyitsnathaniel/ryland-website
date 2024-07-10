@@ -69,7 +69,7 @@ const Newsletter = () => {
       onSubmit={handleSubmit}
     >
       <h2 className="text-4xl p-6 text-center">
-        Sign up for the band newsletter!
+        Sign up for the band newsletter! 🧑🏻‍💻
       </h2>
       <div id="input-wrapper" className="justify-items-center w-2/3">
         <div className="grid">
@@ -109,9 +109,11 @@ const Newsletter = () => {
         {error && <p className="text-red-500">{error}</p>}
         <button
           type="submit"
-          className={
-            "flex transition duration-75 px-5 py-3 m-5 mx-auto rounded-lg outline outline-2 outline-white disabled:opacity-25 hover:enabled:-translate-y-1 hover:enabled:bg-gray-400 hover:enabled:bg-opacity-30 hover:enabled:outline-none"
-          }
+          className={`flex transition duration-75 px-5 py-3 m-5 mx-auto rounded-lg 
+            outline outline-2 outline-white disabled:opacity-25 
+            hover:enabled:-translate-y-1 hover:enabled:bg-gray-400 
+            hover:enabled:bg-opacity-30 hover:enabled:outline-none
+            ${isSubmitting && "animate-bounce"}`}
           disabled={handleDisabled()}
         >
           {isSubmitting ? "Submitting..." : submitted ? "Thanks!" : "Sign Up"}
