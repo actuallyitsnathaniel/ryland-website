@@ -7,44 +7,30 @@ import AppleMusic from "../../components/social-links/apple-music-link";
 import YoutubeLink from "../../components/social-links/youtube-link";
 
 import rylandBed from "../../assets/images/icons/ryland-bed/ryland-bed.svg";
+import Newsletter from "../../components/newsletter";
 
 const Links = () => {
   return (
-    <main className="flex flex-wrap mx-auto w-fit min-h-screen text-white">
-      <div className="space-y-0 pb-3 text-center">
-        <Link exact to={"/"}>
-          <img
-            className="mx-auto transition duration-75 mt-10 mb-3 hover:translate-y-1 hover:scale-125"
-            src={rylandBed}
-            alt="ryland-bed"
-          />
-        </Link>
-
-        <div className="h-8" />
-        <h1 className="hidden p-3 text-[150%] md:text-5xl font-semibold whitespace-nowrap underline underline-offset-8">
-          Upcoming Shows
-        </h1>
-
-        <div className="h-8" />
-        <h1 className="text-[150%] md:text-5xl font-semibold underline underline-offset-8">
-          Links
-        </h1>
-        <div className="flex flex-row items-center text-4xl">
-          <SpotifyLink /> Spotify
-        </div>
-        <div className="flex flex-row  items-center text-4xl">
-          <AppleMusic /> Apple Music
-        </div>
-        <div className="flex flex-row items-center text-center text-4xl">
-          <YoutubeLink /> Youtube
-        </div>
-        <div className="flex flex-row items-center text-4xl">
-          <InstagramLogo /> Instagram
-        </div>
-        <div className="flex flex-row  items-center text-center text-4xl">
-          <GmailLogo /> Gmail
-        </div>
+    <main className="flex flex-col mx-auto w-fit -mt-14 text-white px-8">
+      <Link exact to={"/"}>
+        <img
+          className="mx-auto max-w-[275px] transition duration-75 p-10 scale-125"
+          src={rylandBed}
+          alt="ryland-bed"
+        />
+      </Link>
+      <div className="flex flex-wrap mx-auto gap-4 justify-around items-center">
+        <SpotifyLink />
+        <InstagramLogo />
+        <AppleMusic />
+        <YoutubeLink />
       </div>
+      <h1 className="hidden p-3 text-[150%] md:text-5xl font-semibold whitespace-nowrap underline underline-offset-8">
+        <div className="h-8" />
+        Upcoming Shows
+      </h1>
+
+      <Newsletter />
     </main>
   );
 };
