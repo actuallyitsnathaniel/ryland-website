@@ -51,12 +51,17 @@ const NavItems = ({ classNames, setExpanded, pageTitle }) => {
         to="/about-us"
         {...{ setExpanded }}
       />
-      <NavItem
-        pageTitle={pageTitle}
-        title="Contact"
-        to="/contact"
+      <button
+        className={`flex transition ease-in-out p-4 px-4 duration-150 hover:scale-110 hover:text-orange-200 cursor-pointer ${
+          pageTitle == "Contact"
+            ? "transition ease-in text-orange-300 md:scale-110 hidden sm:inline-block"
+            : ""
+        }`}
+        onClick={() => console.log("TODO: setup modal handler")}
         {...{ setExpanded }}
-      />
+      >
+        Contact
+      </button>
       {/* <NavItem
         pageTitle={pageTitle}
         title="Links"

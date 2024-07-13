@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
+import { useState } from "react";
 import VideoBackground from "./components/video-background";
 import NavBar from "./components/navbar";
 import Footer from "./components/footer";
@@ -14,16 +14,17 @@ import Shows from "./pages/shows";
 import Secret from "./pages/secret";
 import ErrorPage from "./pages/error";
 import Drinks from "./pages/drinks";
+import Newsletter from "./components/newsletter";
 
 const App = () => {
+  const [modal, setModal] = useState(false);
   return (
     <Router forceRefresh>
       <VideoBackground />
-      <NavBar />
+      <NavBar {...{ modal, setModal }} />
       <Routes>
         <Route index element={<Home />} />
         <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/contact" element={<Contact />} />
         <Route path="/links" element={<Links />} />
         <Route path="/merch" element={<Merch />} />
         <Route path="/music" element={<Music />} />
@@ -32,6 +33,7 @@ const App = () => {
         <Route path="/drinks" element={<Drinks />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
+      {/* <Newsletter {...{ modal, setModal }} /> */}
       <Footer />
     </Router>
   );
