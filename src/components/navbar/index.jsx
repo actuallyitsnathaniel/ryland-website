@@ -32,7 +32,7 @@ export const usePageTitle = (location) => {
   return pageTitle;
 };
 
-const NavItems = ({ classNames, setExpanded, pageTitle }) => {
+const NavItems = ({ classNames, setExpanded, pageTitle, setModalOpen }) => {
   return (
     <ul
       id="nav-bar"
@@ -57,7 +57,7 @@ const NavItems = ({ classNames, setExpanded, pageTitle }) => {
             ? "transition ease-in text-orange-300 md:scale-110 hidden sm:inline-block"
             : ""
         }`}
-        onClick={() => console.log("TODO: setup modal handler")}
+        onClick={() => setModalOpen(true)}
         {...{ setExpanded }}
       >
         Contact
@@ -87,7 +87,7 @@ const NavItems = ({ classNames, setExpanded, pageTitle }) => {
   );
 };
 
-const MobileNav = ({ expanded, setExpanded, pageTitle }) => {
+const MobileNav = ({ expanded, setExpanded, pageTitle, setModalOpen }) => {
   return (
     <div id="nav-bar">
       <div className="h-20" id="mobile-nav-padding"></div>
@@ -109,7 +109,7 @@ const MobileNav = ({ expanded, setExpanded, pageTitle }) => {
         >
           <NavItems
             classNames={`flex flex-col items-center h-full`}
-            {...{ expanded, setExpanded, pageTitle }}
+            {...{ expanded, setExpanded, pageTitle, setModalOpen }}
           />
         </div>
       </nav>
@@ -117,7 +117,7 @@ const MobileNav = ({ expanded, setExpanded, pageTitle }) => {
   );
 };
 
-const DesktopNav = ({ pageTitle }) => {
+const DesktopNav = ({ pageTitle, setModalOpen }) => {
   return (
     <>
       <nav
@@ -126,7 +126,10 @@ const DesktopNav = ({ pageTitle }) => {
         pageTitle.includes("Links") ? "hidden" : ""
       }`}
       >
-        <NavItems classNames={"w-full justify-stretch"} {...{ pageTitle }} />
+        <NavItems
+          classNames={"w-full justify-stretch"}
+          {...{ pageTitle, setModalOpen }}
+        />
         <div className="fixed right-4">
           <SocialLinks />
         </div>
@@ -136,7 +139,7 @@ const DesktopNav = ({ pageTitle }) => {
   );
 };
 
-const NavBar = () => {
+const NavBar = ({ setModalOpen }) => {
   const [windowDimension, setWindowDimension] = useState(null);
   const [expanded, setExpanded] = useState(false);
   const isMobile = windowDimension <= 822; // custom width for custom navbar
@@ -157,9 +160,13 @@ const NavBar = () => {
   let pageTitle = usePageTitle(useLocation().pathname);
 
   return isMobile ? (
-    <MobileNav {...{ expanded, setExpanded, isMobile, pageTitle }} />
+    <MobileNav
+      {...{ expanded, setExpanded, isMobile, pageTitle, setModalOpen }}
+    />
   ) : (
-    <DesktopNav {...{ expanded, setExpanded, isMobile, pageTitle }} />
+    <DesktopNav
+      {...{ expanded, setExpanded, isMobile, pageTitle, setModalOpen }}
+    />
   );
 };
 

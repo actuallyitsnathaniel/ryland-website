@@ -18,3 +18,10 @@ export const validateEmail = (string) => {
 export const baseUrl = process.env.VERCEL_BRANCH_URL
   ? `https://${process.env.VERCEL_BRANCH_URL}`
   : "";
+
+export const inputStyle =
+  "flex mx-auto m-2 bg-opacity-20 rounded-md bg-white p-2 font-normal place-items-center w-full";
+export const inputPlaceholderClasses =
+  " placeholder:text-gray-300 placeholder:text-lg";
+export const inputFocusClasses =
+  "focus-visible:outline-none focus:outline-white text-lg";

@@ -2,10 +2,10 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import VideoBackground from "./components/video-background";
 import NavBar from "./components/navbar";
+import Modal from "./components/modal";
 import Footer from "./components/footer";
 
 import Home from "./pages/home";
-import Contact from "./pages/contact";
 import AboutUs from "./pages/about-us";
 import Links from "./pages/links";
 import Merch from "./pages/merch";
@@ -17,11 +17,11 @@ import Drinks from "./pages/drinks";
 import Newsletter from "./components/newsletter";
 
 const App = () => {
-  const [modal, setModal] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
   return (
     <Router forceRefresh>
       <VideoBackground />
-      <NavBar {...{ modal, setModal }} />
+      <NavBar {...{ setModalOpen }} />
       <Routes>
         <Route index element={<Home />} />
         <Route path="/about-us" element={<AboutUs />} />
@@ -33,7 +33,10 @@ const App = () => {
         <Route path="/drinks" element={<Drinks />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
-      {/* <Newsletter {...{ modal, setModal }} /> */}
+      <Modal {...{ isModalOpen, setModalOpen }}>
+        <Newsletter />
+      </Modal>
+
       <Footer />
     </Router>
   );

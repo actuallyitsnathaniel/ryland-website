@@ -11,7 +11,7 @@ import Newsletter from "../../components/newsletter";
 
 const Links = () => {
   return (
-    <main className="flex flex-col mx-auto w-fit -mt-14 text-white px-8">
+    <main className="flex flex-col mx-auto w-fit -mt-14 text-white px-8 gap-10">
       <Link exact to={"/"}>
         <img
           className="mx-auto max-w-[275px] transition duration-75 p-10 scale-125"
