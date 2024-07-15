@@ -2,26 +2,26 @@ import { useRef, useEffect } from "react";
 
 const Modal = ({ isModalOpen, setModalOpen, children }) => {
   const CloseButton = () => (
-    <button
+    <div
       data-collapse-toggle="navbar"
       id="navbar-icon"
       type="button"
-      className={`flex justify-end z-[1] -translate-x-8 translate-y-8`}
+      className={`flex justify-end z-[1] translate-y-16 -translate-x-4`}
       aria-controls="navbar"
       aria-expanded="false"
       onClick={() => {
         setModalOpen(false);
       }}
     >
-      <div className="scale-75">
+      <button className="scale-75 p-5">
         <span
           className={`fixed w-12 h-1 bg-white rounded-sm origin-top-left rotate-45 -translate-x-4 -translate-y-5`}
         />
         <span
           className={`fixed w-12 h-1 bg-white rounded-sm origin-bottom-left -rotate-45 -translate-x-4 translate-y-3`}
         />
-      </div>
-    </button>
+      </button>
+    </div>
   );
   const modalRef = useRef(null);
 
