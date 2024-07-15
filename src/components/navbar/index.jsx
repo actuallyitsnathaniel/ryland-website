@@ -92,7 +92,7 @@ const MobileNav = ({ expanded, setExpanded, pageTitle, setModalOpen }) => {
     <div id="nav-bar">
       <div className="h-20" id="mobile-nav-padding"></div>
       <nav
-        className={`fixed z-[1] bg-gradient-to-b from-black h-30 to-transparent text-white w-screen top-0 font-semibold transition-all bg-opacity-0 ${
+        className={`fixed z-[1] bg-gradient-to-b from-black h-30 to-transparent text-white w-screen top-0  transition-all bg-opacity-0 ${
           pageTitle.includes("Links") && "hidden"
         } ${expanded && "bg-black h-3/4"}`}
       >
@@ -121,7 +121,7 @@ const DesktopNav = ({ pageTitle, setModalOpen }) => {
   return (
     <>
       <nav
-        className={`flex w-1/2 fixed px-6 text-white origin-top pt-3 font-semibold 
+        className={`flex w-1/2 fixed px-6 text-white origin-top pt-3  
       transition-all duration-100 ease-in-out whitespace-nowrap ${
         pageTitle.includes("Links") ? "hidden" : ""
       }`}

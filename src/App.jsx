@@ -19,26 +19,28 @@ import Newsletter from "./components/newsletter";
 const App = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   return (
-    <Router forceRefresh>
-      <VideoBackground />
-      <NavBar {...{ setModalOpen }} />
-      <Routes>
-        <Route index element={<Home />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/links" element={<Links />} />
-        <Route path="/merch" element={<Merch />} />
-        <Route path="/music" element={<Music />} />
-        <Route path="/shows" element={<Shows />} />
-        <Route path="/secret" element={<Secret />} />
-        <Route path="/drinks" element={<Drinks />} />
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
-      <Modal {...{ isModalOpen, setModalOpen }}>
-        <Newsletter />
-      </Modal>
+    <div className="">
+      <Router forceRefresh>
+        <VideoBackground />
+        <NavBar {...{ setModalOpen }} />
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/links" element={<Links />} />
+          <Route path="/merch" element={<Merch />} />
+          <Route path="/music" element={<Music />} />
+          <Route path="/shows" element={<Shows />} />
+          <Route path="/secret" element={<Secret />} />
+          <Route path="/drinks" element={<Drinks />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+        <Modal {...{ isModalOpen, setModalOpen }}>
+          <Newsletter />
+        </Modal>
 
-      <Footer />
-    </Router>
+        <Footer />
+      </Router>
+    </div>
   );
 };
 

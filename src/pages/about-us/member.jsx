@@ -39,7 +39,7 @@ const BandMember = (props) => {
         alt={props.name}
         className={`${expanded === props.i ? focused[1] : unfocused[1]}`}
       />
-      <p className="font-semibold self-center p-3">{`${props.name}`}</p>
+      <p className=" self-center p-3">{`${props.name}`}</p>
       <div className={`${expanded === props.i ? focused[2] : unfocused[2]}`}>
         {`${props.desc}`}
       </div>

@@ -25,7 +25,7 @@ const Links = () => {
         <AppleMusic />
         <YoutubeLink />
       </div>
-      <h1 className="hidden p-3 text-[150%] md:text-5xl font-semibold whitespace-nowrap underline underline-offset-8">
+      <h1 className="hidden p-3 text-[150%] md:text-5xl  whitespace-nowrap underline underline-offset-8">
         <div className="h-8" />
         Upcoming Shows
       </h1>
