@@ -18,6 +18,8 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+        "sans-phudu": ["Phudu", ...defaultTheme.fontFamily.sans],
+        "sans-josefin": ["Josefin Sans", ...defaultTheme.fontFamily.sans],
       },
     },
   },

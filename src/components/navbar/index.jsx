@@ -36,7 +36,9 @@ const NavItems = ({ classNames, setExpanded, pageTitle, setModalOpen }) => {
   return (
     <ul
       id="nav-bar"
-      className={`flex text-3xl sm:justify-around ${classNames && classNames}`}
+      className={`flex text-3xl lowercase sm:justify-around ${
+        classNames && classNames
+      }`}
     >
       <NavItem pageTitle={pageTitle} title="Home" to="/" {...{ setExpanded }} />
       <NavItem
@@ -60,7 +62,7 @@ const NavItems = ({ classNames, setExpanded, pageTitle, setModalOpen }) => {
         onClick={() => setModalOpen(true)}
         {...{ setExpanded }}
       >
-        Contact
+        contact
       </button>
       {/* <NavItem
         pageTitle={pageTitle}
@@ -119,7 +121,7 @@ const MobileNav = ({ expanded, setExpanded, pageTitle, setModalOpen }) => {
 
 const DesktopNav = ({ pageTitle, setModalOpen }) => {
   return (
-    <>
+    <div className="backdrop-blur-sm bg-orange-900 bg-opacity-15">
       <nav
         className={`flex w-1/2 fixed px-6 text-white origin-top pt-3  
       transition-all duration-100 ease-in-out whitespace-nowrap ${
@@ -135,7 +137,7 @@ const DesktopNav = ({ pageTitle, setModalOpen }) => {
         </div>
       </nav>
       <div id="nav-bar-spacer" className="pt-20 " />
-    </>
+    </div>
   );
 };
 
@@ -159,14 +161,18 @@ const NavBar = ({ setModalOpen }) => {
 
   let pageTitle = usePageTitle(useLocation().pathname);
 
-  return isMobile ? (
-    <MobileNav
-      {...{ expanded, setExpanded, isMobile, pageTitle, setModalOpen }}
-    />
-  ) : (
-    <DesktopNav
-      {...{ expanded, setExpanded, isMobile, pageTitle, setModalOpen }}
-    />
+  return (
+    <div className="z-10">
+      {isMobile ? (
+        <MobileNav
+          {...{ expanded, setExpanded, isMobile, pageTitle, setModalOpen }}
+        />
+      ) : (
+        <DesktopNav
+          {...{ expanded, setExpanded, isMobile, pageTitle, setModalOpen }}
+        />
+      )}
+    </div>
   );
 };
 

@@ -11,33 +11,10 @@ body {
   outline: 1px solid #f00 !important;
 } */
 
-.video {
-  filter: brightness(0.4) blur(15px);
-  /* The min width had to be set for both */
-  min-width: 220vh;
-  transform: translateY(-300px);
-  justify-content: center;
-  align-content: center;
-  overflow: hidden;
-  object-fit: fill;
-}
-
 .video-wrapper {
   background-color: #000;
   position: fixed;
   display: flex;
-  min-width: 230vh;
+  min-width: 100%;
   z-index: -1;
-}
-
-@media and min-width(600px) {
-  .video {
-    filter: brightness(0.75) blur(10px);
-    /* The min width had to be set for both */
-    min-width: 60vw;
-    justify-content: center;
-    align-content: center;
-    overflow: hidden;
-    object-fit: fill;
-  }
 }

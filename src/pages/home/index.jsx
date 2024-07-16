@@ -3,14 +3,15 @@ import { MusicLinks } from "../../components/music-embeds";
 
 const Home = () => {
   return (
-    <div className="flex flex-col h-full justify-between">
-      <RylandBedIcon />
+    <div className="flex flex-col h-full justify-between min-h-screen">
+      <div className="flex flex-grow"></div>
+      {/* <RylandBedIcon />
       <div className="flex-col text-center text-white" hidden>
         <h1 className="p-3 text-[150%] md:text-5xl  whitespace-nowrap">
           Upcoming Shows
         </h1>
       </div>
-      <MusicLinks />
+      <MusicLinks /> */}
     </div>
   );
 };

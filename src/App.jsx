@@ -19,7 +19,7 @@ import Newsletter from "./components/newsletter";
 const App = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   return (
-    <div className="">
+    <div className="font-sans-josefin">
       <Router forceRefresh>
         <VideoBackground />
         <NavBar {...{ setModalOpen }} />

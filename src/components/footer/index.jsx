@@ -2,7 +2,7 @@ import { SocialLinks } from "../social-links";
 
 const Footer = () => {
   return (
-    <footer className="grid text-md text-white w-full text-center pt-5">
+    <footer className="grid text-md text-white w-full text-center pt-5 mt-auto">
       <div className="bg-black py-4">
         <div className="sm:hidden flex justify-center">
           <SocialLinks />

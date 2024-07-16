@@ -1,9 +1,9 @@
-import BGVideoMP4 from "../../assets/videos/rylandEP_comp.mp4";
-import BGVideoWEBM from "../../assets/videos/rylandEP_comp.webm";
+import BGVideoMP4 from "../../assets/videos/stuck-at-home.mp4";
+import BGVideoWEBM from "../../assets/videos/stuck-at-home.webm";
 
 const VideoBackground = () => {
   return (
-    <div className="video-wrapper">
+    <div className="video-wrapper w-full h-full ">
       <video
         height={"110%"}
         width={"auto"}
@@ -13,7 +13,7 @@ const VideoBackground = () => {
         muted
         playsInline
         disablePictureInPicture
-        className="video"
+        className="object-cover w-full h-full"
       >
         <source src={BGVideoMP4} type="video/MP4" />
         <source src={BGVideoWEBM} type="video/webm" />
