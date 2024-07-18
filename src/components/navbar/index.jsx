@@ -37,7 +37,7 @@ const NavItems = ({ classNames, setExpanded, pageTitle, setModalOpen }) => {
     <ul
       id="nav-bar"
       className={`flex text-3xl lowercase sm:justify-around ${
-        classNames && classNames
+        !!classNames && classNames
       }`}
     >
       <NavItem pageTitle={pageTitle} title="Home" to="/" {...{ setExpanded }} />
@@ -54,11 +54,12 @@ const NavItems = ({ classNames, setExpanded, pageTitle, setModalOpen }) => {
         {...{ setExpanded }}
       />
       <button
-        className={`flex transition ease-in-out p-4 px-4 duration-150 hover:scale-110 hover:text-orange-200 cursor-pointer ${
-          pageTitle == "Contact"
-            ? "transition ease-in text-orange-300 md:scale-110 hidden sm:inline-block"
-            : ""
-        }`}
+        className={`flex transition ease-in-out p-4 px-4 duration-150 
+          hover:scale-110 hover:text-orange-200 cursor-pointer ${
+            pageTitle == "Contact"
+              ? "transition ease-in text-orange-300 md:scale-110 hidden sm:inline-block"
+              : ""
+          }`}
         onClick={() => setModalOpen(true)}
         {...{ setExpanded }}
       >
@@ -92,7 +93,6 @@ const NavItems = ({ classNames, setExpanded, pageTitle, setModalOpen }) => {
 const MobileNav = ({ expanded, setExpanded, pageTitle, setModalOpen }) => {
   return (
     <div id="nav-bar">
-      <div className="h-20" id="mobile-nav-padding"></div>
       <nav
         className={`fixed z-[1] bg-gradient-to-b from-black h-30 to-transparent text-white w-screen top-0  transition-all bg-opacity-0 ${
           pageTitle.includes("Links") && "hidden"
@@ -121,15 +121,15 @@ const MobileNav = ({ expanded, setExpanded, pageTitle, setModalOpen }) => {
 
 const DesktopNav = ({ pageTitle, setModalOpen }) => {
   return (
-    <div className="backdrop-blur-sm bg-orange-900 bg-opacity-15">
+    <div className="fixed flex flex-row w-screen top-0 backdrop-blur-0 bg-opacity-35">
       <nav
-        className={`flex w-1/2 fixed px-6 text-white origin-top pt-3  
+        className={`flex w-1/3 px-6 text-white items-center
       transition-all duration-100 ease-in-out whitespace-nowrap ${
         pageTitle.includes("Links") ? "hidden" : ""
       }`}
       >
         <NavItems
-          classNames={"w-full justify-stretch"}
+          classNames={"w-full justify-between gap-0"}
           {...{ pageTitle, setModalOpen }}
         />
         <div className="fixed right-4">
@@ -162,7 +162,8 @@ const NavBar = ({ setModalOpen }) => {
   let pageTitle = usePageTitle(useLocation().pathname);
 
   return (
-    <div className="z-10">
+    <div className="z-[3]">
+      <div className="h-20" id="mobile-nav-padding"></div>
       {isMobile ? (
         <MobileNav
           {...{ expanded, setExpanded, isMobile, pageTitle, setModalOpen }}

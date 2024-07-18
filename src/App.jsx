@@ -19,7 +19,7 @@ import Newsletter from "./components/newsletter";
 const App = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   return (
-    <div className="font-sans-josefin">
+    <div className="font-sans-karla">
       <Router forceRefresh>
         <VideoBackground />
         <NavBar {...{ setModalOpen }} />
@@ -37,7 +37,6 @@ const App = () => {
         <Modal {...{ isModalOpen, setModalOpen }}>
           <Newsletter />
         </Modal>
-
         <Footer />
       </Router>
     </div>

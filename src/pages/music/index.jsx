@@ -16,7 +16,7 @@ import talking from "../../assets/images/discography/Singles_EPs/Talking-Single_
 
 const Music = () => {
   return (
-    <div className="flex flex-wrap justify-center text-white">
+    <div className="flex flex-wrap flex-grow justify-center text-white">
       <Discography>
         <Discography.Disc
           artwork={youshouldknow}
