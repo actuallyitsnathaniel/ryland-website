@@ -3,7 +3,10 @@ import { MusicLinks } from "../../components/music-embeds";
 
 const Home = () => {
   return (
-    <div className="flex flex-col h-full justify-between min-h-screen">
+    <div
+      id="home"
+      className="flex flex-col h-full w-screen justify-stretch snap-center"
+    >
       <div className="flex flex-grow"></div>
       {/* <RylandBedIcon />
       <div className="flex-col text-center text-white" hidden>

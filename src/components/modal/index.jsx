@@ -41,7 +41,7 @@ const Modal = ({ isModalOpen, setModalOpen, children }) => {
   return (
     <div
       id="modal-wrapper"
-      className={`fixed grid mx-auto top-0 text-white w-screen h-screen 
+      className={`fixed grid mx-auto -top-10 sm:top-0 text-white w-screen h-screen 
     z-10 bg-opacity-80 backdrop-blur-lg transition-transform duration-300 ${
       isModalOpen ? "scale-100" : "scale-0 after:duration-300:hidden"
     }`}

@@ -12,14 +12,14 @@ export const usePageTitle = (location) => {
 
   useEffect(() => {
     const titleMap = [
-      { path: "/", title: "Home" },
-      { path: "/about-us", title: "About Us" },
-      { path: "/contact", title: "Contact" },
-      { path: "/music", title: "Music" },
-      { path: "/merch", title: "Merch" },
-      { path: "/shows", title: "Shows" },
-      { path: "/secret", title: "Secret" },
-      { path: "/links", title: "Links" },
+      { path: "/", title: "home" },
+      { path: "#about-us", title: "about us" },
+      { path: "#contact", title: "contact" },
+      { path: "#music", title: "music" },
+      { path: "#merch", title: "merch" },
+      { path: "#shows", title: "shows" },
+      { path: "#secret", title: "secret" },
+      { path: "#links", title: "links" },
     ];
 
     const curTitle = titleMap.find((item) => item.path === location);
@@ -36,21 +36,26 @@ const NavItems = ({ classNames, setExpanded, pageTitle, setModalOpen }) => {
   return (
     <ul
       id="nav-bar"
-      className={`flex text-3xl lowercase sm:justify-around ${
+      className={`flex text-3xl sm:justify-around ${
         !!classNames && classNames
       }`}
     >
-      <NavItem pageTitle={pageTitle} title="Home" to="/" {...{ setExpanded }} />
       <NavItem
         pageTitle={pageTitle}
-        title="Music"
-        to="/music"
+        title="home"
+        to="#home"
         {...{ setExpanded }}
       />
       <NavItem
         pageTitle={pageTitle}
-        title="About Us"
-        to="/about-us"
+        title="music"
+        to="#music"
+        {...{ setExpanded }}
+      />
+      <NavItem
+        pageTitle={pageTitle}
+        title="about us"
+        to="#about-us"
         {...{ setExpanded }}
       />
       <button
@@ -94,9 +99,9 @@ const MobileNav = ({ expanded, setExpanded, pageTitle, setModalOpen }) => {
   return (
     <div id="nav-bar">
       <nav
-        className={`fixed z-[1] bg-gradient-to-b from-black h-30 to-transparent text-white w-screen top-0  transition-all bg-opacity-0 ${
+        className={`fixed z-[1] backdrop-blur-md h-30 text-white w-screen top-0 transition-all bg-opacity-0 ${
           pageTitle.includes("Links") && "hidden"
-        } ${expanded && "bg-black h-3/4"}`}
+        } ${expanded && "bg-black bg-opacity-80 h-full"}`}
       >
         <MobileNavHeader
           expanded={expanded}
@@ -106,11 +111,11 @@ const MobileNav = ({ expanded, setExpanded, pageTitle, setModalOpen }) => {
         <div
           id="nav-wrapper"
           className={`w-screen flex justify-center origin-top duration-150 h-0 scale-0 ${
-            expanded && "scale-100 h-full"
+            expanded && "scale-100 h-[80%]"
           }`}
         >
           <NavItems
-            classNames={`flex flex-col items-center h-full`}
+            classNames={`flex flex-col justify-around items-center`}
             {...{ expanded, setExpanded, pageTitle, setModalOpen }}
           />
         </div>
@@ -162,8 +167,8 @@ const NavBar = ({ setModalOpen }) => {
   let pageTitle = usePageTitle(useLocation().pathname);
 
   return (
-    <div className="z-[3]">
-      <div className="h-20" id="mobile-nav-padding"></div>
+    <div id="navbar" className="z-[2]">
+      <div className="pt-20" id="mobile-nav-padding"></div>
       {isMobile ? (
         <MobileNav
           {...{ expanded, setExpanded, isMobile, pageTitle, setModalOpen }}

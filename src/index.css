@@ -7,14 +7,6 @@ body {
 }
 
 /* DEBUG SPACINGS HERE */
-/* * {
+* {
   outline: 1px solid #f00 !important;
-} */
-
-.video-wrapper {
-  background-color: #000;
-  position: fixed;
-  display: flex;
-  min-width: 100%;
-  z-index: -1;
 }
