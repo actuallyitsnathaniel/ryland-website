@@ -24,7 +24,7 @@ export const usePageTitle = (location) => {
     const curTitle = titleMap.find((item) => item.path === location);
     if (curTitle && curTitle.title) {
       setPageTitle(curTitle.title);
-      document.title = "Ryland - " + curTitle.title;
+      document.title = "ryland - " + curTitle.title;
     }
   }, [location]);
 
