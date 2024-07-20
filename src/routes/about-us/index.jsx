@@ -15,16 +15,11 @@ const AboutUs = () => {
   // about them
   let location = useLocation().hash;
   return (
-    <div
-      id="about-us"
-      className={`${
-        location.includes("about-us") ? "flex" : "hidden"
-      } flex-col text-white w-screen`}
-    >
+    <div id="about-us" className={``}>
       <div className="mt-16" />
       <div
-        className="flex flex-wrap flex-grow flex-col items-center 
-        snap-center text-4xl text-white min-h-screen my-auto"
+        className="text-white flex flex-wrap flex-grow flex-col items-center 
+        snap-center text-4xl min-h-screen w-screen my-auto"
       >
         <div className="flex flex-wrap max-w-1/2 justify-center">
           <BandMember

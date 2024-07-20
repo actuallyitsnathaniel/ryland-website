@@ -11,11 +11,7 @@ import Newsletter from "../../components/newsletter";
 const Links = () => {
   let location = useLocation().hash;
   return (
-    <main
-      className={`${
-        location.includes("links") ? "flex" : "hidden"
-      } flex-col mx-auto w-fit text-white px-8 gap-10`}
-    >
+    <main className={``}>
       <div className="mt-16" />
       <Link exact to={"/"}>
         <img
