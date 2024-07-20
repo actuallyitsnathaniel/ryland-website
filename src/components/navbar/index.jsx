@@ -52,7 +52,7 @@ const NavBar = ({ setModalOpen }) => {
   let pageTitle = usePageTitle(useLocation().pathname);
 
   return (
-    <div id="navbar" className="z-[2]">
+    <div id="navbar" className="fixed z-[2]">
       {/* TODO: fix navigation. currently goes to top of page. don't want that. */}
       {isMobile ? (
         <MobileNav

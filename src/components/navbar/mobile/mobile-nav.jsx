@@ -14,11 +14,7 @@ export const MobileNav = ({
           pageTitle.includes("Links") && "hidden"
         } ${expanded && "bg-black bg-opacity-80 h-full"}`}
       >
-        <MobileNavHeader
-          expanded={expanded}
-          setExpanded={setExpanded}
-          pageTitle={pageTitle}
-        />
+        <MobileNavHeader {...{ expanded, setExpanded, pageTitle }} />
         <div
           id="nav-wrapper"
           className={`w-screen flex justify-center origin-top duration-150 h-0 scale-0 ${

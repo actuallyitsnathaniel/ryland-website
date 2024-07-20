@@ -11,11 +11,11 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
-      {
-        path: "#home",
-      },
-      { path: "#music" },
-      { path: "#about-us" },
+      // {
+      //   path: "#home",
+      // },
+      // { path: "#music" },
+      // { path: "#about-us" },
     ],
   },
   { errorElement: <ErrorPage /> },
