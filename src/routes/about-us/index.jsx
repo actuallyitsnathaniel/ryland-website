@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import BandMember from "./member";
 
 import tom from "../../assets/images/the-band/tom.png";
@@ -13,26 +14,18 @@ const AboutUs = () => {
   // TODO: implement context to adjust video BG to
   // zoom into each band member and list something
   // about them
-
-  const [windowDimension, setWindowDimension] = useState(null);
-  // const isMobile = windowDimension <= 822;
-  const isMobile = false;
-
-  useEffect(() => {
-    setWindowDimension(window.innerWidth);
-  }, []);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowDimension(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  let location = useLocation().hash;
   return (
-    <div id="about-us" className="flex flex-col text-white w-screen">
-      <div className="flex flex-wrap flex-grow flex-col items-center snap-center text-4xl text-white min-h-screen my-auto">
+    <div
+      id="about-us"
+      className={`${
+        location.includes("about-us") ? "flex" : "hidden"
+      } flex-col text-white w-screen`}
+    >
+      <div
+        className="flex flex-wrap flex-grow flex-col items-center 
+        snap-center text-4xl text-white min-h-screen my-auto"
+      >
         <div className="flex flex-wrap max-w-1/2 justify-center">
           <BandMember
             profilePic={tom}
@@ -72,15 +65,6 @@ const AboutUs = () => {
         </div>
         <Press />
       </div>
-
-      {/* <div className="flex flex-grow flex-col h-screen">
-          <div id="band-members-desktop" className="h-1/2">
-            <button>elias</button>
-          </div>
-          <div className="flex flex-col h-4/5 justify-end">
-            <Press />
-          </div>
-        </div> */}
     </div>
   );
 };

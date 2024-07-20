@@ -1,3 +1,5 @@
+import { useLocation } from "react-router-dom";
+
 import Discography from "../../components/discography";
 
 // Albums
@@ -15,10 +17,13 @@ import stairwell from "../../assets/images/discography/Singles_EPs/Stairwell-Sin
 import talking from "../../assets/images/discography/Singles_EPs/Talking-Single_600x600bb.jpeg";
 
 const Music = () => {
+  let location = useLocation().hash;
   return (
     <div
       id="music"
-      className="flex flex-col flex-wrap flex-grow w-screen snap-center justify-center text-white"
+      className={`${
+        location.includes("music") ? "flex" : "hidden"
+      } flex-col flex-wrap flex-grow w-screen snap-center justify-center text-white`}
     >
       <Discography>
         <Discography.Disc
