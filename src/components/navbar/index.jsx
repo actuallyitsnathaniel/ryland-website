@@ -53,7 +53,7 @@ const NavBar = ({ setModalOpen }) => {
 
   return (
     <div id="navbar" className="z-[2]">
-      <div className="pt-20" id="mobile-nav-padding"></div>
+      {/* TODO: fix navigation. currently goes to top of page. don't want that. */}
       {isMobile ? (
         <MobileNav
           {...{ expanded, setExpanded, isMobile, pageTitle, setModalOpen }}

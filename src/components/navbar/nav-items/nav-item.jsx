@@ -9,7 +9,7 @@ export const NavItem = ({ setExpanded, title, to }) => {
         "text-orange-200 underline underline-offset-4 ease-in hidden sm:inline-block"
       }`}
       to={to}
-      aria-current="page"
+      aria-current="location"
       onClick={() => setExpanded(false)}
     >
       {title}
