@@ -15,7 +15,7 @@ const Root = () => {
   return (
     <div
       id="root"
-      className="flex flex-col min-h-screen max-w-screen duration-700 font-sans-karla "
+      className="flex flex-col min-h-screen max-w-screen duration-700 font-sans-karla"
     >
       <VideoBackground />
 
