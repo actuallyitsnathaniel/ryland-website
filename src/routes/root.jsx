@@ -9,6 +9,7 @@ import Home from "../routes/home";
 import AboutUs from "../routes/about-us";
 import Music from "../routes/music";
 import Newsletter from "../components/newsletter";
+import Links from "./links";
 
 const Root = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -26,6 +27,7 @@ const Root = () => {
         <Home />
         <Music />
         <AboutUs />
+        <Links />
       </div>
       <Modal {...{ isModalOpen, setModalOpen }}>
         <Newsletter />

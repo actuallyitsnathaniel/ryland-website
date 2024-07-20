@@ -65,7 +65,7 @@ const Newsletter = ({ isModalOpen, setModalOpen }) => {
     <form
       id="newsletter"
       className={`flex flex-col md:my-auto md:mx-auto
-            w-fit h-screen md:h-fit rounded-md p-4 bg-gray-950 bg-opacity-90`}
+            w-fit md:h-fit rounded-md p-4 bg-gray-950 bg-opacity-90`}
       onSubmit={handleSubmit}
     >
       <h2 className="text-4xl p-10 text-center">

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import InstagramLogo from "../../components/social-links/instagram-link";
 import GmailLogo from "../../components/social-links/gmail-link";
@@ -10,8 +10,13 @@ import rylandBed from "../../assets/images/icons/ryland-bed/ryland-bed.svg";
 import Newsletter from "../../components/newsletter";
 
 const Links = () => {
+  let location = useLocation().hash;
   return (
-    <main className="flex flex-col mx-auto w-fit -mt-14 text-white px-8 gap-10">
+    <main
+      className={`${
+        location.includes("links") ? "flex" : "hidden"
+      } flex-col mx-auto w-fit text-white px-8 gap-10`}
+    >
       <Link exact to={"/"}>
         <img
           className="mx-auto max-w-[275px] transition duration-75 p-10 scale-125"
