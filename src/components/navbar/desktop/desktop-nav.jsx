@@ -1,7 +1,7 @@
 import { SocialLinks } from "../../social-links";
 import { NavItems } from "../nav-items";
 
-export const DesktopNav = ({ pageTitle, setModalOpen }) => {
+export const DesktopNav = ({ pageTitle, setExpanded, setModalOpen }) => {
   return (
     <div className="flex flex-row w-screen top-0 backdrop-blur-0 bg-opacity-35">
       <nav
@@ -12,7 +12,7 @@ export const DesktopNav = ({ pageTitle, setModalOpen }) => {
       >
         <NavItems
           classNames={"w-full justify-between gap-0"}
-          {...{ pageTitle, setModalOpen }}
+          {...{ pageTitle, setExpanded, setModalOpen }}
         />
         <div className="fixed right-4">
           <SocialLinks />
