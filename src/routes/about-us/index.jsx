@@ -21,6 +21,7 @@ const AboutUs = () => {
         location.includes("about-us") ? "flex" : "hidden"
       } flex-col text-white w-screen`}
     >
+      <div className="mt-16" />
       <div
         className="flex flex-wrap flex-grow flex-col items-center 
         snap-center text-4xl text-white min-h-screen my-auto"

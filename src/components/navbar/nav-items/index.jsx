@@ -24,7 +24,6 @@ export const NavItems = ({
         className={`flex transition ease-in-out p-4 px-4 duration-150
             hover:scale-110 hover:text-orange-200 cursor-pointer`}
         onClick={() => setModalOpen(true)}
-        // {...{ setExpanded }}
       >
         contact
       </button>

@@ -25,7 +25,7 @@ const Music = () => {
         location.includes("music") ? "flex" : "hidden"
       } flex-col flex-wrap flex-grow w-screen snap-center justify-center text-white`}
     >
-      <div className="mt-20"></div>
+      <div className="mt-16"></div>
       <Discography>
         <Discography.Disc
           artwork={youshouldknow}

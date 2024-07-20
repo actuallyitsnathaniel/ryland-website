@@ -9,7 +9,7 @@ const Discography = ({ children }) => {
     <div className="flex flex-col md:px-28">
       <div>
         <h2 className={"flex text-6xl  italic justify-center p-5"}>
-          singles/EPs
+          singles / EPs
         </h2>
         <div className={"flex flex-wrap w-full justify-center"}>
           {React.Children.map(children, (child, i) => {

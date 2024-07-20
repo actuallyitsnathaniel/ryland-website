@@ -17,13 +17,13 @@ const BandMember = (props) => {
 
   const focused = [
     "fixed z-[1] top-0 grid col-span-1 transition-transform origin-center bg-origin-top duration-150 place-items-center bg-black bg-opacity-70 backdrop-blur-lg w-screen h-screen",
-    "h-[345px] md:h-[400px]",
+    "pt-10 h-[345px] md:h-[400px]",
     "transition-all duration-75 ease-in-out scale-100 text-sm text-lg text-start mx-10 mb-7",
   ];
 
   const unfocused = [
     "flex flex-col transition-all ease-in-out duration-150 md:hover:scale-110 flex xl:basis-1/3 items-center p-3",
-    "max-w-xs w-[66%] p-4",
+    "max-w-xs w-[66%] p-3",
     "scale-0 hidden",
   ];
 
@@ -39,7 +39,7 @@ const BandMember = (props) => {
         alt={props.name}
         className={`${expanded === props.i ? focused[1] : unfocused[1]}`}
       />
-      <p className=" self-center p-3">{`${props.name}`}</p>
+      <p className="self-center p-3">{`${props.name}`}</p>
       <div className={`${expanded === props.i ? focused[2] : unfocused[2]}`}>
         {`${props.desc}`}
       </div>
