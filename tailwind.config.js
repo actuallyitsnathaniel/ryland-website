@@ -24,10 +24,6 @@ export default {
         "sans-average": ["Average Sans", ...defaultTheme.fontFamily.sans],
         "sans-karla": ["Karla", ...defaultTheme.fontFamily.sans],
       },
-      transformOrigin: {
-        // elias: "0px 50%",
-        // jake: "70px 30%",
-      },
     },
   },
   plugins: [],

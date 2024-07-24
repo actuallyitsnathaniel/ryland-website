@@ -13,7 +13,7 @@ const Disc = ({
   tidalLink,
   youtubeLink,
   webLink,
-  album,
+  album = false,
   artwork,
   title,
 }) => {
@@ -74,7 +74,7 @@ Disc.propTypes = {
   tidalLink: PropTypes.string,
   youtubeLink: PropTypes.string,
   webLink: PropTypes.string,
-  album: PropTypes.string,
+  album: PropTypes.boolean,
   artwork: PropTypes.string,
   title: PropTypes.string,
 };
