@@ -8,13 +8,13 @@ const Home = () => {
       <div className="flex flex-grow">
         <div className="mt-16" />
       </div>
-      {/* <RylandBedIcon />
+      <RylandBedIcon />
       <div className="flex-col text-center text-white" hidden>
         <h1 className="p-3 text-[150%] md:text-5xl  whitespace-nowrap">
           Upcoming Shows
         </h1>
       </div>
-      <MusicLinks /> */}
+      <MusicLinks />
     </div>
   );
 };
