@@ -1,5 +1,5 @@
-import { Transition } from "@headlessui/react";
 import clsx from "clsx";
+import { motion } from "framer-motion";
 
 import Discography from "../../components/discography";
 
@@ -17,22 +17,11 @@ import karma from "../../assets/images/discography/Singles_EPs/Karma-Single_600x
 import stairwell from "../../assets/images/discography/Singles_EPs/Stairwell-Single_600x600bb.jpeg";
 import talking from "../../assets/images/discography/Singles_EPs/Talking-Single_600x600bb.jpeg";
 
-const Music = ({ location }) => {
-  console.log(location === "music");
+const Music = () => {
   return (
     <div id="music">
-      <Transition show={location === "music"} appear={true}>
-        <div
-          className={clsx([
-            "w-screen text-white",
-            // Shared closed styles
-            "data-[closed]:opacity-0",
-            // Entering styles
-            "data-[enter]:duration-100 data-[enter]:opacity-100 data-[enter]:data-[closed]:-translate-x-full",
-            // Leaving styles
-            "data-[leave]:duration-300 data-[leave]:data-[closed]:translate-x-full",
-          ])}
-        >
+      <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
+        <div className={clsx(["w-screen text-white"])}>
           <div className="mt-16" />
           <Discography>
             <Discography.Disc
@@ -147,7 +136,7 @@ const Music = ({ location }) => {
             />
           </Discography>
         </div>
-      </Transition>
+      </motion.div>
     </div>
   );
 };

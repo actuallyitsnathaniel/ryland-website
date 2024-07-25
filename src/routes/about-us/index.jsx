@@ -1,4 +1,4 @@
-import { Transition } from "@headlessui/react";
+import { motion } from "framer-motion";
 import clsx from "clsx";
 
 import BandMember from "./member";
@@ -11,24 +11,14 @@ import nate from "../../assets/images/the-band/nate.png";
 
 import Press from "../press";
 
-const AboutUs = ({ location }) => {
+const AboutUs = () => {
   // TODO: implement context to adjust video BG to
   // zoom into each band member and list something
   // about them maybe?
   return (
     <div id="about-us">
-      <Transition show={location === "about-us"} appear={true}>
-        <div
-          className={clsx(
-            "w-screen text-white text-4xl",
-            // Shared closed styles
-            "data-[closed]:opacity-0",
-            // Entering styles
-            "data-[enter]:duration-100 data-[enter]:data-[closed]:-translate-x-full",
-            // Leaving styles
-            "data-[leave]:duration-300 data-[leave]:data-[closed]:translate-x-full"
-          )}
-        >
+      <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
+        <div className={clsx("w-screen text-white text-4xl")}>
           <div className="mt-16" />
           <div className="flex flex-wrap max-w-1/2 justify-center">
             <BandMember
@@ -69,7 +59,7 @@ const AboutUs = ({ location }) => {
           </div>
           <Press />
         </div>
-      </Transition>
+      </motion.div>
     </div>
   );
 };
