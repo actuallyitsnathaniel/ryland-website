@@ -32,7 +32,7 @@ const Discography = ({ children }) => {
                 bounce: 1,
                 duration: 0.7,
                 delayChildren: 0.2,
-                staggerChildren: 0.05,
+                staggerChildren: 0.1,
               },
             },
             hidden: {
