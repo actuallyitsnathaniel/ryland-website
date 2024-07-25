@@ -20,7 +20,7 @@ const Root = () => {
   return (
     <div
       id="root"
-      className="text-white flex flex-col min-h-screen max-w-screen duration-700 font-sans-karla"
+      className="text-white flex flex-col min-h-screen max-w-screen font-sans-karla"
     >
       <VideoBackground />
       <NavBar {...{ setModalOpen }} />

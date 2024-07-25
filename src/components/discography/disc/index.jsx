@@ -54,7 +54,13 @@ const Disc = ({
             album,
           }}
         />
-        <img height={"320px"} width={"320px"} src={artwork} alt={title} />
+        <img
+          height={"320px"}
+          width={"320px"}
+          src={artwork}
+          alt={title}
+          loading="eager"
+        />
       </div>
       <div className="flex flex-row w-80 flex-wrap text-center justify-center transition-scale duration-100 origin-top text-lg md:invisible md:group-hover:visible md:scale-0 md:group-hover:scale-90">
         {title}

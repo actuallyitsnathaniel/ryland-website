@@ -31,6 +31,7 @@ const BandMember = (props) => {
             ? `pt-16 h-[345px] md:h-[400px]`
             : `max-w-xs w-[66%] p-3`
         }`}
+        loading="eager"
       />
       <p className="self-center p-3">{`${props.name}`}</p>
       <div
