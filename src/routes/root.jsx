@@ -16,7 +16,6 @@ import { AnimatePresence } from "framer-motion";
 const Root = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const location = useLocation();
-
   return (
     <div
       id="root"
@@ -25,7 +24,7 @@ const Root = () => {
       <VideoBackground />
       <NavBar {...{ setModalOpen }} />
       <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
+        <Routes location={location} key={location.key}>
           <Route index element={<Home />} />
           <Route path="/music" element={<Music />} />
           <Route path="/about-us" element={<AboutUs />} />

@@ -1,4 +1,5 @@
 import pageTransition from "../../util/transitionPage";
+import { motion } from "framer-motion";
 import clsx from "clsx";
 
 import BandMember from "./member";
@@ -17,7 +18,31 @@ const AboutUs = () => {
   // about them maybe?
   return (
     <div id="about-us">
-      <div className={clsx(["w-screen text-white text-4xl"])}>
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={{
+          visible: {
+            clipPath: "inset(0% 0% 0% 0% round 10px)",
+            transition: {
+              type: "spring",
+              bounce: 1,
+              duration: 0.7,
+              delayChildren: 0.2,
+              staggerChildren: 0.05,
+            },
+          },
+          hidden: {
+            clipPath: "inset(10% 50% 90% 50% round 10px)",
+            transition: {
+              type: "spring",
+              bounce: 0,
+              duration: 0.3,
+            },
+          },
+        }}
+        className={clsx(["w-screen text-white text-4xl"])}
+      >
         <div className="mt-16" />
         <div className="flex flex-wrap max-w-1/2 justify-center">
           <BandMember
@@ -57,7 +82,7 @@ const AboutUs = () => {
           />
         </div>
         <Press />
-      </div>
+      </motion.div>
     </div>
   );
 };

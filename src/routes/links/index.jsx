@@ -9,7 +9,6 @@ import rylandBed from "../../assets/images/icons/ryland-bed/ryland-bed.svg";
 import Newsletter from "../../components/newsletter";
 
 const Links = () => {
-  console.log(useLocation().pathname);
   return (
     <main className="backdrop-blur-sm">
       <div className="flex flex-col px-8 gap-4">
