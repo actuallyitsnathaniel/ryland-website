@@ -7,7 +7,7 @@ export const DesktopNav = ({ pageTitle, setExpanded, setModalOpen }) => {
       <nav
         className={`flex w-1/3 px-6 text-white items-center
         transition-all duration-100 ease-in-out whitespace-nowrap ${
-          pageTitle.includes("Links") ? "hidden" : ""
+          pageTitle.includes("links") ? "hidden" : ""
         }`}
       >
         <NavItems

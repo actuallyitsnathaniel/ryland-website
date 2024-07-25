@@ -12,13 +12,13 @@ export const usePageTitle = (location) => {
   useEffect(() => {
     const titleMap = [
       { path: "/", title: "home" },
-      { path: "#about-us", title: "about us" },
-      { path: "#contact", title: "contact" },
-      { path: "#music", title: "music" },
-      { path: "#merch", title: "merch" },
-      { path: "#shows", title: "shows" },
-      { path: "#secret", title: "secret" },
-      { path: "#links", title: "links" },
+      { path: "/about-us", title: "about us" },
+      { path: "/contact", title: "contact" },
+      { path: "/music", title: "music" },
+      { path: "/merch", title: "merch" },
+      { path: "/shows", title: "shows" },
+      { path: "/secret", title: "secret" },
+      { path: "/links", title: "links" },
     ];
 
     const curTitle = titleMap.find((item) => item.path === location);
@@ -52,8 +52,10 @@ const NavBar = ({ setModalOpen }) => {
   let pageTitle = usePageTitle(useLocation().pathname);
 
   return (
-    <div id="navbar" className="fixed z-[2]">
-      {/* TODO: fix navigation. currently goes to top of page. don't want that. */}
+    <div
+      id="navbar"
+      className={`fixed z-[2] ${pageTitle.includes("links") && "hidden"}`}
+    >
       {isMobile ? (
         <MobileNav
           {...{ expanded, setExpanded, isMobile, pageTitle, setModalOpen }}

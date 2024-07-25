@@ -13,11 +13,11 @@ export const NavItems = ({
         !!classNames && classNames
       }`}
     >
-      <NavItem title="home" to="#home" {...{ pageTitle, setExpanded }} />
-      <NavItem title="music" to="#music" {...{ pageTitle, setExpanded }} />
+      <NavItem title="home" to="/" {...{ pageTitle, setExpanded }} />
+      <NavItem title="music" to="/music" {...{ pageTitle, setExpanded }} />
       <NavItem
         title="about us"
-        to="#about-us"
+        to="/about-us"
         {...{ pageTitle, setExpanded }}
       />
       <button

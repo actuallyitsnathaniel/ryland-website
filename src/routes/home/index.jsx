@@ -1,5 +1,6 @@
 import RylandBedIcon from "../../assets/images/icons/ryland-bed";
 import { MusicLinks } from "../../components/music-embeds";
+import pageTransition from "../../util/transitionPage";
 
 const Home = () => {
   return (
@@ -18,4 +19,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default pageTransition(Home);

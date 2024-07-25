@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import VideoBackground from "../components/video-background";
 import NavBar from "../components/navbar";
@@ -15,22 +15,23 @@ import { AnimatePresence } from "framer-motion";
 
 const Root = () => {
   const [isModalOpen, setModalOpen] = useState(false);
-  const location = useLocation().hash.slice(1);
+  const location = useLocation();
 
   return (
     <div
       id="root"
-      className="flex flex-col min-h-screen max-w-screen duration-700 font-sans-karla"
+      className="text-white flex flex-col min-h-screen max-w-screen duration-700 font-sans-karla"
     >
       <VideoBackground />
-      <div className="transition-all duration-300 ease-in data-[close]:opacity-0">
-        <NavBar {...{ setModalOpen }} />
-        <AnimatePresence mode="sync">
-          <Home location={location} key={0} />
-          <Music location={location} key={1} />
-          <AboutUs location={location} key={2} />
-        </AnimatePresence>
-      </div>
+      <NavBar {...{ setModalOpen }} />
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route index element={<Home />} />
+          <Route path="/music" element={<Music />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/links" element={<Links />} />
+        </Routes>
+      </AnimatePresence>
       <Modal {...{ isModalOpen, setModalOpen }}>
         <Newsletter />
       </Modal>

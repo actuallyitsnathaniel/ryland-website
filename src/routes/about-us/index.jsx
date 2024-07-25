@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import pageTransition from "../../util/transitionPage";
 import clsx from "clsx";
 
 import BandMember from "./member";
@@ -17,51 +17,49 @@ const AboutUs = () => {
   // about them maybe?
   return (
     <div id="about-us">
-      <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
-        <div className={clsx("w-screen text-white text-4xl")}>
-          <div className="mt-16" />
-          <div className="flex flex-wrap max-w-1/2 justify-center">
-            <BandMember
-              profilePic={tom}
-              name={"Tom"}
-              i={0}
-              desc={`The frontman of the band. "It's all about the We." Plays keys,
+      <div className={clsx(["w-screen text-white text-4xl"])}>
+        <div className="mt-16" />
+        <div className="flex flex-wrap max-w-1/2 justify-center">
+          <BandMember
+            profilePic={tom}
+            name={"Tom"}
+            i={0}
+            desc={`The frontman of the band. "It's all about the We." Plays keys,
           guitar, and sings like a songbird.`}
-            />
+          />
 
-            <BandMember
-              profilePic={ron}
-              name={"Ron"}
-              i={1}
-              desc={`The bassist of the band. He'll riff if he feels like it.`}
-            />
+          <BandMember
+            profilePic={ron}
+            name={"Ron"}
+            i={1}
+            desc={`The bassist of the band. He'll riff if he feels like it.`}
+          />
 
-            <BandMember
-              profilePic={nate}
-              name={"Nate"}
-              i={2}
-              desc={`Synths and samples guy. Sings with Tom. He'll do a little jig if he feels like it.`}
-            />
+          <BandMember
+            profilePic={nate}
+            name={"Nate"}
+            i={2}
+            desc={`Synths and samples guy. Sings with Tom. He'll do a little jig if he feels like it.`}
+          />
 
-            <BandMember
-              profilePic={elias}
-              name={"Elias"}
-              i={3}
-              desc={`The drummer. He'll sing if he feels like it.`}
-            />
+          <BandMember
+            profilePic={elias}
+            name={"Elias"}
+            i={3}
+            desc={`The drummer. He'll sing if he feels like it.`}
+          />
 
-            <BandMember
-              profilePic={jake}
-              name={"Jake"}
-              i={4}
-              desc={`Producer and electric guitar player. He'll solo if he feels like it.`}
-            />
-          </div>
-          <Press />
+          <BandMember
+            profilePic={jake}
+            name={"Jake"}
+            i={4}
+            desc={`Producer and electric guitar player. He'll solo if he feels like it.`}
+          />
         </div>
-      </motion.div>
+        <Press />
+      </div>
     </div>
   );
 };
 
-export default AboutUs;
+export default pageTransition(AboutUs);

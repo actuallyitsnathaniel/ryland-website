@@ -74,7 +74,7 @@ Disc.propTypes = {
   tidalLink: PropTypes.string,
   youtubeLink: PropTypes.string,
   webLink: PropTypes.string,
-  album: PropTypes.boolean,
+  album: PropTypes.bool,
   artwork: PropTypes.string,
   title: PropTypes.string,
 };

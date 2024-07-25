@@ -11,7 +11,7 @@ export const MobileNav = ({
     <div id="nav-bar">
       <nav
         className={`fixed z-[1] backdrop-blur-md h-30 text-white w-screen top-0 transition-all bg-opacity-0 ${
-          pageTitle.includes("Links") && "hidden"
+          pageTitle.includes("links") && "hidden"
         } ${expanded && "bg-black bg-opacity-80 h-full"}`}
       >
         <MobileNavHeader {...{ expanded, setExpanded, pageTitle }} />
