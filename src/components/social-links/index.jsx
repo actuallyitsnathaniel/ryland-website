@@ -6,7 +6,7 @@ import AppleMusic from "./apple-music-link";
 export const SocialLinks = () => {
   return (
     <div
-      className={` flex gap-4 z-[1] ${
+      className={`flex gap-4 z-[1] ${
         document.URL.includes("links") ? "hidden" : ""
       }`}
     >
