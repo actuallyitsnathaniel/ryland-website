@@ -12,6 +12,7 @@ import Music from "../routes/music";
 import Newsletter from "../components/newsletter";
 import Links from "./links";
 import { AnimatePresence } from "framer-motion";
+import Shows from "./shows";
 
 const Root = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -28,6 +29,7 @@ const Root = () => {
           <Route index element={<Home />} />
           <Route path="/music" element={<Music />} />
           <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/shows" element={<Shows />} />
           <Route path="/links" element={<Links />} />
         </Routes>
       </AnimatePresence>
