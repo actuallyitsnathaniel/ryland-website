@@ -1,9 +1,11 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import InstagramLogo from "../../components/social-links/instagram-link";
 import SpotifyLink from "../../components/social-links/spotify-link";
 import AppleMusic from "../../components/social-links/apple-music-link";
 import YoutubeLink from "../../components/social-links/youtube-link";
+
+import Sep4_2024 from "../../components/show-link/sep4_2024";
 
 import rylandBed from "../../assets/images/icons/ryland-bed/ryland-bed.svg";
 import Newsletter from "../../components/newsletter";
@@ -25,10 +27,15 @@ const Links = () => {
           <AppleMusic />
           <YoutubeLink />
         </div>
-        <h1 className="hidden p-3 text-[150%] md:text-5xl  whitespace-nowrap underline underline-offset-8">
-          <div className="h-8" />
-          Upcoming Shows
-        </h1>
+        <div className="flex flex-col mx-auto gap-4 justify-around items-center">
+          <h1 className="p-3 text-4xl whitespace-nowrap underline underline-offset-8">
+            <div className="h-8" />
+            Upcoming Shows
+          </h1>
+          <div className="md:p-3">
+            <Sep4_2024 />
+          </div>
+        </div>
 
         <div className="">
           <Newsletter />
