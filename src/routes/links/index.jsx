@@ -27,7 +27,7 @@ const Links = () => {
           <AppleMusic />
           <YoutubeLink />
         </div>
-        <div className="flex flex-col mx-auto gap-4 justify-around items-center">
+        {/* <div className="flex flex-col mx-auto gap-4 justify-around items-center">
           <h1 className="p-3 text-4xl whitespace-nowrap underline underline-offset-8">
             <div className="h-8" />
             Upcoming Shows
@@ -35,7 +35,7 @@ const Links = () => {
           <div className="md:p-3">
             <Sep4_2024 />
           </div>
-        </div>
+        </div> */}
 
         <div className="">
           <Newsletter />
