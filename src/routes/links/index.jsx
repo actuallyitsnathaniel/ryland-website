@@ -5,7 +5,7 @@ import SpotifyLink from "../../components/social-links/spotify-link";
 import AppleMusic from "../../components/social-links/apple-music-link";
 import YoutubeLink from "../../components/social-links/youtube-link";
 
-import Sep4_2024 from "../../components/show-link/sep4_2024";
+// import Sep4_2024 from "../../components/show-link/sep4_2024";
 
 import rylandBed from "../../assets/images/icons/ryland-bed/ryland-bed.svg";
 import Newsletter from "../../components/newsletter";
