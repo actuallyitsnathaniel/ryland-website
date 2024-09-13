@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import VideoBackground from "../components/video-background";
@@ -23,6 +23,7 @@ const Root = () => {
       className="text-white flex flex-col min-h-screen max-w-screen font-sans-karla"
     >
       <VideoBackground />
+
       <NavBar {...{ setModalOpen }} />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.key}>
