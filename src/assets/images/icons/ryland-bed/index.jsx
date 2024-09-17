@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-// TODO: animate drawing?
 
 const SvgComponent = () => (
   <motion.svg
