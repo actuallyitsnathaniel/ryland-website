@@ -12,6 +12,7 @@ import itinerary from "../../assets/images/discography/Singles_EPs/Itinerary-EP_
 import youshouldknow from "../../assets/images/discography/Singles_EPs/You-Should-Know-EP.jpeg";
 
 // Singles
+import stuckAtHome from "../../assets/images/discography/Singles_EPs/stuck-at-home_600x600bb.jpg";
 import iblfawn from "../../assets/images/discography/Singles_EPs/IveBeenLooking-Single_600x600bb.jpeg";
 import karma from "../../assets/images/discography/Singles_EPs/Karma-Single_600x600bb.jpeg";
 import stairwell from "../../assets/images/discography/Singles_EPs/Stairwell-Single_600x600bb.jpeg";
@@ -23,6 +24,12 @@ const Music = () => {
       <div className={clsx(["w-screen text-white"])}>
         <div className="mt-16" />
         <Discography>
+          <Discography.Disc
+            artwork={stuckAtHome}
+            title="Stuck At Home - Single"
+            appleMusicLink="https://distrokid.com/hyperfollow/ryland/stuck-at-home"
+            spotifyLink="https://distrokid.com/hyperfollow/ryland/stuck-at-home"
+          />
           <Discography.Disc
             artwork={youshouldknow}
             title="You Should Know - EP"
@@ -37,7 +44,6 @@ const Music = () => {
               "https://www.youtube.com/playlist?list=OLAK5uy_k68rFLA0eSnvoyseygxYBBdH2nrWp9lu0"
             }
           />
-
           <Discography.Disc
             artwork={talking}
             title="Talking - Single"
