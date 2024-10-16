@@ -13,6 +13,7 @@ import Newsletter from "../components/newsletter";
 import Links from "./links";
 import { AnimatePresence } from "framer-motion";
 import Shows from "./shows";
+import GonnaBeFine from "./gonna-be-fine";
 
 const Root = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -32,6 +33,7 @@ const Root = () => {
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/shows" element={<Shows />} />
           <Route path="/links" element={<Links />} />
+          <Route path="/gonnabefine" element={<GonnaBeFine />} />
         </Routes>
       </AnimatePresence>
       <Modal {...{ isModalOpen, setModalOpen }}>
