@@ -68,9 +68,7 @@ const Newsletter = ({ isModalOpen, setModalOpen }) => {
             w-fit md:h-fit rounded-md p-4 bg-gray-950 bg-opacity-90`}
       onSubmit={handleSubmit}
     >
-      <h2 className="text-4xl p-10 text-center">
-        Sign up for the band newsletter! 🧑🏻‍💻
-      </h2>
+      <h2 className="text-4xl p-10 text-center">Stay Connected&nbsp;</h2>
       <div id="input-wrapper" className="flex flex-col items-center">
         <div className="grid">
           <input

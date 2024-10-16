@@ -41,15 +41,15 @@ const Modal = ({ isModalOpen, setModalOpen, children }) => {
   return (
     <div
       id="modal-wrapper"
-      className={`fixed grid mx-auto -top-10 sm:top-0 text-white w-screen h-screen 
+      className={`fixed grid mx-auto -top-10 text-white w-screen h-screen 
     z-10 bg-opacity-80 backdrop-blur-lg transition-transform duration-300 ${
       isModalOpen ? "scale-100" : "scale-0 after:duration-300:hidden"
     }`}
     >
       <div
         ref={modalRef}
-        className="flex flex-col md:my-auto md:mx-auto 
-            w-fit md:h-fit rounded-md"
+        className="flex flex-col md:my-auto mx-auto pt-10
+             md:h-fit rounded-md"
       >
         <CloseButton />
         {children}
