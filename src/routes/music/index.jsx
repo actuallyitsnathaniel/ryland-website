@@ -27,8 +27,10 @@ const Music = () => {
           <Discography.Disc
             artwork={stuckAtHome}
             title="Stuck At Home - Single"
-            appleMusicLink="https://distrokid.com/hyperfollow/ryland/stuck-at-home"
-            spotifyLink="https://distrokid.com/hyperfollow/ryland/stuck-at-home"
+            appleMusicLink="https://music.apple.com/us/album/stuck-at-home/1773289537?i=1773289538"
+            youtubeLink="https://www.youtube.com/watch?v=EtEVx3pJYnE"
+            spotifyLink="https://open.spotify.com/track/7bKm4IHeW6O3GUkqlHGrMJ?si=e2f7910d10e041fa"
+            tidalLink="https://tidal.com/browse/track/392308932"
           />
           <Discography.Disc
             artwork={youshouldknow}
