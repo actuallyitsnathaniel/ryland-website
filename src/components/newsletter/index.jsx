@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import {
   capitalizeFirstLetter,
   validateEmail,
@@ -6,7 +6,7 @@ import {
   inputPlaceholderClasses,
   inputFocusClasses,
 } from "../../util/util";
-import EmailTemplate from "./email";
+import YouConnectedEmail from "./emails/you-connected-email";
 
 const Newsletter = ({ isModalOpen, setModalOpen }) => {
   const [firstName, setFirstName] = useState("");
@@ -31,7 +31,7 @@ const Newsletter = ({ isModalOpen, setModalOpen }) => {
             lastName
           )}&emailAddress=${encodeURIComponent(
             email
-          )}&htmlBody=${encodeURIComponent(EmailTemplate({ firstName }))}`
+          )}&htmlBody=${encodeURIComponent(YouConnectedEmail({ firstName }))}`
         );
 
         if (!response.ok) {

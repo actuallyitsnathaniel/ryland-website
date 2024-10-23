@@ -11,9 +11,8 @@ import {
   Text,
 } from "@react-email/components";
 import { render } from "@react-email/render";
-import { baseUrl } from "../../util/util";
 
-export default function EmailTemplate({ firstName }) {
+export default function YouConnectedEmail({ firstName }) {
   return render(
     <Html lang="en">
       <Tailwind>

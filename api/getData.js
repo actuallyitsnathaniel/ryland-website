@@ -12,6 +12,29 @@ const handler = async (req, res) => {
     : "http://localhost:3000";
   const webAppURL = process.env.WEB_APP_URL;
 
+  const imageAttachments = [
+    {
+      filename: "spotify.png",
+      path: `${baseUrl}/static/spotify.png`,
+      cid: "spotify",
+    },
+    {
+      filename: "apple-music.png",
+      path: `${baseUrl}/static/apple-music.png`,
+      cid: "apple-music",
+    },
+    {
+      filename: "instagram.png",
+      path: `${baseUrl}/static/instagram.png`,
+      cid: "instagram",
+    },
+    {
+      filename: "gmail.png",
+      path: `${baseUrl}/static/gmail.png`,
+      cid: "gmail",
+    },
+  ];
+
   // Creating Nodemailer transporter
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -41,28 +64,19 @@ const handler = async (req, res) => {
     to: emailAddress,
     subject: "🛌 Heyo! Thanks for connecting with us!",
     html: htmlBody,
-    attachments: [
-      {
-        filename: "spotify.png",
-        path: `${baseUrl}/static/spotify.png`,
-        cid: "spotify",
-      },
-      {
-        filename: "apple-music.png",
-        path: `${baseUrl}/static/apple-music.png`,
-        cid: "apple-music",
-      },
-      {
-        filename: "instagram.png",
-        path: `${baseUrl}/static/instagram.png`,
-        cid: "instagram",
-      },
-      {
-        filename: "gmail.png",
-        path: `${baseUrl}/static/gmail.png`,
-        cid: "gmail",
-      },
-    ],
+    attachments: imageAttachments,
+  };
+
+  const newReleaseOptions = {
+    from: bandEmail,
+    to: emailAddress,
+    subject: "New Ryland, Out Now!! Stream Anywhere ⚾️",
+    html: htmlBody,
+    attachments: imageAttachments.push({
+      filename: "stuck-at-home.jpg",
+      path: `${baseUrl}/static/stuck-at-home.jpg`,
+      cid: "stuck-at-home",
+    }),
   };
 
   try {
