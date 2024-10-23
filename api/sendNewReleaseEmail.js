@@ -1,6 +1,9 @@
 import nodemailer from "nodemailer";
 import axios from "axios";
 
+import { render } from "@react-email/render";
+import NewReleaseEmail from "../src/assets/emails/new-release-email";
+
 // Check vercel deployment protection on lower envs
 const handler = async (req, res) => {
   const bandEmail = process.env.BAND_EMAIL;
@@ -8,6 +11,7 @@ const handler = async (req, res) => {
   const baseUrl = process.env.VERCEL_BRANCH_URL
     ? `https://${process.env.VERCEL_BRANCH_URL}`
     : "http://localhost:3000";
+  const emailHTML = render(<NewReleaseEmail />);
 
   // Google sheet url
   const webAppURL = process.env.WEB_APP_URL;
@@ -56,7 +60,7 @@ const handler = async (req, res) => {
     from: bandEmail,
     to: bandEmail, // Replace with your band's email
     subject: "Your Song is Out 🎵",
-    text: `All is right in the world. Your release, ${songTitle}, is out!`,
+    text: `All is right in the world. Your release, 'Stuck at Home', is out!`,
   };
 
   // Email options for release
@@ -68,7 +72,7 @@ const handler = async (req, res) => {
       "mail3@mailinator.com",
     ], // TODO: send to array of emails
     subject: "New Ryland, Out Now!! Stream Anywhere ⚾️",
-    html: htmlBody,
+    html: emailHTML,
     attachments: imageAttachments.push({
       filename: "stuck-at-home.jpg",
       path: `${baseUrl}/static/stuck-at-home.jpg`,
@@ -77,24 +81,20 @@ const handler = async (req, res) => {
   };
 
   try {
-    // Sending band notifier email
-    await transporter.sendMail(bandMailOptions);
-    console.log("Band notifier email sent");
-
     // Sending new member email
-    await transporter.sendMail(newReleaseOptions);
-    console.log("New member email sent");
+    transporter.sendMail(newReleaseOptions);
+    console.log("New release sent to emails.");
 
+    await transporter.sendMail(bandMailOptions);
+    console.log("New release sent to bandmates.");
     // TODO: GET data from Google Sheets
-    await axios.get(webAppURL);
-    console.log("Data sent to Google Sheets");
+    // await axios.get(webAppURL);
+    // console.log("Data received from Google Sheets");
 
-    res
-      .status(200)
-      .json({ message: "Emails sent and data logged to Google Sheets" });
+    res.status(200).json({ message: "New release emails sent!" });
   } catch (error) {
     console.error("Error:", error);
-    res.status(500).send("Failed to send emails or log data to Google Sheets");
+    res.status(500).send("Failed to send new release emails.");
   }
 };
 

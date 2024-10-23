@@ -9,8 +9,10 @@ const app = express();
 
 // Importing serverless function
 import youConnectedEmail from "./api/youConnectedEmail.js";
+import sendNewReleaseEmail from "./api/sendNewReleaseEmail.js";
 
 app.get("/api/youConnectedEmail", youConnectedEmail);
+app.post("/api/sendNewReleaseEmail", sendNewReleaseEmail);
 
 app.listen(3001, () => {
   console.log("Local development server running on port 3001");
