@@ -67,18 +67,6 @@ const handler = async (req, res) => {
     attachments: imageAttachments,
   };
 
-  const newReleaseOptions = {
-    from: bandEmail,
-    to: emailAddress,
-    subject: "New Ryland, Out Now!! Stream Anywhere ⚾️",
-    html: htmlBody,
-    attachments: imageAttachments.push({
-      filename: "stuck-at-home.jpg",
-      path: `${baseUrl}/static/stuck-at-home.jpg`,
-      cid: "stuck-at-home",
-    }),
-  };
-
   try {
     // Sending band notifier email
     await transporter.sendMail(bandMailOptions);

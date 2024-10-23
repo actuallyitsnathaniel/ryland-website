@@ -8,7 +8,7 @@ import {
 } from "../../util/util";
 import { render } from "@react-email/render";
 
-import YouConnectedEmail from "./emails/you-connected-email";
+import YouConnectedEmail from "../../assets/emails/you-connected-email";
 
 const Newsletter = ({ isModalOpen, setModalOpen }) => {
   const [firstName, setFirstName] = useState("");
@@ -27,7 +27,7 @@ const Newsletter = ({ isModalOpen, setModalOpen }) => {
 
       try {
         const response = await fetch(
-          `/api/getData?firstName=${encodeURIComponent(
+          `/api/youConnectedEmail?firstName=${encodeURIComponent(
             firstName
           )}&lastName=${encodeURIComponent(
             lastName

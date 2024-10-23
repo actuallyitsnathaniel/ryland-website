@@ -1,5 +1,5 @@
 export const fetchSomeData = async () => {
-  const response = await fetch("/api/getData");
+  const response = await fetch("/api/youConnectedEmail");
   const data = await response.json();
   return data;
 };
