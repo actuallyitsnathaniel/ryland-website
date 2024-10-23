@@ -4,8 +4,6 @@ import { useLocation } from "react-router-dom";
 import { DesktopNav } from "./desktop/desktop-nav";
 import { MobileNav } from "./mobile/mobile-nav";
 
-// https://tailwindcss.com/blog/utility-friendly-transitions-with-tailwindui-react
-
 export const usePageTitle = (location) => {
   const [pageTitle, setPageTitle] = useState("");
 
@@ -35,7 +33,7 @@ export const usePageTitle = (location) => {
 const NavBar = ({ setModalOpen }) => {
   const [windowDimension, setWindowDimension] = useState(null);
   const [expanded, setExpanded] = useState(false);
-  const isMobile = windowDimension <= 822; // custom width for custom navbar
+  const isMobile = windowDimension <= 1050; // custom width for custom navbar
 
   useEffect(() => {
     setWindowDimension(window.innerWidth);

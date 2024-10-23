@@ -10,10 +10,9 @@ import {
   Tailwind,
   Text,
 } from "@react-email/components";
-import { render } from "@react-email/render";
 
 export default function YouConnectedEmail({ firstName }) {
-  return render(
+  return (
     <Html lang="en">
       <Tailwind>
         <Container className="flex flex-row text-white bg-black rounded-md p-10">
@@ -63,7 +62,6 @@ export default function YouConnectedEmail({ firstName }) {
           </div>
         </Container>
       </Tailwind>
-    </Html>,
-    { pretty: true }
+    </Html>
   );
 }
