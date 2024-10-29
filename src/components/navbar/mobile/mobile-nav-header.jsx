@@ -2,7 +2,7 @@ export const MobileNavHeader = ({ expanded, setExpanded, pageTitle }) => {
   return (
     <div id="mobile-nav-header">
       <div
-        className={`flex pt-6 pb-4 justify-center text-3xl whitespace-nowrap  `}
+        className={`flex pt-6 pb-4 justify-center text-[170%] whitespace-nowrap`}
       >
         {pageTitle}
       </div>
