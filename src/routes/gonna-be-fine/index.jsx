@@ -33,21 +33,23 @@ const PreSave = () => {
   const release = releases.find((release) => release.releaseDate > today);
 
   return (
-    <a
-      href={`https://distrokid.com/hyperfollow/ryland/${release.title}`}
-      rel="noopener noreferrer"
-      target="_blank"
-      className="flex flex-col justify-center outline w-72 h-min p-4 rounded-lg bg-gray-500 bg-opacity-40"
-    >
-      <img
-        src={release.artwork}
-        alt={`${release.title}-artwork`}
-        className="object-scale-down p-2"
-      />
-      <button className="text-xl">
-        pre-save "{release.title.replace(/-/g, " ")}"
-      </button>
-    </a>
+    <div className="pt-2">
+      <a
+        href={`https://distrokid.com/hyperfollow/ryland/${release.title}`}
+        rel="noopener noreferrer"
+        target="_blank"
+        className="flex flex-col justify-center outline w-72 h-min p-4 rounded-lg bg-gray-500 bg-opacity-40"
+      >
+        <img
+          src={release.artwork}
+          alt={`${release.title}-artwork`}
+          className="object-scale-down p-2"
+        />
+        <button className="text-xl">
+          pre-save "{release.title.replace(/-/g, " ")}"
+        </button>
+      </a>
+    </div>
   );
 };
 

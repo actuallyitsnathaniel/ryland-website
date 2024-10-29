@@ -23,7 +23,7 @@ export const NavItems = ({
       {/* <NavItem title="shows" to="/shows" {...{ pageTitle, setExpanded }} /> */}
       <NavItem
         title="i'm gonna be fine"
-        to="/gonnabefine"
+        to="/imgonnabefine"
         {...{ pageTitle, setExpanded }}
       />
       <button

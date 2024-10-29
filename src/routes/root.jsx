@@ -6,9 +6,9 @@ import NavBar from "../components/navbar";
 import Modal from "../components/modal";
 import Footer from "../components/footer";
 
-import Home from "../routes/home";
-import AboutUs from "../routes/about-us";
-import Music from "../routes/music";
+import Home from "./home";
+import AboutUs from "./about-us";
+import Music from "./music";
 import Newsletter from "../components/newsletter";
 import Links from "./links";
 import { AnimatePresence } from "framer-motion";
@@ -33,7 +33,7 @@ const Root = () => {
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/shows" element={<Shows />} />
           <Route path="/links" element={<Links />} />
-          <Route path="/gonnabefine" element={<GonnaBeFine />} />
+          <Route path="/imgonnabefine" element={<GonnaBeFine />} />
         </Routes>
       </AnimatePresence>
       <Modal {...{ isModalOpen, setModalOpen }}>
