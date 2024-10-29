@@ -22,7 +22,7 @@ export const NavItems = ({
       />
       {/* <NavItem title="shows" to="/shows" {...{ pageTitle, setExpanded }} /> */}
       <NavItem
-        title="gonna be fine"
+        title="i'm gonna be fine"
         to="/gonnabefine"
         {...{ pageTitle, setExpanded }}
       />
