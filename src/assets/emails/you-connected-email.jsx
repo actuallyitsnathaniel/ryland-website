@@ -21,7 +21,7 @@ export default function YouConnectedEmail({ firstName }) {
           <Text>
             Thanks so much for signing up! Now you're IN. You'll be the first to
             hear about anything new with us. No need to think about this
-            further, we'll give a shout we're ready. 🫡
+            further, we'll give a shout when we're ready. 🫡
           </Text>
           <Text>With the utmost love,</Text>
           <Text className="font-bold italic">Ryland</Text>
