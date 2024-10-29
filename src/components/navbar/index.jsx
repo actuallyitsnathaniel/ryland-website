@@ -15,7 +15,7 @@ export const usePageTitle = (location) => {
       { path: "/music", title: "music" },
       { path: "/merch", title: "merch" },
       { path: "/shows", title: "shows" },
-      { path: "/imgonnabefine", title: "gonna be fine" },
+      { path: "/imgonnabefine", title: "i'm gonna be fine" },
       { path: "/secret", title: "secret" },
       { path: "/links", title: "links" },
     ];
