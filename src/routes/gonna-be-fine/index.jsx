@@ -55,7 +55,13 @@ const GonnaBeFine = () => {
             className="object-scale-down p-2 w-full rounded-md"
           />
           <button className="text-xl mt-4">
-            pre-save "{release.title.replace(/-/g, " ")}"
+            "
+            {release.title
+              .replace(/-/g, " ")
+              .replace(/\b\w/g, (char) => char.toUpperCase())}
+            "
+            <br />
+            Pre-save
           </button>
         </a>
       </div>
