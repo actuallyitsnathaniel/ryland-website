@@ -12,6 +12,7 @@ import itinerary from "../../assets/images/discography/Singles_EPs/Itinerary-EP_
 import youshouldknow from "../../assets/images/discography/Singles_EPs/You-Should-Know-EP.jpeg";
 
 // Singles
+import fellThrough from "../../assets/images/discography/Singles_EPs/fell-through-600x600bb.jpg";
 import stuckAtHome from "../../assets/images/discography/Singles_EPs/stuck-at-home_600x600bb.jpg";
 import iblfawn from "../../assets/images/discography/Singles_EPs/IveBeenLooking-Single_600x600bb.jpeg";
 import karma from "../../assets/images/discography/Singles_EPs/Karma-Single_600x600bb.jpeg";
@@ -24,6 +25,14 @@ const Music = () => {
       <div className={clsx(["w-screen text-white"])}>
         <div className="mt-16" />
         <Discography>
+          <Discography.Disc
+            artwork={fellThrough}
+            title="Fell Through - Single"
+            appleMusicLink="https://music.apple.com/us/album/fell-through-single/1773323131"
+            youtubeLink="https://www.youtube.com/watch?v=o2xKgHQJNPM&list=OLAK5uy_lD6uf665fT71dXMWw0RpTC7xc3gbPuw_c"
+            spotifyLink="https://open.spotify.com/track/5Rzr0sZYq1RuXmh5EICCMY?si=4cbe7a4d4e434e96"
+            tidalLink="https://tidal.com/browse/track/392325927"
+          />
           <Discography.Disc
             artwork={stuckAtHome}
             title="Stuck At Home - Single"
