@@ -12,6 +12,7 @@ import itinerary from "../../assets/images/discography/Singles_EPs/Itinerary-EP_
 import youshouldknow from "../../assets/images/discography/Singles_EPs/You-Should-Know-EP.jpeg";
 
 // Singles
+import loveYouAgain from "../../assets/images/discography/Singles_EPs/love-you-again-600x600bb.jpg";
 import fellThrough from "../../assets/images/discography/Singles_EPs/fell-through-600x600bb.jpg";
 import stuckAtHome from "../../assets/images/discography/Singles_EPs/stuck-at-home_600x600bb.jpg";
 import iblfawn from "../../assets/images/discography/Singles_EPs/IveBeenLooking-Single_600x600bb.jpeg";
@@ -25,6 +26,14 @@ const Music = () => {
       <div className={clsx(["w-screen text-white"])}>
         <div className="mt-16" />
         <Discography>
+          <Discography.Disc
+            artwork={loveYouAgain}
+            title="Love You Again - Single"
+            appleMusicLink="https://music.apple.com/in/album/love-you-again/1773439001?i=1773439002"
+            youtubeLink="https://www.youtube.com/watch?v=3SoqN1_O_7A"
+            spotifyLink="https://open.spotify.com/track/3rr1fDgdbQ2v0bdeIBacbG?si=f1101e18ee824f52"
+            tidalLink="https://tidal.com/browse/album/392326246"
+          />
           <Discography.Disc
             artwork={fellThrough}
             title="Fell Through - Single"
