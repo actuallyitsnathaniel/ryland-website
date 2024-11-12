@@ -7,11 +7,13 @@ import Discography from "../../components/discography";
 import portrait from "../../assets/images/discography/LPs/Portrait-LP_600x600bb.jpeg";
 
 // EPs
+import gonnaBeFine from "../../assets/images/discography/Singles_EPs/gonna-be-fine-600.jpg";
+import youshouldknow from "../../assets/images/discography/Singles_EPs/You-Should-Know-EP.jpeg";
 import lashingOut from "../../assets/images/discography/Singles_EPs/Lashing-Out-EP_600x600bb.jpeg";
 import itinerary from "../../assets/images/discography/Singles_EPs/Itinerary-EP_600x600bb.jpeg";
-import youshouldknow from "../../assets/images/discography/Singles_EPs/You-Should-Know-EP.jpeg";
 
 // Singles
+import iWantEveryoneToKnowYou from "../../assets/images/discography/Singles_EPs/i-want-everyone-to-know-you-600x600bb.jpg";
 import loveYouAgain from "../../assets/images/discography/Singles_EPs/love-you-again-600x600bb.jpg";
 import fellThrough from "../../assets/images/discography/Singles_EPs/fell-through-600x600bb.jpg";
 import stuckAtHome from "../../assets/images/discography/Singles_EPs/stuck-at-home_600x600bb.jpg";
@@ -21,11 +23,21 @@ import stairwell from "../../assets/images/discography/Singles_EPs/Stairwell-Sin
 import talking from "../../assets/images/discography/Singles_EPs/Talking-Single_600x600bb.jpeg";
 
 const Music = () => {
+  const today = new Date();
+  const gonnaBeFineDate = new Date("2024-11-17");
   return (
     <div id="music">
       <div className={clsx(["w-screen text-white"])}>
         <div className="mt-16" />
         <Discography>
+          <Discography.Disc
+            artwork={iWantEveryoneToKnowYou}
+            title="I Want Everyone To Know You - Single"
+            appleMusicLink="https://music.apple.com/us/album/i-want-everyone-to-know-you/1773323402?i=1773323403"
+            youtubeLink="https://www.youtube.com/watch?v=qbLJQHfeW1s&list=OLAK5uy_nZcI0VApkJnRj1zYsJBUn5ZENc60WWPck"
+            spotifyLink="https://open.spotify.com/track/0LI6IsFToR8x7F0ayBwgjw?si=4073191ff0c74ce3"
+            tidalLink="https://tidal.com/browse/track/392325923"
+          />
           <Discography.Disc
             artwork={loveYouAgain}
             title="Love You Again - Single"
