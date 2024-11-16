@@ -7,22 +7,24 @@ import { useLocation } from "react-router-dom";
 
 const VideoBackground = () => {
   const location = useLocation().pathname;
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  const [windowDimension, setWindowDimension] = useState(window.innerWidth);
-  const isMobile = windowDimension <= 822; // custom width for custom navbar
-
-  useEffect(() => {
-    setWindowDimension(window.innerWidth);
-  }, []);
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
 
   useEffect(() => {
-    const handleResize = () => {
-      setWindowDimension(window.innerWidth);
-    };
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const getVideoSource = () => {
+    if (windowWidth < 822) {
+      return BGVideoMobile;
+    } else {
+      return BGVideoDesktop;
+    }
+  };
 
   return (
     <div id="video-wrapper" className={`bg-black -z-[1]`}>
@@ -39,10 +41,7 @@ const VideoBackground = () => {
           location !== "/" && "blur-sm brightness-75"
         }`}
       >
-        <source
-          src={isMobile ? BGVideoMobile : BGVideoDesktop}
-          type="video/MP4"
-        />
+        <source src={getVideoSource()} type="video/MP4" />
       </video>
     </div>
   );
