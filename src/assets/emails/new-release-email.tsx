@@ -12,7 +12,7 @@ import {
   Text,
 } from "@react-email/components";
 
-export default function NewReleaseEmail({ firstName }) {
+export default function NewReleaseEmail({ firstName }: { firstName: string }) {
   const isProd = import.meta.env.PROD;
   if (!firstName) firstName = "you";
 

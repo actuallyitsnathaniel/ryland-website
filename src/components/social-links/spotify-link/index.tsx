@@ -7,12 +7,11 @@ const SpotifyLink = () => {
       rel="noopener noreferrer"
     >
       <svg
-        loading="lazy"
         height="40px"
         width="40px"
         viewBox="0 0 305 305"
         className="transition-all duration-75 h-10 rounded-full fill-white hover:scale-110 hover:fill-[#1DB954]"
-        alt="spotify-alt"
+        aria-label="spotify-alt"
       >
         <path
           d="M152.441,0C68.385,0,0,68.39,0,152.453C0,236.568,68.385,305,152.441,305

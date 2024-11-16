@@ -1,4 +1,15 @@
-export const MobileNavHeader = ({ expanded, setExpanded, pageTitle }) => {
+import { Dispatch, SetStateAction } from "react";
+
+type MobileNavHeaderType = {
+  expanded: boolean;
+  setExpanded: Dispatch<SetStateAction<boolean>>;
+  pageTitle: string;
+};
+export const MobileNavHeader = ({
+  expanded,
+  setExpanded,
+  pageTitle,
+}: MobileNavHeaderType) => {
   return (
     <div id="mobile-nav-header">
       <div

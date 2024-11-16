@@ -15,7 +15,7 @@ const Links = () => {
   return (
     <main className="backdrop-blur-sm">
       <div className="flex flex-col px-8 gap-10 items-center">
-        <Link exact="true" to={"/"}>
+        <Link to={"/"}>
           <img
             className="mx-auto w-[275px] max-w-[275px] p-2 mt-5"
             src={rylandBed}

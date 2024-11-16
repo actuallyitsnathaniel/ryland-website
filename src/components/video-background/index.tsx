@@ -8,7 +8,7 @@ import { useLocation } from "react-router-dom";
 const VideoBackground = () => {
   const location = useLocation().pathname;
 
-  const [windowDimension, setWindowDimension] = useState(null);
+  const [windowDimension, setWindowDimension] = useState(window.innerWidth);
   const isMobile = windowDimension <= 822; // custom width for custom navbar
 
   useEffect(() => {

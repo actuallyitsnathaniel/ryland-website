@@ -1,11 +1,19 @@
+import { Dispatch, SetStateAction } from "react";
 import { NavItem } from "./nav-item";
+
+type NavItemsType = {
+  classNames: string;
+  setExpanded: Dispatch<SetStateAction<boolean>>;
+  pageTitle: string;
+  setModalOpen: Dispatch<SetStateAction<boolean>>;
+};
 
 export const NavItems = ({
   classNames,
   setExpanded,
   pageTitle,
   setModalOpen,
-}) => {
+}: NavItemsType) => {
   return (
     <ul
       id="nav-bar"

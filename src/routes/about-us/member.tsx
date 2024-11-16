@@ -1,9 +1,16 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-const BandMember = (props) => {
+type BandMember = {
+  i: number;
+  profilePic: string;
+  name: string;
+  desc: string;
+};
+
+const BandMember = ({ i, profilePic, name, desc }: BandMember) => {
   const [expanded, setExpanded] = useState(-1);
-  const setActiveMember = (i) => {
+  const setActiveMember = (i: number) => {
     if (i === expanded) {
       setExpanded(-1);
     } else {
@@ -24,10 +31,10 @@ const BandMember = (props) => {
     <motion.div
       variants={itemVariants}
       onClick={() => {
-        setActiveMember(props.i);
+        setActiveMember(i);
       }}
       className={`transition-all ease-in-out ${
-        expanded === props.i
+        expanded === i
           ? `flex flex-col justify-center top-0 fixed z-[1] col-span-1 transition-transform 
         origin-center bg-origin-top duration-150 place-items-center
          bg-black bg-opacity-50 backdrop-blur-lg w-screen h-screen`
@@ -36,25 +43,25 @@ const BandMember = (props) => {
       }`}
     >
       <img
-        src={props.profilePic}
-        alt={props.name}
+        src={profilePic}
+        alt={name}
         className={`${
-          expanded === props.i
+          expanded === i
             ? `pt-16 h-[345px] md:h-[400px]`
             : `max-w-xs w-[66%] p-3`
         }`}
         loading="eager"
       />
-      <p className="self-center p-3">{`${props.name}`}</p>
+      <p className="self-center p-3">{`${name}`}</p>
       <div
         className={`${
-          expanded === props.i
+          expanded === i
             ? `transition-all duration-75 ease-in-out 
             scale-100 text-lg text-start mx-10 mb-7`
             : `scale-0 hidden`
         }`}
       >
-        {`${props.desc}`}
+        {`${desc}`}
       </div>
     </motion.div>
   );

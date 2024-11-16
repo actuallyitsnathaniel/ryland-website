@@ -29,14 +29,8 @@ export default defineConfig(({ mode }) => {
               name: "preset-default",
               params: {
                 overrides: {
-                  cleanupNumericValues: true,
                   removeViewBox: false, // https://github.com/svg/svgo/issues/1128
                 },
-                cleanupIDs: {
-                  minify: true,
-                  remove: false,
-                },
-                convertPathData: false,
               },
             },
             "sortAttrs",

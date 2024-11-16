@@ -1,7 +1,18 @@
-import { SocialLinks } from "../../social-links";
+import { Dispatch, SetStateAction } from "react";
+import SocialLinks from "../../social-links";
 import { NavItems } from "../nav-items";
 
-export const DesktopNav = ({ pageTitle, setExpanded, setModalOpen }) => {
+type DesktopNavType = {
+  pageTitle: string;
+  setExpanded: Dispatch<SetStateAction<boolean>>;
+  setModalOpen: Dispatch<SetStateAction<boolean>>;
+};
+
+export const DesktopNav = ({
+  pageTitle,
+  setExpanded,
+  setModalOpen,
+}: DesktopNavType) => {
   return (
     <div className="flex flex-row w-screen top-0 backdrop-blur-0 bg-opacity-35">
       <nav

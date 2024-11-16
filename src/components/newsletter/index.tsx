@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Dispatch, FormEvent, SetStateAction, useState } from "react";
 import {
   capitalizeFirstLetter,
   validateEmail,
@@ -10,7 +10,12 @@ import { render } from "@react-email/render";
 
 import YouConnectedEmail from "../../assets/emails/you-connected-email";
 
-const Newsletter = ({ isModalOpen, setModalOpen }) => {
+type NewsletterType = {
+  isModalOpen?: boolean;
+  setModalOpen?: Dispatch<SetStateAction<boolean>>;
+};
+
+const Newsletter = ({ isModalOpen, setModalOpen }: NewsletterType) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -18,7 +23,7 @@ const Newsletter = ({ isModalOpen, setModalOpen }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
 

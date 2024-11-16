@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Dispatch, SetStateAction } from "react";
 import { useLocation } from "react-router-dom";
 
 import { DesktopNav } from "./desktop/desktop-nav";
 import { MobileNav } from "./mobile/mobile-nav";
 
-export const usePageTitle = (location) => {
+export const usePageTitle = (location: string) => {
   const [pageTitle, setPageTitle] = useState("");
 
   useEffect(() => {
@@ -30,8 +30,12 @@ export const usePageTitle = (location) => {
   return pageTitle;
 };
 
-const NavBar = ({ setModalOpen }) => {
-  const [windowDimension, setWindowDimension] = useState(null);
+const NavBar = ({
+  setModalOpen,
+}: {
+  setModalOpen: Dispatch<SetStateAction<boolean>>;
+}) => {
+  const [windowDimension, setWindowDimension] = useState(window.innerWidth);
   const [expanded, setExpanded] = useState(false);
   const isMobile = windowDimension <= 1050; // custom width for custom navbar
 

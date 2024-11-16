@@ -11,7 +11,11 @@ import {
   Text,
 } from "@react-email/components";
 
-export default function YouConnectedEmail({ firstName }) {
+export default function YouConnectedEmail({
+  firstName,
+}: {
+  firstName: string;
+}) {
   return (
     <Html lang="en">
       <Tailwind>

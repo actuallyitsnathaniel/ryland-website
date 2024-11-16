@@ -1,6 +1,14 @@
 import { Link, useLocation } from "react-router-dom";
 import clsx from "clsx";
-export const NavItem = ({ setExpanded, title, to }) => {
+import { Dispatch, SetStateAction } from "react";
+
+type NavItemType = {
+  setExpanded: Dispatch<SetStateAction<boolean>>;
+  title: string;
+  to: string;
+};
+
+export const NavItem = ({ setExpanded, title, to }: NavItemType) => {
   let currPage = useLocation().pathname;
   return (
     <Link

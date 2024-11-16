@@ -68,14 +68,14 @@ const GonnaBeFine = () => {
     ) : (
       <div className="pt-2">
         <a
-          href={`https://distrokid.com/hyperfollow/ryland/${release.title}`}
+          href={`https://distrokid.com/hyperfollow/ryland/${releases[4].title}`}
           rel="noopener noreferrer"
           target="_blank"
           className="flex flex-col justify-center items-center outline w-72 h-min p-4 rounded-lg bg-gray-500 bg-opacity-40 hover:bg-opacity-60 transition duration-300"
         >
           <img
-            src={release.artwork}
-            alt={`${release.title} artwork`}
+            src={releases[4].artwork}
+            alt={`${releases[4].title} artwork`}
             className="object-scale-down p-2 w-full rounded-md"
           />
           <button className="text-xl mt-4">

@@ -4,13 +4,13 @@ export const fetchSomeData = async () => {
   return data;
 };
 
-export const capitalizeFirstLetter = (string) => {
+export const capitalizeFirstLetter = (string: string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
 // todo: perhaps refactor this into checking with a database
 // and see if they are subscribed to our list
-export const validateEmail = (string) => {
+export const validateEmail = (string: string) => {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(string);
 };

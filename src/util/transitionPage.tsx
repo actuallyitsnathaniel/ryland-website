@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const pageTransition = (OgComponent) => {
+const pageTransition = (OgComponent: JSX.ElementType) => {
   return () => (
     <motion.div
       id="slide-in"

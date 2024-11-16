@@ -1,12 +1,20 @@
 import { MobileNavHeader } from "./mobile-nav-header";
 import { NavItems } from "../nav-items";
+import { Dispatch, SetStateAction } from "react";
+
+type MobileNavType = {
+  expanded: boolean;
+  setExpanded: Dispatch<SetStateAction<boolean>>;
+  pageTitle: string;
+  setModalOpen: Dispatch<SetStateAction<boolean>>;
+};
 
 export const MobileNav = ({
   expanded,
   setExpanded,
   pageTitle,
   setModalOpen,
-}) => {
+}: MobileNavType) => {
   return (
     <div id="nav-bar">
       <nav

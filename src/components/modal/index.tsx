@@ -1,11 +1,16 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, Dispatch, SetStateAction } from "react";
 
-const Modal = ({ isModalOpen, setModalOpen, children }) => {
+type ModalType = {
+  isModalOpen: boolean;
+  setModalOpen: Dispatch<SetStateAction<boolean>>;
+  children: JSX.Element;
+};
+
+const Modal = ({ isModalOpen, setModalOpen, children }: ModalType) => {
   const CloseButton = () => (
     <div
       data-collapse-toggle="navbar"
       id="navbar-icon"
-      type="button"
       className={`flex justify-end z-[1] translate-y-16 -translate-x-4`}
       aria-controls="navbar"
       aria-expanded="false"
@@ -23,10 +28,10 @@ const Modal = ({ isModalOpen, setModalOpen, children }) => {
       </button>
     </div>
   );
-  const modalRef = useRef(null);
+  const modalRef = useRef<HTMLDivElement>(null);
 
-  const handleClickOutside = (event) => {
-    if (modalRef.current && !modalRef.current.contains(event.target)) {
+  const handleClickOutside = (event: MouseEvent) => {
+    if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
       setModalOpen(false);
     }
   };

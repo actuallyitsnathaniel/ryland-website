@@ -3,7 +3,7 @@ import GmailLogo from "./gmail-link";
 import SpotifyLink from "./spotify-link";
 import AppleMusic from "./apple-music-link";
 
-export const SocialLinks = () => {
+const SocialLinks = () => {
   return (
     <div
       className={`flex gap-4 z-[1] ${
@@ -17,3 +17,5 @@ export const SocialLinks = () => {
     </div>
   );
 };
+
+export default SocialLinks;

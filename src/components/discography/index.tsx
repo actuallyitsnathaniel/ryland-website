@@ -2,9 +2,8 @@ import Disc from "./disc";
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { PropTypes } from "prop-types";
 
-const Discography = ({ children }) => {
+const Discography = ({ children }: { children: JSX.Element[] }) => {
   const itemVariants = {
     visible: {
       opacity: 1,
@@ -71,10 +70,6 @@ const Discography = ({ children }) => {
       </div>
     </div>
   );
-};
-
-Discography.propTypes = {
-  children: PropTypes.array,
 };
 
 Discography.Disc = Disc;

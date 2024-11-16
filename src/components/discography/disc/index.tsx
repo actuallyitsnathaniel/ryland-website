@@ -1,11 +1,20 @@
-import { PropTypes } from "prop-types";
-
+import { Dispatch, SetStateAction, useState } from "react";
 import MusicPlatformLinks from "./platform-links";
 
+type DiscType = {
+  className?: string;
+  appleMusicLink?: string;
+  spotifyLink?: string;
+  soundcloudLink?: string;
+  tidalLink?: string;
+  youtubeLink?: string;
+  webLink?: string;
+  album?: boolean;
+  artwork: string;
+  title: string;
+};
+
 const Disc = ({
-  expanded,
-  setExpanded,
-  i,
   className,
   appleMusicLink,
   spotifyLink,
@@ -16,31 +25,25 @@ const Disc = ({
   album = false,
   artwork,
   title,
-}) => {
-  const setActiveDisc = (i) => {
-    if (i === expanded) {
-      setExpanded(-1);
-    } else {
-      setExpanded(i);
-    }
-  };
+}: DiscType) => {
+  const [focused, setFocused] = useState(false);
 
   return (
     <div
       onClick={() => {
-        setActiveDisc(i);
+        setFocused(!focused);
       }}
       onMouseLeave={() => {
-        setActiveDisc(-1);
+        setFocused(false);
       }}
-      onMouseEnter={() => setActiveDisc(i)}
+      onMouseEnter={() => setFocused(true)}
       className={`${className} transition-scale duration-100 text-8xl md:hover:scale-110 group p-3`}
     >
       <div className={"relative h-72 w-72 mx-auto -z-[1]"}>
         <MusicPlatformLinks
           className={`transition-all origin-content bg-black
           ${
-            expanded === i
+            focused
               ? "bg-opacity-50 backdrop-blur-md opacity-100 visible"
               : "invisible opacity-0 bg-opacity-0 backdrop-blur-none"
           }`}
@@ -67,22 +70,6 @@ const Disc = ({
       </div>
     </div>
   );
-};
-
-Disc.propTypes = {
-  expanded: PropTypes.number,
-  setExpanded: PropTypes.func,
-  i: PropTypes.number,
-  className: PropTypes.string,
-  appleMusicLink: PropTypes.string,
-  spotifyLink: PropTypes.string,
-  soundcloudLink: PropTypes.string,
-  tidalLink: PropTypes.string,
-  youtubeLink: PropTypes.string,
-  webLink: PropTypes.string,
-  album: PropTypes.bool,
-  artwork: PropTypes.string,
-  title: PropTypes.string,
 };
 
 export default Disc;
