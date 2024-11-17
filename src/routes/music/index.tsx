@@ -23,13 +23,19 @@ import stairwell from "../../assets/images/discography/Singles_EPs/Stairwell-Sin
 import talking from "../../assets/images/discography/Singles_EPs/Talking-Single_600x600bb.jpeg";
 
 const Music = () => {
-  const today = new Date();
-  const gonnaBeFineDate = new Date("2024-11-17");
   return (
     <div id="music">
       <div className={clsx(["w-screen text-white"])}>
         <div className="mt-16" />
         <Discography>
+          <Discography.Disc
+            artwork={gonnaBeFine}
+            title="I'm Gonna Be Fine - EP"
+            appleMusicLink="https://music.apple.com/us/album/im-gonna-be-fine-ep/1776148719"
+            youtubeLink="https://youtube.com/playlist?list=OLAK5uy_lSjvjAEPkMEwrKBp3QPZcf_2BkJ1RPbLI&feature=shared"
+            spotifyLink="https://open.spotify.com/album/5Wsxv4b0DcdJwxWQhJoslz?si=7BnvCn2WS9SXSpEC_12_Lw"
+            tidalLink="https://tidal.com/browse/album/395421548"
+          />
           <Discography.Disc
             artwork={iWantEveryoneToKnowYou}
             title="I Want Everyone To Know You - Single"

@@ -79,7 +79,9 @@ const GonnaBeFine = () => {
             className="object-scale-down p-2 w-full rounded-md"
           />
           <button className="text-xl mt-4">
-            I'm Gonna Be Fine EP - out now
+            I'm Gonna Be Fine - EP
+            <br />
+            out now
           </button>
         </a>
       </div>
