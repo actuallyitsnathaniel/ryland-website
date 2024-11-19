@@ -11,7 +11,7 @@ type DiscType = {
   webLink?: string;
   album?: boolean;
   artwork: string;
-  title: string;
+  title?: string;
 };
 
 const Disc = ({
@@ -30,16 +30,18 @@ const Disc = ({
 
   return (
     <div
-      onClick={() => {
-        setFocused(!focused);
-      }}
-      onMouseLeave={() => {
-        setFocused(false);
-      }}
-      onMouseEnter={() => setFocused(true)}
       className={`${className} transition-scale duration-100 text-8xl md:hover:scale-110 group p-3`}
     >
-      <div className={"relative h-72 w-72 mx-auto -z-[1]"}>
+      <div
+        className={"relative h-72 w-72 mx-auto"}
+        onMouseLeave={() => {
+          setFocused(false);
+        }}
+        onMouseEnter={() => setFocused(true)}
+        onClick={() => {
+          setFocused(!focused);
+        }}
+      >
         <MusicPlatformLinks
           className={`transition-all origin-content bg-black
           ${
