@@ -52,7 +52,7 @@ const NavBar = ({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  let pageTitle = usePageTitle(useLocation().pathname);
+  const pageTitle = usePageTitle(useLocation().pathname);
 
   return (
     <div

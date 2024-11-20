@@ -9,7 +9,7 @@ type NavItemType = {
 };
 
 export const NavItem = ({ setExpanded, title, to }: NavItemType) => {
-  let currPage = useLocation().pathname;
+  const currPage = useLocation().pathname;
   return (
     <Link
       className={clsx([

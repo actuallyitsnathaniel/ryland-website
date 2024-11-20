@@ -1,4 +1,4 @@
-import { Dispatch, FormEvent, SetStateAction, useState } from "react";
+import { FormEvent, useState } from "react";
 import {
   capitalizeFirstLetter,
   validateEmail,
@@ -10,12 +10,7 @@ import { render } from "@react-email/render";
 
 import YouConnectedEmail from "../../assets/emails/you-connected-email";
 
-type NewsletterType = {
-  isModalOpen?: boolean;
-  setModalOpen?: Dispatch<SetStateAction<boolean>>;
-};
-
-const Newsletter = ({ isModalOpen, setModalOpen }: NewsletterType) => {
+const Newsletter = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
