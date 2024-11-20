@@ -7,7 +7,7 @@ const TidalEmbed = () => {
         borderRadius: "18px",
         padding: "1vh",
       }}
-      src={"https://embed.tidal.com/albums/254309190?layout=gridify"}
+      src={"https://embed.tidal.com/albums/395421548?layout=gridify"}
       frameBorder={0}
     />
   );
