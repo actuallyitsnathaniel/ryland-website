@@ -10,7 +10,7 @@ const Shows = () => {
         <ShowLink
           thumbnail={showJan10th}
           link={"https://partiful.com/e/1mZ79A8ZNqH1lQtD45Er"}
-          venue={"Wornom House"}
+          venue={"Sunland, CA"}
           date={"January 10th, 2024"}
           artists={
             "Ryland | John Lowell Anderson | Evan Walter & Eli Leonard | Keith Evans"
