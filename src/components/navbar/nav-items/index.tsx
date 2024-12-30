@@ -17,7 +17,7 @@ export const NavItems = ({
   return (
     <ul
       id="nav-bar"
-      className={`flex text-3xl sm:justify-around ${
+      className={`flex text-3xl sm:justify-around sm:gap-x-5 ${
         !!classNames && classNames
       }`}
     >
@@ -28,12 +28,12 @@ export const NavItems = ({
         to="/about-us"
         {...{ pageTitle, setExpanded }}
       />
-      {/* <NavItem title="shows" to="/shows" {...{ pageTitle, setExpanded }} /> */}
       <NavItem
         title="i'm gonna be fine"
         to="/imgonnabefine"
         {...{ pageTitle, setExpanded }}
       />
+      <NavItem title="shows" to="/shows" {...{ pageTitle, setExpanded }} />
       <button
         className={`flex transition ease-in-out p-4 px-4 duration-150
             hover:scale-110 hover:text-orange-200 cursor-pointer`}

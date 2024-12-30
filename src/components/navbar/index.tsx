@@ -37,7 +37,7 @@ const NavBar = ({
 }) => {
   const [windowDimension, setWindowDimension] = useState(window.innerWidth);
   const [expanded, setExpanded] = useState(false);
-  const isMobile = windowDimension <= 1050; // custom width for custom navbar
+  const isMobile = windowDimension <= 1300; // custom width for custom navbar
 
   useEffect(() => {
     setWindowDimension(window.innerWidth);
