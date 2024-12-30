@@ -2,17 +2,9 @@ import Disc from "./disc";
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { itemVariants } from "../../util/transitionPage";
 
 const Discography = ({ children }: { children: JSX.Element[] }) => {
-  const itemVariants = {
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { type: "spring", stiffness: 300, damping: 24 },
-    },
-    hidden: { opacity: 0, y: 20, transition: { duration: 0.2 } },
-  };
-
   const [expanded, setExpanded] = useState(-1);
   return (
     <div className="flex flex-col md:px-28">
