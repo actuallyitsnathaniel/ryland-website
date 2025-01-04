@@ -23,6 +23,10 @@ export default {
         "sans-actor": ["Actor", ...defaultTheme.fontFamily.sans],
         "sans-average": ["Average Sans", ...defaultTheme.fontFamily.sans],
         "sans-karla": ["Karla", ...defaultTheme.fontFamily.sans],
+        "sans-helvetica-now": [
+          "Helvetica Now",
+          "/src/assets/fonts/HelveticaNowDisplay/HelveticaNowDisplay.otf",
+        ],
       },
     },
   },
