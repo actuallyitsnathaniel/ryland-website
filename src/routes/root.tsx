@@ -27,7 +27,7 @@ const Root = () => {
       <VideoBackground />
       <img
         src={grain}
-        className="fixed mix-blend-soft-light brightness-[65%] bg-repeat w-full h-full object-cover"
+        className="fixed mix-blend-soft-light brightness-[65%] bg-repeat w-full h-full object-cover pointer-events-none"
       />
       <NavBar {...{ setModalOpen }} />
       <AnimatePresence mode="wait">
