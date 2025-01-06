@@ -9,21 +9,21 @@ export const usePageTitle = (location: string) => {
 
   useEffect(() => {
     const titleMap = [
-      { path: "/", title: "home" },
-      { path: "/about-us", title: "about us" },
-      { path: "/contact", title: "contact" },
-      { path: "/music", title: "music" },
-      { path: "/merch", title: "merch" },
-      { path: "/shows", title: "shows" },
-      { path: "/imgonnabefine", title: "i'm gonna be fine" },
-      { path: "/secret", title: "secret" },
-      { path: "/links", title: "links" },
+      { path: "/", title: "Home" },
+      { path: "/about-us", title: "About Us" },
+      { path: "/contact", title: "Contact" },
+      { path: "/music", title: "Music" },
+      { path: "/merch", title: "Merch" },
+      { path: "/shows", title: "Shows" },
+      { path: "/imgonnabefine", title: "I'm Gonna Be Fine" },
+      { path: "/secret", title: "Secret" },
+      { path: "/links", title: "Links" },
     ];
 
     const curTitle = titleMap.find((item) => item.path === location);
     if (curTitle && curTitle.title) {
       setPageTitle(curTitle.title);
-      document.title = "ryland - " + curTitle.title;
+      document.title = "Ryland - " + curTitle.title;
     }
   }, [location]);
 
