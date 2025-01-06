@@ -25,7 +25,9 @@ const ShowLink = ({
           className="transition duration-75 hover:-translate-y-1 hover:scale-115"
         >
           <img className="mx-auto h-80 my-4" src={thumbnail} alt={alt} />
-          <p className="p-0 m-0 text-xl">Click for tickets</p>
+          <p className="p-0 m-0 text-xl underline underline-offset-4">
+            Click for tickets
+          </p>
         </div>
       </div>
     </a>

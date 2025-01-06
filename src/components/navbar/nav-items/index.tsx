@@ -21,25 +21,25 @@ export const NavItems = ({
         !!classNames && classNames
       }`}
     >
-      <NavItem title="home" to="/" {...{ pageTitle, setExpanded }} />
-      <NavItem title="music" to="/music" {...{ pageTitle, setExpanded }} />
+      <NavItem title="Home" to="/" {...{ pageTitle, setExpanded }} />
+      <NavItem title="Music" to="/music" {...{ pageTitle, setExpanded }} />
       <NavItem
-        title="about us"
+        title="About us"
         to="/about-us"
         {...{ pageTitle, setExpanded }}
       />
       <NavItem
-        title="i'm gonna be fine"
+        title="I'm Gonna Be Fine"
         to="/imgonnabefine"
         {...{ pageTitle, setExpanded }}
       />
-      <NavItem title="shows" to="/shows" {...{ pageTitle, setExpanded }} />
+      <NavItem title="Shows" to="/shows" {...{ pageTitle, setExpanded }} />
       <button
         className={`flex transition ease-in-out p-4 px-4 duration-150
             hover:scale-110 hover:text-orange-200 cursor-pointer`}
         onClick={() => setModalOpen(true)}
       >
-        contact
+        Contact
       </button>
     </ul>
   );

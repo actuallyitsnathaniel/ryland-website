@@ -10,7 +10,7 @@ const Discography = ({ children }: { children: JSX.Element[] }) => {
     <div className="flex flex-col md:px-28">
       <div>
         <h2 className={"flex text-6xl  italic justify-center p-5"}>
-          singles / EPs
+          Singles / EPs
         </h2>
         <motion.div
           initial="hidden"
@@ -48,7 +48,7 @@ const Discography = ({ children }: { children: JSX.Element[] }) => {
         </motion.div>
       </div>
       <div>
-        <h2 className={"flex text-6xl  italic justify-center p-5"}>albums</h2>
+        <h2 className={"flex text-6xl  italic justify-center p-5"}>Albums</h2>
         <div className={"flex flex-row flex-wrap w-full justify-center"}>
           {React.Children.map(children, (child, i) => {
             if (child.props.album)
