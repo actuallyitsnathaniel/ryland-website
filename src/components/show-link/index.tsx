@@ -26,7 +26,7 @@ const ShowLink = ({
         >
           <img className="mx-auto h-80 my-4" src={thumbnail} alt={alt} />
           <p className="p-0 m-0 text-xl underline underline-offset-4">
-            Click for tickets
+            Click for details
           </p>
         </div>
       </div>
