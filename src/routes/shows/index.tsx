@@ -1,7 +1,8 @@
 import ShowLink from "../../components/show-link";
-import showJan10th from "../../assets/images/discography/Singles_EPs/gonna-be-fine-600.jpg";
 import pageTransition, { itemVariants } from "../../util/transitionPage";
 import { motion } from "framer-motion";
+
+import showFeb18 from "../../assets/images/thumbnails/pianos-show.png";
 
 const Shows = () => {
   return (
@@ -10,14 +11,12 @@ const Shows = () => {
       <motion.div variants={itemVariants}>
         <div className="md:p-3">
           <ShowLink
-            thumbnail={showJan10th}
-            link={"https://partiful.com/e/1mZ79A8ZNqH1lQtD45Er"}
-            venue={""}
-            date={"CANCELLED"}
-            artists={
-              "Ryland | John Lowell Anderson | Evan Walter & Eli Leonard | Keith Evans"
-            }
-            alt={"show-jan-10th"}
+            thumbnail={showFeb18}
+            link="https://link.dice.fm/R1fdd3071bc7?dice_id=R1fdd3071bc7"
+            venue="158 Ludlow St, New York, NY 10002, USA"
+            artists={"Sockeye | Ryland | Marou"}
+            date={"Tue, Feb 18, 7:00 PM EST"}
+            alt={"show-feb-18th"}
           />
         </div>
       </motion.div>
