@@ -23,7 +23,6 @@ const Shows = () => {
             data-artist-name="id_15555607"
             data-background-color="rgba(255,255,255,0)"
             data-bit-logo-position="hidden"
-            data-
             data-separator-color="rgba(255,255,255,0.15)"
             data-text-color="rgba(255,255,255,1)"
             data-font="Helvetica"
