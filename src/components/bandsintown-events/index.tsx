@@ -95,7 +95,7 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
   const totalPages = Math.ceil(events.length / perPage);
 
   return (
-    <div className="max-w-2xl mx-auto text-white">
+    <div className="max-w-[90vw] mx-auto text-white">
       <div className="flex justify-center space-x-8 mb-8">
         <button
           onClick={() => setView("upcoming")}
@@ -150,7 +150,7 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
             {paginatedEvents.length === 0 ? (
               <div className="text-center py-4">Nothing yet.</div>
             ) : (
-              <ul className="space-y-8">
+              <ul className="w-[90vw] mx-auto divide-y divide-white/20">
                 {paginatedEvents.map((event) => {
                   const eventDate = new Date(event.datetime);
                   const formattedDate = eventDate.toLocaleDateString(
@@ -162,18 +162,26 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
                       year: "numeric",
                     }
                   );
-                  console.log({ event });
+
                   return (
-                    <li key={event.id} className="border p-4 rounded">
-                      <div className="flex flex-col gap-2">
-                        <div className="flex flex-col gap-2">
+                    <li key={event.id} className="py-4">
+                      <div className="flex flex-row items-center justify-between text-sm md:text-base text-white w-full">
+                        {/* Left Section: Date, Venue, Lineup */}
+                        <div className="flex flex-col text-left min-w-[40%]">
                           <p className="font-semibold">{formattedDate}</p>
-                          <p>
-                            {event.venue.name} - {event.venue.city},{" "}
-                            {event.venue.region}, {event.venue.country}
+                          <p>{event.venue.name}</p>
+                          <p className="text-sm italic text-white/70">
+                            {event.lineup.join(", ")}
                           </p>
                         </div>
-                        <div>
+
+                        {/* Middle Section: City, State */}
+                        <div className="text-center text-white/80 min-w-[25%]">
+                          {event.venue.city}, {event.venue.region}
+                        </div>
+
+                        {/* Right Section: Tickets or “I was there” */}
+                        <div className="text-right min-w-[25%]">
                           {event.offers.length > 0 ? (
                             event.offers.map((offer, index) => (
                               <a
@@ -181,7 +189,7 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
                                 href={offer.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-lg rounded-lg text-center p-2 bg-yellow-600 bg-opacity-85 hover:bg-blue-700 transition duration-150"
+                                className="inline-block text-xs md:text-sm px-4 py-2 bg-yellow-600 hover:bg-blue-700 transition rounded"
                               >
                                 {offer.type === "Tickets"
                                   ? "Buy Tickets"
@@ -193,7 +201,7 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
                               href={getIWasThereUrl(event, appId, "ryland")}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-lg rounded-lg text-center p-2 bg-yellow-600 bg-opacity-85 hover:bg-blue-700 transition duration-150"
+                              className="inline-block text-xs md:text-sm px-4 py-2 bg-yellow-600 hover:bg-blue-700 transition rounded"
                             >
                               I was there ✋🏻
                             </a>
@@ -210,19 +218,19 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
               <div className="flex justify-center space-x-2 mt-6">
                 <button
                   onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
-                  className="px-3 py-1 rounded bg-gray-200 hover:bg-gray-300"
+                  className="text-lg px-3 py-1 rounded hover:bg-gray-700 bg-opacity-75 border"
                   disabled={currentPage === 1}
                 >
                   Prev
                 </button>
-                <span className="px-3 py-1">
+                <span className="text-lg px-3 py-1">
                   Page {currentPage} of {totalPages}
                 </span>
                 <button
                   onClick={() =>
                     setCurrentPage((p) => Math.min(p + 1, totalPages))
                   }
-                  className="px-3 py-1 rounded bg-gray-200 hover:bg-gray-300 text-black"
+                  className="text-lg px-3 py-1 rounded bg-yellow-600 hover:bg-yellow-500"
                   disabled={currentPage === totalPages}
                 >
                   Next
