@@ -91,7 +91,9 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
   }, [artistName, appId, view]);
 
   const startIndex = (currentPage - 1) * perPage;
-  const paginatedEvents = events.slice(startIndex, startIndex + perPage);
+  const paginatedEvents = [...events]
+    .reverse()
+    .slice(startIndex, startIndex + perPage);
   const totalPages = Math.ceil(events.length / perPage);
 
   return (
