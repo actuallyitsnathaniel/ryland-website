@@ -54,7 +54,7 @@ function getIWasThereUrl(
 const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
   artistName,
   appId,
-  initialView = "upcoming",
+  initialView = "past",
   perPage = 5,
 }) => {
   const [events, setEvents] = useState<Event[]>([]);
@@ -169,7 +169,7 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
                     <li key={event.id} className="py-4">
                       <div className="flex flex-row items-center justify-between text-sm md:text-base text-white w-full">
                         {/* Left Section: Date, Venue, Lineup */}
-                        <div className="flex flex-col text-left min-w-[40%]">
+                        <div className="flex flex-col text-left w-[33%]">
                           <p className="font-semibold">{formattedDate}</p>
                           <p>{event.venue.name}</p>
                           <p className="text-sm italic text-white/70">
@@ -178,12 +178,12 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
                         </div>
 
                         {/* Middle Section: City, State */}
-                        <div className="text-center text-white/80 min-w-[25%]">
+                        <div className=" text-white/80 w-[33%] text-left">
                           {event.venue.city}, {event.venue.region}
                         </div>
 
                         {/* Right Section: Tickets or “I was there” */}
-                        <div className="text-right min-w-[25%]">
+                        <div className="text-right [33%]">
                           {event.offers.length > 0 ? (
                             event.offers.map((offer, index) => (
                               <a
@@ -203,7 +203,7 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
                               href={getIWasThereUrl(event, appId, "ryland")}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-block text-xs md:text-sm px-4 py-2 bg-yellow-600 hover:bg-blue-700 transition rounded"
+                              className="inline-block text-xs md:text-sm px-1 py-2 bg-yellow-600 hover:bg-blue-700 transition rounded"
                             >
                               I was there ✋🏻
                             </a>
