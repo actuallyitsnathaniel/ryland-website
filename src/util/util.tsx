@@ -8,6 +8,11 @@ export const capitalizeFirstLetter = (string: string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
+export const hasDatePassed = (dateToCheck: Date): boolean => {
+  const now = new Date();
+  return dateToCheck < now;
+};
+
 // todo: perhaps refactor this into checking with a database
 // and see if they are subscribed to our list
 export const validateEmail = (string: string) => {
