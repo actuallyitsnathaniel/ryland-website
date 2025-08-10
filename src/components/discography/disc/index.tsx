@@ -33,11 +33,11 @@ const Disc = ({
     <motion.div
       className={`${className} text-8xl group p-3`}
       whileHover={{ scale: 1.05 }}
-      transition={{ 
-        type: "spring", 
-        stiffness: 300, 
+      transition={{
+        type: "spring",
+        stiffness: 300,
         damping: 20,
-        duration: 0.2
+        duration: 0.2,
       }}
     >
       <motion.div
@@ -51,27 +51,38 @@ const Disc = ({
         }}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
-        transition={{ 
-          type: "spring", 
-          stiffness: 400, 
-          damping: 25
+        transition={{
+          type: "spring",
+          stiffness: 400,
+          damping: 25,
         }}
       >
+        <img
+          className={`transition-all duration-200 ${
+            focused ? "blur-sm brightness-50" : ""
+          }`}
+          height={"320px"}
+          width={"320px"}
+          src={artwork}
+          alt={title}
+          loading="eager"
+        />
         <motion.div
+          className="absolute inset-0 flex items-center justify-center overflow-clip"
           animate={focused ? "visible" : "hidden"}
           variants={{
             visible: {
               opacity: 1,
               backdropFilter: "blur(8px)",
               backgroundColor: "rgba(0, 0, 0, 0.5)",
-              transition: { duration: 0.2, ease: "easeOut" }
+              transition: { duration: 0.2, ease: "easeOut" },
             },
             hidden: {
               opacity: 0,
               backdropFilter: "blur(0px)",
               backgroundColor: "rgba(0, 0, 0, 0)",
-              transition: { duration: 0.15, ease: "easeIn" }
-            }
+              transition: { duration: 0.15, ease: "easeIn" },
+            },
           }}
         >
           <MusicPlatformLinks
@@ -87,20 +98,13 @@ const Disc = ({
             }}
           />
         </motion.div>
-        <img
-          height={"320px"}
-          width={"320px"}
-          src={artwork}
-          alt={title}
-          loading="eager"
-        />
       </motion.div>
-      <motion.div 
+      <motion.div
         className="flex flex-row w-80 flex-wrap text-center justify-center text-lg md:opacity-0"
-        whileHover={{ 
+        whileHover={{
           opacity: 1,
           scale: 0.9,
-          transition: { duration: 0.2, ease: "easeOut" }
+          transition: { duration: 0.2, ease: "easeOut" },
         }}
         initial={{ opacity: 1, scale: 1 }}
       >
