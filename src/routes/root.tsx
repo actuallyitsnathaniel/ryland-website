@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, Suspense, lazy } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
@@ -6,15 +6,23 @@ import VideoBackground from "../components/video-background";
 import NavBar from "../components/navbar";
 import Modal from "../components/modal";
 import Footer from "../components/footer";
+import Newsletter from "../components/newsletter";
 import grain from "../assets/images/textures/AdobeStock_grain.jpeg";
 
-import Home from "./home";
-import AboutUs from "./about-us";
-import Music from "./music";
-import Newsletter from "../components/newsletter";
-import Links from "./links";
-import Shows from "./shows";
-import GonnaBeFine from "./gonna-be-fine";
+// Lazy load route components for code splitting
+const Home = lazy(() => import("./home"));
+const AboutUs = lazy(() => import("./about-us"));
+const Music = lazy(() => import("./music"));
+const Links = lazy(() => import("./links"));
+const Shows = lazy(() => import("./shows"));
+const GonnaBeFine = lazy(() => import("./gonna-be-fine"));
+
+// Loading fallback component
+const LoadingFallback = () => (
+  <div className="flex items-center justify-center min-h-[50vh]">
+    <div className="text-white text-xl">Loading...</div>
+  </div>
+);
 
 const Root = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -31,14 +39,16 @@ const Root = () => {
       />
       <NavBar {...{ setModalOpen }} />
       <AnimatePresence mode="wait">
-        <Routes location={location} key={location.key}>
-          <Route index element={<Home />} />
-          <Route path="/music" element={<Music />} />
-          <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/shows" element={<Shows />} />
-          <Route path="/links" element={<Links />} />
-          <Route path="/imgonnabefine" element={<GonnaBeFine />} />
-        </Routes>
+        <Suspense fallback={<LoadingFallback />}>
+          <Routes location={location} key={location.key}>
+            <Route index element={<Home />} />
+            <Route path="/music" element={<Music />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/shows" element={<Shows />} />
+            <Route path="/links" element={<Links />} />
+            <Route path="/imgonnabefine" element={<GonnaBeFine />} />
+          </Routes>
+        </Suspense>
       </AnimatePresence>
       <Modal {...{ isModalOpen, setModalOpen }}>
         <Newsletter />

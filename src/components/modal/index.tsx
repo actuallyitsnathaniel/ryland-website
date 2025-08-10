@@ -1,4 +1,4 @@
-import { useRef, useEffect, Dispatch, SetStateAction } from "react";
+import { useRef, useEffect, useCallback, useMemo, Dispatch, SetStateAction } from "react";
 
 type ModalType = {
   isModalOpen: boolean;
@@ -7,7 +7,8 @@ type ModalType = {
 };
 
 const Modal = ({ isModalOpen, setModalOpen, children }: ModalType) => {
-  const CloseButton = () => (
+  // Memoize the close button to prevent re-renders
+  const CloseButton = useMemo(() => (
     <div
       data-collapse-toggle="navbar"
       id="navbar-icon"
@@ -27,21 +28,25 @@ const Modal = ({ isModalOpen, setModalOpen, children }: ModalType) => {
         />
       </button>
     </div>
-  );
+  ), [setModalOpen]);
+
   const modalRef = useRef<HTMLDivElement>(null);
 
-  const handleClickOutside = (event: MouseEvent) => {
+  // Memoize the click handler to prevent recreating on every render
+  const handleClickOutside = useCallback((event: MouseEvent) => {
     if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
       setModalOpen(false);
     }
-  };
+  }, [setModalOpen]);
 
   useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+    if (isModalOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }
+  }, [isModalOpen, handleClickOutside]);
 
   return (
     <div
@@ -56,7 +61,7 @@ const Modal = ({ isModalOpen, setModalOpen, children }: ModalType) => {
         className="flex flex-col md:my-auto mx-auto pt-10
              md:h-fit rounded-md"
       >
-        <CloseButton />
+        {CloseButton}
         {children}
       </div>
     </div>

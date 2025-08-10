@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 interface Event {
@@ -90,11 +90,18 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
     fetchEvents();
   }, [artistName, appId, view]);
 
-  const startIndex = (currentPage - 1) * perPage;
-  const paginatedEvents = [...events]
-    .reverse()
-    .slice(startIndex, startIndex + perPage);
-  const totalPages = Math.ceil(events.length / perPage);
+  // Memoize expensive calculations
+  const { paginatedEvents, totalPages } = useMemo(() => {
+    const startIndex = (currentPage - 1) * perPage;
+    const reversedEvents = [...events].reverse();
+    const paginated = reversedEvents.slice(startIndex, startIndex + perPage);
+    const pages = Math.ceil(events.length / perPage);
+    
+    return {
+      paginatedEvents: paginated,
+      totalPages: pages,
+    };
+  }, [events, currentPage, perPage]);
 
   return (
     <div className="max-w-[90vw] mx-auto text-white">
