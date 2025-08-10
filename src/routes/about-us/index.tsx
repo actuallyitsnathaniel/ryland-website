@@ -24,20 +24,24 @@ const AboutUs = () => {
         variants={{
           visible: {
             clipPath: "inset(0% 0% 0% 0% round 10px)",
+            opacity: 1,
             transition: {
               type: "spring",
-              bounce: 1,
-              duration: 0.7,
-              delayChildren: 0.2,
-              staggerChildren: 0.2,
+              bounce: 0.4,
+              duration: 0.6,
+              delayChildren: 0.15,
+              staggerChildren: 0.1,
             },
           },
           hidden: {
             clipPath: "inset(10% 50% 90% 50% round 10px)",
+            opacity: 0,
             transition: {
               type: "spring",
               bounce: 0,
               duration: 0.3,
+              staggerChildren: 0.05,
+              staggerDirection: -1,
             },
           },
         }}

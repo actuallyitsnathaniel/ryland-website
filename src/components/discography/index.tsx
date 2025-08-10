@@ -2,7 +2,7 @@ import Disc from "./disc";
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { itemVariants } from "../../util/transitionPage";
+import { itemVariants, containerVariants } from "../../util/transitionPage";
 
 const Discography = ({ children }: { children: JSX.Element[] }) => {
   const [expanded, setExpanded] = useState(-1);
@@ -18,20 +18,24 @@ const Discography = ({ children }: { children: JSX.Element[] }) => {
           variants={{
             visible: {
               clipPath: "inset(0% 0% 0% 0% round 10px)",
+              opacity: 1,
               transition: {
                 type: "spring",
-                bounce: 1,
-                duration: 0.7,
-                delayChildren: 0.2,
-                staggerChildren: 0.1,
+                bounce: 0.4,
+                duration: 0.6,
+                delayChildren: 0.1,
+                staggerChildren: 0.08,
               },
             },
             hidden: {
               clipPath: "inset(10% 50% 90% 50% round 10px)",
+              opacity: 0,
               transition: {
                 type: "spring",
                 bounce: 0,
                 duration: 0.3,
+                staggerChildren: 0.05,
+                staggerDirection: -1,
               },
             },
           }}
@@ -40,7 +44,7 @@ const Discography = ({ children }: { children: JSX.Element[] }) => {
           {React.Children.map(children, (child, i) => {
             if (!child.props.album)
               return (
-                <motion.div variants={itemVariants}>
+                <motion.div key={child.key || i} variants={itemVariants}>
                   {React.cloneElement(child, { expanded, setExpanded, i })}
                 </motion.div>
               );
@@ -49,16 +53,21 @@ const Discography = ({ children }: { children: JSX.Element[] }) => {
       </div>
       <div>
         <h2 className={"flex text-6xl  italic justify-center p-5"}>Albums</h2>
-        <div className={"flex flex-row flex-wrap w-full justify-center"}>
+        <motion.div 
+          initial="hidden"
+          animate="visible"
+          variants={containerVariants}
+          className={"flex flex-row flex-wrap w-full justify-center"}
+        >
           {React.Children.map(children, (child, i) => {
             if (child.props.album)
               return (
-                <motion.div variants={itemVariants}>
+                <motion.div key={child.key || i} variants={itemVariants}>
                   {React.cloneElement(child, { expanded, setExpanded, i })}
                 </motion.div>
               );
           })}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
