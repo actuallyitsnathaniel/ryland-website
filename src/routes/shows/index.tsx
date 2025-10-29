@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import pageTransition from "../../util/transitionPage";
+import SEO from "../../components/seo";
 import BandsintownEvents from "../../components/bandsintown-events";
 
 const Shows = () => {
@@ -17,7 +18,13 @@ const Shows = () => {
 
   return (
     <main className="flex flex-col min-h-full h-full md:mt-16 text-center p-3 text-white items-center md:justify-center text-3xl">
+      <SEO
+        title="Shows"
+        description="View upcoming Ryland concerts and tour dates. Get tickets and follow us to be first to know about new shows."
+        url="https://www.weareryland.com/shows"
+      />
       <div className="mt-16 md:my-auto" />
+      <h1 className="sr-only">Ryland Shows - Upcoming Concerts & Tour Dates</h1>
       <motion.div className="flex flex-col gap-5 items-center">
         <BandsintownEvents artistName="ryland" appId={appId} />
         <p className="text-xl pt-10">Wanna be first to the show?</p>

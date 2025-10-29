@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import pageTransition from "../../util/transitionPage";
+import SEO from "../../components/seo";
 
 import Discography from "../../components/discography";
 
@@ -25,8 +26,15 @@ import talking from "../../assets/images/discography/Singles_EPs/Talking-Single_
 const Music = () => {
   return (
     <div id="music">
+      <SEO
+        title="Music"
+        description="Explore Ryland's complete discography including the latest EP 'I'm Gonna Be Fine' and albums like Portrait. Stream on Spotify, Apple Music, and more."
+        url="https://www.weareryland.com/music"
+        type="music.album"
+      />
       <div className={clsx(["w-screen text-white"])}>
         <div className="mt-16" />
+        <h1 className="sr-only">Ryland Music - Discography</h1>
         <Discography>
           <Discography.Disc
             artwork={gonnaBeFine}

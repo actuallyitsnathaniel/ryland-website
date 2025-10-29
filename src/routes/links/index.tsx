@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SEO from "../../components/seo";
 
 import InstagramLogo from "../../components/social-links/instagram-link";
 import SpotifyLink from "../../components/social-links/spotify-link";
@@ -14,6 +15,12 @@ import Newsletter from "../../components/newsletter";
 const Links = () => {
   return (
     <main className="backdrop-blur-sm">
+      <SEO
+        title="Links"
+        description="Connect with Ryland on Spotify, Instagram, Apple Music, and YouTube. Follow us and stay updated with our latest releases."
+        url="https://www.weareryland.com/links"
+      />
+      <h1 className="sr-only">Ryland Links - Connect with Us</h1>
       <div className="flex flex-col px-8 gap-10 items-center">
         <Link to={"/"}>
           <img

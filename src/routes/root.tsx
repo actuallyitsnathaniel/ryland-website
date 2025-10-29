@@ -31,12 +31,14 @@ const Root = () => {
     <div
       id="root"
       className="text-white flex flex-col min-h-screen max-w-screen font-sans-helvetica-now"
+      style={{
+        backgroundImage: `url(${grain})`,
+        backgroundBlendMode: 'soft-light',
+        filter: 'brightness(45%)'
+      }}
     >
       <VideoBackground />
-      <img
-        src={grain}
-        className="fixed mix-blend-soft-light brightness-[45%] bg-repeat w-full h-full object-cover pointer-events-none"
-      />
+      <div className="fixed inset-0 pointer-events-none mix-blend-soft-light brightness-[45%] bg-repeat bg-cover" style={{ backgroundImage: `url(${grain})` }} />
       <NavBar {...{ setModalOpen }} />
       <AnimatePresence mode="wait">
         <Suspense fallback={<LoadingFallback />}>

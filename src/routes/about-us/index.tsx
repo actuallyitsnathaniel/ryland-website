@@ -1,6 +1,7 @@
 import pageTransition from "../../util/transitionPage";
 import { motion } from "framer-motion";
 import clsx from "clsx";
+import SEO from "../../components/seo";
 
 import BandMember from "./member";
 
@@ -18,6 +19,12 @@ const AboutUs = () => {
   // about them maybe?
   return (
     <div id="about-us">
+      <SEO
+        title="About Us"
+        description="Meet the members of Ryland - Tom, Ron, Nate, Elias, and Jake. Learn about the indie rock band from Los Angeles."
+        url="https://www.weareryland.com/about-us"
+        type="profile"
+      />
       <motion.div
         initial="hidden"
         animate="visible"
@@ -48,6 +55,7 @@ const AboutUs = () => {
         className={clsx(["w-screen text-white text-4xl"])}
       >
         <div className="mt-16" />
+        <h1 className="sr-only">About Ryland - Meet the Band</h1>
         <div className="flex flex-wrap max-w-1/2 justify-center">
           <BandMember
             profilePic={tom}
