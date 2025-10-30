@@ -1,6 +1,5 @@
 import RylandBedIcon from "../../assets/images/icons/ryland-bed";
 import { MusicLinks } from "../../components/music-embeds";
-import pageTransition from "../../util/transitionPage";
 import SEO from "../../components/seo";
 
 const Home = () => {
@@ -42,4 +41,4 @@ const Home = () => {
   );
 };
 
-export default pageTransition(Home);
+export default Home;

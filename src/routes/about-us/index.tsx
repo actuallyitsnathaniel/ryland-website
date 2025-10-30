@@ -1,4 +1,3 @@
-import pageTransition from "../../util/transitionPage";
 import { motion } from "framer-motion";
 import clsx from "clsx";
 import SEO from "../../components/seo";
@@ -101,4 +100,4 @@ const AboutUs = () => {
   );
 };
 
-export default pageTransition(AboutUs);
+export default AboutUs;

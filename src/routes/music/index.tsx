@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import pageTransition from "../../util/transitionPage";
 import SEO from "../../components/seo";
 
 import Discography from "../../components/discography";
@@ -193,4 +192,4 @@ const Music = () => {
   );
 };
 
-export default pageTransition(Music);
+export default Music;

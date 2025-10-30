@@ -1,24 +1,25 @@
 import { motion } from "framer-motion";
+import { JSX } from "react";
 
 // Centralized animation variants to prevent conflicts
 export const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { 
-      type: "spring", 
-      stiffness: 300, 
+    transition: {
+      type: "spring",
+      stiffness: 300,
       damping: 24,
-      duration: 0.4 
+      duration: 0.4,
     },
   },
-  hidden: { 
-    opacity: 0, 
-    y: 20, 
-    transition: { 
+  hidden: {
+    opacity: 0,
+    y: 20,
+    transition: {
       duration: 0.2,
-      ease: "easeOut"
-    } 
+      ease: "easeOut",
+    },
   },
 };
 

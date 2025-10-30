@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import pageTransition from "../../util/transitionPage";
 import SEO from "../../components/seo";
 import BandsintownEvents from "../../components/bandsintown-events";
 
@@ -41,4 +40,4 @@ const Shows = () => {
   );
 };
 
-export default pageTransition(Shows);
+export default Shows;

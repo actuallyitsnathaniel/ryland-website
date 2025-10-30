@@ -1,6 +1,6 @@
 import { useState, Suspense, lazy } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 import VideoBackground from "../components/video-background";
 import NavBar from "../components/navbar";
@@ -8,6 +8,7 @@ import Modal from "../components/modal";
 import Footer from "../components/footer";
 import Newsletter from "../components/newsletter";
 import grain from "../assets/images/textures/AdobeStock_grain.jpeg";
+import { pageVariants } from "../util/transitionPage";
 
 // Lazy load route components for code splitting
 const Home = lazy(() => import("./home"));
@@ -41,12 +42,84 @@ const Root = () => {
       <AnimatePresence mode="wait">
         <Suspense fallback={<LoadingFallback />}>
           <Routes location={location} key={location.key}>
-            <Route index element={<Home />} />
-            <Route path="/music" element={<Music />} />
-            <Route path="/about-us" element={<AboutUs />} />
-            <Route path="/shows" element={<Shows />} />
-            <Route path="/links" element={<Links />} />
-            <Route path="/imgonnabefine" element={<GonnaBeFine />} />
+            <Route
+              index
+              element={
+                <motion.div
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                >
+                  <Home />
+                </motion.div>
+              }
+            />
+            <Route
+              path="/music"
+              element={
+                <motion.div
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                >
+                  <Music />
+                </motion.div>
+              }
+            />
+            <Route
+              path="/about-us"
+              element={
+                <motion.div
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                >
+                  <AboutUs />
+                </motion.div>
+              }
+            />
+            <Route
+              path="/shows"
+              element={
+                <motion.div
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                >
+                  <Shows />
+                </motion.div>
+              }
+            />
+            <Route
+              path="/links"
+              element={
+                <motion.div
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                >
+                  <Links />
+                </motion.div>
+              }
+            />
+            <Route
+              path="/imgonnabefine"
+              element={
+                <motion.div
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                >
+                  <GonnaBeFine />
+                </motion.div>
+              }
+            />
           </Routes>
         </Suspense>
       </AnimatePresence>

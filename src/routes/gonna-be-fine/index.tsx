@@ -1,4 +1,3 @@
-import pageTransition from "../../util/transitionPage";
 import Newsletter from "../../components/newsletter";
 import SEO from "../../components/seo";
 
@@ -56,4 +55,4 @@ const GonnaBeFine = () => {
   );
 };
 
-export default pageTransition(GonnaBeFine);
+export default GonnaBeFine;
