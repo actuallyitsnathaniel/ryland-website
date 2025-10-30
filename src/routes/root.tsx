@@ -7,7 +7,6 @@ import NavBar from "../components/navbar";
 import Modal from "../components/modal";
 import Footer from "../components/footer";
 import Newsletter from "../components/newsletter";
-import grain from "../assets/images/textures/AdobeStock_grain.jpeg";
 import { pageVariants } from "../util/transitionPage";
 
 // Lazy load route components for code splitting
@@ -34,10 +33,7 @@ const Root = () => {
       className="text-white flex flex-col min-h-screen max-w-screen font-sans-helvetica-now"
     >
       <VideoBackground />
-      <div
-        className="fixed inset-0 pointer-events-none mix-blend-soft-light brightness-[45%] bg-repeat bg-cover"
-        style={{ backgroundImage: `url(${grain})` }}
-      />
+      <div className="grain-overlay" />
       <NavBar {...{ setModalOpen }} />
       <AnimatePresence mode="wait">
         <Suspense fallback={<LoadingFallback />}>

@@ -45,8 +45,9 @@ const VideoBackground = () => {
         muted
         playsInline
         disablePictureInPicture
-        preload="metadata"
+        preload="auto"
         className={videoClassName}
+        poster="/video-thumbnail.jpg"
       >
         <source src={videoSource} type="video/MP4" />
       </video>
