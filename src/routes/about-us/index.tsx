@@ -20,8 +20,8 @@ const AboutUs = () => {
   return (
     <div id="about-us">
       <SEO
-        title="About Us"
-        description="Meet the members of Ryland - Tom, Ron, Nate, Elias, and Jake. Learn about the indie rock band from Los Angeles."
+        title="About Ryland - Meet the Band | Los Angeles Indie Rock"
+        description="Meet the members of Ryland: Tom (vocals, guitar, keys), Ron (bass), Nate (synths, vocals), Elias (drums), and Jake (guitar, producer). An indie rock band from Los Angeles making music together since 2019."
         url="https://www.weareryland.com/about-us"
         type="profile"
       />
@@ -55,7 +55,9 @@ const AboutUs = () => {
         className={clsx(["w-screen text-white text-4xl"])}
       >
         <div className="mt-16" />
-        <h1 className="sr-only">About Ryland - Meet the Band</h1>
+        <h1 className="sr-only">About Ryland - Meet the Band Members</h1>
+        <h2 className="sr-only">The Band</h2>
+        <h3 className="sr-only">Band Members</h3>
         <div className="flex flex-wrap max-w-1/2 justify-center">
           <BandMember
             profilePic={tom}

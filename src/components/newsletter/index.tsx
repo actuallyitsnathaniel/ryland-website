@@ -121,12 +121,15 @@ const Newsletter = () => {
           {isSubmitting ? "Submitting..." : submitted ? "Thanks!" : "Sign Up"}
         </button>
       </div>
-      <p className="text-center text-sm bottom-0 pt-10">
-        Contact us at&nbsp;
-        <a className="underline" href="mailto:weareryland@gmail.com">
-          weareryland@gmail.com
-        </a>
-      </p>
+      <address className="not-italic text-center text-sm bottom-0 pt-10">
+        <p>Ryland - Los Angeles, CA</p>
+        <p className="flex items-center justify-center">
+          <span className="inline-block scale-150 mr-1 -mb-0.5">📧</span>:&nbsp;
+          <a className="underline" href="mailto:weareryland@gmail.com">
+            weareryland@gmail.com
+          </a>
+        </p>
+      </address>
     </form>
   );
 };

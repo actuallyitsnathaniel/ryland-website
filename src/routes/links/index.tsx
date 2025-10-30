@@ -16,11 +16,13 @@ const Links = () => {
   return (
     <main className="backdrop-blur-sm">
       <SEO
-        title="Links"
-        description="Connect with Ryland on Spotify, Instagram, Apple Music, and YouTube. Follow us and stay updated with our latest releases."
+        title="Links - Connect with Ryland | Social Media & Streaming"
+        description="Connect with Ryland on Spotify, Apple Music, YouTube, and Instagram. Follow us for new music releases, tour dates, and exclusive content from our Los Angeles indie rock band."
         url="https://www.weareryland.com/links"
       />
       <h1 className="sr-only">Ryland Links - Connect with Us</h1>
+      <h2 className="sr-only">Streaming Platforms</h2>
+      <h3 className="sr-only">Social Media Links</h3>
       <div className="flex flex-col px-8 gap-10 items-center">
         <Link to={"/"}>
           <img

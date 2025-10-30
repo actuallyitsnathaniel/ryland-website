@@ -19,12 +19,14 @@ const Shows = () => {
   return (
     <main className="flex flex-col min-h-full h-full md:mt-16 text-center p-3 text-white items-center md:justify-center text-3xl">
       <SEO
-        title="Shows"
-        description="View upcoming Ryland concerts and tour dates. Get tickets and follow us to be first to know about new shows."
+        title="Shows & Tour Dates - Ryland Live Concerts | Los Angeles"
+        description="View upcoming Ryland concerts and tour dates in Los Angeles and beyond. Get tickets to indie rock shows, follow us on Bandsintown to be first to know about new tour announcements and live performances."
         url="https://www.weareryland.com/shows"
       />
       <div className="mt-16 md:my-auto" />
       <h1 className="sr-only">Ryland Shows - Upcoming Concerts & Tour Dates</h1>
+      <h2 className="sr-only">Live Performances</h2>
+      <h3 className="sr-only">Concert Schedule</h3>
       <motion.div className="flex flex-col gap-5 items-center">
         <BandsintownEvents artistName="ryland" appId={appId} />
         <p className="text-xl pt-10">Wanna be first to the show?</p>

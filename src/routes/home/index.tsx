@@ -22,15 +22,15 @@ const Home = () => {
   return (
     <div id="home" className={`w-screen flex-col justify-stretch`}>
       <SEO
-        title="Ryland - Official Website"
-        description="Official website of Ryland - Listen to 'I'm Gonna Be Fine EP' now on all platforms. Indie rock band from Los Angeles."
+        title="Ryland | Official Website"
+        description="Official website of Ryland, an indie rock band from Los Angeles. Stream our latest EP 'I'm Gonna Be Fine' on Spotify, Apple Music, YouTube, and all platforms. New music, tour dates, and more."
         url="https://www.weareryland.com"
         jsonLd={jsonLd}
       />
       <div className="flex flex-grow">
         <div className="mt-16" />
       </div>
-      <h1 className="sr-only">Ryland - Official Website</h1>
+      <h1 className="sr-only">Ryland - Indie Rock Band from Los Angeles</h1>
       <RylandBedIcon />
       <div className="flex-col text-center text-white" hidden>
         <h2 className="p-3 text-[150%] md:text-5xl  whitespace-nowrap">

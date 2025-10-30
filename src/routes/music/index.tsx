@@ -27,14 +27,16 @@ const Music = () => {
   return (
     <div id="music">
       <SEO
-        title="Music"
-        description="Explore Ryland's complete discography including the latest EP 'I'm Gonna Be Fine' and albums like Portrait. Stream on Spotify, Apple Music, and more."
+        title="Music & Discography - Stream Ryland's Latest Songs & Albums"
+        description="Explore Ryland's complete discography including our latest EP 'I'm Gonna Be Fine,' singles like 'Stuck At Home,' and albums like Portrait. Stream indie rock music on Spotify, Apple Music, YouTube, Tidal, and all platforms."
         url="https://www.weareryland.com/music"
         type="music.album"
       />
       <div className={clsx(["w-screen text-white"])}>
         <div className="mt-16" />
-        <h1 className="sr-only">Ryland Music - Discography</h1>
+        <h1 className="sr-only">Ryland Music - Full Discography</h1>
+        <h2 className="sr-only">Latest Releases</h2>
+        <h3 className="sr-only">EPs & Albums</h3>
         <Discography>
           <Discography.Disc
             artwork={gonnaBeFine}

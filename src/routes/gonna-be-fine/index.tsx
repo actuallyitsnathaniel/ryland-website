@@ -40,14 +40,16 @@ const GonnaBeFine = () => {
   return (
     <div className="flex mt-16 w-screen flex-col justify-center text-center mx-auto p-5 gap-10 text-white items-center text-3xl">
       <SEO
-        title="I'm Gonna Be Fine EP"
-        description="Stream Ryland's latest EP 'I'm Gonna Be Fine' now on Spotify, Apple Music, YouTube, and Tidal. Out now."
+        title="I'm Gonna Be Fine EP - Stream Now | Ryland"
+        description="Stream Ryland's latest indie rock EP 'I'm Gonna Be Fine' out now on Spotify, Apple Music, YouTube, and Tidal. Four new tracks from the Los Angeles band featuring 'Stuck At Home' and more."
         url="https://www.weareryland.com/imgonnabefine"
         type="music.album"
         image="https://www.weareryland.com/static/gonna-be-fine-600.jpg"
         jsonLd={jsonLd}
       />
       <h1 className="sr-only">I'm Gonna Be Fine EP - Ryland</h1>
+      <h2 className="sr-only">Latest EP Release</h2>
+      <h3 className="sr-only">Stream Now on All Platforms</h3>
       <PreSave />
       <Newsletter />
     </div>

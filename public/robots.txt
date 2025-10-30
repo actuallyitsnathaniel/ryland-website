@@ -1,3 +1,8 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /api/
+Disallow: /secret
+
+# Sitemap location
+Sitemap: https://www.weareryland.com/sitemap.xml
