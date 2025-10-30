@@ -27,20 +27,20 @@ interface BandsintownEventsProps {
 }
 
 const fadeVariants = {
-  hidden: { 
+  hidden: {
     opacity: 0,
     y: 10,
-    transition: { duration: 0.2, ease: "easeIn" }
+    transition: { duration: 0.2, ease: "easeIn" },
   },
-  visible: { 
+  visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.3, ease: "easeOut" }
+    transition: { duration: 0.3, ease: "easeOut" },
   },
-  exit: { 
+  exit: {
     opacity: 0,
     y: -10,
-    transition: { duration: 0.15, ease: "easeIn" }
+    transition: { duration: 0.15, ease: "easeIn" },
   },
 };
 
@@ -108,7 +108,7 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
     const reversedEvents = [...events].reverse();
     const paginated = reversedEvents.slice(startIndex, startIndex + perPage);
     const pages = Math.ceil(events.length / perPage);
-    
+
     return {
       paginatedEvents: paginated,
       totalPages: pages,
@@ -209,7 +209,7 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
                                 key={index}
                                 href={offer.url}
                                 target="_blank"
-                                rel="noopener noreferrer"
+                                rel="noopener"
                                 className="inline-block text-xs md:text-sm px-4 py-2 bg-yellow-600 hover:bg-blue-700 transition rounded"
                               >
                                 {offer.type === "Tickets"
@@ -221,7 +221,7 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
                             <a
                               href={getIWasThereUrl(event, appId, "ryland")}
                               target="_blank"
-                              rel="noopener noreferrer"
+                              rel="noopener"
                               className="inline-block text-xs md:text-sm px-1 py-2 bg-yellow-600 hover:bg-blue-700 transition rounded"
                             >
                               I was there ✋🏻

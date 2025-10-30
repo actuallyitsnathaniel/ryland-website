@@ -4,7 +4,7 @@ const YoutubeLink = () => {
       className="transition-all duration-100 p-2 md:hover:translate-y-2 hover:scale-125"
       href="https://www.youtube.com/@weareryland"
       target="_blank"
-      rel="noopener noreferrer"
+      rel="noopener"
     >
       <svg
         height="40px"

@@ -31,7 +31,7 @@ const Links = () => {
         </Link>
         <a
           href="https://distrokid.com/hyperfollow/ryland/stuck-at-home"
-          rel="noopener noreferrer"
+          rel="noopener"
           target="_blank"
           className="flex flex-col justify-center outline w-72 h-min p-4 rounded-lg bg-gray-500 bg-opacity-40"
         >

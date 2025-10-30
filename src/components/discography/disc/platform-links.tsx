@@ -11,7 +11,7 @@ const Link = ({ href, image }: { href: string; image: string }) => {
     <a
       href={href}
       className={`flex p-4 ${!href && "hidden"}`}
-      rel="noopener noreferrer"
+      rel="noopener"
       target="_blank"
     >
       <img

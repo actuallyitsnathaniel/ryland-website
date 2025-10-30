@@ -6,7 +6,7 @@ const AppleMusicLink = () => {
       className="transition-all duration-100 p-2 md:hover:translate-y-2"
       href="https://music.apple.com/us/artist/ryland/1472845950"
       target="_blank"
-      rel="noopener noreferrer"
+      rel="noopener"
     >
       <img
         src={AppleMusicSVG}

@@ -6,7 +6,7 @@ const GmailLogo = () => {
       className="transition-all duration-100 p-2 md:hover:translate-y-2 group"
       href="mailto:weareryland@gmail.com"
       target="_blank"
-      rel="noopener noreferrer"
+      rel="noopener"
     >
       <img
         alt="gmail"

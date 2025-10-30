@@ -4,7 +4,7 @@ const InstagramLogo = () => {
       className="transition-all duration-100 p-2 md:hover:translate-y-2"
       href="https://instagram.com/weareryland"
       target="_blank"
-      rel="noopener noreferrer"
+      rel="noopener"
     >
       <svg
         viewBox="-3 -3 30 30"

@@ -4,7 +4,7 @@ const SpotifyLink = () => {
       className="transition-all duration-100 p-2 md:hover:translate-y-2"
       href="https://open.spotify.com/artist/3Ekf9P1XRqjP3MBwl6iFVT?si=FFIpHWiOSdiy5jAlhFPCWg"
       target="_blank"
-      rel="noopener noreferrer"
+      rel="noopener"
     >
       <svg
         height="40px"
