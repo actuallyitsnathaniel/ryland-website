@@ -16,7 +16,7 @@
     "@unhead/react": "^2.0.19",
     "axios": "^1.13.2",
     "clsx": "^2.1.1",
-    "dotenv": "^16.4.5",
+    "dotenv": "^17.2.3",
     "express": "^4.19.2",
     "framer-motion": "^12.25.0",
     "nodemailer": "^7.0.11",
