@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer";
-import axios from "axios";
 
 import { render } from "@react-email/render";
+// eslint-disable-next-line no-unused-vars
 import NewReleaseEmail from "../src/assets/emails/new-release-email";
 
 // Check vercel deployment protection on lower envs
@@ -12,9 +12,6 @@ const handler = async (req, res) => {
     ? `https://${process.env.VERCEL_BRANCH_URL}`
     : "http://localhost:3000";
   const emailHTML = render(<NewReleaseEmail />);
-
-  // Google sheet url
-  const webAppURL = process.env.WEB_APP_URL;
 
   const imageAttachments = [
     {

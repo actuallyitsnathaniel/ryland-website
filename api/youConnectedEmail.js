@@ -82,7 +82,6 @@ const handler = async (req, res) => {
       firstName: firstName,
       lastName: lastName,
       emailAddress,
-      emailAddress,
     };
 
     // Send data to Google Sheets

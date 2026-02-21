@@ -2,14 +2,14 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { itemVariants } from "../../util/transitionPage";
 
-type BandMember = {
+type BandMemberProps = {
   i: number;
   profilePic: string;
   name: string;
   desc: string;
 };
 
-const BandMember = ({ i, profilePic, name, desc }: BandMember) => {
+const BandMember = ({ i, profilePic, name, desc }: BandMemberProps) => {
   const [expanded, setExpanded] = useState(-1);
   const setActiveMember = (i: number) => {
     if (i === expanded) {

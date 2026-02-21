@@ -38,6 +38,7 @@ const Music = () => {
         <h3 className="sr-only">EPs & Albums</h3>
         <Discography>
           <Discography.Disc
+            priority
             artwork={gonnaBeFine}
             title="I'm Gonna Be Fine - EP"
             appleMusicLink="https://music.apple.com/us/album/im-gonna-be-fine-ep/1776148719"

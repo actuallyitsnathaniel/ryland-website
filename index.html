@@ -17,13 +17,18 @@
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#bb6b01" />
 
-    <!-- Preconnect to Google Fonts -->
+    <!-- Preload video poster for fast initial paint -->
+    <link rel="preload" as="image" href="/video-thumbnail.jpg" fetchpriority="high" />
+
+    <!-- Google Fonts loaded async to avoid render-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- Preload critical fonts -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Phudu:wght@300..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Actor&family=Average+Sans&family=Karla:ital,wght@0,200..800;1,200..800&display=swap" />
-    <link href="https://fonts.googleapis.com/css2?family=Phudu:wght@300..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Actor&family=Average+Sans&family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Phudu:wght@300..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Actor&family=Average+Sans&family=Karla:ital,wght@0,200..800;1,200..800&display=optional"
+      media="print"
+      onload="this.media='all'"
+    />
 
     <!-- Sitemap -->
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
@@ -79,11 +84,6 @@
     <script
       crossorigin
       src="https://unpkg.com/universal-cookie@3/umd/universalCookie.min.js"
-      defer
-    ></script>
-    <script
-      charset="utf-8"
-      src="https://widgetv3.bandsintown.com/main.min.js"
       defer
     ></script>
     <!--

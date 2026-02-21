@@ -35,7 +35,7 @@ const Root = () => {
     >
       <VideoBackground />
       <div
-        className="fixed inset-0 pointer-events-none mix-blend-soft-light opacity-60 brightness-50 bg-repeat bg-cover z-[1]"
+        className="fixed inset-0 pointer-events-none mix-blend-soft-light opacity-60 brightness-50 bg-repeat z-[1]"
         style={{ backgroundImage: `url(${grain})` }}
       />
       <NavBar {...{ setModalOpen }} />

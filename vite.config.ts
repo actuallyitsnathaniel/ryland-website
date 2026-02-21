@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react";
 import svgr from "vite-plugin-svgr";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import preload from "vite-plugin-preload";
+import type { PluginConfig } from "svgo";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -17,7 +18,7 @@ export default defineConfig(({ mode }) => {
       svgr(),
       ViteImageOptimizer({
         test: /\.(jpe?g|png|gif|tiff|webp|svg|avif)$/i,
-        exclude: undefined,
+        exclude: /grain-optimized/,
         include: undefined,
         includePublic: true,
         logStats: true,
@@ -40,7 +41,7 @@ export default defineConfig(({ mode }) => {
                 attributes: [{ xmlns: "http://www.w3.org/2000/svg" }],
               },
             },
-          ],
+          ] as PluginConfig[],
         },
         png: {
           // https://sharp.pixelplumbing.com/api-output#png

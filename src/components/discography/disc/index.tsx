@@ -13,6 +13,7 @@ type DiscType = {
   album?: boolean;
   artwork: string;
   title?: string;
+  priority?: boolean;
 };
 
 const Disc = ({
@@ -26,6 +27,7 @@ const Disc = ({
   album = false,
   artwork,
   title,
+  priority = false,
 }: DiscType) => {
   const [focused, setFocused] = useState(false);
 
@@ -65,7 +67,7 @@ const Disc = ({
           width={"320px"}
           src={artwork}
           alt={title}
-          loading="eager"
+          loading={priority ? "eager" : "lazy"}
         />
         <motion.div
           className="absolute inset-0 flex items-center justify-center overflow-clip"
