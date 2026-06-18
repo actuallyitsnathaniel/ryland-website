@@ -3,6 +3,8 @@ import { motion, useReducedMotion } from "framer-motion";
 import MusicPlatformLinks from "./platform-links";
 import { EASE_EXPO_OUT, EASE_EXPO_IN_OUT } from "../../../util/transitionPage";
 
+export type DiscCategory = "single" | "ep" | "album" | "feature";
+
 type DiscType = {
   className?: string;
   appleMusicLink?: string;
@@ -11,7 +13,7 @@ type DiscType = {
   tidalLink?: string;
   youtubeLink?: string;
   webLink?: string;
-  album?: boolean;
+  category?: DiscCategory;
   artwork: string;
   title?: string;
   priority?: boolean;
@@ -48,9 +50,7 @@ const Disc = ({
         tabIndex={0}
         aria-expanded={focused}
         aria-label={`Show streaming links for ${title}`}
-        className={
-          "relative h-72 w-72 mx-auto rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
-        }
+        className="relative h-72 w-72 mx-auto overflow-hidden rounded-xl shadow-lg shadow-black/40 ring-1 ring-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
         onMouseLeave={() => setFocused(false)}
         onMouseEnter={() => setFocused(true)}
         onClick={() => setFocused(!focused)}
@@ -69,11 +69,9 @@ const Disc = ({
         }}
       >
         <img
-          className={`transition-all duration-200 ${
+          className={`h-full w-full object-cover transition-all duration-200 ${
             focused ? "blur-sm brightness-50" : ""
           }`}
-          height={"320px"}
-          width={"320px"}
           src={artwork}
           alt={title}
           loading={priority ? "eager" : "lazy"}
@@ -118,17 +116,9 @@ const Disc = ({
           />
         </motion.div>
       </motion.div>
-      <motion.div
-        className="flex flex-row w-80 flex-wrap text-center justify-center text-lg md:opacity-0"
-        whileHover={{
-          opacity: 1,
-          scale: 0.9,
-          transition: { duration: 0.2, ease: EASE_EXPO_OUT },
-        }}
-        initial={{ opacity: 1, scale: 1 }}
-      >
+      <div className="mx-auto mt-3 flex w-72 flex-wrap justify-center text-center text-lg">
         {title}
-      </motion.div>
+      </div>
     </motion.div>
   );
 };

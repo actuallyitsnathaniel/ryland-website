@@ -37,6 +37,7 @@ const Music = () => {
         <Discography>
           <Discography.Disc
             priority
+            category="ep"
             artwork={gonnaBeFine}
             title="I'm Gonna Be Fine - EP"
             appleMusicLink="https://music.apple.com/us/album/im-gonna-be-fine-ep/1776148719"
@@ -45,6 +46,7 @@ const Music = () => {
             tidalLink="https://tidal.com/browse/album/395421548"
           />
           <Discography.Disc
+            category="single"
             artwork={iWantEveryoneToKnowYou}
             title="I Want Everyone To Know You - Single"
             appleMusicLink="https://music.apple.com/us/album/i-want-everyone-to-know-you/1773323402?i=1773323403"
@@ -53,6 +55,7 @@ const Music = () => {
             tidalLink="https://tidal.com/browse/track/392325923"
           />
           <Discography.Disc
+            category="single"
             artwork={loveYouAgain}
             title="Love You Again - Single"
             appleMusicLink="https://music.apple.com/in/album/love-you-again/1773439001?i=1773439002"
@@ -61,6 +64,7 @@ const Music = () => {
             tidalLink="https://tidal.com/browse/album/392326246"
           />
           <Discography.Disc
+            category="single"
             artwork={fellThrough}
             title="Fell Through - Single"
             appleMusicLink="https://music.apple.com/us/album/fell-through-single/1773323131"
@@ -69,6 +73,7 @@ const Music = () => {
             tidalLink="https://tidal.com/browse/track/392325927"
           />
           <Discography.Disc
+            category="single"
             artwork={stuckAtHome}
             title="Stuck At Home - Single"
             appleMusicLink="https://music.apple.com/us/album/stuck-at-home/1773289537?i=1773289538"
@@ -77,6 +82,7 @@ const Music = () => {
             tidalLink="https://tidal.com/browse/track/392308932"
           />
           <Discography.Disc
+            category="ep"
             artwork={youshouldknow}
             title="You Should Know - EP"
             appleMusicLink={
@@ -91,6 +97,7 @@ const Music = () => {
             }
           />
           <Discography.Disc
+            category="single"
             artwork={talking}
             title="Talking - Single"
             appleMusicLink={
@@ -105,6 +112,7 @@ const Music = () => {
             }
           />
           <Discography.Disc
+            category="single"
             artwork={karma}
             title="Karma - Single"
             appleMusicLink={
@@ -119,6 +127,7 @@ const Music = () => {
             }
           />
           <Discography.Disc
+            category="single"
             artwork={iblfawn}
             title={`I've Been Looking For A While Now - Single`}
             appleMusicLink={
@@ -131,6 +140,7 @@ const Music = () => {
             youtubeLink={"https://www.youtube.com/watch?v=0En7Fc5NMmo"}
           />
           <Discography.Disc
+            category="ep"
             artwork={lashingOut}
             title="Lashing Out - EP"
             appleMusicLink={
@@ -145,6 +155,7 @@ const Music = () => {
             }
           />
           <Discography.Disc
+            category="single"
             artwork={stairwell}
             title="Stairwell - Single"
             appleMusicLink={
@@ -157,6 +168,7 @@ const Music = () => {
             youtubeLink={"https://youtu.be/DB4k8_zpkJw"}
           />
           <Discography.Disc
+            category="ep"
             artwork={itinerary}
             title="Itinerary - EP"
             appleMusicLink={
@@ -171,9 +183,9 @@ const Music = () => {
             }
           />
           <Discography.Disc
+            category="album"
             artwork={portrait}
             title={"Portrait"}
-            album
             appleMusicLink={
               "https://music.apple.com/us/album/portrait/1556566677"
             }
