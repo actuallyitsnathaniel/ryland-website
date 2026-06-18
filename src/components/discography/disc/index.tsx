@@ -84,6 +84,7 @@ const Disc = ({
           variants={{
             visible: {
               opacity: 1,
+              pointerEvents: "auto",
               backdropFilter: "blur(8px)",
               backgroundColor: "rgba(0, 0, 0, 0.5)",
               transition: {
@@ -93,6 +94,7 @@ const Disc = ({
             },
             hidden: {
               opacity: 0,
+              pointerEvents: "none",
               backdropFilter: "blur(0px)",
               backgroundColor: "rgba(0, 0, 0, 0)",
               transition: {
