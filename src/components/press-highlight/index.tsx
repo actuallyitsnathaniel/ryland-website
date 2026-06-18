@@ -6,13 +6,13 @@ type PressHighlightType = {
 
 const PressHighlight = ({ title, subtitle, url }: PressHighlightType) => {
   return (
-    <div className="pb-6">
-      <div className="md:transition md:duration-75 md:ease-in-out md:hover:scale-110">
-        <a className=" p-5 text-2xl" href={url}>
+    <div>
+      <div className="md:transition md:duration-75 md:hover:scale-105 md:origin-left">
+        <a className="text-2xl" href={url}>
           {title}
         </a>
       </div>
-      <p className="text-lg">{subtitle}</p>
+      <p className="text-lg text-white/60">{subtitle}</p>
     </div>
   );
 };

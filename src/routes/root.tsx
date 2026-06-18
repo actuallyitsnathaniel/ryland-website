@@ -18,20 +18,14 @@ const Music = lazy(() => import("./music"));
 const Links = lazy(() => import("./links"));
 const Shows = lazy(() => import("./shows"));
 const GonnaBeFine = lazy(() => import("./gonna-be-fine"));
-const Press = lazy(() => import("./press"));
 const Merch = lazy(() => import("./merch"));
 const Drinks = lazy(() => import("./drinks"));
 const Secret = lazy(() => import("./secret"));
 const ErrorPage = lazy(() => import("./error"));
 
 // Loading fallback component
-const LoadingFallback = () => (
-  <div className="flex items-center justify-center min-h-[50vh]">
-    <div className="font-sans-grotesk text-white text-2xl tracking-[0.3em] uppercase animate-pulse">
-      Ryland
-    </div>
-  </div>
-);
+// Blank fallback — let the page (and its logo) draw in without a visible placeholder
+const LoadingFallback = () => <div className="min-h-[50vh]" />;
 
 // Wrap each route in the shared page transition
 const Page = ({ children }: { children: ReactNode }) => (
@@ -69,7 +63,6 @@ const Root = () => {
               <Route path="/shows" element={<Page><Shows /></Page>} />
               <Route path="/links" element={<Page><Links /></Page>} />
               <Route path="/imgonnabefine" element={<Page><GonnaBeFine /></Page>} />
-              <Route path="/press" element={<Page><Press /></Page>} />
               <Route path="/merch" element={<Page><Merch /></Page>} />
               <Route path="/drinks" element={<Page><Drinks /></Page>} />
               <Route path="/secret" element={<Page><Secret /></Page>} />

@@ -26,18 +26,22 @@ const BandMember = ({
       className={
         expanded
           ? "fixed inset-0 z-50 flex flex-col items-center justify-center gap-4 bg-black/70 backdrop-blur-lg cursor-pointer px-6"
-          : "flex flex-col xl:basis-1/3 items-center p-3 cursor-pointer"
+          : "flex flex-col items-center gap-2 p-2 cursor-pointer group"
       }
     >
       <img
         src={profilePic}
         alt={name}
         className={
-          expanded ? "h-[345px] md:h-[400px]" : "max-w-xs w-[66%] p-3"
+          expanded
+            ? "h-[345px] md:h-[400px]"
+            : "h-28 w-28 sm:h-36 sm:w-36 object-cover rounded-lg transition-all duration-200 opacity-90 group-hover:opacity-100 grayscale group-hover:grayscale-0"
         }
         loading="eager"
       />
-      <p className="font-sans-grotesk text-2xl tracking-[-0.01em]">{name}</p>
+      <p className="font-sans-grotesk tracking-[-0.01em] text-lg lg:text-xl">
+        {name}
+      </p>
       {expanded && (
         <motion.p
           initial={{ opacity: 0, y: 8 }}
