@@ -9,7 +9,7 @@ const PressHighlight = ({ title, subtitle, url }: PressHighlightType) => {
     <div>
       <div className="md:transition md:duration-75 md:hover:scale-105 md:origin-left">
         <a className="text-2xl" href={url}>
-          {title}
+          &#9099; {title}
         </a>
       </div>
       <p className="text-lg text-white/60">{subtitle}</p>
