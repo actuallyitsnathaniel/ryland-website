@@ -2,9 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Helvetica Now Display";
+  src: url("/fonts/HelveticaNowDisplay.otf") format("opentype");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 body {
-  background-color: #000;
+  background-color: #0a0a0a;
   text-decoration-color: white;
+}
+
+/* Branded text selection */
+::selection {
+  background-color: #ea580c; /* orange-600 */
+  color: #fff;
+}
+
+/* Visible, on-brand focus ring for keyboard nav */
+:focus-visible {
+  outline: 2px solid #ea580c; /* orange-600 */
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Headings: tighten and balance display type */
+h1,
+h2 {
+  text-wrap: balance;
 }
 
 /* CSS-based grain texture - much lighter than 6.6MB image */

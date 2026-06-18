@@ -1,5 +1,5 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import clsx from "clsx";
 import SEO from "../../components/seo";
 
 import BandMember from "./member";
@@ -10,12 +10,36 @@ import elias from "../../assets/images/the-band/elias.png";
 import jake from "../../assets/images/the-band/jake.png";
 import nate from "../../assets/images/the-band/nate.png";
 
-import Press from "../press";
+const members = [
+  {
+    profilePic: tom,
+    name: "Tom",
+    desc: `The frontman of the band. "It's all about the We." Plays keys, guitar, and sings like a songbird.`,
+  },
+  {
+    profilePic: ron,
+    name: "Ron",
+    desc: `The bassist of the band. He'll riff if he feels like it.`,
+  },
+  {
+    profilePic: nate,
+    name: "Nate",
+    desc: `Synths and samples guy. Sings with Tom. He'll do a little jig if he feels like it.`,
+  },
+  {
+    profilePic: elias,
+    name: "Elias",
+    desc: `The drummer. He'll sing if he feels like it.`,
+  },
+  {
+    profilePic: jake,
+    name: "Jake",
+    desc: `Producer and electric guitar player. He'll solo if he feels like it.`,
+  },
+];
 
 const AboutUs = () => {
-  // TODO: implement context to adjust video BG to
-  // zoom into each band member and list something
-  // about them maybe?
+  const [expanded, setExpanded] = useState(-1);
   return (
     <div id="about-us">
       <SEO
@@ -51,50 +75,24 @@ const AboutUs = () => {
             },
           },
         }}
-        className={clsx(["w-screen text-white text-4xl"])}
+        className="w-screen text-white"
       >
         <div className="mt-16" />
         <h1 className="sr-only">About Ryland - Meet the Band Members</h1>
         <h2 className="sr-only">The Band</h2>
         <h3 className="sr-only">Band Members</h3>
-        <div className="flex flex-wrap max-w-1/2 justify-center">
-          <BandMember
-            profilePic={tom}
-            name={"Tom"}
-            i={0}
-            desc={`The frontman of the band. "It's all about the We." Plays keys,
-          guitar, and sings like a songbird.`}
-          />
-
-          <BandMember
-            profilePic={ron}
-            name={"Ron"}
-            i={1}
-            desc={`The bassist of the band. He'll riff if he feels like it.`}
-          />
-
-          <BandMember
-            profilePic={nate}
-            name={"Nate"}
-            i={2}
-            desc={`Synths and samples guy. Sings with Tom. He'll do a little jig if he feels like it.`}
-          />
-
-          <BandMember
-            profilePic={elias}
-            name={"Elias"}
-            i={3}
-            desc={`The drummer. He'll sing if he feels like it.`}
-          />
-
-          <BandMember
-            profilePic={jake}
-            name={"Jake"}
-            i={4}
-            desc={`Producer and electric guitar player. He'll solo if he feels like it.`}
-          />
+        <div className="flex flex-wrap justify-center">
+          {members.map((member, i) => (
+            <BandMember
+              key={member.name}
+              profilePic={member.profilePic}
+              name={member.name}
+              desc={member.desc}
+              expanded={expanded === i}
+              onToggle={() => setExpanded(expanded === i ? -1 : i)}
+            />
+          ))}
         </div>
-        <Press />
       </motion.div>
     </div>
   );

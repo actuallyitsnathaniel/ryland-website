@@ -27,7 +27,9 @@ const ErrorPage = lazy(() => import("./error"));
 // Loading fallback component
 const LoadingFallback = () => (
   <div className="flex items-center justify-center min-h-[50vh]">
-    <div className="text-white text-xl">Loading...</div>
+    <div className="font-sans-grotesk text-white text-2xl tracking-[0.3em] uppercase animate-pulse">
+      Ryland
+    </div>
   </div>
 );
 

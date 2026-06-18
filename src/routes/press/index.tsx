@@ -3,7 +3,9 @@ import PressHighlight from "../../components/press-highlight";
 const Press = () => {
   return (
     <div className="flex flex-wrap flex-col items-center text-white py-10">
-      <h1 className="underline under pb-3">Press Highlights</h1>
+      <h1 className="font-sans-grotesk text-[clamp(2rem,5vw,3.5rem)] tracking-[-0.02em] underline underline-offset-8 pb-3">
+        Press Highlights
+      </h1>
       <div className="flex text-center items-middle my-auto">
         <div>
           <PressHighlight

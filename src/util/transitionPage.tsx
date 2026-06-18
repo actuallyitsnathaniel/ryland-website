@@ -1,5 +1,9 @@
 import { Variants } from "framer-motion";
 
+// Custom easing curves (no default ease/linear)
+export const EASE_EXPO_OUT = [0.16, 1, 0.3, 1] as const;
+export const EASE_EXPO_IN_OUT = [0.87, 0, 0.13, 1] as const;
+
 // Centralized animation variants to prevent conflicts
 export const itemVariants: Variants = {
   visible: {
@@ -17,7 +21,7 @@ export const itemVariants: Variants = {
     y: 20,
     transition: {
       duration: 0.2,
-      ease: "easeOut",
+      ease: EASE_EXPO_OUT,
     },
   },
 };
@@ -57,7 +61,7 @@ export const pageVariants: Variants = {
     x: 0,
     transition: {
       duration: 0.3,
-      ease: "easeOut",
+      ease: EASE_EXPO_OUT,
     },
   },
   exit: {
@@ -65,7 +69,7 @@ export const pageVariants: Variants = {
     x: -15,
     transition: {
       duration: 0.2,
-      ease: "easeIn",
+      ease: EASE_EXPO_IN_OUT,
     },
   },
 };

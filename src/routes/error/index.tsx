@@ -9,7 +9,9 @@ export const ErrorScreen = ({
   subtext?: string;
 }) => (
   <main className="flex flex-col items-center justify-center min-h-screen px-6 text-center text-white gap-6">
-    <h1 className="text-4xl sm:text-6xl font-bold">{headline}</h1>
+    <h1 className="font-sans-grotesk text-[clamp(2.5rem,7vw,4.5rem)] tracking-[-0.03em] font-bold">
+      {headline}
+    </h1>
     <p className="text-lg sm:text-xl text-orange-100 max-w-md">{subtext}</p>
     <Link
       to="/"

@@ -9,7 +9,7 @@ const Discography = ({ children }: { children: JSX.Element[] }) => {
   return (
     <div className="flex flex-col md:px-28">
       <div>
-        <h2 className={"flex text-6xl  italic justify-center p-5"}>
+        <h2 className={"flex font-sans-grotesk text-[clamp(2.5rem,6vw,4.5rem)] tracking-[-0.02em] italic justify-center p-5"}>
           Singles / EPs
         </h2>
         <motion.div
@@ -52,7 +52,7 @@ const Discography = ({ children }: { children: JSX.Element[] }) => {
         </motion.div>
       </div>
       <div>
-        <h2 className={"flex text-6xl  italic justify-center p-5"}>Albums</h2>
+        <h2 className={"flex font-sans-grotesk text-[clamp(2.5rem,6vw,4.5rem)] tracking-[-0.02em] italic justify-center p-5"}>Albums</h2>
         <motion.div 
           initial="hidden"
           animate="visible"

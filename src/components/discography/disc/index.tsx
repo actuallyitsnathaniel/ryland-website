@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import MusicPlatformLinks from "./platform-links";
+import { EASE_EXPO_OUT, EASE_EXPO_IN_OUT } from "../../../util/transitionPage";
 
 type DiscType = {
   className?: string;
@@ -77,13 +78,13 @@ const Disc = ({
               opacity: 1,
               backdropFilter: "blur(8px)",
               backgroundColor: "rgba(0, 0, 0, 0.5)",
-              transition: { duration: 0.2, ease: "easeOut" },
+              transition: { duration: 0.2, ease: EASE_EXPO_OUT },
             },
             hidden: {
               opacity: 0,
               backdropFilter: "blur(0px)",
               backgroundColor: "rgba(0, 0, 0, 0)",
-              transition: { duration: 0.15, ease: "easeIn" },
+              transition: { duration: 0.15, ease: EASE_EXPO_IN_OUT },
             },
           }}
         >
@@ -106,7 +107,7 @@ const Disc = ({
         whileHover={{
           opacity: 1,
           scale: 0.9,
-          transition: { duration: 0.2, ease: "easeOut" },
+          transition: { duration: 0.2, ease: EASE_EXPO_OUT },
         }}
         initial={{ opacity: 1, scale: 1 }}
       >

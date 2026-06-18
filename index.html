@@ -20,12 +20,21 @@
     <!-- Preload video poster for fast initial paint -->
     <link rel="preload" as="image" href="/video-thumbnail.jpg" fetchpriority="high" />
 
+    <!-- Preload body display font so text doesn't flash -->
+    <link
+      rel="preload"
+      as="font"
+      type="font/otf"
+      href="/fonts/HelveticaNowDisplay.otf"
+      crossorigin
+    />
+
     <!-- Google Fonts loaded async to avoid render-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Phudu:wght@300..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Actor&family=Average+Sans&family=Karla:ital,wght@0,200..800;1,200..800&display=optional"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
       media="print"
       onload="this.media='all'"
     />

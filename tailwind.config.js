@@ -18,14 +18,10 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],
-        "sans-phudu": ["Phudu", ...defaultTheme.fontFamily.sans],
-        "sans-josefin": ["Josefin Sans", ...defaultTheme.fontFamily.sans],
-        "sans-actor": ["Actor", ...defaultTheme.fontFamily.sans],
-        "sans-average": ["Average Sans", ...defaultTheme.fontFamily.sans],
-        "sans-karla": ["Karla", ...defaultTheme.fontFamily.sans],
+        "sans-grotesk": ["Space Grotesk", ...defaultTheme.fontFamily.sans],
         "sans-helvetica-now": [
-          "Helvetica Now",
-          "/src/assets/fonts/HelveticaNowDisplay/HelveticaNowDisplay.otf",
+          "Helvetica Now Display",
+          ...defaultTheme.fontFamily.sans,
         ],
       },
     },
