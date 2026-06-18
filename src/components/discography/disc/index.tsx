@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import MusicPlatformLinks from "./platform-links";
 import { EASE_EXPO_OUT, EASE_EXPO_IN_OUT } from "../../../util/transitionPage";
 
@@ -25,17 +25,17 @@ const Disc = ({
   tidalLink,
   youtubeLink,
   webLink,
-  album = false,
   artwork,
   title,
   priority = false,
 }: DiscType) => {
   const [focused, setFocused] = useState(false);
+  const reduceMotion = useReducedMotion();
 
   return (
     <motion.div
       className={`${className} text-8xl group p-3`}
-      whileHover={{ scale: 1.05 }}
+      whileHover={reduceMotion ? undefined : { scale: 1.05 }}
       transition={{
         type: "spring",
         stiffness: 300,
@@ -44,16 +44,24 @@ const Disc = ({
       }}
     >
       <motion.div
-        className={"relative h-72 w-72 mx-auto"}
-        onMouseLeave={() => {
-          setFocused(false);
-        }}
+        role="button"
+        tabIndex={0}
+        aria-expanded={focused}
+        aria-label={`Show streaming links for ${title}`}
+        className={
+          "relative h-72 w-72 mx-auto rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+        }
+        onMouseLeave={() => setFocused(false)}
         onMouseEnter={() => setFocused(true)}
-        onClick={() => {
-          setFocused(!focused);
+        onClick={() => setFocused(!focused)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            setFocused((f) => !f);
+          }
         }}
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
+        whileHover={reduceMotion ? undefined : { scale: 1.02 }}
+        whileTap={reduceMotion ? undefined : { scale: 0.98 }}
         transition={{
           type: "spring",
           stiffness: 400,
@@ -78,26 +86,32 @@ const Disc = ({
               opacity: 1,
               backdropFilter: "blur(8px)",
               backgroundColor: "rgba(0, 0, 0, 0.5)",
-              transition: { duration: 0.2, ease: EASE_EXPO_OUT },
+              transition: {
+                duration: reduceMotion ? 0 : 0.2,
+                ease: EASE_EXPO_OUT,
+              },
             },
             hidden: {
               opacity: 0,
               backdropFilter: "blur(0px)",
               backgroundColor: "rgba(0, 0, 0, 0)",
-              transition: { duration: 0.15, ease: EASE_EXPO_IN_OUT },
+              transition: {
+                duration: reduceMotion ? 0 : 0.15,
+                ease: EASE_EXPO_IN_OUT,
+              },
             },
           }}
         >
           <MusicPlatformLinks
             className="origin-center"
             {...{
+              title,
               appleMusicLink,
               spotifyLink,
               soundcloudLink,
               tidalLink,
               youtubeLink,
               webLink,
-              album,
             }}
           />
         </motion.div>

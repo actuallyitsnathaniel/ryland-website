@@ -6,19 +6,27 @@ import youtube from "/src/assets/images/icons/music-platforms/youtube.svg";
 import tidal from "/src/assets/images/icons/music-platforms/tidal.svg";
 import hyperlinkIcon from "/src/assets/images/icons/shop-icon.svg";
 
-const Link = ({ href, image }: { href: string; image: string }) => {
+const Link = ({
+  href,
+  image,
+  label,
+}: {
+  href: string;
+  image: string;
+  label: string;
+}) => {
   return (
     <a
       href={href}
-      className={`flex p-4 ${!href && "hidden"}`}
-      rel="noopener"
+      className="flex p-4 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+      rel="noopener noreferrer"
       target="_blank"
     >
       <img
         className={"transition-all duration-75 md:hover:scale-110"}
         height={"75px"}
         width={"75px"}
-        alt="music-link"
+        alt={label}
         src={image}
       />
     </a>
@@ -27,17 +35,18 @@ const Link = ({ href, image }: { href: string; image: string }) => {
 
 type MusicPlatformLinksType = {
   className: string;
-  width?: string;
+  title?: string;
   spotifyLink?: string;
   appleMusicLink?: string;
   soundcloudLink?: string;
   tidalLink?: string;
-  webLink?: string;
+  webLink?: string; // ponytail: kept for future web/merch releases
   youtubeLink?: string;
 };
 
 const MusicPlatformLinks = ({
   className,
+  title,
   spotifyLink,
   appleMusicLink,
   soundcloudLink,
@@ -45,18 +54,33 @@ const MusicPlatformLinks = ({
   youtubeLink,
   webLink,
 }: MusicPlatformLinksType) => {
+  const links = [
+    { href: spotifyLink, image: spotify, platform: "Spotify" },
+    { href: appleMusicLink, image: appleMusic, platform: "Apple Music" },
+    { href: soundcloudLink, image: soundcloud, platform: "SoundCloud" },
+    { href: tidalLink, image: tidal, platform: "Tidal" },
+    { href: youtubeLink, image: youtube, platform: "YouTube" },
+    { href: webLink, image: hyperlinkIcon, platform: "the web" },
+  ];
+
   return (
     <div
       className={`absolute flex flex-wrap justify-around
       ${className} h-72 w-72 items-center
       `}
     >
-      {spotifyLink && <Link href={spotifyLink} image={spotify} />}
-      {appleMusicLink && <Link href={appleMusicLink} image={appleMusic} />}
-      {soundcloudLink && <Link href={soundcloudLink} image={soundcloud} />}
-      {tidalLink && <Link href={tidalLink} image={tidal} />}
-      {youtubeLink && <Link href={youtubeLink} image={youtube} />}
-      {webLink && <Link href={webLink} image={hyperlinkIcon} />}
+      {links
+        .filter((link) => link.href)
+        .map(({ href, image, platform }) => (
+          <Link
+            key={platform}
+            href={href as string}
+            image={image}
+            label={
+              title ? `Listen to ${title} on ${platform}` : `Listen on ${platform}`
+            }
+          />
+        ))}
     </div>
   );
 };
