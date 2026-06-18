@@ -93,9 +93,9 @@ const AboutUs = () => {
             },
           },
         }}
-        className="text-white w-full min-h-[calc(100vh-4rem)] px-6 pt-24 pb-10
-          flex flex-col lg:flex-row items-center lg:items-center justify-center
-          gap-12 lg:gap-16"
+        className="text-white w-full
+          flex flex-col lg:flex-row items-center justify-center
+          gap-10 lg:gap-16"
       >
         <h1 className="sr-only">About Ryland - Meet the Band Members</h1>
         <h2 className="sr-only">The Band</h2>

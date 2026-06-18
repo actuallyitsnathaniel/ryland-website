@@ -8,7 +8,7 @@ export const ErrorScreen = ({
   headline?: string;
   subtext?: string;
 }) => (
-  <main className="flex flex-col items-center justify-center min-h-screen px-6 text-center text-white gap-6">
+  <div className="flex flex-col items-center text-center text-white gap-6">
     <h1 className="font-sans-grotesk text-[clamp(2.5rem,7vw,4.5rem)] tracking-[-0.03em] font-bold">
       {headline}
     </h1>
@@ -19,7 +19,7 @@ export const ErrorScreen = ({
     >
       Back home
     </Link>
-  </main>
+  </div>
 );
 
 const ErrorPage = () => <ErrorScreen />;

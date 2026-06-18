@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import SEO from "../../components/seo";
 
 import Discography from "../../components/discography";
@@ -31,8 +30,7 @@ const Music = () => {
         url="https://www.weareryland.com/music"
         type="music.album"
       />
-      <div className={clsx(["w-screen text-white"])}>
-        <div className="mt-16" />
+      <div className="text-white">
         <h1 className="sr-only">Ryland Music - Full Discography</h1>
         <h2 className="sr-only">Latest Releases</h2>
         <h3 className="sr-only">EPs & Albums</h3>

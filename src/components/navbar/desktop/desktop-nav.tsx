@@ -14,12 +14,9 @@ export const DesktopNav = ({
   setModalOpen,
 }: DesktopNavType) => {
   return (
-    <div className="flex flex-row w-screen top-0 backdrop-blur-0 bg-opacity-35">
+    <header className="fixed top-0 inset-x-0 z-50 h-16 flex flex-row">
       <nav
-        className={`flex w-1/3 px-6 text-white items-center
-        transition-all duration-100 ease-in-out whitespace-nowrap ${
-          pageTitle.includes("links") && "hidden"
-        }`}
+        className="flex w-1/3 px-6 text-white items-center whitespace-nowrap"
       >
         <NavItems
           classNames={"w-full justify-between gap-0"}
@@ -29,6 +26,6 @@ export const DesktopNav = ({
           <SocialLinks />
         </div>
       </nav>
-    </div>
+    </header>
   );
 };

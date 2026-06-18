@@ -27,16 +27,20 @@ const ErrorPage = lazy(() => import("./error"));
 // Blank fallback — let the page (and its logo) draw in without a visible placeholder
 const LoadingFallback = () => <div className="min-h-[50vh]" />;
 
-// Wrap each route in the shared page transition
+// Wrap each route in the shared page transition.
+// flex-1 fills the space between nav and footer; the inner m-auto centers
+// content when it's shorter than that space and top-aligns + scrolls when taller
+// (no top-clipping, unlike justify-center).
 const Page = ({ children }: { children: ReactNode }) => (
-  <motion.div
+  <motion.main
     variants={pageVariants}
     initial="initial"
     animate="animate"
     exit="exit"
+    className="flex flex-1 flex-col w-full pt-20 md:pt-16"
   >
-    {children}
-  </motion.div>
+    <div className="m-auto w-full px-6 py-10">{children}</div>
+  </motion.main>
 );
 
 const Root = () => {

@@ -1,6 +1,8 @@
+import { Dispatch, SetStateAction } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { MobileNavHeader } from "./mobile-nav-header";
 import { NavItems } from "../nav-items";
-import { Dispatch, SetStateAction } from "react";
+import { EASE_EXPO_OUT } from "../../../util/transitionPage";
 
 type MobileNavType = {
   expanded: boolean;
@@ -15,26 +17,54 @@ export const MobileNav = ({
   pageTitle,
   setModalOpen,
 }: MobileNavType) => {
+  const reduceMotion = useReducedMotion();
+
   return (
-    <div id="nav-bar">
-      <nav
-        className={`fixed z-[1] h-30 text-white w-screen top-0 transition-all bg-opacity-0 ${
-          pageTitle.includes("links") && "hidden"
-        } ${expanded && "bg-black bg-opacity-80 backdrop-blur-md h-full"}`}
-      >
-        <MobileNavHeader {...{ expanded, setExpanded, pageTitle }} />
-        <div
-          id="nav-wrapper"
-          className={`w-screen flex justify-center origin-top duration-150 h-0 scale-0 ${
-            expanded && "scale-100 h-[80%]"
-          }`}
-        >
-          <NavItems
-            classNames={`flex flex-col justify-around items-center`}
-            {...{ expanded, setExpanded, pageTitle, setModalOpen }}
+    <header className="fixed top-0 inset-x-0 z-50 text-white">
+      {/* Full-viewport frosted overlay — anchored to the viewport, not a
+          zero-height parent, so it actually covers the page. */}
+      <AnimatePresence>
+        {expanded && (
+          <motion.div
+            key="mobile-menu"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{
+              duration: reduceMotion ? 0 : 0.25,
+              ease: EASE_EXPO_OUT,
+            }}
+            className="fixed inset-0 -z-10 bg-black/90 backdrop-blur-md"
           />
-        </div>
-      </nav>
-    </div>
+        )}
+      </AnimatePresence>
+
+      {/* Header bar: title + hamburger (always present) */}
+      <div className="relative h-20">
+        <MobileNavHeader {...{ expanded, setExpanded, pageTitle }} />
+      </div>
+
+      {/* Centered link list, revealed when expanded */}
+      <AnimatePresence>
+        {expanded && (
+          <motion.div
+            key="mobile-links"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{
+              duration: reduceMotion ? 0 : 0.3,
+              ease: EASE_EXPO_OUT,
+            }}
+            className="fixed inset-x-0 top-20 bottom-0 flex justify-center"
+          >
+            <NavItems
+              classNames="flex flex-col justify-around items-center"
+              {...{ setExpanded, pageTitle, setModalOpen }}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
   );
 };

@@ -37,7 +37,7 @@ const GonnaBeFine = () => {
   };
 
   return (
-    <div className="flex mt-16 w-screen flex-col justify-center text-center mx-auto p-5 gap-10 text-white items-center text-3xl">
+    <div className="flex flex-col text-center gap-10 text-white items-center text-3xl">
       <SEO
         title="I'm Gonna Be Fine EP - Stream Now | Ryland"
         description="Stream Ryland's latest indie rock EP 'I'm Gonna Be Fine' out now on Spotify, Apple Music, YouTube, and Tidal. Four new tracks from the Los Angeles band featuring 'Stuck At Home' and more."

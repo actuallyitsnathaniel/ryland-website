@@ -58,21 +58,13 @@ const NavBar = ({
 
   const pageTitle = usePageTitle(location.pathname);
 
-  return (
-    <div
-      id="navbar"
-      className={`fixed z-[2] ${pageTitle.includes("links") && "hidden"}`}
-    >
-      {isMobile ? (
-        <MobileNav
-          {...{ expanded, setExpanded, isMobile, pageTitle, setModalOpen }}
-        />
-      ) : (
-        <DesktopNav
-          {...{ expanded, setExpanded, isMobile, pageTitle, setModalOpen }}
-        />
-      )}
-    </div>
+  // Navbar is hidden entirely on the /links page.
+  if (location.pathname === "/links") return null;
+
+  return isMobile ? (
+    <MobileNav {...{ expanded, setExpanded, pageTitle, setModalOpen }} />
+  ) : (
+    <DesktopNav {...{ pageTitle, setExpanded, setModalOpen }} />
   );
 };
 

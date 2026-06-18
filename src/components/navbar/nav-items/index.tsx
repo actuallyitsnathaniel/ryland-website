@@ -16,7 +16,6 @@ export const NavItems = ({
 }: NavItemsType) => {
   return (
     <ul
-      id="nav-bar"
       className={`flex text-3xl sm:justify-around sm:gap-x-5 ${
         !!classNames && classNames
       }`}

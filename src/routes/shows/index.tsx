@@ -16,13 +16,12 @@ const Shows = () => {
   }, []);
 
   return (
-    <main className="flex flex-col min-h-full h-full md:mt-16 text-center p-3 text-white items-center md:justify-center text-3xl">
+    <div className="flex flex-col text-center text-white items-center text-3xl">
       <SEO
         title="Shows & Tour Dates - Ryland Live Concerts | Los Angeles"
         description="View upcoming Ryland concerts and tour dates in Los Angeles and beyond. Get tickets to indie rock shows, follow us on Bandsintown to be first to know about new tour announcements and live performances."
         url="https://www.weareryland.com/shows"
       />
-      <div className="mt-16 md:my-auto" />
       <h1 className="sr-only">Ryland Shows - Upcoming Concerts & Tour Dates</h1>
       <h2 className="sr-only">Live Performances</h2>
       <h3 className="sr-only">Concert Schedule</h3>
@@ -36,7 +35,7 @@ const Shows = () => {
           loading="lazy"
         ></iframe>
       </motion.div>
-    </main>
+    </div>
   );
 };
 
