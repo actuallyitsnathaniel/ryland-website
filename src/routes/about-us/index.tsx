@@ -55,8 +55,7 @@ const press = [
 
 // TODO: replace with the real band bio
 const bio = `Ryland is an indie rock band from Los Angeles, making music together
-since 2019. Tom, Ron, Nate, Elias, and Jake write loud, honest songs about
-trying to be fine — and mostly getting there.`;
+since 2019. Comprised of Tom, Ron, Nate, Elias, and Jake. They love music and inventing their own sports.`;
 
 const AboutUs = () => {
   const [expanded, setExpanded] = useState(-1);

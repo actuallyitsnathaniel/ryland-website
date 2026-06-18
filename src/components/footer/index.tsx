@@ -4,25 +4,26 @@ const Footer = () => {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "MusicGroup",
-    "name": "Ryland",
-    "genre": "Indie Rock",
-    "address": {
+    name: "Ryland",
+    genre: "Indie Rock",
+    address: {
       "@type": "PostalAddress",
-      "addressLocality": "Los Angeles",
-      "addressRegion": "CA",
-      "addressCountry": "US"
+      addressLocality: "Los Angeles",
+      addressRegion: "CA",
+      addressCountry: "US",
     },
-    "email": "weareryland@gmail.com",
-    "url": "https://www.weareryland.com",
-    "sameAs": [
-      "https://www.instagram.com/weare.ryland",
+    email: "weareryland@gmail.com",
+    url: "https://www.weareryland.com",
+    sameAs: [
+      "https://www.instagram.com/weareryland",
       "https://open.spotify.com/artist/3Ekf9P1XRqjP3MBwl6iFVT",
       "https://music.apple.com/us/artist/ryland/1472845950",
-      "https://www.youtube.com/@weareryland"
-    ]
+      "https://www.youtube.com/@weareryland",
+    ],
   };
 
-  const isHomePage = typeof window !== 'undefined' && window.location.pathname === '/';
+  const isHomePage =
+    typeof window !== "undefined" && window.location.pathname === "/";
 
   return (
     <footer
@@ -31,7 +32,9 @@ const Footer = () => {
     >
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessSchema),
+        }}
       />
       <div className="py-3">
         <div className="sm:hidden flex justify-center">

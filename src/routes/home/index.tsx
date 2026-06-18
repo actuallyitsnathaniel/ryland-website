@@ -11,10 +11,10 @@ const Home = () => {
     url: "https://www.weareryland.com",
     image: "https://www.weareryland.com/video-thumbnail.jpg",
     sameAs: [
-      "https://www.instagram.com/weare.ryland",
+      "https://www.instagram.com/weareryland",
       "https://open.spotify.com/artist/5MmVJjCarP72v32WkjCixh",
       "https://music.apple.com/us/artist/ryland/1473082051",
-      "https://www.youtube.com/@rylandband",
+      "https://www.youtube.com/@weareryland",
     ],
   };
 
