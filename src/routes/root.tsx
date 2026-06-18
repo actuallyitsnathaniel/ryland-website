@@ -1,4 +1,4 @@
-import { useState, Suspense, lazy } from "react";
+import { useState, Suspense, lazy, ReactNode } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -7,6 +7,7 @@ import NavBar from "../components/navbar";
 import Modal from "../components/modal";
 import Footer from "../components/footer";
 import Newsletter from "../components/newsletter";
+import ErrorBoundary from "../components/error-boundary";
 import grain from "../assets/images/textures/grain-optimized.jpeg";
 import { pageVariants } from "../util/transitionPage";
 
@@ -17,12 +18,29 @@ const Music = lazy(() => import("./music"));
 const Links = lazy(() => import("./links"));
 const Shows = lazy(() => import("./shows"));
 const GonnaBeFine = lazy(() => import("./gonna-be-fine"));
+const Press = lazy(() => import("./press"));
+const Merch = lazy(() => import("./merch"));
+const Drinks = lazy(() => import("./drinks"));
+const Secret = lazy(() => import("./secret"));
+const ErrorPage = lazy(() => import("./error"));
 
 // Loading fallback component
 const LoadingFallback = () => (
   <div className="flex items-center justify-center min-h-[50vh]">
     <div className="text-white text-xl">Loading...</div>
   </div>
+);
+
+// Wrap each route in the shared page transition
+const Page = ({ children }: { children: ReactNode }) => (
+  <motion.div
+    variants={pageVariants}
+    initial="initial"
+    animate="animate"
+    exit="exit"
+  >
+    {children}
+  </motion.div>
 );
 
 const Root = () => {
@@ -40,88 +58,23 @@ const Root = () => {
       />
       <NavBar {...{ setModalOpen }} />
       <AnimatePresence mode="wait">
-        <Suspense fallback={<LoadingFallback />}>
-          <Routes location={location} key={location.key}>
-            <Route
-              index
-              element={
-                <motion.div
-                  variants={pageVariants}
-                  initial="initial"
-                  animate="animate"
-                  exit="exit"
-                >
-                  <Home />
-                </motion.div>
-              }
-            />
-            <Route
-              path="/music"
-              element={
-                <motion.div
-                  variants={pageVariants}
-                  initial="initial"
-                  animate="animate"
-                  exit="exit"
-                >
-                  <Music />
-                </motion.div>
-              }
-            />
-            <Route
-              path="/about-us"
-              element={
-                <motion.div
-                  variants={pageVariants}
-                  initial="initial"
-                  animate="animate"
-                  exit="exit"
-                >
-                  <AboutUs />
-                </motion.div>
-              }
-            />
-            <Route
-              path="/shows"
-              element={
-                <motion.div
-                  variants={pageVariants}
-                  initial="initial"
-                  animate="animate"
-                  exit="exit"
-                >
-                  <Shows />
-                </motion.div>
-              }
-            />
-            <Route
-              path="/links"
-              element={
-                <motion.div
-                  variants={pageVariants}
-                  initial="initial"
-                  animate="animate"
-                  exit="exit"
-                >
-                  <Links />
-                </motion.div>
-              }
-            />
-            <Route
-              path="/imgonnabefine"
-              element={
-                <motion.div
-                  variants={pageVariants}
-                  initial="initial"
-                  animate="animate"
-                  exit="exit"
-                >
-                  <GonnaBeFine />
-                </motion.div>
-              }
-            />
-          </Routes>
-        </Suspense>
+        <ErrorBoundary>
+          <Suspense fallback={<LoadingFallback />}>
+            <Routes location={location} key={location.key}>
+              <Route index element={<Page><Home /></Page>} />
+              <Route path="/music" element={<Page><Music /></Page>} />
+              <Route path="/about-us" element={<Page><AboutUs /></Page>} />
+              <Route path="/shows" element={<Page><Shows /></Page>} />
+              <Route path="/links" element={<Page><Links /></Page>} />
+              <Route path="/imgonnabefine" element={<Page><GonnaBeFine /></Page>} />
+              <Route path="/press" element={<Page><Press /></Page>} />
+              <Route path="/merch" element={<Page><Merch /></Page>} />
+              <Route path="/drinks" element={<Page><Drinks /></Page>} />
+              <Route path="/secret" element={<Page><Secret /></Page>} />
+              <Route path="*" element={<Page><ErrorPage /></Page>} />
+            </Routes>
+          </Suspense>
+        </ErrorBoundary>
       </AnimatePresence>
       <Modal {...{ isModalOpen, setModalOpen }}>
         <Newsletter />

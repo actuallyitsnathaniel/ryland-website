@@ -46,7 +46,7 @@ const SEO = ({
       ? [
           {
             type: "application/ld+json",
-            children: JSON.stringify(jsonLd),
+            innerHTML: JSON.stringify(jsonLd),
           },
         ]
       : [],

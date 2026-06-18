@@ -26,6 +26,9 @@ const Newsletter = () => {
       setIsSubmitting(true);
 
       try {
+        const htmlBody = await render(YouConnectedEmail({ firstName }), {
+          pretty: true,
+        });
         const response = await fetch(
           `/api/youConnectedEmail?firstName=${encodeURIComponent(
             firstName
@@ -33,9 +36,7 @@ const Newsletter = () => {
             lastName
           )}&emailAddress=${encodeURIComponent(
             email
-          )}&htmlBody=${encodeURIComponent(
-            render(YouConnectedEmail({ firstName }), { pretty: true })
-          )}`
+          )}&htmlBody=${encodeURIComponent(htmlBody)}`
         );
 
         if (!response.ok) {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useMemo } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, Variants } from "framer-motion";
 
 interface Event {
   id: string;
@@ -26,7 +26,7 @@ interface BandsintownEventsProps {
   perPage?: number;
 }
 
-const fadeVariants = {
+const fadeVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 10,

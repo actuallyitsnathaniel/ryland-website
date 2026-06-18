@@ -1,4 +1,4 @@
-import { useRef, useEffect, useCallback, useMemo, Dispatch, SetStateAction } from "react";
+import { useRef, useEffect, useCallback, useMemo, Dispatch, SetStateAction, JSX } from "react";
 
 type ModalType = {
   isModalOpen: boolean;

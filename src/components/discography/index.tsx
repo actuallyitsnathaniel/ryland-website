@@ -1,6 +1,6 @@
 import Disc from "./disc";
 
-import React, { useState } from "react";
+import React, { useState, JSX } from "react";
 import { motion } from "framer-motion";
 import { itemVariants, containerVariants } from "../../util/transitionPage";
 

@@ -1,8 +1,7 @@
-import { motion } from "framer-motion";
-import { JSX } from "react";
+import { Variants } from "framer-motion";
 
 // Centralized animation variants to prevent conflicts
-export const itemVariants = {
+export const itemVariants: Variants = {
   visible: {
     opacity: 1,
     y: 0,
@@ -24,7 +23,7 @@ export const itemVariants = {
 };
 
 // Container variants for staggered animations
-export const containerVariants = {
+export const containerVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
@@ -48,7 +47,7 @@ export const containerVariants = {
 };
 
 // Page transition variants - FIXED: removed whileInView conflict
-export const pageVariants = {
+export const pageVariants: Variants = {
   initial: {
     opacity: 0,
     x: 15,
@@ -70,18 +69,3 @@ export const pageVariants = {
     },
   },
 };
-
-const pageTransition = (OgComponent: JSX.ElementType) => {
-  return () => (
-    <motion.div
-      variants={pageVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-    >
-      <OgComponent />
-    </motion.div>
-  );
-};
-
-export default pageTransition;

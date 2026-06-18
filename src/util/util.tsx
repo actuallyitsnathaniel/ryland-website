@@ -1,16 +1,5 @@
-export const fetchSomeData = async () => {
-  const response = await fetch("/api/youConnectedEmail");
-  const data = await response.json();
-  return data;
-};
-
 export const capitalizeFirstLetter = (string: string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
-};
-
-export const hasDatePassed = (dateToCheck: Date): boolean => {
-  const now = new Date();
-  return dateToCheck < now;
 };
 
 // todo: perhaps refactor this into checking with a database
