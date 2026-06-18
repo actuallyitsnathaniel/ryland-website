@@ -15,6 +15,7 @@ const Home = () => {
       "https://open.spotify.com/artist/5MmVJjCarP72v32WkjCixh",
       "https://music.apple.com/us/artist/ryland/1473082051",
       "https://www.youtube.com/@weareryland",
+      "https://music.youtube.com/channel/UChjPqJxxT2qSo5fDXlUXRLA",
     ],
   };
 

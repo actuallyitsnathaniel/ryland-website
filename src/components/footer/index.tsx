@@ -19,6 +19,7 @@ const Footer = () => {
       "https://open.spotify.com/artist/3Ekf9P1XRqjP3MBwl6iFVT",
       "https://music.apple.com/us/artist/ryland/1472845950",
       "https://www.youtube.com/@weareryland",
+      "https://music.youtube.com/channel/UChjPqJxxT2qSo5fDXlUXRLA",
     ],
   };
 
