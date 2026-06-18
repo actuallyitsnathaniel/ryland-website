@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useCallback, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import BGVideoDesktop from "../../assets/videos/catch-desktop.mp4";
 import BGVideoMobile from "../../assets/videos/catch-mobile.mp4";
@@ -11,17 +11,18 @@ const VideoBackground = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   // Debounced resize handler to prevent excessive re-renders
-  const handleResize = useCallback(() => {
-    const timeoutId = setTimeout(() => {
-      setWindowWidth(window.innerWidth);
-    }, 100);
-    return () => clearTimeout(timeoutId);
-  }, []);
-
   useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [handleResize]);
+    let t: ReturnType<typeof setTimeout>;
+    const onResize = () => {
+      clearTimeout(t);
+      t = setTimeout(() => setWindowWidth(window.innerWidth), 100);
+    };
+    window.addEventListener("resize", onResize);
+    return () => {
+      clearTimeout(t);
+      window.removeEventListener("resize", onResize);
+    };
+  }, []);
 
   // Memoize video source to prevent recalculation on every render
   const videoSource = useMemo(() => {
