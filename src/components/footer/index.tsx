@@ -53,7 +53,8 @@ const Footer = () => {
         )}
         <p className="px-6 mb-3 text-xs text-white/70 max-w-prose mx-auto">
           Ryland's music is not licensed for AI or machine learning training.
-          Please respect this policy.{" "}
+          Any violation of this policy will be pursued to the fullest extent of
+          the law.{" "}
           <Link
             to="/usage-and-ai-policy"
             className="text-orange-400 underline underline-offset-4"
