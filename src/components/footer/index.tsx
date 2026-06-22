@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import SocialLinks from "../social-links";
 
 const Footer = () => {
@@ -49,6 +51,16 @@ const Footer = () => {
             </a>
           </address>
         )}
+        <p className="px-6 mb-3 text-xs text-white/70 max-w-prose mx-auto">
+          Ryland's music is not licensed for AI or machine learning training.
+          Please respect this policy.{" "}
+          <Link
+            to="/usage-and-ai-policy"
+            className="text-orange-400 underline underline-offset-4"
+          >
+            Usage &amp; AI Policy
+          </Link>
+        </p>
         <p className="grid md:text-md">
           Copyright © {new Date().getFullYear()} Ryland
           <p>

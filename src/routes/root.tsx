@@ -21,6 +21,7 @@ const GonnaBeFine = lazy(() => import("./gonna-be-fine"));
 const Merch = lazy(() => import("./merch"));
 const Drinks = lazy(() => import("./drinks"));
 const Secret = lazy(() => import("./secret"));
+const UsageAndAiPolicy = lazy(() => import("./usage-and-ai-policy"));
 const ErrorPage = lazy(() => import("./error"));
 
 // Loading fallback component
@@ -70,6 +71,7 @@ const Root = () => {
               <Route path="/merch" element={<Page><Merch /></Page>} />
               <Route path="/drinks" element={<Page><Drinks /></Page>} />
               <Route path="/secret" element={<Page><Secret /></Page>} />
+              <Route path="/usage-and-ai-policy" element={<Page><UsageAndAiPolicy /></Page>} />
               <Route path="*" element={<Page><ErrorPage /></Page>} />
             </Routes>
           </Suspense>

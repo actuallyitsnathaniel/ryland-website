@@ -15,6 +15,7 @@ const TITLE_MAP = [
   { path: "/imgonnabefine", title: "I'm Gonna Be Fine" },
   { path: "/secret", title: "Secret" },
   { path: "/links", title: "Links" },
+  { path: "/usage-and-ai-policy", title: "Usage & AI Policy" },
 ];
 
 export const usePageTitle = (location: string) => {
