@@ -11,6 +11,9 @@
 # production
 /build
 
+# showcase captures
+/showcase
+
 # misc
 .DS_Store
 .env
