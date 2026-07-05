@@ -17,26 +17,31 @@ const members = [
     profilePic: tom,
     name: "Tom",
     desc: `The frontman of the band. "It's all about the We." Plays keys, guitar, and sings like a songbird.`,
+    listening: "Paper Kites, Parcels",
   },
   {
     profilePic: ron,
     name: "Ron",
     desc: `The bassist of the band. He'll riff if he feels like it.`,
+    listening: "Mineral King",
   },
   {
     profilePic: nate,
     name: "Nate",
     desc: `Synths and samples guy. Sings with Tom. He'll do a little jig if he feels like it.`,
+    listening: "Virtual Riot, svn4vr",
   },
   {
     profilePic: elias,
     name: "Elias",
     desc: `The drummer. He'll sing if he feels like it.`,
+    listening: "Bobby Charles",
   },
   {
     profilePic: jake,
     name: "Jake",
     desc: `Producer and electric guitar player. He'll solo if he feels like it.`,
+    listening: "Toledo, Honne",
   },
 ];
 
@@ -109,6 +114,7 @@ const AboutUs = () => {
                 profilePic={member.profilePic}
                 name={member.name}
                 desc={member.desc}
+                listening={member.listening}
                 expanded={expanded === i}
                 onToggle={() => setExpanded(expanded === i ? -1 : i)}
               />

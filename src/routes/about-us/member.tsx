@@ -5,6 +5,7 @@ type BandMemberProps = {
   profilePic: string;
   name: string;
   desc: string;
+  listening: string;
   expanded: boolean;
   onToggle: () => void;
 };
@@ -13,6 +14,7 @@ const BandMember = ({
   profilePic,
   name,
   desc,
+  listening,
   expanded,
   onToggle,
 }: BandMemberProps) => {
@@ -43,14 +45,21 @@ const BandMember = ({
         {name}
       </p>
       {expanded && (
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.25, ease: EASE_EXPO_OUT }}
-          className="text-lg text-center max-w-md text-white/80"
+          className="max-w-md text-center"
         >
-          {desc}
-        </motion.p>
+          <p className="text-lg text-white/80">{desc}</p>
+          <p className="mt-4 text-sm text-white/60">
+            <span className="font-sans-grotesk tracking-[0.2em] uppercase text-white/40">
+              Currently listening to
+            </span>
+            <br />
+            {listening}
+          </p>
+        </motion.div>
       )}
     </motion.div>
   );
