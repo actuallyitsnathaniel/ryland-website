@@ -13,7 +13,7 @@ export const MobileNavHeader = ({
   return (
     <div id="mobile-nav-header">
       <div
-        className={`flex pt-6 pb-4 justify-center text-4xl whitespace-nowrap`}
+        className="flex justify-center px-16 pb-4 pt-6 text-balance text-3xl tracking-[-0.02em]"
       >
         {pageTitle}
       </div>
@@ -21,9 +21,10 @@ export const MobileNavHeader = ({
         data-collapse-toggle="navbar"
         id="navbar-icon"
         type="button"
-        className={`flex flex-col top-3 right-3 fixed mt-4 z-[1] select-none duration-200 -translate-x-2`}
+        className="fixed right-3 top-3 z-[1] mt-4 inline-flex min-h-11 min-w-11 -translate-x-2 cursor-pointer select-none flex-col items-center justify-center duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500"
         aria-controls="navbar"
-        aria-expanded="false"
+        aria-expanded={expanded}
+        aria-label={expanded ? "Close menu" : "Open menu"}
         onClick={() => {
           setExpanded(!expanded);
         }}

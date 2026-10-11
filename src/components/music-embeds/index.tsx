@@ -1,18 +1,22 @@
 import SpotifyEmbed from "./spotify";
 import AppleMusicEmbed from "./apple-music";
 import TidalEmbed from "./tidal";
+import { pageInset, sectionTitle } from "../../util/util";
 
 export const MusicLinks = () => {
   return (
-    <div className="text-white">
-      <div className="p-6 text-center whitespace-nowrap font-sans-grotesk text-[clamp(1.75rem,5vw,3rem)] tracking-[-0.02em]">
+    <section
+      aria-labelledby="listen-heading"
+      className={`flex w-full flex-col items-center gap-6 text-xl leading-normal text-white ${pageInset}`}
+    >
+      <h2 id="listen-heading" className={`${sectionTitle} text-center`}>
         Listen to I'm Gonna Be Fine
-      </div>
-      <div className="flex flex-wrap justify-center">
+      </h2>
+      <div className="flex w-full flex-wrap justify-center gap-4">
         <SpotifyEmbed />
         <AppleMusicEmbed />
         <TidalEmbed />
       </div>
-    </div>
+    </section>
   );
 };

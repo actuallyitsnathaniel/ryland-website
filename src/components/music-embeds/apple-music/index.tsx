@@ -2,11 +2,7 @@ const AppleMusicEmbed = () => {
   return (
     <iframe
       title="apple-music-embedded"
-      className="h-[470px]"
-      style={{
-        borderRadius: "18px",
-        padding: "1vh",
-      }}
+      className="h-[470px] w-80 max-w-full rounded-xl"
       src={
         "https://embed.music.apple.com/us/album/im-gonna-be-fine-ep/1776148719"
       }

@@ -28,8 +28,8 @@ class ErrorBoundaryInner extends Component<
     if (this.state.hasError) {
       return (
         <ErrorScreen
-          headline="Something hit a wrong note 🎸"
-          subtext="An error broke the page — head back home and try again."
+          headline="Something hit a wrong note"
+          subtext="An error broke the page. Head back home and try again."
         />
       );
     }

@@ -12,15 +12,13 @@ export const NavItem = ({ setExpanded, title, to }: NavItemType) => {
   const currPage = useLocation().pathname;
   return (
     <Link
-      className={clsx([
-        "flex transition ease-in-out p-4 px-4 duration-150 hover:scale-110 hover:text-orange-200",
-        `${
-          currPage === to &&
-          "text-orange-200 underline underline-offset-4 ease-in hidden sm:inline-block"
-        }`,
-      ])}
+      className={clsx(
+        "inline-flex min-h-11 cursor-pointer items-center px-3 text-3xl tracking-[-0.02em] transition-colors duration-200 hover:text-orange-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 min-[1301px]:text-2xl",
+        currPage === to &&
+          "hidden text-orange-200 underline underline-offset-4 sm:inline-flex"
+      )}
       to={to}
-      aria-current="location"
+      aria-current={currPage === to ? "page" : undefined}
       onClick={() => setExpanded(false)}
     >
       {title}

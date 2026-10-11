@@ -31,7 +31,7 @@ const Footer = () => {
   return (
     <footer
       id="footer"
-      className="grid text-md text-white w-full text-center pt-4 mt-auto bottom-0"
+      className="mt-auto grid w-full pt-4 text-center text-lg leading-normal text-white"
     >
       <script
         type="application/ld+json"
@@ -44,35 +44,38 @@ const Footer = () => {
           <SocialLinks />
         </div>
         {isHomePage && (
-          <address className="hidden md:block not-italic fixed bottom-4 right-4 text-xs text-right">
-            <p>Ryland - Los Angeles, CA</p>
-            <a href="mailto:weareryland@gmail.com" className="underline">
+          <address className="fixed bottom-4 right-4 hidden text-right text-lg not-italic text-white/60 md:block">
+            <p>Ryland, Los Angeles, CA</p>
+            <a
+              href="mailto:weareryland@gmail.com"
+              className="inline-flex min-h-11 cursor-pointer items-center underline underline-offset-4 transition-colors duration-200 hover:text-white"
+            >
               weareryland@gmail.com
             </a>
           </address>
         )}
-        <p className="px-6 mb-3 text-xs text-white/70 max-w-prose mx-auto">
+        <p className="mx-auto mb-3 max-w-prose px-6 text-lg text-white/60">
           Ryland's music is not licensed for AI or machine learning training.
           Any violation of this policy will be pursued to the fullest extent of
           the law.{" "}
           <Link
             to="/usage-and-ai-policy"
-            className="text-orange-400 underline underline-offset-4"
+            className="inline-flex min-h-11 cursor-pointer items-center text-orange-400 underline underline-offset-4 transition-colors duration-200 hover:text-orange-300"
           >
             Usage &amp; AI Policy
           </Link>
         </p>
-        <p className="grid md:text-md">
+        <p className="text-lg text-white/60">
           Copyright © {new Date().getFullYear()} Ryland
-          <p>
-            powered by&nbsp;
+          <span className="mt-1 block">
+            powered by{" "}
             <a
-              className="underline underline-offset-8 "
+              className="inline-flex min-h-11 cursor-pointer items-center underline underline-offset-4 transition-colors duration-200 hover:text-white"
               href="mailto:nathanielrbowman@gmail.com"
             >
               nathaniel bowman
             </a>
-          </p>
+          </span>
         </p>
       </div>
     </footer>

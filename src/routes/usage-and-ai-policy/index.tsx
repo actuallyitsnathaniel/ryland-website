@@ -49,7 +49,7 @@ const Body = ({ text }: { text: string }) => {
       {before}
       <a
         href={`mailto:${email}`}
-        className="text-orange-400 underline underline-offset-4"
+        className="cursor-pointer text-orange-400 underline underline-offset-4 transition-colors duration-200 hover:text-orange-300"
       >
         {email}
       </a>
@@ -59,27 +59,27 @@ const Body = ({ text }: { text: string }) => {
 };
 
 const UsageAndAiPolicy = () => (
-  <div className="max-w-3xl mx-auto bg-black/60 backdrop-blur-sm rounded-lg p-6 md:p-10 text-white">
-    <header className="border-b border-white/20 pb-6 mb-8">
-      <h1 className="text-3xl md:text-4xl font-bold">Usage &amp; AI Policy</h1>
-      <p className="mt-2 text-white/70">
+  <div className="mx-auto max-w-3xl rounded-lg bg-black/60 p-6 text-xl leading-normal text-white backdrop-blur-sm md:p-10">
+    <header className="mb-8 border-b border-white/15 pb-6">
+      <h1 className="text-balance text-4xl tracking-[-0.02em]">
+        Usage &amp; AI Policy
+      </h1>
+      <p className="mt-2 text-white/60">
         How Ryland's music may and may not be used.
       </p>
     </header>
 
-    <div className="md:columns-2 md:gap-10 space-y-8">
+    <div className="space-y-8 md:columns-2 md:gap-10">
       {SECTIONS.map(({ heading, body, list }) => (
         <section key={heading} className="break-inside-avoid">
-          <h2 className="text-xl font-semibold text-orange-400 mb-2">
-            {heading}
-          </h2>
+          <h2 className="mb-2 text-3xl tracking-[-0.02em]">{heading}</h2>
           {body && (
-            <p className="text-white/90">
+            <p>
               <Body text={body} />
             </p>
           )}
           {list && (
-            <ul className="mt-2 list-disc list-inside space-y-1 text-white/90">
+            <ul className="mt-2 list-inside list-disc space-y-1">
               {list.map((item) => (
                 <li key={item}>{item}</li>
               ))}

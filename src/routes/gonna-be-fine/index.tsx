@@ -1,5 +1,6 @@
 import Newsletter from "../../components/newsletter";
 import SEO from "../../components/seo";
+import { pageInset, sectionTitle } from "../../util/util";
 
 import gonnaBeFine from "../../assets/images/discography/Singles_EPs/gonna-be-fine-600.jpg";
 import Discography from "../../components/discography";
@@ -17,27 +18,11 @@ const GonnaBeFine = () => {
     genre: "Indie Rock",
     url: "https://www.weareryland.com/imgonnabefine",
   };
-  const PreSave = () => {
-    return (
-      <div className="flex flex-col justify-center items-center outline py-5 h-min rounded-lg bg-gray-500 bg-opacity-40 hover:bg-opacity-60 transition duration-300">
-        <Discography.Disc
-          artwork={gonnaBeFine}
-          appleMusicLink="https://music.apple.com/us/album/im-gonna-be-fine-ep/1776148719"
-          youtubeLink="https://youtube.com/playlist?list=OLAK5uy_lSjvjAEPkMEwrKBp3QPZcf_2BkJ1RPbLI&feature=shared"
-          spotifyLink="https://open.spotify.com/album/5Wsxv4b0DcdJwxWQhJoslz?si=7BnvCn2WS9SXSpEC_12_Lw"
-          tidalLink="https://tidal.com/browse/album/395421548"
-        />
-        <span className="text-xl">
-          I'm Gonna Be Fine - EP
-          <br />
-          <p> Out Now</p>
-        </span>
-      </div>
-    );
-  };
 
   return (
-    <div className="flex flex-col text-center gap-10 text-white items-center text-3xl">
+    <div
+      className={`grid w-full grid-cols-1 items-start gap-10 text-center text-xl leading-normal text-white lg:grid-cols-3 lg:gap-x-12 ${pageInset}`}
+    >
       <SEO
         title="I'm Gonna Be Fine EP - Stream Now | Ryland"
         description="Stream Ryland's latest indie rock EP 'I'm Gonna Be Fine' out now on Spotify, Apple Music, YouTube, and Tidal. Four new tracks from the Los Angeles band featuring 'Stuck At Home' and more."
@@ -47,10 +32,28 @@ const GonnaBeFine = () => {
         jsonLd={jsonLd}
       />
       <h1 className="sr-only">I'm Gonna Be Fine EP - Ryland</h1>
-      <h2 className="sr-only">Latest EP Release</h2>
-      <h3 className="sr-only">Stream Now on All Platforms</h3>
-      <PreSave />
-      <Newsletter />
+      <section
+        aria-labelledby="listen-heading"
+        className="flex min-w-0 flex-col items-center gap-6 lg:col-span-1 lg:border-r lg:border-white/15 lg:pr-12"
+      >
+        <h2 id="listen-heading" className={sectionTitle}>
+          Listen
+        </h2>
+        <Discography.Disc
+          priority
+          artwork={gonnaBeFine}
+          title="I'm Gonna Be Fine - EP"
+          appleMusicLink="https://music.apple.com/us/album/im-gonna-be-fine-ep/1776148719"
+          youtubeLink="https://youtube.com/playlist?list=OLAK5uy_lSjvjAEPkMEwrKBp3QPZcf_2BkJ1RPbLI&feature=shared"
+          spotifyLink="https://open.spotify.com/album/5Wsxv4b0DcdJwxWQhJoslz?si=7BnvCn2WS9SXSpEC_12_Lw"
+          tidalLink="https://tidal.com/browse/album/395421548"
+        />
+        <p className="text-white/60">Out now</p>
+      </section>
+      <div className="h-px w-full bg-white/15 lg:hidden" aria-hidden="true" />
+      <section className="flex min-w-0 justify-center lg:col-span-2">
+        <Newsletter />
+      </section>
     </div>
   );
 };

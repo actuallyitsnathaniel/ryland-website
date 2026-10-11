@@ -1,8 +1,9 @@
 import Disc, { DiscCategory } from "./disc";
 
 import React, { useState, JSX } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { itemVariants, containerVariants } from "../../util/transitionPage";
+import { pillPrimary, pillSecondary } from "../../util/util";
 
 type Filter = DiscCategory | "all";
 
@@ -43,9 +44,11 @@ const Discography = ({ children }: { children: JSX.Element[] }) => {
       ? all
       : all.filter((child) => child.props.category === filter);
 
+  const reduceMotion = useReducedMotion();
+
   return (
-    <div className="flex flex-col gap-10 py-3 md:px-28">
-      <div className="flex flex-wrap justify-center gap-3 px-4">
+    <div className="flex w-full flex-col gap-10 py-3 text-xl">
+      <div className="flex flex-wrap justify-center gap-3">
         {pills.map(({ key, label, count }) => {
           const active = filter === key;
           return (
@@ -54,11 +57,7 @@ const Discography = ({ children }: { children: JSX.Element[] }) => {
               type="button"
               aria-pressed={active}
               onClick={() => setFilter(key)}
-              className={`cursor-pointer rounded-full border px-5 py-1.5 tracking-[-0.02em] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 ${
-                active
-                  ? "border-yellow-600 bg-yellow-600 text-white"
-                  : "border-white/30 text-white/80 hover:border-yellow-600/60 hover:text-white"
-              }`}
+              className={active ? pillPrimary : pillSecondary}
             >
               {label} ({count})
             </button>
@@ -68,11 +67,11 @@ const Discography = ({ children }: { children: JSX.Element[] }) => {
 
       <motion.div
         key={filter}
-        initial="hidden"
+        initial={reduceMotion ? false : "hidden"}
         animate="visible"
-        variants={containerVariants}
+        variants={reduceMotion ? undefined : containerVariants}
         aria-live="polite"
-        className="flex flex-wrap w-full justify-center"
+        className="flex w-full flex-wrap justify-center gap-8"
       >
         {visible.map((child, i) => (
           <motion.div key={child.key || i} variants={itemVariants}>

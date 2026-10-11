@@ -1,17 +1,20 @@
+import { iconLinkClass } from "../../../util/util";
+
 const SpotifyLink = () => {
   return (
     <a
-      className="transition-all duration-100 p-2 md:hover:translate-y-2"
+      className={iconLinkClass}
       href="https://open.spotify.com/artist/3Ekf9P1XRqjP3MBwl6iFVT?si=FFIpHWiOSdiy5jAlhFPCWg"
       target="_blank"
-      rel="noopener"
+      rel="noopener noreferrer"
+      aria-label="Ryland on Spotify"
     >
       <svg
-        height="40px"
-        width="40px"
+        height="40"
+        width="40"
         viewBox="0 0 305 305"
-        className="transition-all duration-75 h-10 rounded-full fill-white hover:scale-110 hover:fill-[#1DB954]"
-        aria-label="spotify-alt"
+        className="h-10 w-10 fill-white transition-colors duration-200 group-hover:fill-[#1DB954]"
+        aria-hidden="true"
       >
         <path
           d="M152.441,0C68.385,0,0,68.39,0,152.453C0,236.568,68.385,305,152.441,305

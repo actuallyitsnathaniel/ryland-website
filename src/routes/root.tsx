@@ -1,6 +1,6 @@
 import { useState, Suspense, lazy, ReactNode } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
 import VideoBackground from "../components/video-background";
 import NavBar from "../components/navbar";
@@ -32,17 +32,20 @@ const LoadingFallback = () => <div className="min-h-[50vh]" />;
 // flex-1 fills the space between nav and footer; the inner m-auto centers
 // content when it's shorter than that space and top-aligns + scrolls when taller
 // (no top-clipping, unlike justify-center).
-const Page = ({ children }: { children: ReactNode }) => (
-  <motion.main
-    variants={pageVariants}
-    initial="initial"
-    animate="animate"
-    exit="exit"
-    className="flex flex-1 flex-col w-full pt-20 md:pt-16"
-  >
-    <div className="m-auto w-full px-6 py-10">{children}</div>
-  </motion.main>
-);
+const Page = ({ children }: { children: ReactNode }) => {
+  const reduceMotion = useReducedMotion();
+  return (
+    <motion.main
+      variants={reduceMotion ? undefined : pageVariants}
+      initial={reduceMotion ? false : "initial"}
+      animate={reduceMotion ? undefined : "animate"}
+      exit={reduceMotion ? undefined : "exit"}
+      className="flex flex-1 flex-col w-full pt-20 md:pt-16"
+    >
+      <div className="m-auto w-full px-6 py-10">{children}</div>
+    </motion.main>
+  );
+};
 
 const Root = () => {
   const [isModalOpen, setModalOpen] = useState(false);

@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import SEO from "../../components/seo";
 import { itemVariants } from "../../util/transitionPage";
+import { pageInset, sectionTitle } from "../../util/util";
 
 import BandMember from "./member";
 import PressHighlight from "../../components/press-highlight";
@@ -64,6 +65,7 @@ since 2019. Comprised of Tom, Ron, Nate, Elias, and Jake. They love music and in
 
 const AboutUs = () => {
   const [expanded, setExpanded] = useState(-1);
+  const reduceMotion = useReducedMotion();
   return (
     <div id="about-us">
       <SEO
@@ -73,41 +75,46 @@ const AboutUs = () => {
         type="profile"
       />
       <motion.div
-        initial="hidden"
+        initial={reduceMotion ? false : "hidden"}
         animate="visible"
-        variants={{
-          visible: {
-            opacity: 1,
-            transition: {
-              type: "spring",
-              bounce: 0.4,
-              duration: 0.6,
-              delayChildren: 0.15,
-              staggerChildren: 0.1,
-            },
-          },
-          hidden: {
-            opacity: 0,
-            transition: {
-              type: "spring",
-              bounce: 0,
-              duration: 0.3,
-              staggerChildren: 0.05,
-              staggerDirection: -1,
-            },
-          },
-        }}
-        className="text-white w-full
-          flex flex-col lg:flex-row items-center justify-center
-          gap-10 lg:gap-16"
+        variants={
+          reduceMotion
+            ? undefined
+            : {
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    type: "spring",
+                    bounce: 0.4,
+                    duration: 0.6,
+                    delayChildren: 0.15,
+                    staggerChildren: 0.1,
+                  },
+                },
+                hidden: {
+                  opacity: 0,
+                  transition: {
+                    type: "spring",
+                    bounce: 0,
+                    duration: 0.3,
+                    staggerChildren: 0.05,
+                    staggerDirection: -1,
+                  },
+                },
+              }
+        }
+        className={`grid w-full grid-cols-1 items-start gap-10 text-xl leading-normal text-white lg:grid-cols-3 lg:gap-x-12 ${pageInset}`}
       >
         <h1 className="sr-only">About Ryland - Meet the Band Members</h1>
-        <h2 className="sr-only">The Band</h2>
 
-        {/* Left: band + bio */}
-        <div className="flex flex-col items-center gap-10 md:gap-12 text-center">
-          {/* Members — 3 up top, 2 below, centered */}
-          <div className="flex flex-wrap justify-center items-end gap-x-4 gap-y-4 max-w-[34rem]">
+        <section
+          aria-labelledby="band-heading"
+          className="flex min-w-0 flex-col items-center gap-10 lg:col-span-2 lg:border-r lg:border-white/15 lg:pr-12"
+        >
+          <h2 id="band-heading" className={sectionTitle}>
+            The band
+          </h2>
+          <div className="flex flex-wrap items-end justify-center gap-4">
             {members.map((member, i) => (
               <BandMember
                 key={member.name}
@@ -120,25 +127,25 @@ const AboutUs = () => {
               />
             ))}
           </div>
-
-          {/* Bio */}
           <motion.p
             variants={itemVariants}
-            className="max-w-xl text-base md:text-lg leading-relaxed text-white/80"
+            className="max-w-prose text-center text-xl leading-normal"
           >
             {bio}
           </motion.p>
-        </div>
+        </section>
 
-        {/* Right: press */}
+        <div className="h-px w-full bg-white/15 lg:hidden" aria-hidden="true" />
+
         <motion.aside
           variants={itemVariants}
-          className="w-full max-w-sm lg:border-l lg:border-white/15 lg:pl-16 text-center lg:text-left"
+          aria-labelledby="press-heading"
+          className="flex min-w-0 flex-col items-center gap-6 text-center lg:col-span-1"
         >
-          <h2 className="font-sans-grotesk text-sm tracking-[0.3em] uppercase text-white/50 mb-5">
+          <h2 id="press-heading" className={sectionTitle}>
             Press
           </h2>
-          <div className="flex flex-col gap-4">
+          <div className="flex w-full flex-col gap-4">
             {press.map((p) => (
               <PressHighlight
                 key={p.url}

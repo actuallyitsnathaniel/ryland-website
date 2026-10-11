@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { itemVariants, EASE_EXPO_OUT } from "../../util/transitionPage";
 
 type BandMemberProps = {
@@ -18,50 +18,53 @@ const BandMember = ({
   expanded,
   onToggle,
 }: BandMemberProps) => {
+  const reduceMotion = useReducedMotion();
+
   return (
-    <motion.div
+    <motion.button
+      type="button"
       variants={itemVariants}
       onClick={onToggle}
-      whileHover={expanded ? {} : { scale: 1.05 }}
-      whileTap={expanded ? {} : { scale: 0.98 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      aria-expanded={expanded}
       className={
         expanded
-          ? "fixed inset-0 z-50 flex flex-col items-center justify-center gap-4 bg-black/70 backdrop-blur-lg cursor-pointer px-6"
-          : "flex flex-col items-center gap-2 p-2 cursor-pointer group"
+          ? "fixed inset-0 z-50 flex cursor-pointer flex-col items-center justify-center gap-4 border-0 bg-black/70 px-6 text-white backdrop-blur-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500"
+          : "group flex cursor-pointer flex-col items-center gap-2 border-0 bg-transparent p-2 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500"
       }
     >
       <img
         src={profilePic}
-        alt={name}
+        alt=""
         className={
           expanded
-            ? "h-[345px] md:h-[400px]"
-            : "h-28 w-28 sm:h-36 sm:w-36 object-cover rounded-lg transition-all duration-200 opacity-90 group-hover:opacity-100 grayscale group-hover:grayscale-0"
+            ? "aspect-square h-[345px] rounded-full object-cover shadow-lg shadow-black/40 ring-1 ring-white/10 md:h-[400px]"
+            : "aspect-square h-28 w-28 rounded-full object-cover shadow-lg shadow-black/40 ring-1 ring-white/10 transition duration-200 group-hover:brightness-110 group-hover:ring-white/30 sm:h-36 sm:w-36"
         }
         loading="eager"
       />
-      <p className="font-sans-grotesk tracking-[-0.01em] text-lg lg:text-xl">
+      <p
+        className={
+          expanded
+            ? "text-balance text-4xl tracking-[-0.02em]"
+            : "text-xl tracking-[-0.02em]"
+        }
+      >
         {name}
       </p>
       {expanded && (
         <motion.div
-          initial={{ opacity: 0, y: 8 }}
+          initial={reduceMotion ? false : { opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.25, ease: EASE_EXPO_OUT }}
+          transition={{ duration: reduceMotion ? 0 : 0.25, ease: EASE_EXPO_OUT }}
           className="max-w-md text-center"
         >
-          <p className="text-lg text-white/80">{desc}</p>
-          <p className="mt-4 text-sm text-white/60">
-            <span className="font-sans-grotesk tracking-[0.2em] uppercase text-white/40">
-              Currently listening to
-            </span>
-            <br />
-            {listening}
+          <p className="text-xl leading-normal">{desc}</p>
+          <p className="mt-4 text-lg text-white/60">
+            Currently listening to {listening}
           </p>
         </motion.div>
       )}
-    </motion.div>
+    </motion.button>
   );
 };
 

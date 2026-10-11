@@ -18,14 +18,13 @@ const Link = ({
   return (
     <a
       href={href}
-      className="flex p-4 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+      className="group flex h-full w-full cursor-pointer items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500"
       rel="noopener noreferrer"
       target="_blank"
+      onClick={(event) => event.stopPropagation()}
     >
       <img
-        className={"transition-all duration-75 md:hover:scale-110"}
-        height={"75px"}
-        width={"75px"}
+        className="h-20 w-20 object-contain transition duration-200 group-hover:brightness-110"
         alt={label}
         src={image}
       />
@@ -34,7 +33,6 @@ const Link = ({
 };
 
 type MusicPlatformLinksType = {
-  className: string;
   title?: string;
   spotifyLink?: string;
   appleMusicLink?: string;
@@ -45,7 +43,6 @@ type MusicPlatformLinksType = {
 };
 
 const MusicPlatformLinks = ({
-  className,
   title,
   spotifyLink,
   appleMusicLink,
@@ -64,11 +61,7 @@ const MusicPlatformLinks = ({
   ];
 
   return (
-    <div
-      className={`absolute flex flex-wrap justify-around
-      ${className} h-72 w-72 items-center
-      `}
-    >
+    <div className="grid h-full w-full grid-cols-2 grid-rows-2">
       {links
         .filter((link) => link.href)
         .map(({ href, image, platform }) => (

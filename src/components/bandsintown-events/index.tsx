@@ -214,23 +214,26 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
                   );
 
                   return (
-                    <li key={event.id} className="py-4">
-                      <div className="flex flex-col items-center gap-3 text-center sm:flex-row sm:items-center sm:text-left">
-                        <div className="flex flex-col sm:w-1/3">
+                    <li key={event.id} className="py-3">
+                      <div className="flex items-center gap-4 text-left sm:gap-3">
+                        <div className="flex min-w-0 flex-1 flex-col sm:w-1/3 sm:flex-none">
                           <p className="font-semibold tracking-[-0.02em]">
                             {formattedDate}
                           </p>
                           <p>{event.venue.name}</p>
+                          <p className="text-white/60 sm:hidden">
+                            {event.venue.city}, {event.venue.region}
+                          </p>
                           <p className="text-sm italic text-white/60">
                             {event.lineup.join(", ")}
                           </p>
                         </div>
 
-                        <div className="text-white/60 sm:w-1/3">
+                        <div className="hidden text-white/60 sm:block sm:w-1/3">
                           {event.venue.city}, {event.venue.region}
                         </div>
 
-                        <div className="sm:w-1/3 sm:text-right">
+                        <div className="shrink-0 sm:w-1/3 sm:text-right">
                           {event.offers.length > 0 ? (
                             event.offers.map((offer, index) => (
                               <a

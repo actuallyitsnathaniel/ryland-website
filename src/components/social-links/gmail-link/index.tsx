@@ -1,17 +1,17 @@
 import GmailColor from "../../../assets/images/icons/gmail-color.svg";
+import { iconLinkClass } from "../../../util/util";
 
 const GmailLogo = () => {
   return (
     <a
-      className="transition-all duration-100 p-2 md:hover:translate-y-2 group"
+      className={iconLinkClass}
       href="mailto:weareryland@gmail.com"
-      target="_blank"
-      rel="noopener"
+      aria-label="Email Ryland"
     >
       <img
-        alt="gmail"
+        alt=""
         src={GmailColor}
-        className="h-10 saturate-0 hover:saturate-100 contrast-[150%] to-black hover:contrast-100 transition ease-in-out duration-100 hover:scale-110"
+        className="h-10 w-auto saturate-0 contrast-150 transition duration-200 group-hover:saturate-100 group-hover:contrast-100"
       />
     </a>
   );

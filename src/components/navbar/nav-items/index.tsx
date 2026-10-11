@@ -16,7 +16,7 @@ export const NavItems = ({
 }: NavItemsType) => {
   return (
     <ul
-      className={`flex text-3xl sm:justify-around sm:gap-x-5 ${
+      className={`flex text-3xl tracking-[-0.02em] sm:justify-around sm:gap-x-3 min-[1301px]:text-2xl ${
         !!classNames && classNames
       }`}
     >
@@ -34,9 +34,11 @@ export const NavItems = ({
       />
       <NavItem title="Shows" to="/shows" {...{ pageTitle, setExpanded }} />
       <button
-        className={`flex transition ease-in-out p-4 px-4 duration-150
-            hover:scale-110 hover:text-orange-200 cursor-pointer`}
-        onClick={() => setModalOpen(true)}
+        className="inline-flex min-h-11 cursor-pointer items-center px-3 text-3xl tracking-[-0.02em] transition-colors duration-200 hover:text-orange-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 min-[1301px]:text-2xl"
+        onClick={() => {
+          setExpanded(false);
+          setModalOpen(true);
+        }}
       >
         Contact
       </button>

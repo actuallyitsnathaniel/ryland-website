@@ -7,7 +7,7 @@ import YoutubeLink from "./youtube-link";
 const SocialLinks = () => {
   return (
     <div
-      className={`flex gap-4 z-[1] ${
+      className={`z-[1] flex gap-4 xl:gap-6 ${
         document.URL.includes("links") ? "hidden" : ""
       }`}
     >

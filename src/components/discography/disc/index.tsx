@@ -35,50 +35,35 @@ const Disc = ({
   const reduceMotion = useReducedMotion();
 
   return (
-    <motion.div
-      className={`${className} text-8xl group p-3`}
-      whileHover={reduceMotion ? undefined : { scale: 1.05 }}
-      transition={{
-        type: "spring",
-        stiffness: 300,
-        damping: 20,
-        duration: 0.2,
-      }}
-    >
-      <motion.div
-        role="button"
-        tabIndex={0}
-        aria-expanded={focused}
-        aria-label={`Show streaming links for ${title}`}
-        className="relative h-72 w-72 mx-auto overflow-hidden rounded-xl shadow-lg shadow-black/40 ring-1 ring-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
-        onMouseLeave={() => setFocused(false)}
+    <div className={`${className ?? ""} w-72 min-w-0 max-w-full text-xl`}>
+      <div
+        className="group relative"
         onMouseEnter={() => setFocused(true)}
-        onClick={() => setFocused(!focused)}
-        onKeyDown={(e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            setFocused((f) => !f);
-          }
-        }}
-        whileHover={reduceMotion ? undefined : { scale: 1.02 }}
-        whileTap={reduceMotion ? undefined : { scale: 0.98 }}
-        transition={{
-          type: "spring",
-          stiffness: 400,
-          damping: 25,
-        }}
+        onMouseLeave={() => setFocused(false)}
       >
-        <img
-          className={`h-full w-full object-cover transition-all duration-200 ${
-            focused ? "blur-sm brightness-50" : ""
-          }`}
-          src={artwork}
-          alt={title}
-          loading={priority ? "eager" : "lazy"}
-        />
+        <button
+          type="button"
+          aria-expanded={focused}
+          aria-label={
+            title ? `Show streaming links for ${title}` : "Show streaming links"
+          }
+          className="relative aspect-square w-full cursor-pointer overflow-hidden rounded-xl shadow-lg shadow-black/40 ring-1 ring-white/10 transition duration-200 hover:ring-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500"
+          onClick={() => setFocused((open) => !open)}
+        >
+          <img
+            className={`h-full w-full object-cover transition duration-200 ${
+              focused ? "blur-sm brightness-50" : "group-hover:brightness-110"
+            }`}
+            src={artwork}
+            alt={title ?? ""}
+            loading={priority ? "eager" : "lazy"}
+          />
+        </button>
         <motion.div
-          className="absolute inset-0 flex items-center justify-center overflow-clip"
+          className="absolute inset-0 overflow-hidden rounded-xl"
+          initial="hidden"
           animate={focused ? "visible" : "hidden"}
+          onClick={() => setFocused(false)}
           variants={{
             visible: {
               opacity: 1,
@@ -103,7 +88,6 @@ const Disc = ({
           }}
         >
           <MusicPlatformLinks
-            className="origin-center"
             {...{
               title,
               appleMusicLink,
@@ -115,11 +99,13 @@ const Disc = ({
             }}
           />
         </motion.div>
-      </motion.div>
-      <div className="mx-auto mt-3 flex w-72 flex-wrap justify-center text-center text-lg">
-        {title}
       </div>
-    </motion.div>
+      {title ? (
+        <p className="mt-3 text-balance text-center text-2xl tracking-[-0.02em]">
+          {title}
+        </p>
+      ) : null}
+    </div>
   );
 };
 

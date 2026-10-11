@@ -1,6 +1,7 @@
 import SEO from "../../components/seo";
 
 import Discography from "../../components/discography";
+import { pageInset, sectionTitle } from "../../util/util";
 
 // Albums
 import portrait from "../../assets/images/discography/LPs/Portrait-LP_600x600bb.jpeg";
@@ -30,10 +31,10 @@ const Music = () => {
         url="https://www.weareryland.com/music"
         type="music.album"
       />
-      <div className="text-white">
-        <h1 className="sr-only">Ryland Music - Full Discography</h1>
-        <h2 className="sr-only">Latest Releases</h2>
-        <h3 className="sr-only">EPs & Albums</h3>
+      <div
+        className={`flex w-full flex-col items-center gap-10 text-xl leading-normal text-white ${pageInset}`}
+      >
+        <h1 className={`${sectionTitle} sr-only xl:not-sr-only`}>Music</h1>
         <Discography>
           <Discography.Disc
             priority

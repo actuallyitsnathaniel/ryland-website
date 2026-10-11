@@ -1,11 +1,5 @@
 import { FormEvent, useState } from "react";
-import {
-  capitalizeFirstLetter,
-  validateEmail,
-  inputStyle,
-  inputPlaceholderClasses,
-  inputFocusClasses,
-} from "../../util/util";
+import { capitalizeFirstLetter, validateEmail, fieldClass, pillPrimary, sectionTitle } from "../../util/util";
 import { render } from "@react-email/render";
 
 import YouConnectedEmail from "../../assets/emails/you-connected-email";
@@ -58,80 +52,83 @@ const Newsletter = () => {
     }
   };
 
-  const handleDisabled = () => {
-    return (
-      submitted ||
-      isSubmitting ||
-      !(firstName !== "" && lastName !== "" && validateEmail(email))
-    );
-  };
+  const handleDisabled = () => submitted || isSubmitting;
 
   return (
     <form
       id="newsletter"
-      className={`flex flex-col md:my-auto md:mx-auto
-            w-fit md:h-max rounded-md p-4 bg-gray-950 bg-opacity-90`}
+      className="flex w-full max-w-md flex-col items-center gap-6 text-xl leading-normal text-white"
       onSubmit={handleSubmit}
     >
-      <h2 className="font-sans-grotesk text-[clamp(2rem,5vw,3.5rem)] tracking-[-0.02em] p-10 text-center">
-        Stay Connected&nbsp;
-      </h2>
-      <div id="input-wrapper" className="flex flex-col items-center">
-        <div className="grid">
+      <h2 className={`${sectionTitle} text-center`}>Stay connected</h2>
+      <div className="flex w-full flex-col gap-4">
+        <label
+          htmlFor="input-firstName"
+          className="flex flex-col gap-2 text-left text-lg text-white/60"
+        >
+          First name
           <input
             type="text"
             id="input-firstName"
             name="user_first_name"
-            className={`${inputStyle} ${inputFocusClasses} ${inputPlaceholderClasses}`}
-            placeholder="First Name"
+            autoComplete="given-name"
+            className={fieldClass}
             value={firstName}
             onChange={(e) =>
               setFirstName(capitalizeFirstLetter(e.target.value))
             }
             required
           />
+        </label>
+        <label
+          htmlFor="input-lastName"
+          className="flex flex-col gap-2 text-left text-lg text-white/60"
+        >
+          Last name
           <input
             type="text"
             id="input-lastName"
             name="user_last_name"
-            className={`${inputStyle} ${inputFocusClasses} ${inputPlaceholderClasses}`}
-            placeholder="Last Name"
+            autoComplete="family-name"
+            className={fieldClass}
             value={lastName}
             onChange={(e) => setLastName(capitalizeFirstLetter(e.target.value))}
             required
           />
+        </label>
+        <label
+          htmlFor="input-email"
+          className="flex flex-col gap-2 text-left text-lg text-white/60"
+        >
+          Email
           <input
             type="email"
             id="input-email"
             name="user_email"
-            className={`${inputStyle} ${inputFocusClasses} ${inputPlaceholderClasses}`}
-            placeholder="Email"
+            autoComplete="email"
+            className={fieldClass}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-        </div>
-        {error && <p className="text-red-500">{error}</p>}
-        <button
-          type="submit"
-          className={`flex transition duration-75 px-5 py-3 m-5 mx-auto rounded-lg 
-            outline outline-2 outline-white disabled:opacity-25 
-            hover:enabled:-translate-y-1 hover:enabled:bg-gray-400 
-            hover:enabled:bg-opacity-30 hover:enabled:outline-none
-            ${isSubmitting && "animate-bounce"}`}
-          disabled={handleDisabled()}
-        >
-          {isSubmitting ? "Submitting..." : submitted ? "Thanks!" : "Sign Up"}
-        </button>
+        </label>
       </div>
-      <address className="not-italic text-center text-sm bottom-0 pt-10">
-        <p>Ryland - Los Angeles, CA</p>
-        <p className="flex items-center justify-center">
-          <span className="inline-block scale-150 mr-1 -mb-0.5">📧</span>:&nbsp;
-          <a className="underline" href="mailto:weareryland@gmail.com">
-            weareryland@gmail.com
-          </a>
+      {error && (
+        <p className="text-lg text-orange-400" role="alert">
+          {error}
         </p>
+      )}
+      <button type="submit" className={pillPrimary} disabled={handleDisabled()}>
+        {isSubmitting ? "Submitting..." : submitted ? "Thanks!" : "Sign up"}
+      </button>
+      <address className="not-italic text-center text-lg text-white/60">
+        <p>Ryland, Los Angeles, CA</p>
+        <a
+          className="inline-flex min-h-11 cursor-pointer items-center underline underline-offset-4 transition-colors duration-200 hover:text-white"
+          href="mailto:weareryland@gmail.com"
+        >
+          weareryland@gmail.com
+        </a>
       </address>
     </form>
   );
