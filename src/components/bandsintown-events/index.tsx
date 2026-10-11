@@ -1,6 +1,7 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo, ReactNode } from "react";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import { losAngelesDateKey } from "../../data/featured-shows";
+import { pillPrimary, pillSecondary } from "../../util/util";
 
 interface Event {
   id: string;
@@ -29,6 +30,8 @@ interface BandsintownEventsProps {
   suppressDates?: string[];
   /** A featured show is already on the page, so an empty Upcoming list points back to it. */
   hasFeatured?: boolean;
+  /** Desktop-only companion, placed on the same row as Upcoming and Past. */
+  children?: ReactNode;
 }
 
 const fadeVariants: Variants = {
@@ -75,6 +78,7 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
   perPage = 5,
   suppressDates = [],
   hasFeatured = false,
+  children,
 }) => {
   const [events, setEvents] = useState<Event[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -139,13 +143,13 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
     "inline-flex min-h-11 cursor-pointer items-center rounded-full border border-white/30 px-4 text-sm tracking-[-0.02em] text-white/80 transition-colors duration-200 hover:border-yellow-600/60 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500";
 
   return (
-    <div className="w-full text-white">
-      <div className="mb-8 flex justify-center gap-3">
+    <div className="flex w-full flex-col text-white min-[1301px]:grid min-[1301px]:grid-cols-[auto_minmax(0,1fr)] min-[1301px]:items-center min-[1301px]:gap-x-6">
+      <div className="mb-4 flex justify-center gap-3 min-[1301px]:col-start-1 min-[1301px]:row-start-1 min-[1301px]:mb-0 min-[1301px]:justify-start">
         <button
           type="button"
           aria-pressed={view === "upcoming"}
           onClick={() => setView("upcoming")}
-          className={tabClass(view === "upcoming")}
+          className={view === "upcoming" ? pillPrimary : pillSecondary}
         >
           Upcoming
         </button>
@@ -153,12 +157,19 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
           type="button"
           aria-pressed={view === "past"}
           onClick={() => setView("past")}
-          className={tabClass(view === "past")}
+          className={view === "past" ? pillPrimary : pillSecondary}
         >
           Past
         </button>
       </div>
 
+      {children ? (
+        <div className="order-last mt-4 flex flex-col items-center gap-3 min-[1301px]:order-none min-[1301px]:col-start-2 min-[1301px]:row-start-1 min-[1301px]:mt-0 min-[1301px]:flex-row min-[1301px]:justify-end">
+          {children}
+        </div>
+      ) : null}
+
+      <div className="min-[1301px]:col-span-2 min-[1301px]:row-start-2 min-[1301px]:mt-4">
       <AnimatePresence mode="wait">
         {loading ? (
           <motion.div
@@ -214,9 +225,9 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
                   );
 
                   return (
-                    <li key={event.id} className="py-3">
-                      <div className="flex items-center gap-4 text-left sm:gap-3">
-                        <div className="flex min-w-0 flex-1 flex-col sm:w-1/3 sm:flex-none">
+                    <li key={event.id} className="py-2.5">
+                      <div className="flex items-center gap-4 text-left leading-normal sm:gap-3">
+                        <div className="flex min-w-0 flex-1 flex-col">
                           <p className="font-semibold tracking-[-0.02em]">
                             {formattedDate}
                           </p>
@@ -229,11 +240,11 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
                           </p>
                         </div>
 
-                        <div className="hidden text-white/60 sm:block sm:w-1/3">
+                        <div className="hidden shrink-0 text-white/60 sm:block sm:w-44">
                           {event.venue.city}, {event.venue.region}
                         </div>
 
-                        <div className="shrink-0 sm:w-1/3 sm:text-right">
+                        <div className="shrink-0 sm:text-right">
                           {event.offers.length > 0 ? (
                             event.offers.map((offer, index) => (
                               <a
@@ -265,35 +276,35 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
                 })}
               </ul>
             )}
-
-            {totalPages > 1 && (
-              <div className="mt-6 flex items-center justify-center gap-3">
-                <button
-                  type="button"
-                  onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
-                  className={`${tabClass(false)} disabled:cursor-not-allowed disabled:opacity-40`}
-                  disabled={currentPage === 1}
-                >
-                  Prev
-                </button>
-                <span className="px-2 text-white/60">
-                  {currentPage} / {totalPages}
-                </span>
-                <button
-                  type="button"
-                  onClick={() =>
-                    setCurrentPage((p) => Math.min(p + 1, totalPages))
-                  }
-                  className={`${tabClass(false)} disabled:cursor-not-allowed disabled:opacity-40`}
-                  disabled={currentPage === totalPages}
-                >
-                  Next
-                </button>
-              </div>
-            )}
           </motion.div>
         )}
       </AnimatePresence>
+      {!loading && !error && totalPages > 1 && (
+        <div className="mt-4 flex items-center justify-center gap-3">
+          <button
+            type="button"
+            onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
+            className={`${tabClass(false)} disabled:cursor-not-allowed disabled:opacity-40`}
+            disabled={currentPage === 1}
+          >
+            Prev
+          </button>
+          <span className="px-2 text-white/60">
+            {currentPage} / {totalPages}
+          </span>
+          <button
+            type="button"
+            onClick={() =>
+              setCurrentPage((p) => Math.min(p + 1, totalPages))
+            }
+            className={`${tabClass(false)} disabled:cursor-not-allowed disabled:opacity-40`}
+            disabled={currentPage === totalPages}
+          >
+            Next
+          </button>
+        </div>
+      )}
+      </div>
     </div>
   );
 };

@@ -133,7 +133,7 @@ const TheBand = () => {
       >
         <section
           aria-labelledby="band-heading"
-          className="-mt-6 flex min-w-0 flex-col items-center gap-4 sm:mt-0 sm:gap-10 lg:col-span-2 lg:border-r lg:border-white/15 lg:pr-12"
+          className="-mt-6 flex min-w-0 flex-col items-center gap-4 sm:mt-0 sm:gap-6 lg:col-span-2 lg:border-r lg:border-white/15 lg:pr-12"
         >
           <h1 id="band-heading" className="sr-only">
             The band

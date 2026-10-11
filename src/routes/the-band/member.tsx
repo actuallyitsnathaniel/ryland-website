@@ -23,7 +23,7 @@ const BandMember = ({
         type="button"
         onClick={onSelect}
         aria-pressed={focused}
-        className={`group flex cursor-pointer flex-col items-center gap-1 border-0 bg-transparent px-1 py-0 text-white transition-transform duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 sm:gap-2 sm:py-2 ${
+        className={`group flex cursor-pointer flex-col items-center gap-1 border-0 bg-transparent px-1 py-0 text-white transition-transform duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 sm:gap-2 ${
           focused ? "scale-[1.15]" : "scale-100"
         }`}
       >
