@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import SocialLinks from "../social-links";
 
@@ -24,8 +24,6 @@ const Footer = () => {
       "https://music.youtube.com/channel/UChjPqJxxT2qSo5fDXlUXRLA",
     ],
   };
-
-  const isHomePage = useLocation().pathname === "/";
 
   return (
     <footer
@@ -55,17 +53,6 @@ const Footer = () => {
             </Link>
           </p>
           <div className="text-lg text-white/60 md:shrink-0 md:text-right">
-            {isHomePage && (
-              <address className="mb-3 hidden not-italic md:block">
-                <p>Ryland, Los Angeles, CA</p>
-                <a
-                  href="mailto:weareryland@gmail.com"
-                  className="inline-flex min-h-11 cursor-pointer items-center underline underline-offset-4 transition-colors duration-200 hover:text-white"
-                >
-                  weareryland@gmail.com
-                </a>
-              </address>
-            )}
             <p>Copyright © {new Date().getFullYear()} Ryland</p>
             <p className="mt-1">
               powered by{" "}

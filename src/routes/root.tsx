@@ -61,26 +61,41 @@ const Root = () => {
         style={{ backgroundImage: `url(${grain})` }}
       />
       <NavBar {...{ setModalOpen }} />
-      <AnimatePresence mode="wait">
-        <ErrorBoundary>
-          <Suspense fallback={<LoadingFallback />}>
-            <Routes location={location} key={location.key}>
-              <Route index element={<Page><Home /></Page>} />
-              <Route path="/music" element={<Page><Music /></Page>} />
-              <Route path="/the-band" element={<Page><TheBand /></Page>} />
-              <Route path="/about-us" element={<Navigate to="/the-band" replace />} />
-              <Route path="/shows" element={<Page><Shows /></Page>} />
-              <Route path="/links" element={<Page><Links /></Page>} />
-              <Route path="/imgonnabefine" element={<Page><GonnaBeFine /></Page>} />
-              <Route path="/merch" element={<Page><Merch /></Page>} />
-              <Route path="/drinks" element={<Page><Drinks /></Page>} />
-              <Route path="/secret" element={<Page><Secret /></Page>} />
-              <Route path="/usage-and-ai-policy" element={<Page><UsageAndAiPolicy /></Page>} />
-              <Route path="*" element={<Page><ErrorPage /></Page>} />
-            </Routes>
-          </Suspense>
-        </ErrorBoundary>
-      </AnimatePresence>
+      <div className="relative flex w-full flex-1 flex-col">
+        <AnimatePresence mode="wait">
+          <ErrorBoundary>
+            <Suspense fallback={<LoadingFallback />}>
+              <Routes location={location} key={location.key}>
+                <Route index element={<Page><Home /></Page>} />
+                <Route path="/music" element={<Page><Music /></Page>} />
+                <Route path="/the-band" element={<Page><TheBand /></Page>} />
+                <Route path="/about-us" element={<Navigate to="/the-band" replace />} />
+                <Route path="/shows" element={<Page><Shows /></Page>} />
+                <Route path="/links" element={<Page><Links /></Page>} />
+                <Route path="/imgonnabefine" element={<Page><GonnaBeFine /></Page>} />
+                <Route path="/merch" element={<Page><Merch /></Page>} />
+                <Route path="/drinks" element={<Page><Drinks /></Page>} />
+                <Route path="/secret" element={<Page><Secret /></Page>} />
+                <Route path="/usage-and-ai-policy" element={<Page><UsageAndAiPolicy /></Page>} />
+                <Route path="*" element={<Page><ErrorPage /></Page>} />
+              </Routes>
+            </Suspense>
+          </ErrorBoundary>
+        </AnimatePresence>
+        {location.pathname === "/" && (
+          <div className="pointer-events-none absolute inset-0 z-10 hidden md:flex md:flex-col md:items-end md:justify-end">
+            <address className="pointer-events-auto sticky bottom-4 mr-6 text-right text-lg not-italic text-white/60">
+              <p>Ryland, Los Angeles, CA</p>
+              <a
+                href="mailto:weareryland@gmail.com"
+                className="inline-flex min-h-11 cursor-pointer items-center underline underline-offset-4 transition-colors duration-200 hover:text-white"
+              >
+                weareryland@gmail.com
+              </a>
+            </address>
+          </div>
+        )}
+      </div>
       <Modal {...{ isModalOpen, setModalOpen }}>
         <Newsletter />
       </Modal>
