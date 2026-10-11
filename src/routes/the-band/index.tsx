@@ -63,7 +63,7 @@ const press = [
 const bio = `Ryland is an indie rock band from Los Angeles, making music together
 since 2019. Comprised of Tom, Ron, Nate, Elias, and Jake. They love music and inventing their own sports.`;
 
-const AboutUs = () => {
+const TheBand = () => {
   const [expanded, setExpanded] = useState(-1);
   const [shown, setShown] = useState(bio);
   const [textVisible, setTextVisible] = useState(true);
@@ -93,11 +93,11 @@ const AboutUs = () => {
   }, [member]);
 
   return (
-    <div id="about-us">
+    <div id="the-band">
       <SEO
         title="The band"
         description="Meet the members of Ryland: Tom (vocals, guitar, keys), Ron (bass), Nate (synths, vocals), Elias (drums), and Jake (guitar, producer). An indie rock band from Los Angeles making music together since 2019."
-        url="https://www.weareryland.com/about-us"
+        url="https://www.weareryland.com/the-band"
         type="profile"
       />
       <motion.div
@@ -133,7 +133,7 @@ const AboutUs = () => {
       >
         <section
           aria-labelledby="band-heading"
-          className="flex min-w-0 flex-col items-center gap-10 lg:col-span-2 lg:border-r lg:border-white/15 lg:pr-12"
+          className="-mt-6 flex min-w-0 flex-col items-center gap-4 sm:mt-0 sm:gap-10 lg:col-span-2 lg:border-r lg:border-white/15 lg:pr-12"
         >
           <h1 id="band-heading" className="sr-only">
             The band
@@ -197,4 +197,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default TheBand;

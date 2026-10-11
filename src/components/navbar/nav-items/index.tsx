@@ -24,7 +24,7 @@ export const NavItems = ({
       <NavItem title="Music" to="/music" {...{ pageTitle, setExpanded }} />
       <NavItem
         title="The band"
-        to="/about-us"
+        to="/the-band"
         {...{ pageTitle, setExpanded }}
       />
       <NavItem

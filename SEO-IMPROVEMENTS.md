@@ -8,7 +8,7 @@
 - ✅ Added dynamic meta tags to all routes:
   - Home (`/`)
   - Music (`/music`)
-  - About Us (`/about-us`)
+  - The band (`/the-band`)
   - Shows (`/shows`)
   - Links (`/links`)
   - I'm Gonna Be Fine (`/imgonnabefine`)
@@ -62,7 +62,7 @@ Each page now includes:
 - `src/routes/root.tsx` - Fixed grain texture image
 - `src/routes/home/index.tsx` - Added SEO + h1 + JSON-LD
 - `src/routes/music/index.tsx` - Added SEO + h1
-- `src/routes/about-us/index.tsx` - Added SEO + h1
+- `src/routes/the-band/index.tsx` - Added SEO + h1
 - `src/routes/shows/index.tsx` - Added SEO + h1
 - `src/routes/links/index.tsx` - Added SEO + h1
 - `src/routes/gonna-be-fine/index.tsx` - Added SEO + h1 + JSON-LD

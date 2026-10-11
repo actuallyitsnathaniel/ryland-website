@@ -1,3 +1,10 @@
 {
+  "redirects": [
+    {
+      "source": "/about-us",
+      "destination": "/the-band",
+      "permanent": true
+    }
+  ],
   "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }

@@ -7,7 +7,7 @@ export default {
     { scrollPage: 5000 },                                            // homepage + bg video
     { clickNav: "Music", waitText: "Music" },                        // lazy route
     { openClose: "[role=\"button\"][aria-expanded]", back: false },  // open a disc -> streaming links
-    { clickNav: "About us", waitText: "About" },
+    { clickNav: "The band", waitText: "Press" },
     { clickNav: "Shows", waitText: "Shows" },
     { clickNav: "I'm Gonna Be Fine", waitText: "Fine" },
     { clickNav: "Home", waitText: "" },

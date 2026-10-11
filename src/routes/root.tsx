@@ -1,5 +1,5 @@
 import { useState, Suspense, lazy, ReactNode } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Navigate, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
 import VideoBackground from "../components/video-background";
@@ -13,7 +13,7 @@ import { pageVariants } from "../util/transitionPage";
 
 // Lazy load route components for code splitting
 const Home = lazy(() => import("./home"));
-const AboutUs = lazy(() => import("./about-us"));
+const TheBand = lazy(() => import("./the-band"));
 const Music = lazy(() => import("./music"));
 const Links = lazy(() => import("./links"));
 const Shows = lazy(() => import("./shows"));
@@ -67,7 +67,8 @@ const Root = () => {
             <Routes location={location} key={location.key}>
               <Route index element={<Page><Home /></Page>} />
               <Route path="/music" element={<Page><Music /></Page>} />
-              <Route path="/about-us" element={<Page><AboutUs /></Page>} />
+              <Route path="/the-band" element={<Page><TheBand /></Page>} />
+              <Route path="/about-us" element={<Navigate to="/the-band" replace />} />
               <Route path="/shows" element={<Page><Shows /></Page>} />
               <Route path="/links" element={<Page><Links /></Page>} />
               <Route path="/imgonnabefine" element={<Page><GonnaBeFine /></Page>} />

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import SocialLinks from "../social-links";
 
@@ -25,13 +25,12 @@ const Footer = () => {
     ],
   };
 
-  const isHomePage =
-    typeof window !== "undefined" && window.location.pathname === "/";
+  const isHomePage = useLocation().pathname === "/";
 
   return (
     <footer
       id="footer"
-      className="mt-auto grid w-full pt-4 text-center text-lg leading-normal text-white"
+      className="mt-auto w-full pt-4 text-lg leading-normal text-white"
     >
       <script
         type="application/ld+json"
@@ -43,40 +42,42 @@ const Footer = () => {
         <div className="sm:hidden flex justify-center">
           <SocialLinks />
         </div>
-        {isHomePage && (
-          <address className="fixed bottom-4 right-4 hidden text-right text-lg not-italic text-white/60 md:block">
-            <p>Ryland, Los Angeles, CA</p>
-            <a
-              href="mailto:weareryland@gmail.com"
-              className="inline-flex min-h-11 cursor-pointer items-center underline underline-offset-4 transition-colors duration-200 hover:text-white"
+        <div className="flex flex-col items-center gap-3 px-6 text-center md:flex-row md:items-end md:justify-between md:text-left">
+          <p className="max-w-prose text-lg text-white/60 md:max-w-xl">
+            Ryland's music is not licensed for AI or machine learning training.
+            Any violation of this policy will be pursued to the fullest extent of
+            the law.{" "}
+            <Link
+              to="/usage-and-ai-policy"
+              className="inline-flex min-h-11 cursor-pointer items-center text-orange-400 underline underline-offset-4 transition-colors duration-200 hover:text-orange-300"
             >
-              weareryland@gmail.com
-            </a>
-          </address>
-        )}
-        <p className="mx-auto mb-3 max-w-prose px-6 text-lg text-white/60">
-          Ryland's music is not licensed for AI or machine learning training.
-          Any violation of this policy will be pursued to the fullest extent of
-          the law.{" "}
-          <Link
-            to="/usage-and-ai-policy"
-            className="inline-flex min-h-11 cursor-pointer items-center text-orange-400 underline underline-offset-4 transition-colors duration-200 hover:text-orange-300"
-          >
-            Usage &amp; AI Policy
-          </Link>
-        </p>
-        <p className="text-lg text-white/60">
-          Copyright © {new Date().getFullYear()} Ryland
-          <span className="mt-1 block">
-            powered by{" "}
-            <a
-              className="inline-flex min-h-11 cursor-pointer items-center underline underline-offset-4 transition-colors duration-200 hover:text-white"
-              href="mailto:nathanielrbowman@gmail.com"
-            >
-              nathaniel bowman
-            </a>
-          </span>
-        </p>
+              Usage &amp; AI Policy
+            </Link>
+          </p>
+          <div className="text-lg text-white/60 md:shrink-0 md:text-right">
+            {isHomePage && (
+              <address className="mb-3 hidden not-italic md:block">
+                <p>Ryland, Los Angeles, CA</p>
+                <a
+                  href="mailto:weareryland@gmail.com"
+                  className="inline-flex min-h-11 cursor-pointer items-center underline underline-offset-4 transition-colors duration-200 hover:text-white"
+                >
+                  weareryland@gmail.com
+                </a>
+              </address>
+            )}
+            <p>Copyright © {new Date().getFullYear()} Ryland</p>
+            <p className="mt-1">
+              powered by{" "}
+              <a
+                className="inline-flex min-h-11 cursor-pointer items-center underline underline-offset-4 transition-colors duration-200 hover:text-white"
+                href="mailto:nathanielrbowman@gmail.com"
+              >
+                nathaniel bowman
+              </a>
+            </p>
+          </div>
+        </div>
       </div>
     </footer>
   );
