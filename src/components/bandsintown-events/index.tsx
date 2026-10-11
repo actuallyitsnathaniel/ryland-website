@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useMemo } from "react";
 import { AnimatePresence, motion, Variants } from "framer-motion";
+import { losAngelesDateKey } from "../../data/featured-shows";
 
 interface Event {
   id: string;
@@ -24,6 +25,10 @@ interface BandsintownEventsProps {
   appId: string;
   initialView?: "upcoming" | "past";
   perPage?: number;
+  /** Los Angeles calendar dates (YYYY-MM-DD) already shown as featured shows. */
+  suppressDates?: string[];
+  /** A featured show is already on the page, so an empty Upcoming list points back to it. */
+  hasFeatured?: boolean;
 }
 
 const fadeVariants: Variants = {
@@ -68,6 +73,8 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
   appId,
   initialView = "past",
   perPage = 5,
+  suppressDates = [],
+  hasFeatured = false,
 }) => {
   const [events, setEvents] = useState<Event[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -102,33 +109,51 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
     fetchEvents();
   }, [artistName, appId, view]);
 
+  const suppressKey = suppressDates.join(",");
+
   // Memoize expensive calculations
   const { paginatedEvents, totalPages } = useMemo(() => {
+    const hidden = new Set(suppressKey ? suppressKey.split(",") : []);
+    const listed = events.filter(
+      (event) => !hidden.has(losAngelesDateKey(event.datetime))
+    );
     const startIndex = (currentPage - 1) * perPage;
-    const reversedEvents = [...events].reverse();
+    const reversedEvents = [...listed].reverse();
     const paginated = reversedEvents.slice(startIndex, startIndex + perPage);
-    const pages = Math.ceil(events.length / perPage);
+    const pages = Math.ceil(listed.length / perPage);
 
     return {
       paginatedEvents: paginated,
       totalPages: pages,
     };
-  }, [events, currentPage, perPage]);
+  }, [events, currentPage, perPage, suppressKey]);
+
+  const tabClass = (active: boolean) =>
+    `inline-flex min-h-11 cursor-pointer items-center justify-center rounded-full border px-5 tracking-[-0.02em] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 ${
+      active
+        ? "border-yellow-600 bg-yellow-600 text-white"
+        : "border-white/30 text-white/80 hover:border-yellow-600/60 hover:text-white"
+    }`;
+
+  const actionClass =
+    "inline-flex min-h-11 cursor-pointer items-center rounded-full border border-white/30 px-4 text-sm tracking-[-0.02em] text-white/80 transition-colors duration-200 hover:border-yellow-600/60 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500";
 
   return (
-    <div className="max-w-[90vw] mx-auto text-white">
-      <div className="flex justify-center space-x-8 mb-8">
+    <div className="w-full text-white">
+      <div className="mb-8 flex justify-center gap-3">
         <button
+          type="button"
+          aria-pressed={view === "upcoming"}
           onClick={() => setView("upcoming")}
-          className={`px-4 py-2 rounded ${
-            view === "upcoming" ? "underline" : ""
-          }`}
+          className={tabClass(view === "upcoming")}
         >
           Upcoming
         </button>
         <button
+          type="button"
+          aria-pressed={view === "past"}
           onClick={() => setView("past")}
-          className={`px-4 py-2 rounded ${view === "past" ? "underline" : ""}`}
+          className={tabClass(view === "past")}
         >
           Past
         </button>
@@ -155,7 +180,7 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
             exit="exit"
             variants={fadeVariants}
             transition={{ duration: 0.4 }}
-            className="text-center py-4 text-red-500"
+            className="py-4 text-center text-orange-400"
           >
             Error: {error}
           </motion.div>
@@ -169,9 +194,13 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
             transition={{ duration: 0.4 }}
           >
             {paginatedEvents.length === 0 ? (
-              <div className="text-center py-4">Nothing yet.</div>
+              <div className="py-4 text-center text-white/60">
+                {hasFeatured && view === "upcoming"
+                  ? "The next show is up top."
+                  : "Nothing yet."}
+              </div>
             ) : (
-              <ul className="w-[90vw] mx-auto divide-y divide-white/20">
+              <ul className="divide-y divide-white/15">
                 {paginatedEvents.map((event) => {
                   const eventDate = new Date(event.datetime);
                   const formattedDate = eventDate.toLocaleDateString(
@@ -186,34 +215,33 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
 
                   return (
                     <li key={event.id} className="py-4">
-                      <div className="flex flex-row items-center justify-between text-sm md:text-base text-white w-full">
-                        {/* Left Section: Date, Venue, Lineup */}
-                        <div className="flex flex-col text-left w-[33%]">
-                          <p className="font-semibold">{formattedDate}</p>
+                      <div className="flex flex-col items-center gap-3 text-center sm:flex-row sm:items-center sm:text-left">
+                        <div className="flex flex-col sm:w-1/3">
+                          <p className="font-semibold tracking-[-0.02em]">
+                            {formattedDate}
+                          </p>
                           <p>{event.venue.name}</p>
-                          <p className="text-sm italic text-white/70">
+                          <p className="text-sm italic text-white/60">
                             {event.lineup.join(", ")}
                           </p>
                         </div>
 
-                        {/* Middle Section: City, State */}
-                        <div className=" text-white/80 w-[33%] text-left">
+                        <div className="text-white/60 sm:w-1/3">
                           {event.venue.city}, {event.venue.region}
                         </div>
 
-                        {/* Right Section: Tickets or “I was there” */}
-                        <div className="text-right [33%]">
+                        <div className="sm:w-1/3 sm:text-right">
                           {event.offers.length > 0 ? (
                             event.offers.map((offer, index) => (
                               <a
                                 key={index}
                                 href={offer.url}
                                 target="_blank"
-                                rel="noopener"
-                                className="inline-block text-xs md:text-sm px-4 py-2 bg-yellow-600 hover:bg-blue-700 transition rounded"
+                                rel="noopener noreferrer"
+                                className={actionClass}
                               >
                                 {offer.type === "Tickets"
-                                  ? "Buy Tickets"
+                                  ? "Tickets"
                                   : offer.type}
                               </a>
                             ))
@@ -221,10 +249,10 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
                             <a
                               href={getIWasThereUrl(event, appId, "ryland")}
                               target="_blank"
-                              rel="noopener"
-                              className="inline-block text-xs md:text-sm px-1 py-2 bg-yellow-600 hover:bg-blue-700 transition rounded"
+                              rel="noopener noreferrer"
+                              className={actionClass}
                             >
-                              I was there ✋🏻
+                              I was there
                             </a>
                           )}
                         </div>
@@ -236,22 +264,24 @@ const BandsintownEvents: React.FC<BandsintownEventsProps> = ({
             )}
 
             {totalPages > 1 && (
-              <div className="flex justify-center space-x-2 mt-6">
+              <div className="mt-6 flex items-center justify-center gap-3">
                 <button
+                  type="button"
                   onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
-                  className="text-lg px-3 py-1 rounded hover:bg-gray-700 bg-opacity-75 border"
+                  className={`${tabClass(false)} disabled:cursor-not-allowed disabled:opacity-40`}
                   disabled={currentPage === 1}
                 >
                   Prev
                 </button>
-                <span className="text-lg px-3 py-1">
-                  Page {currentPage} of {totalPages}
+                <span className="px-2 text-white/60">
+                  {currentPage} / {totalPages}
                 </span>
                 <button
+                  type="button"
                   onClick={() =>
                     setCurrentPage((p) => Math.min(p + 1, totalPages))
                   }
-                  className="text-lg px-3 py-1 rounded bg-yellow-600 hover:bg-yellow-500"
+                  className={`${tabClass(false)} disabled:cursor-not-allowed disabled:opacity-40`}
                   disabled={currentPage === totalPages}
                 >
                   Next
