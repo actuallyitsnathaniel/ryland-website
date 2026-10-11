@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import SEO from "../../components/seo";
 import { itemVariants } from "../../util/transitionPage";
@@ -65,11 +65,37 @@ since 2019. Comprised of Tom, Ron, Nate, Elias, and Jake. They love music and in
 
 const AboutUs = () => {
   const [expanded, setExpanded] = useState(-1);
+  const [shown, setShown] = useState(bio);
+  const [textVisible, setTextVisible] = useState(true);
   const reduceMotion = useReducedMotion();
+  const member = expanded >= 0 ? members[expanded] : null;
+  const copy = member ? member.desc : bio;
+  const copyRef = useRef(copy);
+  copyRef.current = copy;
+
+  useEffect(() => {
+    if (copy === shown) return;
+    if (reduceMotion) {
+      setShown(copy);
+      setTextVisible(true);
+      return;
+    }
+    setTextVisible(false);
+  }, [copy, shown, reduceMotion]);
+
+  useEffect(() => {
+    if (!member) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setExpanded(-1);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [member]);
+
   return (
     <div id="about-us">
       <SEO
-        title="About Ryland - Meet the Band | Los Angeles Indie Rock"
+        title="The band"
         description="Meet the members of Ryland: Tom (vocals, guitar, keys), Ron (bass), Nate (synths, vocals), Elias (drums), and Jake (guitar, producer). An indie rock band from Los Angeles making music together since 2019."
         url="https://www.weareryland.com/about-us"
         type="profile"
@@ -105,34 +131,44 @@ const AboutUs = () => {
         }
         className={`grid w-full grid-cols-1 items-start gap-10 text-xl leading-normal text-white lg:grid-cols-3 lg:gap-x-12 ${pageInset}`}
       >
-        <h1 className="sr-only">About Ryland - Meet the Band Members</h1>
-
         <section
           aria-labelledby="band-heading"
           className="flex min-w-0 flex-col items-center gap-10 lg:col-span-2 lg:border-r lg:border-white/15 lg:pr-12"
         >
-          <h2 id="band-heading" className={sectionTitle}>
+          <h1 id="band-heading" className="sr-only">
             The band
-          </h2>
-          <div className="flex flex-wrap items-end justify-center gap-4">
-            {members.map((member, i) => (
+          </h1>
+          <div className="flex w-full flex-wrap items-end justify-center gap-4">
+            {members.map((person, i) => (
               <BandMember
-                key={member.name}
-                profilePic={member.profilePic}
-                name={member.name}
-                desc={member.desc}
-                listening={member.listening}
-                expanded={expanded === i}
-                onToggle={() => setExpanded(expanded === i ? -1 : i)}
+                key={person.name}
+                profilePic={person.profilePic}
+                name={person.name}
+                focused={expanded === i}
+                onSelect={() => setExpanded(expanded === i ? -1 : i)}
               />
             ))}
           </div>
-          <motion.p
-            variants={itemVariants}
-            className="max-w-prose text-center text-xl leading-normal"
-          >
-            {bio}
-          </motion.p>
+          <div className="grid w-full max-w-prose text-center text-xl leading-normal">
+            <p className="invisible col-start-1 row-start-1" aria-hidden="true">
+              {bio}
+            </p>
+            <p
+              aria-live="polite"
+              onTransitionEnd={(event) => {
+                if (event.propertyName !== "opacity") return;
+                if (event.target !== event.currentTarget) return;
+                if (copyRef.current === shown) return;
+                setShown(copyRef.current);
+                setTextVisible(true);
+              }}
+              className={`col-start-1 row-start-1 transition-opacity duration-200 ${
+                textVisible ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              {shown}
+            </p>
+          </div>
         </section>
 
         <div className="h-px w-full bg-white/15 lg:hidden" aria-hidden="true" />

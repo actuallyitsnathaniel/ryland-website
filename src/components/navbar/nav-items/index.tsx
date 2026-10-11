@@ -23,12 +23,12 @@ export const NavItems = ({
       <NavItem title="Home" to="/" {...{ pageTitle, setExpanded }} />
       <NavItem title="Music" to="/music" {...{ pageTitle, setExpanded }} />
       <NavItem
-        title="About us"
+        title="The band"
         to="/about-us"
         {...{ pageTitle, setExpanded }}
       />
       <NavItem
-        title="I'm Gonna Be Fine"
+        title="I'm gonna be fine"
         to="/imgonnabefine"
         {...{ pageTitle, setExpanded }}
       />

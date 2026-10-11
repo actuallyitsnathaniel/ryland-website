@@ -7,7 +7,7 @@ import { MobileNav } from "./mobile/mobile-nav";
 // Memoize the title map to prevent recreation on every hook call
 const TITLE_MAP = [
   { path: "/", title: "Home" },
-  { path: "/about-us", title: "About Us" },
+  { path: "/about-us", title: "The band" },
   { path: "/contact", title: "Contact" },
   { path: "/music", title: "Music" },
   { path: "/merch", title: "Merch" },
