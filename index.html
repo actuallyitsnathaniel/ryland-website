@@ -20,26 +20,13 @@
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#bb6b01" />
 
-    <!-- Preload video poster for fast initial paint -->
-    <link rel="preload" as="image" href="/video-thumbnail.jpg" fetchpriority="high" />
-
     <!-- Preload body display font so text doesn't flash -->
     <link
       rel="preload"
       as="font"
-      type="font/otf"
-      href="/fonts/HelveticaNowDisplay.otf"
+      type="font/woff2"
+      href="/fonts/HelveticaNowDisplay.woff2"
       crossorigin
-    />
-
-    <!-- Google Fonts loaded async to avoid render-blocking -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
-      media="print"
-      onload="this.media='all'"
     />
 
     <!-- Sitemap -->
@@ -60,7 +47,7 @@
         "@type": "VideoObject",
         "name": "Ryland Background Video",
         "description": "Background video for Ryland's official website",
-        "thumbnailUrl": "https://www.weareryland.com/video-thumbnail.jpg",
+        "thumbnailUrl": "https://www.weareryland.com/video-thumbnail.webp",
         "uploadDate": "2024-09-13",
         "contentUrl": "https://www.weareryland.com/catch-desktop.mp4"
       }
@@ -88,16 +75,6 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script
-      type="text/javascript"
-      src="https://unpkg.com/default-passive-events"
-      defer
-    ></script>
-    <script
-      crossorigin
-      src="https://unpkg.com/universal-cookie@3/umd/universalCookie.min.js"
-      defer
-    ></script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

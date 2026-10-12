@@ -3,6 +3,7 @@ const TidalEmbed = () => {
     <iframe
       className="h-[470px] w-80 max-w-full rounded-xl"
       title="tidal-embed"
+      loading="lazy"
       src={"https://embed.tidal.com/albums/395421548?layout=gridify"}
       frameBorder={0}
     />

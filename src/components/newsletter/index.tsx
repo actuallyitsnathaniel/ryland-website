@@ -1,8 +1,5 @@
 import { FormEvent, useState } from "react";
 import { capitalizeFirstLetter, validateEmail, fieldClass, pillPrimary, sectionTitle } from "../../util/util";
-import { render } from "@react-email/render";
-
-import YouConnectedEmail from "../../assets/emails/you-connected-email";
 
 const Newsletter = () => {
   const [firstName, setFirstName] = useState("");
@@ -20,18 +17,15 @@ const Newsletter = () => {
       setIsSubmitting(true);
 
       try {
-        const htmlBody = await render(YouConnectedEmail({ firstName }), {
-          pretty: true,
+        const response = await fetch("/api/youConnectedEmail", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            firstName,
+            lastName,
+            emailAddress: email,
+          }),
         });
-        const response = await fetch(
-          `/api/youConnectedEmail?firstName=${encodeURIComponent(
-            firstName
-          )}&lastName=${encodeURIComponent(
-            lastName
-          )}&emailAddress=${encodeURIComponent(
-            email
-          )}&htmlBody=${encodeURIComponent(htmlBody)}`
-        );
 
         if (!response.ok) {
           throw new Error("Failed to submit data");

@@ -1,9 +1,28 @@
 import nodemailer from "nodemailer";
 import axios from "axios";
+import { render } from "@react-email/render";
+import YouConnectedEmail from "../src/assets/emails/you-connected-email";
+
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // Check vercel deployment protection on lower envs
 const handler = async (req, res) => {
-  const { firstName, lastName, emailAddress, htmlBody } = req.query; // Extracting query parameters
+  if (req.method !== "POST") {
+    res.setHeader("Allow", "POST");
+    return res.status(405).json({ message: "Method not allowed" });
+  }
+
+  const { firstName, lastName, emailAddress } = req.body ?? {};
+  if (
+    typeof firstName !== "string" ||
+    typeof lastName !== "string" ||
+    typeof emailAddress !== "string" ||
+    !firstName.trim() ||
+    !lastName.trim() ||
+    !emailPattern.test(emailAddress)
+  ) {
+    return res.status(400).json({ message: "Invalid signup" });
+  }
 
   const bandEmail = process.env.BAND_EMAIL;
   const bandPass = process.env.BAND_PASS;
@@ -11,6 +30,9 @@ const handler = async (req, res) => {
     ? `https://${process.env.VERCEL_BRANCH_URL}`
     : "http://localhost:3000";
   const webAppURL = process.env.WEB_APP_URL;
+  const html = await render(
+    YouConnectedEmail({ firstName: firstName.trim() })
+  );
 
   const imageAttachments = [
     {
@@ -55,7 +77,7 @@ const handler = async (req, res) => {
     from: emailAddress,
     to: bandEmail, // Replace with your band's email
     subject: "New Subscriber",
-    text: `${firstName} ${lastName} - ${emailAddress} has been added to the email list!`,
+    text: `${firstName.trim()} ${lastName.trim()} - ${emailAddress} has been added to the email list!`,
   };
 
   // Email options for new member
@@ -63,7 +85,7 @@ const handler = async (req, res) => {
     from: bandEmail,
     to: emailAddress,
     subject: "🛌 Heyo! Thanks for connecting with us!",
-    html: htmlBody,
+    html,
     attachments: imageAttachments,
   };
 
@@ -79,8 +101,8 @@ const handler = async (req, res) => {
     // Prepare data for Google Sheets
     const sheetData = {
       timestamp: new Date().toISOString(),
-      firstName: firstName,
-      lastName: lastName,
+      firstName: firstName.trim(),
+      lastName: lastName.trim(),
       emailAddress,
     };
 

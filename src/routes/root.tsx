@@ -6,9 +6,8 @@ import VideoBackground from "../components/video-background";
 import NavBar from "../components/navbar";
 import Modal from "../components/modal";
 import Footer from "../components/footer";
-import Newsletter from "../components/newsletter";
 import ErrorBoundary from "../components/error-boundary";
-import grain from "../assets/images/textures/grain-optimized.jpeg";
+import grain from "../assets/images/textures/grain-optimized.webp";
 import { pageVariants } from "../util/transitionPage";
 
 // Lazy load route components for code splitting
@@ -23,6 +22,7 @@ const Drinks = lazy(() => import("./drinks"));
 const Secret = lazy(() => import("./secret"));
 const UsageAndAiPolicy = lazy(() => import("./usage-and-ai-policy"));
 const ErrorPage = lazy(() => import("./error"));
+const Newsletter = lazy(() => import("../components/newsletter"));
 
 // Loading fallback component
 // Blank fallback — let the page (and its logo) draw in without a visible placeholder
@@ -97,7 +97,11 @@ const Root = () => {
         )}
       </div>
       <Modal {...{ isModalOpen, setModalOpen }}>
-        <Newsletter />
+        {isModalOpen && (
+          <Suspense fallback={<p className="text-lg text-white/60">Loading…</p>}>
+            <Newsletter />
+          </Suspense>
+        )}
       </Modal>
       <Footer />
     </div>

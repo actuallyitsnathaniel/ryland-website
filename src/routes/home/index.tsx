@@ -9,7 +9,7 @@ const Home = () => {
     name: "Ryland",
     genre: "Indie Rock",
     url: "https://www.weareryland.com",
-    image: "https://www.weareryland.com/video-thumbnail.jpg",
+    image: "https://www.weareryland.com/video-thumbnail.webp",
     sameAs: [
       "https://www.instagram.com/weareryland",
       "https://open.spotify.com/artist/5MmVJjCarP72v32WkjCixh",

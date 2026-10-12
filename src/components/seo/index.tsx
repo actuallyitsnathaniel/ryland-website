@@ -12,7 +12,7 @@ interface SEOProps {
 const SEO = ({
   title = "Ryland - Official Website",
   description = "Official website of Ryland - Listen to 'I'm Gonna Be Fine EP' now on all platforms. Indie rock band from Los Angeles.",
-  image = "https://www.weareryland.com/video-thumbnail.jpg",
+  image = "https://www.weareryland.com/video-thumbnail.webp",
   url = "https://www.weareryland.com",
   type = "website",
   jsonLd,

@@ -18,7 +18,6 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],
-        "sans-grotesk": ["Space Grotesk", ...defaultTheme.fontFamily.sans],
         "sans-helvetica-now": [
           "Helvetica Now Display",
           ...defaultTheme.fontFamily.sans,

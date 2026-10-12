@@ -1,9 +1,9 @@
-import { useRef, useEffect, useCallback, Dispatch, SetStateAction, JSX } from "react";
+import { useRef, useEffect, useCallback, Dispatch, SetStateAction, ReactNode } from "react";
 
 type ModalType = {
   isModalOpen: boolean;
   setModalOpen: Dispatch<SetStateAction<boolean>>;
-  children: JSX.Element;
+  children: ReactNode;
 };
 
 const Modal = ({ isModalOpen, setModalOpen, children }: ModalType) => {

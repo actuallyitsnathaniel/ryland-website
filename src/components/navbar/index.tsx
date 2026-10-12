@@ -18,16 +18,15 @@ const TITLE_MAP = [
   { path: "/usage-and-ai-policy", title: "Usage & AI Policy" },
 ];
 
+const titleForPath = (path: string) =>
+  TITLE_MAP.find((item) => item.path === path)?.title ?? "";
+
 export const usePageTitle = (location: string) => {
-  const [pageTitle, setPageTitle] = useState("");
+  const pageTitle = titleForPath(location);
 
   useEffect(() => {
-    const curTitle = TITLE_MAP.find((item) => item.path === location);
-    if (curTitle?.title) {
-      setPageTitle(curTitle.title);
-      document.title = "Ryland - " + curTitle.title;
-    }
-  }, [location]);
+    if (pageTitle) document.title = "Ryland - " + pageTitle;
+  }, [pageTitle]);
 
   return pageTitle;
 };

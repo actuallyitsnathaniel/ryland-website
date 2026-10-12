@@ -6,12 +6,13 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
+app.use(express.json());
 
 // Importing serverless function
 import youConnectedEmail from "./api/youConnectedEmail.js";
 import sendNewReleaseEmail from "./api/sendNewReleaseEmail.js";
 
-app.get("/api/youConnectedEmail", youConnectedEmail);
+app.post("/api/youConnectedEmail", youConnectedEmail);
 app.post("/api/sendNewReleaseEmail", sendNewReleaseEmail);
 
 app.listen(3001, () => {

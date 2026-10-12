@@ -20,28 +20,40 @@ export const NavItems = ({
         !!classNames && classNames
       }`}
     >
-      <NavItem title="Home" to="/" {...{ pageTitle, setExpanded }} />
-      <NavItem title="Music" to="/music" {...{ pageTitle, setExpanded }} />
-      <NavItem
-        title="The band"
-        to="/the-band"
-        {...{ pageTitle, setExpanded }}
-      />
-      <NavItem
-        title="I'm gonna be fine"
-        to="/imgonnabefine"
-        {...{ pageTitle, setExpanded }}
-      />
-      <NavItem title="Shows" to="/shows" {...{ pageTitle, setExpanded }} />
-      <button
-        className="inline-flex min-h-11 cursor-pointer items-center px-3 text-3xl tracking-[-0.02em] transition-colors duration-200 hover:text-orange-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 min-[1301px]:text-2xl"
-        onClick={() => {
-          setExpanded(false);
-          setModalOpen(true);
-        }}
-      >
-        Contact
-      </button>
+      <li className="flex max-sm:has-[.hidden]:hidden">
+        <NavItem title="Home" to="/" {...{ pageTitle, setExpanded }} />
+      </li>
+      <li className="flex max-sm:has-[.hidden]:hidden">
+        <NavItem title="Music" to="/music" {...{ pageTitle, setExpanded }} />
+      </li>
+      <li className="flex max-sm:has-[.hidden]:hidden">
+        <NavItem
+          title="The band"
+          to="/the-band"
+          {...{ pageTitle, setExpanded }}
+        />
+      </li>
+      <li className="flex max-sm:has-[.hidden]:hidden">
+        <NavItem
+          title="I'm gonna be fine"
+          to="/imgonnabefine"
+          {...{ pageTitle, setExpanded }}
+        />
+      </li>
+      <li className="flex max-sm:has-[.hidden]:hidden">
+        <NavItem title="Shows" to="/shows" {...{ pageTitle, setExpanded }} />
+      </li>
+      <li className="flex">
+        <button
+          className="inline-flex min-h-11 cursor-pointer items-center px-3 text-3xl tracking-[-0.02em] transition-colors duration-200 hover:text-orange-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 min-[1301px]:text-2xl"
+          onClick={() => {
+            setExpanded(false);
+            setModalOpen(true);
+          }}
+        >
+          Contact
+        </button>
+      </li>
     </ul>
   );
 };

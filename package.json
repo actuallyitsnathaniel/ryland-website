@@ -26,7 +26,6 @@
     "react-dom": "^19.2.3",
     "react-email": "^5.2.5",
     "react-router-dom": "^7.0.2",
-    "vite-plugin-preload": "^0.4.4",
     "vite-plugin-svgr": "^4.2.0"
   },
   "devDependencies": {
